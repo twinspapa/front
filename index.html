@@ -13,7 +13,6 @@
 
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
     <!-- CSS Implementing Plugins -->
     <link rel="stylesheet" href="./assets/vendor/icon-set/style.css">
@@ -23,1246 +22,752 @@
 
     <!-- CSS Front Template -->
     <link rel="stylesheet" href="./assets/css/theme.min.css">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="./assets/css/custom.css">
   </head>
 
   <body class="has-navbar-vertical-aside navbar-vertical-aside-show-xl   footer-offset">
+      <script src="./assets/vendor/hs-navbar-vertical-aside/hs-navbar-vertical-aside-mini-cache.js"></script>
 
-    <script src="./assets/vendor/hs-navbar-vertical-aside/hs-navbar-vertical-aside-mini-cache.js"></script>
-
-    <div id="top" class="navbar navbar-expand-lg navbar-fixed navbar-height navbar-flush navbar-container navbar-bordered">
-      <!-- load top -->
-    </div>
-
-    <!-- ========== MAIN CONTENT ========== -->
-    <!-- Navbar Vertical -->
-    <aside id="aside" class="js-navbar-vertical-aside navbar navbar-vertical-aside navbar-vertical navbar-vertical-fixed navbar-expand-xl navbar-bordered  ">
-      <div class="navbar-vertical-container">
-        <div class="navbar-vertical-footer-offset">
-          <div class="navbar-brand-wrapper justify-content-between">
+    <!-- ========== HEADER ========== -->
+      <header id="header" class="navbar navbar-expand-lg navbar-fixed navbar-height navbar-flush navbar-container navbar-bordered">
+        <div class="navbar-nav-wrap">
+          <!-- 사이드바 축소시 로고 노출 -->
+          <div class="navbar-brand-wrapper">
             <!-- Logo -->
-              <a class="navbar-brand" href="./index.html" aria-label="Front">
-                <img class="navbar-brand-logo" src="./assets/svg/logos/logo.svg" alt="Logo">
-                <img class="navbar-brand-logo-mini" src="./assets/svg/logos/logo-short.svg" alt="Logo">
-              </a>
+            <a class="navbar-brand" href="./index.html" aria-label="Front">
+              <img class="navbar-brand-logo" src="./assets/svg/logos/logo.svg" alt="Logo">
+              <img class="navbar-brand-logo-mini" src="./assets/svg/logos/logo-short.svg" alt="Logo">
+            </a>
             <!-- End Logo -->
+          </div>
+          <!-- END 사이드바 축소시 로고 노출 -->
 
-            <!-- Navbar Vertical Toggle -->
-            <button type="button" class="js-navbar-vertical-aside-toggle-invoker navbar-vertical-aside-toggle btn btn-icon btn-xs btn-ghost-dark">
-              <i class="tio-clear tio-lg"></i>
+          <div class="navbar-nav-wrap-content-left">
+            <!-- Navbar Vertical Toggle : 사이드바 토글 버튼 -->
+            <button type="button" class="js-navbar-vertical-aside-toggle-invoker close mr-3">
+              <i class="tio-first-page navbar-vertical-aside-toggle-short-align" data-toggle="tooltip" data-placement="right" title="Collapse"></i>
+              <i class="tio-last-page navbar-vertical-aside-toggle-full-align" data-template='<div class="tooltip d-none d-sm-block" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>' data-toggle="tooltip" data-placement="right" title="Expand"></i>
             </button>
-            <!-- End Navbar Vertical Toggle -->
+            <!-- End Navbar Vertical Toggle : 사이드바 토글 버튼 -->
           </div>
 
-          <!-- Content -->
-          <div class="navbar-vertical-content">
-          <!-- Navbar -->
-            <ul class="navbar-nav navbar-nav-lg nav-tabs">
+          <!-- Secondary Content -->
+          <div class="navbar-nav-wrap-content-right">
+            <!-- Navbar -->
+            <ul class="navbar-nav align-items-center flex-row">
               <li class="nav-item">
-                <a class="js-nav-tooltip-link nav-link active" href="javascript:void(0);" onclick="viewLoad('PGID_A');" title="Dashboards">
-                  <i class="tio-home-vs-1-outlined nav-icon"></i>
-                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Dashboards</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="js-nav-tooltip-link nav-link" href="javascript:void(0);" onclick="viewLoad('PGID_B');" title="회원">
-                  <i class="tio-user-outlined nav-icon"></i>
-                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">회원</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="js-nav-tooltip-link nav-link" href="javascript:void(0);" onclick="viewLoad('PGID_A');" title="게시물">
-                  <i class="tio-pages-outlined nav-icon"></i>
-                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">게시물</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="js-nav-tooltip-link nav-link" href="javascript:void(0);" onclick="viewLoad('PGID_A');" title="캠페인">
-                  <i class="tio-notice-outlined nav-icon"></i>
-                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">캠페인</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="js-nav-tooltip-link nav-link" href="javascript:void(0);" onclick="viewLoad('PGID_A');" title="리치쇼핑">
-                  <i class="tio-shopping-icon nav-icon"></i>
-                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">리치쇼핑</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="js-nav-tooltip-link nav-link" href="javascript:void(0);" onclick="viewLoad('PGID_A');" title="주문내역">
-                  <i class="tio-shopping-cart-outlined nav-icon"></i>
-                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">주문내역</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="js-nav-tooltip-link nav-link" href="javascript:void(0);" onclick="viewLoad('PGID_A');" title="문의내역">
-                  <i class="tio-comment-vs-outlined nav-icon"></i>
-                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">문의내역</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="js-nav-tooltip-link nav-link" href="javascript:void(0);" onclick="viewLoad('PGID_A');" title="리포트">
-                  <i class="tio-user-outlined nav-icon"></i>
-                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">리포트</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="js-nav-tooltip-link nav-link" href="javascript:void(0);" onclick="viewLoad('PGID_A');" title="광고주">
-                  <i class="tio-dubai nav-icon"></i>
-                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">광고주</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="js-nav-tooltip-link nav-link" href="javascript:void(0);" onclick="viewLoad('PGID_A');" title="콘텐츠">
-                  <i class="tio-feed-outlined nav-icon"></i>
-                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">콘텐츠</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="js-nav-tooltip-link nav-link" href="javascript:void(0);" onclick="viewLoad('PGID_A');" title="계정관리">
-                  <i class="tio-settings-outlined nav-icon"></i>
-                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">계정관리</span>
-                </a>
-              </li>
-
-              <!-- Front Builder -->
-              <li class="nav-item nav-footer-item ">
-                <a class="d-none d-md-flex js-hs-unfold-invoker nav-link nav-link-toggle" href="javascript:;"
-                   data-hs-unfold-options='{
-                     "target": "#styleSwitcherDropdown",
-                     "type": "css-animation",
-                     "animationIn": "fadeInRight",
-                     "animationOut": "fadeOutRight",
-                     "hasOverlay": true,
-                     "smartPositionOff": true
-                   }'>
-                  <i class="tio-tune nav-icon"></i>
-                </a>
-                <a class="d-flex d-md-none nav-link nav-link-toggle" href="javascript:;">
-                  <i class="tio-tune nav-icon"></i>
-                </a>
-              </li>
-              <!-- End Front Builder -->
-
-              <!-- Help -->
-              <li class="navbar-vertical-aside-has-menu nav-footer-item ">
-                <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle " href="javascript:;" title="Help">
-                  <i class="tio-home-vs-1-outlined nav-icon"></i>
-                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Help</span>
-                </a>
-
-                <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
-                  <li class="nav-item">
-                    <a class="nav-link" href="#" title="Resources &amp; tutorials">
-                      <i class="tio-book-outlined dropdown-item-icon"></i> Resources &amp; tutorials
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#" title="Keyboard shortcuts">
-                      <i class="tio-command-key dropdown-item-icon"></i> Keyboard shortcuts
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#" title="Connect other apps">
-                      <i class="tio-alt dropdown-item-icon"></i> Connect other apps
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#" title="What's new?">
-                      <i class="tio-gift dropdown-item-icon"></i> What's new?
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#" title="Contact support">
-                      <i class="tio-chat-outlined dropdown-item-icon"></i> Contact support
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <!-- End Help -->
-
-              <!-- Language -->
-              <li class="navbar-vertical-aside-has-menu nav-footer-item ">
-                <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle " href="javascript:;" title="Language">
-                  <img class="avatar avatar-xss avatar-circle" src="./assets/vendor/flag-icon-css/flags/1x1/us.svg" alt="United States Flag">
-                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Language</span>
-                </a>
-
-                <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
-                  <li class="nav-item">
-                    <a class="nav-link" href="#" title="English (US)">
-                      <img class="avatar avatar-xss avatar-circle mr-2" src="./assets/vendor/flag-icon-css/flags/1x1/us.svg" alt="Flag">
-                      English (US)
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#" title="English (UK)">
-                      <img class="avatar avatar-xss avatar-circle mr-2" src="./assets/vendor/flag-icon-css/flags/1x1/gb.svg" alt="Flag">
-                      English (UK)
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#" title="Deutsch">
-                      <img class="avatar avatar-xss avatar-circle mr-2" src="./assets/vendor/flag-icon-css/flags/1x1/de.svg" alt="Flag">
-                      Deutsch
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#" title="Dansk">
-                      <img class="avatar avatar-xss avatar-circle mr-2" src="./assets/vendor/flag-icon-css/flags/1x1/dk.svg" alt="Flag">
-                      Dansk
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#" title="Italiano">
-                      <img class="avatar avatar-xss avatar-circle mr-2" src="./assets/vendor/flag-icon-css/flags/1x1/it.svg" alt="Flag">
-                      Italiano
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#" title="中文 (繁體)">
-                      <img class="avatar avatar-xss avatar-circle mr-2" src="./assets/vendor/flag-icon-css/flags/1x1/cn.svg" alt="Flag">
-                      中文 (繁體)
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <!-- End Language -->
-            </ul>
-          <!-- End Navebar -->
-          </div>
-          <!-- End Content -->
-
-          <!-- Footer -->
-          <div class="navbar-vertical-footer">
-            <ul class="navbar-vertical-footer-list">
-              <li class="navbar-vertical-footer-list-item">
-                <!-- Unfold -->
+                <!-- Account -->
                 <div class="hs-unfold">
-                  <a class="js-hs-unfold-invoker btn btn-icon btn-ghost-secondary rounded-circle" href="javascript:;"
+                  <a class="js-hs-unfold-invoker navbar-dropdown-account-wrapper" href="javascript:;"
                      data-hs-unfold-options='{
-                      "target": "#styleSwitcherDropdown",
-                      "type": "css-animation",
-                      "animationIn": "fadeInRight",
-                      "animationOut": "fadeOutRight",
-                      "hasOverlay": true,
-                      "smartPositionOff": true
+                       "target": "#accountNavbarDropdown",
+                       "type": "css-animation"
                      }'>
-                    <i class="tio-tune"></i>
-                  </a>
-                </div>
-                <!-- End Unfold -->
-              </li>
-
-              <li class="navbar-vertical-footer-list-item">
-                <!-- Other Links -->
-                <div class="hs-unfold">
-                  <a class="js-hs-unfold-invoker btn btn-icon btn-ghost-secondary rounded-circle" href="javascript:;"
-                     data-hs-unfold-options='{
-                      "target": "#otherLinksDropdown",
-                      "type": "css-animation",
-                      "animationIn": "slideInDown",
-                      "hideOnScroll": true
-                     }'>
-                    <i class="tio-help-outlined"></i>
+                    <div class="avatar avatar-sm avatar-circle">
+                      <img class="avatar-img" src="./assets/img/160x160/img6.jpg" alt="Image Description">
+                      <span class="avatar-status avatar-sm-status avatar-status-success"></span>
+                    </div>
                   </a>
 
-                  <div id="otherLinksDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu navbar-vertical-footer-dropdown">
-                    <span class="dropdown-header">Help</span>
-                    <a class="dropdown-item" href="#">
-                      <i class="tio-book-outlined dropdown-item-icon"></i>
-                      <span class="text-truncate pr-2" title="Resources &amp; tutorials">Resources &amp; tutorials</span>
-                    </a>
-                    <a class="dropdown-item" href="#">
-                      <i class="tio-command-key dropdown-item-icon"></i>
-                      <span class="text-truncate pr-2" title="Keyboard shortcuts">Keyboard shortcuts</span>
-                    </a>
-                    <a class="dropdown-item" href="#">
-                      <i class="tio-alt dropdown-item-icon"></i>
-                      <span class="text-truncate pr-2" title="Connect other apps">Connect other apps</span>
-                    </a>
-                    <a class="dropdown-item" href="#">
-                      <i class="tio-gift dropdown-item-icon"></i>
-                      <span class="text-truncate pr-2" title="What's new?">What's new?</span>
-                    </a>
+                  <div id="accountNavbarDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right navbar-dropdown-menu navbar-dropdown-account" style="width: 16rem;">
+                    <div class="dropdown-item">
+                      <div class="media align-items-center">
+                        <div class="avatar avatar-sm avatar-circle mr-2">
+                          <img class="avatar-img" src="./assets/img/160x160/img6.jpg" alt="Image Description">
+                        </div>
+                        <div class="media-body">
+                          <span class="card-title h5">Mark Williams</span>
+                        </div>
+                      </div>
+                    </div>
+
                     <div class="dropdown-divider"></div>
-                    <span class="dropdown-header">Contacts</span>
-                    <a class="dropdown-item" href="#">
-                      <i class="tio-chat-outlined dropdown-item-icon"></i>
-                      <span class="text-truncate pr-2" title="Contact support">Contact support</span>
-                    </a>
+                      <a class="dropdown-item" href="#">
+                        <span class="text-truncate pr-2" title="Status">Status: Online</span>
+                      </a>
+                      <a class="dropdown-item" href="#">
+                        <span class="text-truncate pr-2" title="Settings">Account Settings</span>
+                      </a>
+                      <a class="dropdown-item" href="#">
+                        <span class="text-truncate pr-2" title="Feedback">Feedback</span>
+                      </a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">
+                        <span class="text-truncate pr-2" title="Sign out">Sign out</span>
+                      </a>
                   </div>
-                </div>
-                <!-- End Other Links -->
-              </li>
-
-              <li class="navbar-vertical-footer-list-item">
-                <!-- Language -->
-                <div class="hs-unfold">
-                  <a class="js-hs-unfold-invoker btn btn-icon btn-ghost-secondary rounded-circle" href="javascript:;"
-                     data-hs-unfold-options='{
-                      "target": "#languageDropdown",
-                      "type": "css-animation",
-                      "animationIn": "slideInDown",
-                      "hideOnScroll": true
-                     }'>
-                    <img class="avatar avatar-xss avatar-circle" src="./assets/vendor/flag-icon-css/flags/1x1/us.svg" alt="United States Flag">
-                  </a>
-
-                  <div id="languageDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu navbar-vertical-footer-dropdown">
-                    <span class="dropdown-header">Select language</span>
-                    <a class="dropdown-item" href="#">
-                      <img class="avatar avatar-xss avatar-circle mr-2" src="./assets/vendor/flag-icon-css/flags/1x1/us.svg" alt="Flag">
-                      <span class="text-truncate pr-2" title="English">English (US)</span>
-                    </a>
-                    <a class="dropdown-item" href="#">
-                      <img class="avatar avatar-xss avatar-circle mr-2" src="./assets/vendor/flag-icon-css/flags/1x1/gb.svg" alt="Flag">
-                      <span class="text-truncate pr-2" title="English">English (UK)</span>
-                    </a>
-                    <a class="dropdown-item" href="#">
-                      <img class="avatar avatar-xss avatar-circle mr-2" src="./assets/vendor/flag-icon-css/flags/1x1/de.svg" alt="Flag">
-                      <span class="text-truncate pr-2" title="Deutsch">Deutsch</span>
-                    </a>
-                    <a class="dropdown-item" href="#">
-                      <img class="avatar avatar-xss avatar-circle mr-2" src="./assets/vendor/flag-icon-css/flags/1x1/dk.svg" alt="Flag">
-                      <span class="text-truncate pr-2" title="Dansk">Dansk</span>
-                    </a>
-                    <a class="dropdown-item" href="#">
-                      <img class="avatar avatar-xss avatar-circle mr-2" src="./assets/vendor/flag-icon-css/flags/1x1/it.svg" alt="Flag">
-                      <span class="text-truncate pr-2" title="Italiano">Italiano</span>
-                    </a>
-                    <a class="dropdown-item" href="#">
-                      <img class="avatar avatar-xss avatar-circle mr-2" src="./assets/vendor/flag-icon-css/flags/1x1/cn.svg" alt="Flag">
-                      <span class="text-truncate pr-2" title="中文 (繁體)">中文 (繁體)</span>
-                    </a>
-                  </div>
-                </div>
-                <!-- End Language -->
+                <!-- End Account -->
               </li>
             </ul>
+            <!-- End Navbar -->
           </div>
-          <!-- End Footer -->
+          <!-- End Secondary Content -->
         </div>
-      </div>
-    </aside>
-    <!-- End Navbar Vertical -->
+      </header>
+    <!-- ========== END HEADER ========== -->
 
+
+    <!-- ========== Sidebar ========== -->
+    <!-- Navbar Vertical -->
+      <aside class="js-navbar-vertical-aside navbar navbar-vertical-aside navbar-vertical navbar-vertical-fixed navbar-expand-xl navbar-bordered  ">
+        <div class="navbar-vertical-container">
+          <div class="navbar-vertical-footer-offset">
+            <div class="navbar-brand-wrapper justify-content-between">
+              <!-- Logo -->
+                <a class="navbar-brand" href="./index.html" aria-label="Front">
+                  <img class="navbar-brand-logo" src="./assets/svg/logos/logo.svg" alt="Logo">
+                  <img class="navbar-brand-logo-mini" src="./assets/svg/logos/logo-short.svg" alt="Logo">
+                </a>
+              <!-- End Logo -->
+
+              <!-- Navbar Vertical Toggle : 모바일 메뉴 출력시 닫기 버튼 -->
+              <button type="button" class="js-navbar-vertical-aside-toggle-invoker navbar-vertical-aside-toggle btn btn-icon btn-xs btn-ghost-dark">
+                <i class="tio-clear tio-lg"></i>
+              </button>
+              <!-- End Navbar Vertical Toggle : 모바일 메뉴 출력시 닫기 버튼 -->
+            </div>
+
+            <!-- Navbar : 메뉴 -->
+            <div class="navbar-vertical-content">
+              <ul class="navbar-nav navbar-nav-lg nav-tabs">
+                <li class="nav-item">
+                  <a class="js-nav-tooltip-link nav-link active" href="index.html" title="Dashboards">
+                    <i class="tio-home-vs-1-outlined nav-icon"></i>
+                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Dashboards</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="js-nav-tooltip-link nav-link" href="PGID_B.html" title="회원">
+                    <i class="tio-user-outlined nav-icon"></i>
+                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">회원</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="js-nav-tooltip-link nav-link" href="PGID_C.html" title="게시물">
+                    <i class="tio-pages-outlined nav-icon"></i>
+                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">게시물</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="js-nav-tooltip-link nav-link" href="PGID_D.html" title="캠페인">
+                    <i class="tio-notice-outlined nav-icon"></i>
+                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">캠페인</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="js-nav-tooltip-link nav-link" href="PGID_E.html" title="리치쇼핑">
+                    <i class="tio-shopping-icon nav-icon"></i>
+                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">리치쇼핑</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="js-nav-tooltip-link nav-link" href="PGID_F.html" title="주문내역">
+                    <i class="tio-shopping-cart-outlined nav-icon"></i>
+                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">주문내역</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="js-nav-tooltip-link nav-link" href="PGID_G.html" title="문의내역">
+                    <i class="tio-comment-vs-outlined nav-icon"></i>
+                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">문의내역</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="js-nav-tooltip-link nav-link" href="PGID_H.html" title="리포트">
+                    <i class="tio-user-outlined nav-icon"></i>
+                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">리포트</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="js-nav-tooltip-link nav-link" href="PGID_I.html" title="광고주">
+                    <i class="tio-dubai nav-icon"></i>
+                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">광고주</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="js-nav-tooltip-link nav-link" href="PGID_J.html" title="콘텐츠">
+                    <i class="tio-feed-outlined nav-icon"></i>
+                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">콘텐츠</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="js-nav-tooltip-link nav-link" href="PGID_K.html" title="계정관리">
+                    <i class="tio-settings-outlined nav-icon"></i>
+                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">계정관리</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- End Navebar: 메뉴 -->
+          </div>
+        </div>
+      </aside>
+    <!-- End Navbar Vertical -->
+    <!-- ========== END Sidebar ========== -->
+
+
+    <!-- ========== Contents ========== -->
     <main id="content" role="main" class="main pointer-event">
+
       <!-- Content -->
-      <div id="view" class="content container-fluid">
-        <!-- load contents -->
+      <div class="content container-fluid">
+
+          <!-- Page Header -->
+          <div class="page-header">
+            <div class="row align-items-center">
+              <div class="col-sm mb-2 mb-sm-0">
+                <h1 class="page-header-title">Dashboard</h1>
+              </div>
+            </div>
+          </div>
+          <!-- End Page Header -->
+
+          <!-- Card Section -->
+          <div class="row gx-2 gx-lg-3">
+
+            <!-- Card: Total User -->
+            <div class="col-sm-6 col-lg-4 mb-3 mb-lg-5">
+              <!-- Card -->
+              <a class="card card-hover-shadow h-100" href="#">
+                <div class="card-body">
+                  <h6 class="card-subtitle">Total Users</h6>
+                  <div class="row align-items-center gx-2 mb-1">
+                    <div class="col-6">
+                      <span class="card-title h2">72,540</span>
+                    </div>
+                    <div class="col-6">
+                      <!-- Chart -->
+                      <div class="chartjs-custom" style="height: 3rem;">
+                        <canvas class="js-chart"
+                                data-hs-chartjs-options='{
+                                  "type": "line",
+                                  "data": {
+                                     "labels": ["1 May","2 May","3 May","4 May","5 May","6 May","7 May","8 May","9 May","10 May","11 May","12 May","13 May","14 May","15 May","16 May","17 May","18 May","19 May","20 May","21 May","22 May","23 May","24 May","25 May","26 May","27 May","28 May","29 May","30 May","31 May"],
+                                     "datasets": [{
+                                      "data": [21,20,24,20,18,17,15,17,18,30,31,30,30,35,25,35,35,40,60,90,90,90,85,70,75,70,30,30,30,50,72],
+                                      "backgroundColor": ["rgba(55, 125, 255, 0)", "rgba(255, 255, 255, 0)"],
+                                      "borderColor": "#377dff",
+                                      "borderWidth": 2,
+                                      "pointRadius": 0,
+                                      "pointHoverRadius": 0
+                                    }]
+                                  },
+                                  "options": {
+                                     "scales": {
+                                       "yAxes": [{
+                                         "display": false
+                                       }],
+                                       "xAxes": [{
+                                         "display": false
+                                       }]
+                                     },
+                                    "hover": {
+                                      "mode": "nearest",
+                                      "intersect": false
+                                    },
+                                    "tooltips": {
+                                      "postfix": "k",
+                                      "hasIndicator": true,
+                                      "intersect": false
+                                    }
+                                  }
+                                }'>
+                        </canvas>
+                      </div>
+                      <!-- End Chart -->
+                    </div>
+                  </div>
+                  <!-- End Row -->
+
+                  <span class="badge badge-soft-success">
+                    <i class="tio-trending-up"></i> 12.5%
+                  </span>
+                  <span class="text-body font-size-sm ml-1">from 70,104</span>
+                </div>
+              </a>
+              <!-- End Card -->
+            </div>
+            <!-- End Total User -->
+
+            <!-- Card: Campaign -->
+            <div class="col-sm-6 col-lg-4 mb-3 mb-lg-5">
+              <!-- Card -->
+              <a class="card card-hover-shadow h-100" href="#">
+                <div class="card-body">
+                  <h6 class="card-subtitle">Campaign</h6>
+
+                  <div class="row align-items-center gx-2 mb-1">
+                    <div class="col-6">
+                      <span class="card-title h2">2453/100</span>
+                    </div>
+
+                    <div class="col-6">
+                      <!-- Chart -->
+                      <div class="chartjs-custom" style="height: 3rem;">
+                        <canvas class="js-chart"
+                                data-hs-chartjs-options='{
+                                  "type": "line",
+                                  "data": {
+                                     "labels": ["1 May","2 May","3 May","4 May","5 May","6 May","7 May","8 May","9 May","10 May","11 May","12 May","13 May","14 May","15 May","16 May","17 May","18 May","19 May","20 May","21 May","22 May","23 May","24 May","25 May","26 May","27 May","28 May","29 May","30 May","31 May"],
+                                     "datasets": [{
+                                      "data": [21,20,24,20,18,17,15,17,30,30,35,25,18,30,31,35,35,90,90,90,85,100,120,120,120,100,90,75,75,75,90],
+                                      "backgroundColor": ["rgba(55, 125, 255, 0)", "rgba(255, 255, 255, 0)"],
+                                      "borderColor": "#377dff",
+                                      "borderWidth": 2,
+                                      "pointRadius": 0,
+                                      "pointHoverRadius": 0
+                                    }]
+                                  },
+                                  "options": {
+                                     "scales": {
+                                       "yAxes": [{
+                                         "display": false
+                                       }],
+                                       "xAxes": [{
+                                         "display": false
+                                       }]
+                                     },
+                                    "hover": {
+                                      "mode": "nearest",
+                                      "intersect": false
+                                    },
+                                    "tooltips": {
+                                      "postfix": "%",
+                                      "hasIndicator": true,
+                                      "intersect": false
+                                    }
+                                  }
+                                }'>
+                        </canvas>
+                      </div>
+                      <!-- End Chart -->
+                    </div>
+                  </div>
+                  <!-- End Row -->
+
+                  <span class="badge badge-soft-success">
+                    <i class="tio-trending-up"></i> 1.7%
+                  </span>
+                  <span class="text-body font-size-sm ml-1">from 2345/87</span>
+                </div>
+              </a>
+              <!-- End Card -->
+            </div>
+            <!-- End Card: Campaign -->
+
+            <!-- Card: Sales -->
+            <div class="col-sm-6 col-lg-4 mb-3 mb-lg-5">
+              <!-- Card -->
+              <a class="card card-hover-shadow h-100" href="#">
+                <div class="card-body">
+                  <h6 class="card-subtitle">Sales</h6>
+
+                  <div class="row align-items-center gx-2 mb-1">
+                    <div class="col-6">
+                      <span class="card-title h2">13,487,745</span>
+                    </div>
+
+                    <div class="col-6">
+                      <!-- Chart -->
+                      <div class="chartjs-custom" style="height: 3rem;">
+                        <canvas class="js-chart"
+                                data-hs-chartjs-options='{
+                                  "type": "line",
+                                  "data": {
+                                     "labels": ["1 May","2 May","3 May","4 May","5 May","6 May","7 May","8 May","9 May","10 May","11 May","12 May","13 May","14 May","15 May","16 May","17 May","18 May","19 May","20 May","21 May","22 May","23 May","24 May","25 May","26 May","27 May","28 May","29 May","30 May","31 May"],
+                                     "datasets": [{
+                                      "data": [25,18,30,31,35,35,60,60,60,75,21,20,24,20,18,17,15,17,30,120,120,120,100,90,75,90,90,90,75,70,60],
+                                      "backgroundColor": ["rgba(55, 125, 255, 0)", "rgba(255, 255, 255, 0)"],
+                                      "borderColor": "#377dff",
+                                      "borderWidth": 2,
+                                      "pointRadius": 0,
+                                      "pointHoverRadius": 0
+                                    }]
+                                  },
+                                  "options": {
+                                     "scales": {
+                                       "yAxes": [{
+                                         "display": false
+                                       }],
+                                       "xAxes": [{
+                                         "display": false
+                                       }]
+                                     },
+                                    "hover": {
+                                      "mode": "nearest",
+                                      "intersect": false
+                                    },
+                                    "tooltips": {
+                                      "postfix": "%",
+                                      "hasIndicator": true,
+                                      "intersect": false
+                                    }
+                                  }
+                                }'>
+                        </canvas>
+                      </div>
+                      <!-- End Chart -->
+                    </div>
+                  </div>
+                  <!-- End Row -->
+
+                  <span class="badge badge-soft-danger">
+                    <i class="tio-trending-down"></i> 4.4%
+                  </span>
+                  <span class="text-body font-size-sm ml-1">from 12,487,745</span>
+                </div>
+              </a>
+              <!-- End Card -->
+            </div>
+            <!-- End Card: Sales -->
+
+            <!-- Card: New User -->
+            <div class="col-sm-6 col-lg-4 mb-3 mb-lg-5">
+              <!-- Card -->
+              <a class="card card-hover-shadow h-100" href="#">
+                <div class="card-body">
+                  <h6 class="card-subtitle">New Users</h6>
+
+                  <div class="row align-items-center gx-2 mb-1">
+                    <div class="col-6">
+                      <span class="card-title h2">92,913</span>
+                    </div>
+
+                    <div class="col-6">
+                      <!-- Chart -->
+                      <div class="chartjs-custom" style="height: 3rem;">
+                        <canvas class="js-chart"
+                                data-hs-chartjs-options='{
+                                  "type": "line",
+                                  "data": {
+                                     "labels": ["1 May","2 May","3 May","4 May","5 May","6 May","7 May","8 May","9 May","10 May","11 May","12 May","13 May","14 May","15 May","16 May","17 May","18 May","19 May","20 May","21 May","22 May","23 May","24 May","25 May","26 May","27 May","28 May","29 May","30 May","31 May"],
+                                     "datasets": [{
+                                      "data": [21,20,24,15,17,30,30,35,35,35,40,60,12,90,90,85,70,75,43,75,90,22,120,120,90,85,100,92,92,92,92],
+                                      "backgroundColor": ["rgba(55, 125, 255, 0)", "rgba(255, 255, 255, 0)"],
+                                      "borderColor": "#377dff",
+                                      "borderWidth": 2,
+                                      "pointRadius": 0,
+                                      "pointHoverRadius": 0
+                                    }]
+                                  },
+                                  "options": {
+                                     "scales": {
+                                       "yAxes": [{
+                                         "display": false
+                                       }],
+                                       "xAxes": [{
+                                         "display": false
+                                       }]
+                                     },
+                                    "hover": {
+                                      "mode": "nearest",
+                                      "intersect": false
+                                    },
+                                    "tooltips": {
+                                      "postfix": "k",
+                                      "hasIndicator": true,
+                                      "intersect": false
+                                    }
+                                  }
+                                }'>
+                        </canvas>
+                      </div>
+                      <!-- End Chart -->
+                    </div>
+                  </div>
+                  <!-- End Row -->
+
+                  <span class="badge badge-soft-secondary">0.0%</span>
+                  <span class="text-body font-size-sm ml-1">from 2,913</span>
+                </div>
+              </a>
+              <!-- End Card -->
+            </div>
+            <!-- End Card: New User -->
+
+            <!-- Card: Rich Shopping -->
+            <div class="col-sm-6 col-lg-4 mb-3 mb-lg-5">
+              <!-- Card -->
+              <a class="card card-hover-shadow h-100" href="#">
+                <div class="card-body">
+                  <h6 class="card-subtitle">Rich Shopping</h6>
+
+                  <div class="row align-items-center gx-2 mb-1">
+                    <div class="col-6">
+                      <span class="card-title h2">2,453/100</span>
+                    </div>
+
+                    <div class="col-6">
+                      <!-- Chart -->
+                      <div class="chartjs-custom" style="height: 3rem;">
+                        <canvas class="js-chart"
+                                data-hs-chartjs-options='{
+                                  "type": "line",
+                                  "data": {
+                                     "labels": ["1 May","2 May","3 May","4 May","5 May","6 May","7 May","8 May","9 May","10 May","11 May","12 May","13 May","14 May","15 May","16 May","17 May","18 May","19 May","20 May","21 May","22 May","23 May","24 May","25 May","26 May","27 May","28 May","29 May","30 May","31 May"],
+                                     "datasets": [{
+                                      "data": [21,20,24,15,17,30,30,35,35,35,40,60,12,90,90,85,70,75,43,75,90,22,120,120,90,85,100,92,92,92,92],
+                                      "backgroundColor": ["rgba(55, 125, 255, 0)", "rgba(255, 255, 255, 0)"],
+                                      "borderColor": "#377dff",
+                                      "borderWidth": 2,
+                                      "pointRadius": 0,
+                                      "pointHoverRadius": 0
+                                    }]
+                                  },
+                                  "options": {
+                                     "scales": {
+                                       "yAxes": [{
+                                         "display": false
+                                       }],
+                                       "xAxes": [{
+                                         "display": false
+                                       }]
+                                     },
+                                    "hover": {
+                                      "mode": "nearest",
+                                      "intersect": false
+                                    },
+                                    "tooltips": {
+                                      "postfix": "k",
+                                      "hasIndicator": true,
+                                      "intersect": false
+                                    }
+                                  }
+                                }'>
+                        </canvas>
+                      </div>
+                      <!-- End Chart -->
+                    </div>
+                  </div>
+                  <!-- End Row -->
+
+                  <span class="badge badge-soft-secondary">0.0%</span>
+                  <span class="text-body font-size-sm ml-1">from 2,253/76</span>
+                </div>
+              </a>
+              <!-- End Card -->
+            </div>
+            <!-- End Card: Rich Shopping -->
+
+            <!-- Card: Burnout Point -->
+            <div class="col-sm-6 col-lg-4 mb-3 mb-lg-5">
+              <!-- Card -->
+              <a class="card card-hover-shadow h-100" href="#">
+                <div class="card-body">
+                  <h6 class="card-subtitle">Burnout Point</h6>
+
+                  <div class="row align-items-center gx-2 mb-1">
+                    <div class="col-6">
+                      <span class="card-title h2">92,913</span>
+                    </div>
+
+                    <div class="col-6">
+                      <!-- Chart -->
+                      <div class="chartjs-custom" style="height: 3rem;">
+                        <canvas class="js-chart"
+                                data-hs-chartjs-options='{
+                                  "type": "line",
+                                  "data": {
+                                     "labels": ["1 May","2 May","3 May","4 May","5 May","6 May","7 May","8 May","9 May","10 May","11 May","12 May","13 May","14 May","15 May","16 May","17 May","18 May","19 May","20 May","21 May","22 May","23 May","24 May","25 May","26 May","27 May","28 May","29 May","30 May","31 May"],
+                                     "datasets": [{
+                                      "data": [21,20,24,15,17,30,30,35,35,35,40,60,12,90,90,85,70,75,43,75,90,22,120,120,90,85,100,92,92,92,92],
+                                      "backgroundColor": ["rgba(55, 125, 255, 0)", "rgba(255, 255, 255, 0)"],
+                                      "borderColor": "#377dff",
+                                      "borderWidth": 2,
+                                      "pointRadius": 0,
+                                      "pointHoverRadius": 0
+                                    }]
+                                  },
+                                  "options": {
+                                     "scales": {
+                                       "yAxes": [{
+                                         "display": false
+                                       }],
+                                       "xAxes": [{
+                                         "display": false
+                                       }]
+                                     },
+                                    "hover": {
+                                      "mode": "nearest",
+                                      "intersect": false
+                                    },
+                                    "tooltips": {
+                                      "postfix": "k",
+                                      "hasIndicator": true,
+                                      "intersect": false
+                                    }
+                                  }
+                                }'>
+                        </canvas>
+                      </div>
+                      <!-- End Chart -->
+                    </div>
+                  </div>
+                  <!-- End Row -->
+
+                  <span class="badge badge-soft-secondary">0.0%</span>
+                  <span class="text-body font-size-sm ml-1">from 2,913</span>
+                </div>
+              </a>
+              <!-- End Card -->
+            </div>
+            <!-- End Card: Burnout Point -->
+
+          </div>
+          <!-- End Card Section -->
+
+          <!-- Statistics: New User, Sales, Burnout Point -->
+          <div class="row gx-2 gx-lg-3">
+            <div class="col">
+              <!-- Card -->
+              <div class="card h-100">
+
+                <!-- Header -->
+                <div class="card-header">
+                  <h5 class="card-header-title">Monthly expenses</h5>
+                  <!-- 기간설정 -->
+                  <button id="js-daterangepicker-predefined" class="btn btn-sm btn-ghost-secondary dropdown-toggle">
+                    <i class="tio-date-range"></i>
+                    <span class="js-daterangepicker-predefined-preview ml-1">Nov 2 - Nov 2, 2020</span>
+                  </button>
+                  <!-- End 기간설정 -->
+                </div>
+                <!-- End Header -->
+
+                <!-- Body -->
+                <div class="card-body">
+                  <div class="row mb-4">
+                    <div class="col-sm mb-2 mb-sm-0">
+                      <div class="d-flex align-items-center">
+                        <span class="h1 mb-0">35%</span>
+                        <span class="text-success ml-2">
+                          <i class="tio-trending-up"></i> 25.3%
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="col-sm-auto align-self-sm-end">
+                      <!-- Legend Indicators -->
+                      <div class="row font-size-sm">
+                        <div class="col-auto">
+                          <span class="legend-indicator bg-primary"></span> New User
+                        </div>
+                        <div class="col-auto">
+                          <span class="legend-indicator bg-success"></span> Sales
+                        </div>
+                        <div class="col-auto">
+                          <span class="legend-indicator bg-danger"></span> Burnort Point
+                        </div>
+                      </div>
+                      <!-- End Legend Indicators -->
+                    </div>
+                  </div>
+                  <!-- End Row -->
+
+                  <!-- line Chart -->
+                  <div class="chartjs-custom">
+                    <canvas id="updatingLineChart" style="height: 20rem;"
+                    data-hs-chartjs-options='{
+                      "type": "line",
+                      "data": {
+                         "labels": ["Feb","Jan","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+                         "datasets": [{
+                          "backgroundColor": ["rgba(55, 125, 255, .5)", "rgba(255, 255, 255, .2)"],
+                          "borderColor": "#377dff",
+                          "borderWidth": 2,
+                          "pointRadius": 0,
+                          "hoverBorderColor": "#377dff",
+                          "pointBackgroundColor": "#377dff",
+                          "pointBorderColor": "#fff",
+                          "pointHoverRadius": 0
+                        },
+                        {
+                         "backgroundColor": ["rgba(0, 219, 167, .5)", "rgba(255, 255, 255, .2)"],
+                         "borderColor": "#00c9a7",
+                         "borderWidth": 2,
+                         "pointRadius": 0,
+                         "hoverBorderColor": "#00c9a7",
+                         "pointBackgroundColor": "#00c9a7",
+                         "pointBorderColor": "#fff",
+                         "pointHoverRadius": 0
+                        },
+                        {
+                          "backgroundColor": ["rgba(237, 76, 120, .5)", "rgba(255, 255, 255, .2)"],
+                          "borderColor": "#ed4c78",
+                          "borderWidth": 2,
+                          "pointRadius": 0,
+                          "hoverBorderColor": "#ed4c78",
+                          "pointBackgroundColor": "#ed4c78",
+                          "pointBorderColor": "#fff",
+                          "pointHoverRadius": 0
+                        }]
+                      },
+                      "options": {
+                        "gradientPosition": {"y1": 200},
+                         "scales": {
+                            "yAxes": [{
+                              "gridLines": {
+                                "color": "#e7eaf3",
+                                "drawBorder": false,
+                                "zeroLineColor": "#e7eaf3"
+                              },
+                              "ticks": {
+                                "min": 0,
+                                "max": 100,
+                                "stepSize": 20,
+                                "fontColor": "#97a4af",
+                                "fontFamily": "Open Sans, sans-serif",
+                                "padding": 10,
+                                "postfix": "k"
+                              }
+                            }],
+                            "xAxes": [{
+                              "gridLines": {
+                                "display": false,
+                                "drawBorder": false
+                              },
+                              "ticks": {
+                                "fontSize": 12,
+                                "fontColor": "#97a4af",
+                                "fontFamily": "Open Sans, sans-serif",
+                                "padding": 5
+                              }
+                            }]
+                        },
+                        "tooltips": {
+                          "prefix": "$",
+                          "postfix": "k",
+                          "hasIndicator": true,
+                          "mode": "index",
+                          "intersect": false,
+                          "lineMode": true,
+                          "lineWithLineColor": "rgba(19, 33, 68, 0.075)"
+                        },
+                        "hover": {
+                          "mode": "nearest",
+                          "intersect": true
+                        }
+                      }
+                    }'></canvas>
+                  </div>
+                  <!-- End line Chart -->
+                </div>
+                <!-- End Body -->
+              </div>
+              <!-- End Card -->
+            </div>
+          </div>
+          <!-- End Row -->
+
       </div>
       <!-- End Content -->
-
-      <!-- Footer -->
-        <div class="footer">
-          <div class="row justify-content-between align-items-center">
-            <div class="col">
-              <p class="font-size-sm mb-0">&copy; Front. <span class="d-none d-sm-inline-block">2020 Htmlstream.</span></p>
-            </div>
-            <div class="col-auto">
-              <div class="d-flex justify-content-end">
-                <!-- List Dot -->
-                <ul class="list-inline list-separator">
-                  <li class="list-inline-item">
-                    <a class="list-separator-link" href="#">FAQ</a>
-                  </li>
-
-                  <li class="list-inline-item">
-                    <a class="list-separator-link" href="#">License</a>
-                  </li>
-
-                  <li class="list-inline-item">
-                    <!-- Keyboard Shortcuts Toggle -->
-                    <div class="hs-unfold">
-                      <a class="js-hs-unfold-invoker btn btn-icon btn-ghost-secondary rounded-circle" href="javascript:;"
-                         data-hs-unfold-options='{
-                              "target": "#keyboardShortcutsSidebar",
-                              "type": "css-animation",
-                              "animationIn": "fadeInRight",
-                              "animationOut": "fadeOutRight",
-                              "hasOverlay": true,
-                              "smartPositionOff": true
-                             }'>
-                        <i class="tio-command-key"></i>
-                      </a>
-                    </div>
-                    <!-- End Keyboard Shortcuts Toggle -->
-                  </li>
-                </ul>
-                <!-- End List Dot -->
-              </div>
-            </div>
-          </div>
-        </div>
-      <!-- End Footer -->
     </main>
-    <!-- ========== END MAIN CONTENT ========== -->
-
-
-    <!-- ========== SECONDARY CONTENTS ========== -->
-    <!-- Keyboard Shortcuts -->
-    <div id="keyboardShortcutsSidebar" class="hs-unfold-content sidebar sidebar-bordered sidebar-box-shadow">
-      <div class="card card-lg sidebar-card sidebar-scrollbar">
-        <div class="card-header">
-          <h4 class="card-header-title">Keyboard shortcuts</h4>
-
-          <!-- Toggle Button -->
-          <a class="js-hs-unfold-invoker btn btn-icon btn-xs btn-ghost-dark ml-2" href="javascript:;"
-             data-hs-unfold-options='{
-                "target": "#keyboardShortcutsSidebar",
-                "type": "css-animation",
-                "animationIn": "fadeInRight",
-                "animationOut": "fadeOutRight",
-                "hasOverlay": true,
-                "smartPositionOff": true
-               }'>
-            <i class="tio-clear tio-lg"></i>
-          </a>
-          <!-- End Toggle Button -->
-        </div>
-
-        <!-- Body -->
-        <div class="card-body sidebar-body">
-          <div class="list-group list-group-sm list-group-flush list-group-no-gutters mb-5">
-            <div class="list-group-item">
-              <h5 class="mb-1">Formatting</h5>
-            </div>
-            <div class="list-group-item">
-              <div class="row align-items-center">
-                <div class="col-5">
-                  <span class="font-weight-bold">Bold</span>
-                </div>
-                <div class="col-7 text-right">
-                  <kbd class="d-inline-block mb-1">Ctrl</kbd> <small class="text-muted">+</small> <kbd class="d-inline-block mb-1">b</kbd>
-                </div>
-              </div>
-            </div>
-            <div class="list-group-item">
-              <div class="row align-items-center">
-                <div class="col-5">
-                  <em>italic</em>
-                </div>
-                <div class="col-7 text-right">
-                  <kbd class="d-inline-block mb-1">Ctrl</kbd> <small class="text-muted">+</small> <kbd class="d-inline-block mb-1">i</kbd>
-                </div>
-              </div>
-            </div>
-            <div class="list-group-item">
-              <div class="row align-items-center">
-                <div class="col-5">
-                  <u>Underline</u>
-                </div>
-                <div class="col-7 text-right">
-                  <kbd class="d-inline-block mb-1">Ctrl</kbd> <small class="text-muted">+</small> <kbd class="d-inline-block mb-1">u</kbd>
-                </div>
-              </div>
-            </div>
-            <div class="list-group-item">
-              <div class="row align-items-center">
-                <div class="col-5">
-                  <s>Strikethrough</s>
-                </div>
-                <div class="col-7 text-right">
-                  <kbd class="d-inline-block mb-1">Ctrl</kbd> <small class="text-muted">+</small> <kbd class="d-inline-block mb-1">Alt</kbd> <small class="text-muted">+</small> <kbd class="d-inline-block mb-1">s</kbd>
-                </div>
-              </div>
-            </div>
-            <div class="list-group-item">
-              <div class="row align-items-center">
-                <div class="col-5">
-                  <span class="small">Small text</span>
-                </div>
-                <div class="col-7 text-right">
-                  <kbd class="d-inline-block mb-1">Ctrl</kbd> <small class="text-muted">+</small> <kbd class="d-inline-block mb-1">s</kbd>
-                </div>
-              </div>
-            </div>
-            <div class="list-group-item">
-              <div class="row align-items-center">
-                <div class="col-5">
-                  <mark>Highlight</mark>
-                </div>
-                <div class="col-7 text-right">
-                  <kbd class="d-inline-block mb-1">Ctrl</kbd> <small class="text-muted">+</small> <kbd class="d-inline-block mb-1">e</kbd>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="list-group list-group-sm list-group-flush list-group-no-gutters mb-5">
-            <div class="list-group-item">
-              <h5 class="mb-1">Insert</h5>
-            </div>
-            <div class="list-group-item">
-              <div class="row align-items-center">
-                <div class="col-5">
-                  <span>Mention person <a href="#">(@Brian)</a></span>
-                </div>
-                <div class="col-7 text-right">
-                  <kbd class="d-inline-block mb-1">@</kbd>
-                </div>
-              </div>
-            </div>
-            <div class="list-group-item">
-              <div class="row align-items-center">
-                <div class="col-5">
-                  <span>Link to doc <a href="#">(+Meeting notes)</a></span>
-                </div>
-                <div class="col-7 text-right">
-                  <kbd class="d-inline-block mb-1">+</kbd>
-                </div>
-              </div>
-            </div>
-            <div class="list-group-item">
-              <div class="row align-items-center">
-                <div class="col-5">
-                  <a href="#">#hashtag</a>
-                </div>
-                <div class="col-7 text-right">
-                  <kbd class="d-inline-block mb-1">#hashtag</kbd>
-                </div>
-              </div>
-            </div>
-            <div class="list-group-item">
-              <div class="row align-items-center">
-                <div class="col-5">
-                  <span>Date</span>
-                </div>
-                <div class="col-7 text-right">
-                  <kbd class="d-inline-block mb-1">/date</kbd>
-                  <kbd class="d-inline-block mb-1">Space</kbd>
-                  <kbd class="d-inline-block mb-1">/datetime</kbd>
-                  <kbd class="d-inline-block mb-1">/datetime</kbd>
-                  <kbd class="d-inline-block mb-1">Space</kbd>
-                </div>
-              </div>
-            </div>
-            <div class="list-group-item">
-              <div class="row align-items-center">
-                <div class="col-5">
-                  <span>Time</span>
-                </div>
-                <div class="col-7 text-right">
-                  <kbd class="d-inline-block mb-1">/time</kbd>
-                  <kbd class="d-inline-block mb-1">Space</kbd>
-                </div>
-              </div>
-            </div>
-            <div class="list-group-item">
-              <div class="row align-items-center">
-                <div class="col-5">
-                  <span>Note box</span>
-                </div>
-                <div class="col-7 text-right">
-                  <kbd class="d-inline-block mb-1">/note</kbd>
-                  <kbd class="d-inline-block mb-1">Enter</kbd>
-                  <kbd class="d-inline-block mb-1">/note red</kbd>
-                  <kbd class="d-inline-block mb-1">/note red</kbd>
-                  <kbd class="d-inline-block mb-1">Enter</kbd>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="list-group list-group-sm list-group-flush list-group-no-gutters mb-5">
-            <div class="list-group-item">
-              <h5 class="mb-1">Editing</h5>
-            </div>
-            <div class="list-group-item">
-              <div class="row align-items-center">
-                <div class="col-5">
-                  <span>Find and replace</span>
-                </div>
-                <div class="col-7 text-right">
-                  <kbd class="d-inline-block mb-1">Ctrl</kbd> <small class="text-muted">+</small> <kbd class="d-inline-block mb-1">r</kbd>
-                </div>
-              </div>
-            </div>
-            <div class="list-group-item">
-              <div class="row align-items-center">
-                <div class="col-5">
-                  <span>Find next</span>
-                </div>
-                <div class="col-7 text-right">
-                  <kbd class="d-inline-block mb-1">Ctrl</kbd> <small class="text-muted">+</small> <kbd class="d-inline-block mb-1">n</kbd>
-                </div>
-              </div>
-            </div>
-            <div class="list-group-item">
-              <div class="row align-items-center">
-                <div class="col-5">
-                  <span>Find previous</span>
-                </div>
-                <div class="col-7 text-right">
-                  <kbd class="d-inline-block mb-1">Ctrl</kbd> <small class="text-muted">+</small> <kbd class="d-inline-block mb-1">p</kbd>
-                </div>
-              </div>
-            </div>
-            <div class="list-group-item">
-              <div class="row align-items-center">
-                <div class="col-5">
-                  <span>Indent</span>
-                </div>
-                <div class="col-7 text-right">
-                  <kbd class="d-inline-block mb-1">Tab</kbd>
-                </div>
-              </div>
-            </div>
-            <div class="list-group-item">
-              <div class="row align-items-center">
-                <div class="col-5">
-                  <span>Un-indent</span>
-                </div>
-                <div class="col-7 text-right">
-                  <kbd class="d-inline-block mb-1">Shift</kbd> <small class="text-muted">+</small> <kbd class="d-inline-block mb-1">Tab</kbd>
-                </div>
-              </div>
-            </div>
-            <div class="list-group-item">
-              <div class="row align-items-center">
-                <div class="col-5">
-                  <span>Move line up</span>
-                </div>
-                <div class="col-7 text-right">
-                  <kbd class="d-inline-block mb-1">Ctrl</kbd> <small class="text-muted">+</small> <kbd class="d-inline-block mb-1">Shift</kbd> <small class="text-muted">+</small> <kbd class="d-inline-block mb-1"><i class="tio-arrow-large-upward-outlined"></i></kbd>
-                </div>
-              </div>
-            </div>
-            <div class="list-group-item">
-              <div class="row align-items-center">
-                <div class="col-5">
-                  <span>Move line down</span>
-                </div>
-                <div class="col-7 text-right">
-                  <kbd class="d-inline-block mb-1">Ctrl</kbd> <small class="text-muted">+</small> <kbd class="d-inline-block mb-1">Shift</kbd> <small class="text-muted">+</small> <kbd class="d-inline-block mb-1"><i class="tio-arrow-large-downward-outlined font-size-sm"></i></kbd>
-                </div>
-              </div>
-            </div>
-            <div class="list-group-item">
-              <div class="row align-items-center">
-                <div class="col-5">
-                  <span>Add a comment</span>
-                </div>
-                <div class="col-7 text-right">
-                  <kbd class="d-inline-block mb-1">Ctrl</kbd> <small class="text-muted">+</small> <kbd class="d-inline-block mb-1">Alt</kbd> <small class="text-muted">+</small> <kbd class="d-inline-block mb-1">m</kbd>
-                </div>
-              </div>
-            </div>
-            <div class="list-group-item">
-              <div class="row align-items-center">
-                <div class="col-5">
-                  <span>Undo</span>
-                </div>
-                <div class="col-7 text-right">
-                  <kbd class="d-inline-block mb-1">Ctrl</kbd> <small class="text-muted">+</small> <kbd class="d-inline-block mb-1">z</kbd>
-                </div>
-              </div>
-            </div>
-            <div class="list-group-item">
-              <div class="row align-items-center">
-                <div class="col-5">
-                  <span>Redo</span>
-                </div>
-                <div class="col-7 text-right">
-                  <kbd class="d-inline-block mb-1">Ctrl</kbd> <small class="text-muted">+</small> <kbd class="d-inline-block mb-1">y</kbd>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="list-group list-group-sm list-group-flush list-group-no-gutters">
-            <div class="list-group-item">
-              <h5 class="mb-1">Application</h5>
-            </div>
-            <div class="list-group-item">
-              <div class="row align-items-center">
-                <div class="col-5">
-                  <span>Create new doc</span>
-                </div>
-                <div class="col-7 text-right">
-                  <kbd class="d-inline-block mb-1">Ctrl</kbd> <small class="text-muted">+</small> <kbd class="d-inline-block mb-1">Alt</kbd> <small class="text-muted">+</small> <kbd class="d-inline-block mb-1">n</kbd>
-                </div>
-              </div>
-            </div>
-            <div class="list-group-item">
-              <div class="row align-items-center">
-                <div class="col-5">
-                  <span>Present</span>
-                </div>
-                <div class="col-7 text-right">
-                  <kbd class="d-inline-block mb-1">Ctrl</kbd> <small class="text-muted">+</small> <kbd class="d-inline-block mb-1">Shift</kbd> <small class="text-muted">+</small> <kbd class="d-inline-block mb-1">p</kbd>
-                </div>
-              </div>
-            </div>
-            <div class="list-group-item">
-              <div class="row align-items-center">
-                <div class="col-5">
-                  <span>Share</span>
-                </div>
-                <div class="col-7 text-right">
-                  <kbd class="d-inline-block mb-1">Ctrl</kbd> <small class="text-muted">+</small> <kbd class="d-inline-block mb-1">Shift</kbd> <small class="text-muted">+</small> <kbd class="d-inline-block mb-1">s</kbd>
-                </div>
-              </div>
-            </div>
-            <div class="list-group-item">
-              <div class="row align-items-center">
-                <div class="col-5">
-                  <span>Search docs</span>
-                </div>
-                <div class="col-7 text-right">
-                  <kbd class="d-inline-block mb-1">Ctrl</kbd> <small class="text-muted">+</small> <kbd class="d-inline-block mb-1">Shift</kbd> <small class="text-muted">+</small> <kbd class="d-inline-block mb-1">o</kbd>
-                </div>
-              </div>
-            </div>
-            <div class="list-group-item">
-              <div class="row align-items-center">
-                <div class="col-5">
-                  <span>Keyboard shortcuts</span>
-                </div>
-                <div class="col-7 text-right">
-                  <kbd class="d-inline-block mb-1">Ctrl</kbd> <small class="text-muted">+</small> <kbd class="d-inline-block mb-1">Shift</kbd> <small class="text-muted">+</small> <kbd class="d-inline-block mb-1">/</kbd>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End Body -->
-      </div>
-    </div>
-    <!-- End Keyboard Shortcuts -->
-
-    <!-- Activity -->
-    <div id="activitySidebar" class="hs-unfold-content sidebar sidebar-bordered sidebar-box-shadow sidebar-scrollbar">
-      <div class="card card-lg sidebar-card">
-        <div class="card-header">
-          <h4 class="card-header-title">Activity stream</h4>
-
-          <!-- Toggle Button -->
-          <a class="js-hs-unfold-invoker btn btn-icon btn-xs btn-ghost-dark ml-2" href="javascript:;"
-             data-hs-unfold-options='{
-              "target": "#activitySidebar",
-              "type": "css-animation",
-              "animationIn": "fadeInRight",
-              "animationOut": "fadeOutRight",
-              "hasOverlay": true,
-              "smartPositionOff": true
-             }'>
-            <i class="tio-clear tio-lg"></i>
-          </a>
-          <!-- End Toggle Button -->
-        </div>
-
-        <!-- Body -->
-        <div class="card-body sidebar-body">
-          <!-- Step -->
-          <ul class="step step-icon-sm step-avatar-sm">
-            <!-- Step Item -->
-            <li class="step-item">
-              <div class="step-content-wrapper">
-                <div class="step-avatar">
-                  <img class="step-avatar-img" src="./assets/img/160x160/img9.jpg" alt="Image Description">
-                </div>
-
-                <div class="step-content">
-                  <h5 class="mb-1">Iana Robinson</h5>
-
-                  <p class="font-size-sm mb-1">Added 2 files to task <a class="text-uppercase" href="#"><i class="tio-folder-bookmarked"></i> Fd-7</a></p>
-
-                  <ul class="list-group list-group-sm">
-                    <!-- List Item -->
-                    <li class="list-group-item list-group-item-light">
-                      <div class="row gx-1">
-                        <div class="col-6">
-                          <div class="media">
-                              <span class="mt-1 mr-2">
-                                <img class="avatar avatar-xs" src="./assets/svg/brands/excel.svg" alt="Image Description">
-                              </span>
-                            <div class="media-body text-truncate">
-                              <span class="d-block font-size-sm text-dark text-truncate" title="weekly-reports.xls">weekly-reports.xls</span>
-                              <small class="d-block text-muted">12kb</small>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-6">
-                          <div class="media">
-                              <span class="mt-1 mr-2">
-                                <img class="avatar avatar-xs" src="./assets/svg/brands/word.svg" alt="Image Description">
-                              </span>
-                            <div class="media-body text-truncate">
-                              <span class="d-block font-size-sm text-dark text-truncate" title="weekly-reports.xls">weekly-reports.xls</span>
-                              <small class="d-block text-muted">4kb</small>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <!-- End List Item -->
-                  </ul>
-
-                  <small class="text-muted text-uppercase">Now</small>
-                </div>
-              </div>
-            </li>
-            <!-- End Step Item -->
-
-            <!-- Step Item -->
-            <li class="step-item">
-              <div class="step-content-wrapper">
-                <span class="step-icon step-icon-soft-dark">B</span>
-
-                <div class="step-content">
-                  <h5 class="mb-1">Bob Dean</h5>
-
-                  <p class="font-size-sm mb-1">Marked <a class="text-uppercase" href="#"><i class="tio-folder-bookmarked"></i> Fr-6</a> as <span class="badge badge-soft-success badge-pill"><span class="legend-indicator bg-success"></span>"Completed"</span></p>
-
-                  <small class="text-muted text-uppercase">Today</small>
-                </div>
-              </div>
-            </li>
-            <!-- End Step Item -->
-
-            <!-- Step Item -->
-            <li class="step-item">
-              <div class="step-content-wrapper">
-                <div class="step-avatar">
-                  <img class="step-avatar-img" src="./assets/img/160x160/img3.jpg" alt="Image Description">
-                </div>
-
-                <div class="step-content">
-                  <h5 class="h5 mb-1">Crane</h5>
-
-                  <p class="font-size-sm mb-1">Added 5 card to <a href="#">Payments</a></p>
-
-                  <ul class="list-group list-group-sm">
-                    <li class="list-group-item list-group-item-light">
-                      <div class="row gx-1">
-                        <div class="col">
-                          <img class="img-fluid rounded ie-sidebar-activity-img" src="./assets/svg/illustrations/card-1.svg" alt="Image Description">
-                        </div>
-                        <div class="col">
-                          <img class="img-fluid rounded ie-sidebar-activity-img" src="./assets/svg/illustrations/card-2.svg" alt="Image Description">
-                        </div>
-                        <div class="col">
-                          <img class="img-fluid rounded ie-sidebar-activity-img" src="./assets/svg/illustrations/card-3.svg" alt="Image Description">
-                        </div>
-                        <div class="col-auto align-self-center">
-                          <div class="text-center">
-                            <a href="#">+2</a>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-
-                  <small class="text-muted text-uppercase">May 12</small>
-                </div>
-              </div>
-            </li>
-            <!-- End Step Item -->
-
-            <!-- Step Item -->
-            <li class="step-item">
-              <div class="step-content-wrapper">
-                <span class="step-icon step-icon-soft-info">D</span>
-
-                <div class="step-content">
-                  <h5 class="mb-1">David Lidell</h5>
-
-                  <p class="font-size-sm mb-1">Added a new member to Front Dashboard</p>
-
-                  <small class="text-muted text-uppercase">May 15</small>
-                </div>
-              </div>
-            </li>
-            <!-- End Step Item -->
-
-            <!-- Step Item -->
-            <li class="step-item">
-              <div class="step-content-wrapper">
-                <div class="step-avatar">
-                  <img class="step-avatar-img" src="./assets/img/160x160/img7.jpg" alt="Image Description">
-                </div>
-
-                <div class="step-content">
-                  <h5 class="mb-1">Rachel King</h5>
-
-                  <p class="font-size-sm mb-1">Marked <a class="text-uppercase" href="#"><i class="tio-folder-bookmarked"></i> Fr-3</a> as <span class="badge badge-soft-success badge-pill"><span class="legend-indicator bg-success"></span>"Completed"</span></p>
-
-                  <small class="text-muted text-uppercase">Apr 29</small>
-                </div>
-              </div>
-            </li>
-            <!-- End Step Item -->
-
-            <!-- Step Item -->
-            <li class="step-item">
-              <div class="step-content-wrapper">
-                <div class="step-avatar">
-                  <img class="step-avatar-img" src="./assets/img/160x160/img5.jpg" alt="Image Description">
-                </div>
-
-                <div class="step-content">
-                  <h5 class="mb-1">Finch Hoot</h5>
-
-                  <p class="font-size-sm mb-1">Earned a "Top endorsed" <i class="tio-verified text-primary"></i> badge</p>
-
-                  <small class="text-muted text-uppercase">Apr 06</small>
-                </div>
-              </div>
-            </li>
-            <!-- End Step Item -->
-
-            <!-- Step Item -->
-            <li class="step-item">
-              <div class="step-content-wrapper">
-                  <span class="step-icon step-icon-soft-primary">
-                    <i class="tio-user"></i>
-                  </span>
-
-                <div class="step-content">
-                  <h5 class="mb-1">Project status updated</h5>
-
-                  <p class="font-size-sm mb-1">Marked <a class="text-uppercase" href="#"><i class="tio-folder-bookmarked"></i> Fr-3</a> as <span class="badge badge-soft-primary badge-pill"><span class="legend-indicator bg-primary"></span>"In progress"</span></p>
-
-                  <small class="text-muted text-uppercase">Feb 10</small>
-                </div>
-              </div>
-            </li>
-            <!-- End Step Item -->
-          </ul>
-          <!-- End Step -->
-
-          <a class="btn btn-block btn-white" href="javascript:;">View all <i class="tio-chevron-right"></i></a>
-        </div>
-        <!-- End Body -->
-      </div>
-    </div>
-    <!-- End Activity -->
-
-    <!-- Welcome Message Modal -->
-    <div class="modal fade" id="welcomeMessageModal" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <!-- Header -->
-          <div class="modal-close">
-            <button type="button" class="btn btn-icon btn-sm btn-ghost-secondary" data-dismiss="modal" aria-label="Close">
-              <i class="tio-clear tio-lg"></i>
-            </button>
-          </div>
-          <!-- End Header -->
-
-          <!-- Body -->
-          <div class="modal-body p-sm-5">
-            <div class="text-center">
-              <div class="w-75 w-sm-50 mx-auto mb-4">
-                <img class="img-fluid" src="./assets/svg/illustrations/graphs.svg" alt="Image Description">
-              </div>
-
-              <h4 class="h1">Welcome to Front</h4>
-
-              <p>We're happy to see you in our community.</p>
-            </div>
-          </div>
-          <!-- End Body -->
-
-          <!-- Footer -->
-          <div class="modal-footer d-block text-center py-sm-5">
-            <small class="text-cap mb-4">Trusted by the world's best teams</small>
-
-            <div class="w-85 mx-auto">
-              <div class="row justify-content-between">
-                <div class="col">
-                  <img class="img-fluid ie-welcome-brands" src="./assets/svg/brands/gitlab-gray.svg" alt="Image Description">
-                </div>
-                <div class="col">
-                  <img class="img-fluid ie-welcome-brands" src="./assets/svg/brands/fitbit-gray.svg" alt="Image Description">
-                </div>
-                <div class="col">
-                  <img class="img-fluid ie-welcome-brands" src="./assets/svg/brands/flow-xo-gray.svg" alt="Image Description">
-                </div>
-                <div class="col">
-                  <img class="img-fluid ie-welcome-brands" src="./assets/svg/brands/layar-gray.svg" alt="Image Description">
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- End Footer -->
-        </div>
-      </div>
-    </div>
-    <!-- End Welcome Message Modal -->
-
-    <!-- Create a new user Modal -->
-    <div class="modal fade" id="inviteUserModal" tabindex="-1" role="dialog" aria-labelledby="inviteUserModalTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <form class="modal-content">
-          <!-- Header -->
-          <div class="modal-header">
-            <h4 id="inviteUserModalTitle" class="modal-title">Invite users</h4>
-
-            <button type="button" class="btn btn-icon btn-sm btn-ghost-secondary" data-dismiss="modal" aria-label="Close">
-              <i class="tio-clear tio-lg"></i>
-            </button>
-          </div>
-          <!-- End Header -->
-
-          <!-- Body -->
-          <div class="modal-body">
-            <!-- Form Group -->
-            <div class="form-group">
-              <div class="input-group input-group-merge mb-2 mb-sm-0">
-                <div class="input-group-prepend" id="fullName">
-                  <span class="input-group-text">
-                    <i class="tio-search"></i>
-                  </span>
-                </div>
-
-                <input type="text" class="form-control" name="fullName" placeholder="Search name or emails" aria-label="Search name or emails" aria-describedby="fullName">
-
-                <div class="input-group-append input-group-append-last-sm-down-none">
-                  <!-- Select -->
-                  <div id="permissionSelect" class="select2-custom select2-custom-right">
-                    <select class="js-select2-custom"
-                            data-hs-select2-options='{
-                              "dropdownParent": "#permissionSelect",
-                              "minimumResultsForSearch": "Infinity",
-                              "dropdownAutoWidth": true,
-                              "dropdownWidth": "11rem"
-                            }'>
-                      <option value="guest" selected>Guest</option>
-                      <option value="can edit">Can edit</option>
-                      <option value="can comment">Can comment</option>
-                      <option value="full access">Full access</option>
-                    </select>
-                  </div>
-                  <!-- End Select -->
-
-                  <a class="btn btn-primary d-none d-sm-block" href="javascript:;">Invite</a>
-                </div>
-              </div>
-
-              <a class="btn btn-block btn-primary d-sm-none" href="javascript:;">Invite</a>
-            </div>
-            <!-- End Form Group -->
-
-            <div class="form-row">
-              <h5 class="col modal-title">Invite users</h5>
-
-              <div class="col-auto">
-                <a class="d-flex align-items-center font-size-sm text-body" href="#">
-                  <img class="avatar avatar-xss mr-2" src="./assets/svg/brands/gmail.svg" alt="Image Description">
-                  Import contacts
-                </a>
-              </div>
-            </div>
-
-            <hr class="mt-2">
-
-            <ul class="list-unstyled list-unstyled-py-4">
-              <!-- List Group Item -->
-              <li>
-                <div class="media">
-                  <div class="avatar avatar-sm avatar-circle mr-3">
-                    <img class="avatar-img" src="./assets/img/160x160/img10.jpg" alt="Image Description">
-                  </div>
-
-                  <div class="media-body">
-                    <div class="row align-items-center">
-                      <div class="col-sm">
-                        <h5 class="text-body mb-0">Amanda Harvey <i class="tio-verified text-primary" data-toggle="tooltip" data-placement="top" title="Top endorsed"></i></h5>
-                        <span class="d-block font-size-sm">amanda@example.com</span>
-                      </div>
-
-                      <div class="col-sm">
-                        <!-- Select -->
-                        <div id="inviteUserSelect1" class="select2-custom select2-custom-sm-right d-sm-flex justify-content-sm-end">
-                          <select class="js-select2-custom"
-                                  data-hs-select2-options='{
-                                    "dropdownParent": "#inviteUserSelect1",
-                                    "minimumResultsForSearch": "Infinity",
-                                    "customClass": "custom-select custom-select-sm custom-select-borderless pl-0",
-                                    "dropdownAutoWidth": true,
-                                    "width": true
-                                  }'>
-                            <option value="guest" selected>Guest</option>
-                            <option value="can edit">Can edit</option>
-                            <option value="can comment">Can comment</option>
-                            <option value="full access">Full access</option>
-                            <option value="remove" data-option-template='<span class="text-danger">Remove</span>'>Remove</option>
-                          </select>
-                        </div>
-                        <!-- End Select -->
-                      </div>
-                    </div>
-                    <!-- End Row -->
-                  </div>
-                </div>
-              </li>
-              <!-- End List Group Item -->
-
-              <!-- List Group Item -->
-              <li>
-                <div class="media">
-                  <div class="avatar avatar-sm avatar-circle mr-3">
-                    <img class="avatar-img" src="./assets/img/160x160/img3.jpg" alt="Image Description">
-                  </div>
-
-                  <div class="media-body">
-                    <div class="row align-items-center">
-                      <div class="col-sm">
-                        <h5 class="text-body mb-0">David Harrison</h5>
-                        <span class="d-block font-size-sm">david@example.com</span>
-                      </div>
-
-                      <div class="col-sm">
-                        <!-- Select -->
-                        <div id="inviteUserSelect2" class="select2-custom select2-custom-sm-right d-sm-flex justify-content-sm-end">
-                          <select class="js-select2-custom"
-                                  data-hs-select2-options='{
-                                    "dropdownParent": "#inviteUserSelect2",
-                                    "minimumResultsForSearch": "Infinity",
-                                    "customClass": "custom-select custom-select-sm custom-select-borderless pl-0",
-                                    "dropdownAutoWidth": true,
-                                    "width": true
-                                  }'>
-                            <option value="guest" selected>Guest</option>
-                            <option value="can edit">Can edit</option>
-                            <option value="can comment">Can comment</option>
-                            <option value="full access">Full access</option>
-                            <option value="remove" data-option-template='<span class="text-danger">Remove</span>'>Remove</option>
-                          </select>
-                        </div>
-                        <!-- End Select -->
-                      </div>
-                    </div>
-                    <!-- End Row -->
-                  </div>
-                </div>
-              </li>
-              <!-- End List Group Item -->
-
-              <!-- List Group Item -->
-              <li>
-                <div class="media">
-                  <div class="avatar avatar-sm avatar-circle mr-3">
-                    <img class="avatar-img" src="./assets/img/160x160/img9.jpg" alt="Image Description">
-                  </div>
-
-                  <div class="media-body">
-                    <div class="row align-items-center">
-                      <div class="col-sm">
-                        <h5 class="text-body mb-0">Ella Lauda <i class="tio-verified text-primary" data-toggle="tooltip" data-placement="top" title="Top endorsed"></i></h5>
-                        <span class="d-block font-size-sm">Markvt@example.com</span>
-                      </div>
-
-                      <div class="col-sm">
-                        <!-- Select -->
-                        <div id="inviteUserSelect4" class="select2-custom select2-custom-sm-right d-sm-flex justify-content-sm-end">
-                          <select class="js-select2-custom"
-                                  data-hs-select2-options='{
-                                    "dropdownParent": "#inviteUserSelect4",
-                                    "minimumResultsForSearch": "Infinity",
-                                    "customClass": "custom-select custom-select-sm custom-select-borderless pl-0",
-                                    "dropdownAutoWidth": true,
-                                    "width": true
-                                  }'>
-                            <option value="guest" selected>Guest</option>
-                            <option value="can edit">Can edit</option>
-                            <option value="can comment">Can comment</option>
-                            <option value="full access">Full access</option>
-                            <option value="remove" data-option-template='<span class="text-danger">Remove</span>'>Remove</option>
-                          </select>
-                        </div>
-                        <!-- End Select -->
-                      </div>
-                    </div>
-                    <!-- End Row -->
-                  </div>
-                </div>
-              </li>
-              <!-- End List Group Item -->
-
-              <!-- List Group Item -->
-              <li>
-                <div class="media">
-                  <div class="avatar avatar-sm avatar-soft-dark avatar-circle mr-3">
-                    <span class="avatar-initials">B</span>
-                  </div>
-
-                  <div class="media-body">
-                    <div class="row align-items-center">
-                      <div class="col-sm">
-                        <h5 class="text-body mb-0">Bob Dean</h5>
-                        <span class="d-block font-size-sm">bob@example.com</span>
-                      </div>
-
-                      <div class="col-sm">
-                        <!-- Select -->
-                        <div id="inviteUserSelect3" class="select2-custom select2-custom-sm-right d-sm-flex justify-content-sm-end">
-                          <select class="js-select2-custom"
-                                  data-hs-select2-options='{
-                                    "dropdownParent": "#inviteUserSelect3",
-                                    "minimumResultsForSearch": "Infinity",
-                                    "customClass": "custom-select custom-select-sm custom-select-borderless pl-0",
-                                    "dropdownAutoWidth": true,
-                                    "width": true
-                                  }'>
-                            <option value="guest" selected>Guest</option>
-                            <option value="can edit">Can edit</option>
-                            <option value="can comment">Can comment</option>
-                            <option value="full access">Full access</option>
-                            <option value="remove" data-option-template='<span class="text-danger">Remove</span>'>Remove</option>
-                          </select>
-                        </div>
-                        <!-- End Select -->
-                      </div>
-                    </div>
-                    <!-- End Row -->
-                  </div>
-                </div>
-              </li>
-              <!-- End List Group Item -->
-            </ul>
-          </div>
-          <!-- End Body -->
-
-          <!-- Footer -->
-          <div class="modal-footer justify-content-start">
-            <div class="row align-items-center flex-grow-1 mx-n2">
-              <div class="col-sm-9 mb-2 mb-sm-0">
-                <input type="hidden" id="inviteUserPublicClipboard" value="https://themes.getbootstrap.com/product/front-multipurpose-responsive-template/">
-
-                <p class="modal-footer-text">The public share <a href="#">link settings</a>
-                  <i class="tio-help-outlined" data-toggle="tooltip" data-placement="top" title="The public share link allows people to view the project without giving access to full collaboration features."></i>
-                </p>
-              </div>
-
-              <div class="col-sm-3 text-sm-right">
-                <a class="js-clipboard btn btn-sm btn-white text-nowrap" href="javascript:;" data-toggle="tooltip" data-placement="top" title="Copy to clipboard!"
-                   data-hs-clipboard-options='{
-                    "type": "tooltip",
-                    "successText": "Copied!",
-                    "contentTarget": "#inviteUserPublicClipboard",
-                    "container": "#inviteUserModal"
-                   }'>
-                <i class="tio-link mr-1"></i> Copy link</a>
-              </div>
-            </div>
-          </div>
-          <!-- End Footer -->
-        </form>
-      </div>
-    </div>
-    <!-- End Create a new user Modal -->
-    <!-- ========== END SECONDARY CONTENTS ========== -->
+    <!-- ========== END Page load ========== -->
 
     <!-- JS Global Compulsory  -->
     <script src="./assets/vendor/jquery/dist/jquery.min.js"></script>
     <script src="./assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
     <script src="./assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
 
     <!-- JS Implementing Plugins -->
     <script src="./assets/vendor/hs-navbar-vertical-aside/hs-navbar-vertical-aside.min.js"></script>
@@ -1278,13 +783,21 @@
     <script src="./assets/vendor/datatables.net.extensions/select/select.min.js"></script>
     <script src="./assets/vendor/clipboard/dist/clipboard.min.js"></script>
 
-
     <!-- JS Front -->
     <script src="./assets/js/theme.min.js"></script>
 
     <!-- JS Plugins Init. -->
     <script>
       $(document).on('ready', function () {
+        $('.js-navbar-vertical-aside-toggle-invoker').click(function () {
+          $('.js-navbar-vertical-aside-toggle-invoker i').tooltip('hide');
+        });
+
+
+        // initialization of navbar vertical navigation
+        var sidebar = $('.js-navbar-vertical-aside').hsSideNav();
+
+
         // initialization of tooltip in navbar vertical menu
         $('.js-nav-tooltip-link').tooltip({ boundary: 'window' })
 
@@ -1293,19 +806,84 @@
             return false;
           }
         });
-      });
-    </script>
 
-    <!-- custom js -->
-    <script src="./assets/js/custom.js"></script>
-    <script>
-      $(function() {
-        topLoad('top');
-        viewLoad('PGID_A');
 
-        $('#aside .nav-link').on('click', function() {
-          $(this).addClass('active');
-          $('#aside .nav-link').not($(this)).removeClass('active');
+        // initialization of unfold
+        $('.js-hs-unfold-invoker').each(function () {
+          var unfold = new HSUnfold($(this)).init();
+        });
+
+
+        // initialization of chartjs
+        Chart.plugins.unregister(ChartDataLabels);
+
+        $('.js-chart').each(function () {
+          $.HSCore.components.HSChartJS.init($(this));
+        });
+
+        var updatingChart = $.HSCore.components.HSChartJS.init($('#updatingData'));
+
+
+        // initialization of daterangepicker
+        $('.js-daterangepicker').daterangepicker();
+
+        $('.js-daterangepicker-times').daterangepicker({
+          timePicker: true,
+          startDate: moment().startOf('hour'),
+          endDate: moment().startOf('hour').add(32, 'hour'),
+          locale: {
+            format: 'M/DD hh:mm A'
+          }
+        });
+
+        var start = moment();
+        var end = moment();
+
+        function cb(start, end) {
+          $('#js-daterangepicker-predefined .js-daterangepicker-predefined-preview').html(start.format('MMM D') + ' - ' + end.format('MMM D, YYYY'));
+        }
+
+        $('#js-daterangepicker-predefined').daterangepicker({
+          startDate: start,
+          endDate: end,
+          ranges: {
+            'Today': [moment(), moment()],
+            'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+            'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+            'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+            'This Month': [moment().startOf('month'), moment().endOf('month')],
+            'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+          }
+        }, cb);
+
+        cb(start, end);
+
+
+        // Statistics: New User, Sales, Burnout Point
+        // initialization of chartjs
+        var updatingChartDatasets = [
+          [
+            [18,51,60,38,88,50,40,52,88,80,60,70],
+            [27,38,60,77,40,50,49,29,42,27,42,50],
+            [60,38,18,51,88,50,40,52,60,70,88,80]
+          ]
+        ]
+
+        // initialization of chartjs
+        var updatingLineChart = $.HSCore.components.HSChartJS.init($('#updatingLineChart'), {
+          data: {
+            datasets: [
+              {
+                data: updatingChartDatasets[0][0]
+              },
+              {
+                data: updatingChartDatasets[0][1]
+              },
+              {
+                data: updatingChartDatasets[0][2]
+              }
+            ]
+          }
         });
       });
     </script>
