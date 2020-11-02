@@ -22,182 +22,187 @@
 
     <!-- CSS Front Template -->
     <link rel="stylesheet" href="./assets/css/theme.min.css">
+    <link rel="stylesheet" href="./assets/css/custom.css">
   </head>
 
-  <body class="has-navbar-vertical-aside navbar-vertical-aside-show-xl   footer-offset">
+  <body class="has-navbar-vertical-aside navbar-vertical-aside-show-xl footer-offset">
+    <script src="./assets/vendor/hs-navbar-vertical-aside/hs-navbar-vertical-aside-mini-cache.js"></script>
+
     <!-- ========== HEADER ========== -->
-      <header id="header" class="navbar navbar-expand-lg navbar-fixed navbar-height navbar-flush navbar-container navbar-bordered">
-        <div class="navbar-nav-wrap">
-          <!-- 사이드바 축소시 로고 노출 -->
-          <div class="navbar-brand-wrapper">
-            <!-- Logo -->
-            <a class="navbar-brand" href="./index.html" aria-label="Front">
-              <img class="navbar-brand-logo" src="./assets/svg/logos/logo.svg" alt="Logo">
-              <img class="navbar-brand-logo-mini" src="./assets/svg/logos/logo-short.svg" alt="Logo">
-            </a>
-            <!-- End Logo -->
-          </div>
-          <!-- END 사이드바 축소시 로고 노출 -->
+    <header id="header" class="navbar navbar-expand-lg navbar-fixed navbar-height navbar-flush navbar-container navbar-bordered">
+      <div class="navbar-nav-wrap">
+        <!-- 사이드바 축소시 로고 노출 -->
+        <div class="navbar-brand-wrapper">
+          <!-- Logo -->
+          <a class="navbar-brand" href="./index.html" aria-label="Front">
+            <img class="navbar-brand-logo" src="./assets/svg/logos/logo.svg" alt="Logo">
+            <img class="navbar-brand-logo-mini" src="./assets/svg/logos/logo-short.svg" alt="Logo">
+          </a>
+          <!-- End Logo -->
+        </div>
 
-          <div class="navbar-nav-wrap-content-left">
-            <!-- Navbar Vertical Toggle : 사이드바 토글 버튼 -->
-            <button type="button" class="js-navbar-vertical-aside-toggle-invoker close mr-3">
-              <i class="tio-first-page navbar-vertical-aside-toggle-short-align" data-toggle="tooltip" data-placement="right" title="Collapse"></i>
-              <i class="tio-last-page navbar-vertical-aside-toggle-full-align" data-template='<div class="tooltip d-none d-sm-block" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>' data-toggle="tooltip" data-placement="right" title="Expand"></i>
-            </button>
-            <!-- End Navbar Vertical Toggle : 사이드바 토글 버튼 -->
-          </div>
+        <!-- END 사이드바 축소시 로고 노출 -->
 
-          <!-- Secondary Content -->
-          <div class="navbar-nav-wrap-content-right">
-            <!-- Navbar -->
-            <ul class="navbar-nav align-items-center flex-row">
-              <li class="nav-item">
-                <!-- Account -->
-                <div class="hs-unfold">
-                  <a class="js-hs-unfold-invoker navbar-dropdown-account-wrapper" href="javascript:;"
-                     data-hs-unfold-options='{
-                       "target": "#accountNavbarDropdown",
-                       "type": "css-animation"
-                     }'>
-                    <div class="avatar avatar-sm avatar-circle">
-                      <img class="avatar-img" src="./assets/img/160x160/img6.jpg" alt="Image Description">
-                      <span class="avatar-status avatar-sm-status avatar-status-success"></span>
-                    </div>
-                  </a>
+        <div class="navbar-nav-wrap-content-left">
+          <!-- Navbar Vertical Toggle : 사이드바 토글 버튼 -->
+          <button type="button" class="js-navbar-vertical-aside-toggle-invoker close mr-3">
+            <i class="tio-first-page navbar-vertical-aside-toggle-short-align" data-toggle="tooltip" data-placement="right" title="Collapse"></i>
+            <i class="tio-last-page navbar-vertical-aside-toggle-full-align" data-template='<div class="tooltip d-none d-sm-block" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>' data-toggle="tooltip" data-placement="right" title="Expand"></i>
+          </button>
+          <!-- End Navbar Vertical Toggle : 사이드바 토글 버튼 -->
+        </div>
 
-                  <div id="accountNavbarDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right navbar-dropdown-menu navbar-dropdown-account" style="width: 16rem;">
-                    <div class="dropdown-item">
-                      <div class="media align-items-center">
-                        <div class="avatar avatar-sm avatar-circle mr-2">
-                          <img class="avatar-img" src="./assets/img/160x160/img6.jpg" alt="Image Description">
-                        </div>
-                        <div class="media-body">
-                          <span class="card-title h5">Mark Williams</span>
-                        </div>
+        <!-- Secondary Content -->
+        <div class="navbar-nav-wrap-content-right">
+          <!-- Navbar -->
+          <ul class="navbar-nav align-items-center flex-row">
+            <li class="nav-item">
+              <!-- Account -->
+              <div class="hs-unfold">
+                <a class="js-hs-unfold-invoker navbar-dropdown-account-wrapper" href="javascript:;"
+                   data-hs-unfold-options='{
+                     "target": "#accountNavbarDropdown",
+                     "type": "css-animation"
+                   }'>
+                  <div class="avatar avatar-sm avatar-circle">
+                    <img class="avatar-img" src="./assets/img/160x160/img6.jpg" alt="Image Description">
+                    <span class="avatar-status avatar-sm-status avatar-status-success"></span>
+                  </div>
+                </a>
+
+                <div id="accountNavbarDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right navbar-dropdown-menu navbar-dropdown-account" style="width: 16rem;">
+                  <div class="dropdown-item">
+                    <div class="media align-items-center">
+                      <div class="avatar avatar-sm avatar-circle mr-2">
+                        <img class="avatar-img" src="./assets/img/160x160/img6.jpg" alt="Image Description">
+                      </div>
+                      <div class="media-body">
+                        <span class="card-title h5">Mark Williams</span>
                       </div>
                     </div>
-
-                    <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">
-                        <span class="text-truncate pr-2" title="Status">Status: Online</span>
-                      </a>
-                      <a class="dropdown-item" href="#">
-                        <span class="text-truncate pr-2" title="Settings">Account Settings</span>
-                      </a>
-                      <a class="dropdown-item" href="#">
-                        <span class="text-truncate pr-2" title="Feedback">Feedback</span>
-                      </a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">
-                        <span class="text-truncate pr-2" title="Sign out">Sign out</span>
-                      </a>
                   </div>
-                <!-- End Account -->
-              </li>
-            </ul>
-            <!-- End Navbar -->
-          </div>
-          <!-- End Secondary Content -->
+
+                  <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">
+                      <span class="text-truncate pr-2" title="Status">Status: Online</span>
+                    </a>
+                    <a class="dropdown-item" href="#">
+                      <span class="text-truncate pr-2" title="Settings">Account Settings</span>
+                    </a>
+                    <a class="dropdown-item" href="#">
+                      <span class="text-truncate pr-2" title="Feedback">Feedback</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">
+                      <span class="text-truncate pr-2" title="Sign out">Sign out</span>
+                    </a>
+                </div>
+              <!-- End Account -->
+            </li>
+          </ul>
+          <!-- End Navbar -->
         </div>
-      </header>
+        <!-- End Secondary Content -->
+      </div>
+
+    </header>
     <!-- ========== END HEADER ========== -->
 
 
     <!-- ========== Sidebar ========== -->
     <!-- Navbar Vertical -->
-      <aside class="js-navbar-vertical-aside navbar navbar-vertical-aside navbar-vertical navbar-vertical-fixed navbar-expand-xl navbar-bordered  ">
-        <div class="navbar-vertical-container">
-          <div class="navbar-vertical-footer-offset">
-            <div class="navbar-brand-wrapper justify-content-between">
-              <!-- Logo -->
-                <a class="navbar-brand" href="./index.html" aria-label="Front">
-                  <img class="navbar-brand-logo" src="./assets/svg/logos/logo.svg" alt="Logo">
-                  <img class="navbar-brand-logo-mini" src="./assets/svg/logos/logo-short.svg" alt="Logo">
-                </a>
-              <!-- End Logo -->
+    <aside class="js-navbar-vertical-aside navbar navbar-vertical-aside navbar-vertical navbar-vertical-fixed navbar-expand-xl navbar-bordered">
+      <div class="navbar-vertical-container">
+        <div class="navbar-vertical-footer-offset">
+          <div class="navbar-brand-wrapper justify-content-between">
+            <!-- Logo -->
+              <a class="navbar-brand" href="./index.html" aria-label="Front">
+                <img class="navbar-brand-logo" src="./assets/svg/logos/logo.svg" alt="Logo">
+                <img class="navbar-brand-logo-mini" src="./assets/svg/logos/logo-short.svg" alt="Logo">
+              </a>
+            <!-- End Logo -->
 
-              <!-- Navbar Vertical Toggle : 모바일 메뉴 출력시 닫기 버튼 -->
-              <button type="button" class="js-navbar-vertical-aside-toggle-invoker navbar-vertical-aside-toggle btn btn-icon btn-xs btn-ghost-dark">
-                <i class="tio-clear tio-lg"></i>
-              </button>
-              <!-- End Navbar Vertical Toggle : 모바일 메뉴 출력시 닫기 버튼 -->
-            </div>
-
-            <!-- Navbar : 메뉴 -->
-            <div class="navbar-vertical-content">
-              <ul class="navbar-nav navbar-nav-lg nav-tabs">
-                <li class="nav-item">
-                  <a class="js-nav-tooltip-link nav-link active" href="index.html" title="Dashboards">
-                    <i class="tio-home-vs-1-outlined nav-icon"></i>
-                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Dashboards</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="js-nav-tooltip-link nav-link" href="pages/PGID_B.html" title="회원">
-                    <i class="tio-user-outlined nav-icon"></i>
-                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">회원</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="js-nav-tooltip-link nav-link" href="pages/PGID_C.html" title="게시물">
-                    <i class="tio-pages-outlined nav-icon"></i>
-                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">게시물</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="js-nav-tooltip-link nav-link" href="pages/PGID_D.html" title="캠페인">
-                    <i class="tio-notice-outlined nav-icon"></i>
-                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">캠페인</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="js-nav-tooltip-link nav-link" href="pages/PGID_E.html" title="리치쇼핑">
-                    <i class="tio-shopping-icon nav-icon"></i>
-                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">리치쇼핑</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="js-nav-tooltip-link nav-link" href="pages/PGID_F.html" title="주문내역">
-                    <i class="tio-shopping-cart-outlined nav-icon"></i>
-                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">주문내역</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="js-nav-tooltip-link nav-link" href="pages/PGID_G.html" title="문의내역">
-                    <i class="tio-comment-vs-outlined nav-icon"></i>
-                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">문의내역</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="js-nav-tooltip-link nav-link" href="pages/PGID_H.html" title="리포트">
-                    <i class="tio-user-outlined nav-icon"></i>
-                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">리포트</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="js-nav-tooltip-link nav-link" href="pages/PGID_I.html" title="광고주">
-                    <i class="tio-dubai nav-icon"></i>
-                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">광고주</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="js-nav-tooltip-link nav-link" href="pages/PGID_J.html" title="콘텐츠">
-                    <i class="tio-feed-outlined nav-icon"></i>
-                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">콘텐츠</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="js-nav-tooltip-link nav-link" href="pages/PGID_K.html" title="계정관리">
-                    <i class="tio-settings-outlined nav-icon"></i>
-                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">계정관리</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <!-- End Navebar: 메뉴 -->
+            <!-- Navbar Vertical Toggle : 모바일 메뉴 출력시 닫기 버튼 -->
+            <button type="button" class="js-navbar-vertical-aside-toggle-invoker navbar-vertical-aside-toggle btn btn-icon btn-xs btn-ghost-dark">
+              <i class="tio-clear tio-lg"></i>
+            </button>
+            <!-- End Navbar Vertical Toggle : 모바일 메뉴 출력시 닫기 버튼 -->
           </div>
+
+          <!-- Navbar : 메뉴 -->
+          <div class="navbar-vertical-content">
+            <ul class="navbar-nav navbar-nav-lg nav-tabs">
+              <li class="nav-item">
+                <a class="js-nav-tooltip-link nav-link active" href="index.html" title="Dashboards">
+                  <i class="tio-home-vs-1-outlined nav-icon"></i>
+                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Dashboards</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="js-nav-tooltip-link nav-link" href="pages/PGID_B.html" title="회원">
+                  <i class="tio-user-outlined nav-icon"></i>
+                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">회원</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="js-nav-tooltip-link nav-link" href="pages/PGID_C.html" title="게시물">
+                  <i class="tio-pages-outlined nav-icon"></i>
+                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">게시물</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="js-nav-tooltip-link nav-link" href="pages/PGID_D.html" title="캠페인">
+                  <i class="tio-notice-outlined nav-icon"></i>
+                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">캠페인</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="js-nav-tooltip-link nav-link" href="pages/PGID_E.html" title="리치쇼핑">
+                  <i class="tio-shopping-icon nav-icon"></i>
+                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">리치쇼핑</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="js-nav-tooltip-link nav-link" href="pages/PGID_F.html" title="주문내역">
+                  <i class="tio-shopping-cart-outlined nav-icon"></i>
+                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">주문내역</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="js-nav-tooltip-link nav-link" href="pages/PGID_G.html" title="문의내역">
+                  <i class="tio-comment-vs-outlined nav-icon"></i>
+                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">문의내역</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="js-nav-tooltip-link nav-link" href="pages/PGID_H.html" title="리포트">
+                  <i class="tio-user-outlined nav-icon"></i>
+                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">리포트</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="js-nav-tooltip-link nav-link" href="pages/PGID_I.html" title="광고주">
+                  <i class="tio-dubai nav-icon"></i>
+                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">광고주</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="js-nav-tooltip-link nav-link" href="pages/PGID_J.html" title="콘텐츠">
+                  <i class="tio-feed-outlined nav-icon"></i>
+                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">콘텐츠</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="js-nav-tooltip-link nav-link" href="pages/PGID_K.html" title="계정관리">
+                  <i class="tio-settings-outlined nav-icon"></i>
+                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">계정관리</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- End Navebar: 메뉴 -->
         </div>
-      </aside>
+      </div>
+    </aside>
     <!-- End Navbar Vertical -->
     <!-- ========== END Sidebar ========== -->

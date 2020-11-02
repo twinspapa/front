@@ -22,185 +22,188 @@
 
     <!-- CSS Front Template -->
     <link rel="stylesheet" href="./assets/css/theme.min.css">
+    <link rel="stylesheet" href="./assets/css/custom.css">
   </head>
 
-  <body class="has-navbar-vertical-aside navbar-vertical-aside-show-xl   footer-offset">
-      <script src="./assets/vendor/hs-navbar-vertical-aside/hs-navbar-vertical-aside-mini-cache.js"></script>
+  <body class="has-navbar-vertical-aside navbar-vertical-aside-show-xl footer-offset">
+    <script src="./assets/vendor/hs-navbar-vertical-aside/hs-navbar-vertical-aside-mini-cache.js"></script>
 
     <!-- ========== HEADER ========== -->
-      <header id="header" class="navbar navbar-expand-lg navbar-fixed navbar-height navbar-flush navbar-container navbar-bordered">
-        <div class="navbar-nav-wrap">
-          <!-- 사이드바 축소시 로고 노출 -->
-          <div class="navbar-brand-wrapper">
-            <!-- Logo -->
-            <a class="navbar-brand" href="./index.html" aria-label="Front">
-              <img class="navbar-brand-logo" src="./assets/svg/logos/logo.svg" alt="Logo">
-              <img class="navbar-brand-logo-mini" src="./assets/svg/logos/logo-short.svg" alt="Logo">
-            </a>
-            <!-- End Logo -->
-          </div>
-          <!-- END 사이드바 축소시 로고 노출 -->
+    <header id="header" class="navbar navbar-expand-lg navbar-fixed navbar-height navbar-flush navbar-container navbar-bordered">
+      <div class="navbar-nav-wrap">
+        <!-- 사이드바 축소시 로고 노출 -->
+        <div class="navbar-brand-wrapper">
+          <!-- Logo -->
+          <a class="navbar-brand" href="./index.html" aria-label="Front">
+            <img class="navbar-brand-logo" src="./assets/svg/logos/logo.svg" alt="Logo">
+            <img class="navbar-brand-logo-mini" src="./assets/svg/logos/logo-short.svg" alt="Logo">
+          </a>
+          <!-- End Logo -->
+        </div>
 
-          <div class="navbar-nav-wrap-content-left">
-            <!-- Navbar Vertical Toggle : 사이드바 토글 버튼 -->
-            <button type="button" class="js-navbar-vertical-aside-toggle-invoker close mr-3">
-              <i class="tio-first-page navbar-vertical-aside-toggle-short-align" data-toggle="tooltip" data-placement="right" title="Collapse"></i>
-              <i class="tio-last-page navbar-vertical-aside-toggle-full-align" data-template='<div class="tooltip d-none d-sm-block" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>' data-toggle="tooltip" data-placement="right" title="Expand"></i>
-            </button>
-            <!-- End Navbar Vertical Toggle : 사이드바 토글 버튼 -->
-          </div>
+        <!-- END 사이드바 축소시 로고 노출 -->
 
-          <!-- Secondary Content -->
-          <div class="navbar-nav-wrap-content-right">
-            <!-- Navbar -->
-            <ul class="navbar-nav align-items-center flex-row">
-              <li class="nav-item">
-                <!-- Account -->
-                <div class="hs-unfold">
-                  <a class="js-hs-unfold-invoker navbar-dropdown-account-wrapper" href="javascript:;"
-                     data-hs-unfold-options='{
-                       "target": "#accountNavbarDropdown",
-                       "type": "css-animation"
-                     }'>
-                    <div class="avatar avatar-sm avatar-circle">
-                      <img class="avatar-img" src="./assets/img/160x160/img6.jpg" alt="Image Description">
-                      <span class="avatar-status avatar-sm-status avatar-status-success"></span>
-                    </div>
-                  </a>
+        <div class="navbar-nav-wrap-content-left">
+          <!-- Navbar Vertical Toggle : 사이드바 토글 버튼 -->
+          <button type="button" class="js-navbar-vertical-aside-toggle-invoker close mr-3">
+            <i class="tio-first-page navbar-vertical-aside-toggle-short-align" data-toggle="tooltip" data-placement="right" title="Collapse"></i>
+            <i class="tio-last-page navbar-vertical-aside-toggle-full-align" data-template='<div class="tooltip d-none d-sm-block" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>' data-toggle="tooltip" data-placement="right" title="Expand"></i>
+          </button>
+          <!-- End Navbar Vertical Toggle : 사이드바 토글 버튼 -->
+        </div>
 
-                  <div id="accountNavbarDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right navbar-dropdown-menu navbar-dropdown-account" style="width: 16rem;">
-                    <div class="dropdown-item">
-                      <div class="media align-items-center">
-                        <div class="avatar avatar-sm avatar-circle mr-2">
-                          <img class="avatar-img" src="./assets/img/160x160/img6.jpg" alt="Image Description">
-                        </div>
-                        <div class="media-body">
-                          <span class="card-title h5">Mark Williams</span>
-                        </div>
+        <!-- Secondary Content -->
+        <div class="navbar-nav-wrap-content-right">
+          <!-- Navbar -->
+          <ul class="navbar-nav align-items-center flex-row">
+            <li class="nav-item">
+              <!-- Account -->
+              <div class="hs-unfold">
+                <a class="js-hs-unfold-invoker navbar-dropdown-account-wrapper" href="javascript:;"
+                   data-hs-unfold-options='{
+                     "target": "#accountNavbarDropdown",
+                     "type": "css-animation"
+                   }'>
+                  <div class="avatar avatar-sm avatar-circle">
+                    <img class="avatar-img" src="./assets/img/160x160/img6.jpg" alt="Image Description">
+                    <span class="avatar-status avatar-sm-status avatar-status-success"></span>
+                  </div>
+                </a>
+
+                <div id="accountNavbarDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right navbar-dropdown-menu navbar-dropdown-account" style="width: 16rem;">
+                  <div class="dropdown-item">
+                    <div class="media align-items-center">
+                      <div class="avatar avatar-sm avatar-circle mr-2">
+                        <img class="avatar-img" src="./assets/img/160x160/img6.jpg" alt="Image Description">
+                      </div>
+                      <div class="media-body">
+                        <span class="card-title h5">Mark Williams</span>
                       </div>
                     </div>
-
-                    <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">
-                        <span class="text-truncate pr-2" title="Status">Status: Online</span>
-                      </a>
-                      <a class="dropdown-item" href="#">
-                        <span class="text-truncate pr-2" title="Settings">Account Settings</span>
-                      </a>
-                      <a class="dropdown-item" href="#">
-                        <span class="text-truncate pr-2" title="Feedback">Feedback</span>
-                      </a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">
-                        <span class="text-truncate pr-2" title="Sign out">Sign out</span>
-                      </a>
                   </div>
-                <!-- End Account -->
-              </li>
-            </ul>
-            <!-- End Navbar -->
-          </div>
-          <!-- End Secondary Content -->
+
+                  <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">
+                      <span class="text-truncate pr-2" title="Status">Status: Online</span>
+                    </a>
+                    <a class="dropdown-item" href="#">
+                      <span class="text-truncate pr-2" title="Settings">Account Settings</span>
+                    </a>
+                    <a class="dropdown-item" href="#">
+                      <span class="text-truncate pr-2" title="Feedback">Feedback</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">
+                      <span class="text-truncate pr-2" title="Sign out">Sign out</span>
+                    </a>
+                </div>
+              <!-- End Account -->
+            </li>
+          </ul>
+          <!-- End Navbar -->
         </div>
-      </header>
+        <!-- End Secondary Content -->
+      </div>
+
+    </header>
     <!-- ========== END HEADER ========== -->
 
 
     <!-- ========== Sidebar ========== -->
     <!-- Navbar Vertical -->
-      <aside class="js-navbar-vertical-aside navbar navbar-vertical-aside navbar-vertical navbar-vertical-fixed navbar-expand-xl navbar-bordered  ">
-        <div class="navbar-vertical-container">
-          <div class="navbar-vertical-footer-offset">
-            <div class="navbar-brand-wrapper justify-content-between">
-              <!-- Logo -->
-                <a class="navbar-brand" href="./index.html" aria-label="Front">
-                  <img class="navbar-brand-logo" src="./assets/svg/logos/logo.svg" alt="Logo">
-                  <img class="navbar-brand-logo-mini" src="./assets/svg/logos/logo-short.svg" alt="Logo">
-                </a>
-              <!-- End Logo -->
+    <aside class="js-navbar-vertical-aside navbar navbar-vertical-aside navbar-vertical navbar-vertical-fixed navbar-expand-xl navbar-bordered">
+      <div class="navbar-vertical-container">
+        <div class="navbar-vertical-footer-offset">
+          <div class="navbar-brand-wrapper justify-content-between">
+            <!-- Logo -->
+              <a class="navbar-brand" href="./index.html" aria-label="Front">
+                <img class="navbar-brand-logo" src="./assets/svg/logos/logo.svg" alt="Logo">
+                <img class="navbar-brand-logo-mini" src="./assets/svg/logos/logo-short.svg" alt="Logo">
+              </a>
+            <!-- End Logo -->
 
-              <!-- Navbar Vertical Toggle : 모바일 메뉴 출력시 닫기 버튼 -->
-              <button type="button" class="js-navbar-vertical-aside-toggle-invoker navbar-vertical-aside-toggle btn btn-icon btn-xs btn-ghost-dark">
-                <i class="tio-clear tio-lg"></i>
-              </button>
-              <!-- End Navbar Vertical Toggle : 모바일 메뉴 출력시 닫기 버튼 -->
-            </div>
-
-            <!-- Navbar : 메뉴 -->
-            <div class="navbar-vertical-content">
-              <ul class="navbar-nav navbar-nav-lg nav-tabs">
-                <li class="nav-item">
-                  <a class="js-nav-tooltip-link nav-link active" href="index.html" title="Dashboards">
-                    <i class="tio-home-vs-1-outlined nav-icon"></i>
-                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Dashboards</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="js-nav-tooltip-link nav-link" href="PGID_B.html" title="회원">
-                    <i class="tio-user-outlined nav-icon"></i>
-                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">회원</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="js-nav-tooltip-link nav-link" href="PGID_C.html" title="게시물">
-                    <i class="tio-pages-outlined nav-icon"></i>
-                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">게시물</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="js-nav-tooltip-link nav-link" href="PGID_D.html" title="캠페인">
-                    <i class="tio-notice-outlined nav-icon"></i>
-                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">캠페인</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="js-nav-tooltip-link nav-link" href="PGID_E.html" title="리치쇼핑">
-                    <i class="tio-shopping-icon nav-icon"></i>
-                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">리치쇼핑</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="js-nav-tooltip-link nav-link" href="PGID_F.html" title="주문내역">
-                    <i class="tio-shopping-cart-outlined nav-icon"></i>
-                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">주문내역</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="js-nav-tooltip-link nav-link" href="PGID_G.html" title="문의내역">
-                    <i class="tio-comment-vs-outlined nav-icon"></i>
-                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">문의내역</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="js-nav-tooltip-link nav-link" href="PGID_H.html" title="리포트">
-                    <i class="tio-user-outlined nav-icon"></i>
-                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">리포트</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="js-nav-tooltip-link nav-link" href="PGID_I.html" title="광고주">
-                    <i class="tio-dubai nav-icon"></i>
-                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">광고주</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="js-nav-tooltip-link nav-link" href="PGID_J.html" title="콘텐츠">
-                    <i class="tio-feed-outlined nav-icon"></i>
-                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">콘텐츠</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="js-nav-tooltip-link nav-link" href="PGID_K.html" title="계정관리">
-                    <i class="tio-settings-outlined nav-icon"></i>
-                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">계정관리</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <!-- End Navebar: 메뉴 -->
+            <!-- Navbar Vertical Toggle : 모바일 메뉴 출력시 닫기 버튼 -->
+            <button type="button" class="js-navbar-vertical-aside-toggle-invoker navbar-vertical-aside-toggle btn btn-icon btn-xs btn-ghost-dark">
+              <i class="tio-clear tio-lg"></i>
+            </button>
+            <!-- End Navbar Vertical Toggle : 모바일 메뉴 출력시 닫기 버튼 -->
           </div>
+
+          <!-- Navbar : 메뉴 -->
+          <div class="navbar-vertical-content">
+            <ul class="navbar-nav navbar-nav-lg nav-tabs">
+              <li class="nav-item">
+                <a class="js-nav-tooltip-link nav-link active" href="index.html" title="Dashboards">
+                  <i class="tio-home-vs-1-outlined nav-icon"></i>
+                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Dashboards</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="js-nav-tooltip-link nav-link" href="pages/PGID_B.html" title="회원">
+                  <i class="tio-user-outlined nav-icon"></i>
+                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">회원</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="js-nav-tooltip-link nav-link" href="pages/PGID_C.html" title="게시물">
+                  <i class="tio-pages-outlined nav-icon"></i>
+                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">게시물</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="js-nav-tooltip-link nav-link" href="pages/PGID_D.html" title="캠페인">
+                  <i class="tio-notice-outlined nav-icon"></i>
+                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">캠페인</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="js-nav-tooltip-link nav-link" href="pages/PGID_E.html" title="리치쇼핑">
+                  <i class="tio-shopping-icon nav-icon"></i>
+                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">리치쇼핑</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="js-nav-tooltip-link nav-link" href="pages/PGID_F.html" title="주문내역">
+                  <i class="tio-shopping-cart-outlined nav-icon"></i>
+                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">주문내역</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="js-nav-tooltip-link nav-link" href="pages/PGID_G.html" title="문의내역">
+                  <i class="tio-comment-vs-outlined nav-icon"></i>
+                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">문의내역</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="js-nav-tooltip-link nav-link" href="pages/PGID_H.html" title="리포트">
+                  <i class="tio-user-outlined nav-icon"></i>
+                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">리포트</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="js-nav-tooltip-link nav-link" href="pages/PGID_I.html" title="광고주">
+                  <i class="tio-dubai nav-icon"></i>
+                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">광고주</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="js-nav-tooltip-link nav-link" href="pages/PGID_J.html" title="콘텐츠">
+                  <i class="tio-feed-outlined nav-icon"></i>
+                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">콘텐츠</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="js-nav-tooltip-link nav-link" href="pages/PGID_K.html" title="계정관리">
+                  <i class="tio-settings-outlined nav-icon"></i>
+                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">계정관리</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- End Navebar: 메뉴 -->
         </div>
-      </aside>
+      </div>
+    </aside>
     <!-- End Navbar Vertical -->
     <!-- ========== END Sidebar ========== -->
 
@@ -211,552 +214,552 @@
       <!-- Content -->
       <div class="content container-fluid">
 
-          <!-- Page Header -->
-          <div class="page-header">
-            <div class="row align-items-center">
-              <div class="col-sm mb-2 mb-sm-0">
-                <h1 class="page-header-title">Dashboard</h1>
+        <!-- Page Header -->
+        <div class="page-header">
+          <div class="row align-items-center">
+            <div class="col-sm mb-2 mb-sm-0">
+              <h1 class="page-header-title">Dashboard</h1>
+            </div>
+          </div>
+        </div>
+        <!-- End Page Header -->
+
+        <!-- Card Section -->
+        <div class="row gx-2 gx-lg-3">
+
+          <!-- Card: Total User -->
+          <div class="col-sm-6 col-lg-4 mb-3 mb-lg-5">
+            <!-- Card -->
+            <a class="card card-hover-shadow h-100" href="#">
+              <div class="card-body">
+                <h6 class="card-subtitle">Total Users</h6>
+                <div class="row align-items-center gx-2 mb-1">
+                  <div class="col-6">
+                    <span class="card-title h2">72,540</span>
+                  </div>
+                  <div class="col-6">
+                    <!-- Chart -->
+                    <div class="chartjs-custom" style="height: 3rem;">
+                      <canvas class="js-chart"
+                              data-hs-chartjs-options='{
+                                "type": "line",
+                                "data": {
+                                   "labels": ["1 May","2 May","3 May","4 May","5 May","6 May","7 May","8 May","9 May","10 May","11 May","12 May","13 May","14 May","15 May","16 May","17 May","18 May","19 May","20 May","21 May","22 May","23 May","24 May","25 May","26 May","27 May","28 May","29 May","30 May","31 May"],
+                                   "datasets": [{
+                                    "data": [21,20,24,20,18,17,15,17,18,30,31,30,30,35,25,35,35,40,60,90,90,90,85,70,75,70,30,30,30,50,72],
+                                    "backgroundColor": ["rgba(55, 125, 255, 0)", "rgba(255, 255, 255, 0)"],
+                                    "borderColor": "#377dff",
+                                    "borderWidth": 2,
+                                    "pointRadius": 0,
+                                    "pointHoverRadius": 0
+                                  }]
+                                },
+                                "options": {
+                                   "scales": {
+                                     "yAxes": [{
+                                       "display": false
+                                     }],
+                                     "xAxes": [{
+                                       "display": false
+                                     }]
+                                   },
+                                  "hover": {
+                                    "mode": "nearest",
+                                    "intersect": false
+                                  },
+                                  "tooltips": {
+                                    "postfix": "k",
+                                    "hasIndicator": true,
+                                    "intersect": false
+                                  }
+                                }
+                              }'>
+                      </canvas>
+                    </div>
+                    <!-- End Chart -->
+                  </div>
+                </div>
+                <!-- End Row -->
+
+                <span class="badge badge-soft-success">
+                  <i class="tio-trending-up"></i> 12.5%
+                </span>
+                <span class="text-body font-size-sm ml-1">from 70,104</span>
               </div>
-            </div>
+            </a>
+            <!-- End Card -->
           </div>
-          <!-- End Page Header -->
+          <!-- End Total User -->
 
-          <!-- Card Section -->
-          <div class="row gx-2 gx-lg-3">
+          <!-- Card: Campaign -->
+          <div class="col-sm-6 col-lg-4 mb-3 mb-lg-5">
+            <!-- Card -->
+            <a class="card card-hover-shadow h-100" href="#">
+              <div class="card-body">
+                <h6 class="card-subtitle">Campaign</h6>
 
-            <!-- Card: Total User -->
-            <div class="col-sm-6 col-lg-4 mb-3 mb-lg-5">
-              <!-- Card -->
-              <a class="card card-hover-shadow h-100" href="#">
-                <div class="card-body">
-                  <h6 class="card-subtitle">Total Users</h6>
-                  <div class="row align-items-center gx-2 mb-1">
-                    <div class="col-6">
-                      <span class="card-title h2">72,540</span>
-                    </div>
-                    <div class="col-6">
-                      <!-- Chart -->
-                      <div class="chartjs-custom" style="height: 3rem;">
-                        <canvas class="js-chart"
-                                data-hs-chartjs-options='{
-                                  "type": "line",
-                                  "data": {
-                                     "labels": ["1 May","2 May","3 May","4 May","5 May","6 May","7 May","8 May","9 May","10 May","11 May","12 May","13 May","14 May","15 May","16 May","17 May","18 May","19 May","20 May","21 May","22 May","23 May","24 May","25 May","26 May","27 May","28 May","29 May","30 May","31 May"],
-                                     "datasets": [{
-                                      "data": [21,20,24,20,18,17,15,17,18,30,31,30,30,35,25,35,35,40,60,90,90,90,85,70,75,70,30,30,30,50,72],
-                                      "backgroundColor": ["rgba(55, 125, 255, 0)", "rgba(255, 255, 255, 0)"],
-                                      "borderColor": "#377dff",
-                                      "borderWidth": 2,
-                                      "pointRadius": 0,
-                                      "pointHoverRadius": 0
-                                    }]
-                                  },
-                                  "options": {
-                                     "scales": {
-                                       "yAxes": [{
-                                         "display": false
-                                       }],
-                                       "xAxes": [{
-                                         "display": false
-                                       }]
-                                     },
-                                    "hover": {
-                                      "mode": "nearest",
-                                      "intersect": false
-                                    },
-                                    "tooltips": {
-                                      "postfix": "k",
-                                      "hasIndicator": true,
-                                      "intersect": false
-                                    }
-                                  }
-                                }'>
-                        </canvas>
-                      </div>
-                      <!-- End Chart -->
-                    </div>
+                <div class="row align-items-center gx-2 mb-1">
+                  <div class="col-6">
+                    <span class="card-title h2">2453/100</span>
                   </div>
-                  <!-- End Row -->
 
-                  <span class="badge badge-soft-success">
-                    <i class="tio-trending-up"></i> 12.5%
-                  </span>
-                  <span class="text-body font-size-sm ml-1">from 70,104</span>
-                </div>
-              </a>
-              <!-- End Card -->
-            </div>
-            <!-- End Total User -->
-
-            <!-- Card: Campaign -->
-            <div class="col-sm-6 col-lg-4 mb-3 mb-lg-5">
-              <!-- Card -->
-              <a class="card card-hover-shadow h-100" href="#">
-                <div class="card-body">
-                  <h6 class="card-subtitle">Campaign</h6>
-
-                  <div class="row align-items-center gx-2 mb-1">
-                    <div class="col-6">
-                      <span class="card-title h2">2453/100</span>
-                    </div>
-
-                    <div class="col-6">
-                      <!-- Chart -->
-                      <div class="chartjs-custom" style="height: 3rem;">
-                        <canvas class="js-chart"
-                                data-hs-chartjs-options='{
-                                  "type": "line",
-                                  "data": {
-                                     "labels": ["1 May","2 May","3 May","4 May","5 May","6 May","7 May","8 May","9 May","10 May","11 May","12 May","13 May","14 May","15 May","16 May","17 May","18 May","19 May","20 May","21 May","22 May","23 May","24 May","25 May","26 May","27 May","28 May","29 May","30 May","31 May"],
-                                     "datasets": [{
-                                      "data": [21,20,24,20,18,17,15,17,30,30,35,25,18,30,31,35,35,90,90,90,85,100,120,120,120,100,90,75,75,75,90],
-                                      "backgroundColor": ["rgba(55, 125, 255, 0)", "rgba(255, 255, 255, 0)"],
-                                      "borderColor": "#377dff",
-                                      "borderWidth": 2,
-                                      "pointRadius": 0,
-                                      "pointHoverRadius": 0
-                                    }]
+                  <div class="col-6">
+                    <!-- Chart -->
+                    <div class="chartjs-custom" style="height: 3rem;">
+                      <canvas class="js-chart"
+                              data-hs-chartjs-options='{
+                                "type": "line",
+                                "data": {
+                                   "labels": ["1 May","2 May","3 May","4 May","5 May","6 May","7 May","8 May","9 May","10 May","11 May","12 May","13 May","14 May","15 May","16 May","17 May","18 May","19 May","20 May","21 May","22 May","23 May","24 May","25 May","26 May","27 May","28 May","29 May","30 May","31 May"],
+                                   "datasets": [{
+                                    "data": [21,20,24,20,18,17,15,17,30,30,35,25,18,30,31,35,35,90,90,90,85,100,120,120,120,100,90,75,75,75,90],
+                                    "backgroundColor": ["rgba(55, 125, 255, 0)", "rgba(255, 255, 255, 0)"],
+                                    "borderColor": "#377dff",
+                                    "borderWidth": 2,
+                                    "pointRadius": 0,
+                                    "pointHoverRadius": 0
+                                  }]
+                                },
+                                "options": {
+                                   "scales": {
+                                     "yAxes": [{
+                                       "display": false
+                                     }],
+                                     "xAxes": [{
+                                       "display": false
+                                     }]
+                                   },
+                                  "hover": {
+                                    "mode": "nearest",
+                                    "intersect": false
                                   },
-                                  "options": {
-                                     "scales": {
-                                       "yAxes": [{
-                                         "display": false
-                                       }],
-                                       "xAxes": [{
-                                         "display": false
-                                       }]
-                                     },
-                                    "hover": {
-                                      "mode": "nearest",
-                                      "intersect": false
-                                    },
-                                    "tooltips": {
-                                      "postfix": "%",
-                                      "hasIndicator": true,
-                                      "intersect": false
-                                    }
+                                  "tooltips": {
+                                    "postfix": "%",
+                                    "hasIndicator": true,
+                                    "intersect": false
                                   }
-                                }'>
-                        </canvas>
-                      </div>
-                      <!-- End Chart -->
+                                }
+                              }'>
+                      </canvas>
                     </div>
+                    <!-- End Chart -->
                   </div>
-                  <!-- End Row -->
-
-                  <span class="badge badge-soft-success">
-                    <i class="tio-trending-up"></i> 1.7%
-                  </span>
-                  <span class="text-body font-size-sm ml-1">from 2345/87</span>
                 </div>
-              </a>
-              <!-- End Card -->
-            </div>
-            <!-- End Card: Campaign -->
+                <!-- End Row -->
 
-            <!-- Card: Sales -->
-            <div class="col-sm-6 col-lg-4 mb-3 mb-lg-5">
-              <!-- Card -->
-              <a class="card card-hover-shadow h-100" href="#">
-                <div class="card-body">
-                  <h6 class="card-subtitle">Sales</h6>
-
-                  <div class="row align-items-center gx-2 mb-1">
-                    <div class="col-6">
-                      <span class="card-title h2">13,487,745</span>
-                    </div>
-
-                    <div class="col-6">
-                      <!-- Chart -->
-                      <div class="chartjs-custom" style="height: 3rem;">
-                        <canvas class="js-chart"
-                                data-hs-chartjs-options='{
-                                  "type": "line",
-                                  "data": {
-                                     "labels": ["1 May","2 May","3 May","4 May","5 May","6 May","7 May","8 May","9 May","10 May","11 May","12 May","13 May","14 May","15 May","16 May","17 May","18 May","19 May","20 May","21 May","22 May","23 May","24 May","25 May","26 May","27 May","28 May","29 May","30 May","31 May"],
-                                     "datasets": [{
-                                      "data": [25,18,30,31,35,35,60,60,60,75,21,20,24,20,18,17,15,17,30,120,120,120,100,90,75,90,90,90,75,70,60],
-                                      "backgroundColor": ["rgba(55, 125, 255, 0)", "rgba(255, 255, 255, 0)"],
-                                      "borderColor": "#377dff",
-                                      "borderWidth": 2,
-                                      "pointRadius": 0,
-                                      "pointHoverRadius": 0
-                                    }]
-                                  },
-                                  "options": {
-                                     "scales": {
-                                       "yAxes": [{
-                                         "display": false
-                                       }],
-                                       "xAxes": [{
-                                         "display": false
-                                       }]
-                                     },
-                                    "hover": {
-                                      "mode": "nearest",
-                                      "intersect": false
-                                    },
-                                    "tooltips": {
-                                      "postfix": "%",
-                                      "hasIndicator": true,
-                                      "intersect": false
-                                    }
-                                  }
-                                }'>
-                        </canvas>
-                      </div>
-                      <!-- End Chart -->
-                    </div>
-                  </div>
-                  <!-- End Row -->
-
-                  <span class="badge badge-soft-danger">
-                    <i class="tio-trending-down"></i> 4.4%
-                  </span>
-                  <span class="text-body font-size-sm ml-1">from 12,487,745</span>
-                </div>
-              </a>
-              <!-- End Card -->
-            </div>
-            <!-- End Card: Sales -->
-
-            <!-- Card: New User -->
-            <div class="col-sm-6 col-lg-4 mb-3 mb-lg-5">
-              <!-- Card -->
-              <a class="card card-hover-shadow h-100" href="#">
-                <div class="card-body">
-                  <h6 class="card-subtitle">New Users</h6>
-
-                  <div class="row align-items-center gx-2 mb-1">
-                    <div class="col-6">
-                      <span class="card-title h2">92,913</span>
-                    </div>
-
-                    <div class="col-6">
-                      <!-- Chart -->
-                      <div class="chartjs-custom" style="height: 3rem;">
-                        <canvas class="js-chart"
-                                data-hs-chartjs-options='{
-                                  "type": "line",
-                                  "data": {
-                                     "labels": ["1 May","2 May","3 May","4 May","5 May","6 May","7 May","8 May","9 May","10 May","11 May","12 May","13 May","14 May","15 May","16 May","17 May","18 May","19 May","20 May","21 May","22 May","23 May","24 May","25 May","26 May","27 May","28 May","29 May","30 May","31 May"],
-                                     "datasets": [{
-                                      "data": [21,20,24,15,17,30,30,35,35,35,40,60,12,90,90,85,70,75,43,75,90,22,120,120,90,85,100,92,92,92,92],
-                                      "backgroundColor": ["rgba(55, 125, 255, 0)", "rgba(255, 255, 255, 0)"],
-                                      "borderColor": "#377dff",
-                                      "borderWidth": 2,
-                                      "pointRadius": 0,
-                                      "pointHoverRadius": 0
-                                    }]
-                                  },
-                                  "options": {
-                                     "scales": {
-                                       "yAxes": [{
-                                         "display": false
-                                       }],
-                                       "xAxes": [{
-                                         "display": false
-                                       }]
-                                     },
-                                    "hover": {
-                                      "mode": "nearest",
-                                      "intersect": false
-                                    },
-                                    "tooltips": {
-                                      "postfix": "k",
-                                      "hasIndicator": true,
-                                      "intersect": false
-                                    }
-                                  }
-                                }'>
-                        </canvas>
-                      </div>
-                      <!-- End Chart -->
-                    </div>
-                  </div>
-                  <!-- End Row -->
-
-                  <span class="badge badge-soft-secondary">0.0%</span>
-                  <span class="text-body font-size-sm ml-1">from 2,913</span>
-                </div>
-              </a>
-              <!-- End Card -->
-            </div>
-            <!-- End Card: New User -->
-
-            <!-- Card: Rich Shopping -->
-            <div class="col-sm-6 col-lg-4 mb-3 mb-lg-5">
-              <!-- Card -->
-              <a class="card card-hover-shadow h-100" href="#">
-                <div class="card-body">
-                  <h6 class="card-subtitle">Rich Shopping</h6>
-
-                  <div class="row align-items-center gx-2 mb-1">
-                    <div class="col-6">
-                      <span class="card-title h2">2,453/100</span>
-                    </div>
-
-                    <div class="col-6">
-                      <!-- Chart -->
-                      <div class="chartjs-custom" style="height: 3rem;">
-                        <canvas class="js-chart"
-                                data-hs-chartjs-options='{
-                                  "type": "line",
-                                  "data": {
-                                     "labels": ["1 May","2 May","3 May","4 May","5 May","6 May","7 May","8 May","9 May","10 May","11 May","12 May","13 May","14 May","15 May","16 May","17 May","18 May","19 May","20 May","21 May","22 May","23 May","24 May","25 May","26 May","27 May","28 May","29 May","30 May","31 May"],
-                                     "datasets": [{
-                                      "data": [21,20,24,15,17,30,30,35,35,35,40,60,12,90,90,85,70,75,43,75,90,22,120,120,90,85,100,92,92,92,92],
-                                      "backgroundColor": ["rgba(55, 125, 255, 0)", "rgba(255, 255, 255, 0)"],
-                                      "borderColor": "#377dff",
-                                      "borderWidth": 2,
-                                      "pointRadius": 0,
-                                      "pointHoverRadius": 0
-                                    }]
-                                  },
-                                  "options": {
-                                     "scales": {
-                                       "yAxes": [{
-                                         "display": false
-                                       }],
-                                       "xAxes": [{
-                                         "display": false
-                                       }]
-                                     },
-                                    "hover": {
-                                      "mode": "nearest",
-                                      "intersect": false
-                                    },
-                                    "tooltips": {
-                                      "postfix": "k",
-                                      "hasIndicator": true,
-                                      "intersect": false
-                                    }
-                                  }
-                                }'>
-                        </canvas>
-                      </div>
-                      <!-- End Chart -->
-                    </div>
-                  </div>
-                  <!-- End Row -->
-
-                  <span class="badge badge-soft-secondary">0.0%</span>
-                  <span class="text-body font-size-sm ml-1">from 2,253/76</span>
-                </div>
-              </a>
-              <!-- End Card -->
-            </div>
-            <!-- End Card: Rich Shopping -->
-
-            <!-- Card: Burnout Point -->
-            <div class="col-sm-6 col-lg-4 mb-3 mb-lg-5">
-              <!-- Card -->
-              <a class="card card-hover-shadow h-100" href="#">
-                <div class="card-body">
-                  <h6 class="card-subtitle">Burnout Point</h6>
-
-                  <div class="row align-items-center gx-2 mb-1">
-                    <div class="col-6">
-                      <span class="card-title h2">92,913</span>
-                    </div>
-
-                    <div class="col-6">
-                      <!-- Chart -->
-                      <div class="chartjs-custom" style="height: 3rem;">
-                        <canvas class="js-chart"
-                                data-hs-chartjs-options='{
-                                  "type": "line",
-                                  "data": {
-                                     "labels": ["1 May","2 May","3 May","4 May","5 May","6 May","7 May","8 May","9 May","10 May","11 May","12 May","13 May","14 May","15 May","16 May","17 May","18 May","19 May","20 May","21 May","22 May","23 May","24 May","25 May","26 May","27 May","28 May","29 May","30 May","31 May"],
-                                     "datasets": [{
-                                      "data": [21,20,24,15,17,30,30,35,35,35,40,60,12,90,90,85,70,75,43,75,90,22,120,120,90,85,100,92,92,92,92],
-                                      "backgroundColor": ["rgba(55, 125, 255, 0)", "rgba(255, 255, 255, 0)"],
-                                      "borderColor": "#377dff",
-                                      "borderWidth": 2,
-                                      "pointRadius": 0,
-                                      "pointHoverRadius": 0
-                                    }]
-                                  },
-                                  "options": {
-                                     "scales": {
-                                       "yAxes": [{
-                                         "display": false
-                                       }],
-                                       "xAxes": [{
-                                         "display": false
-                                       }]
-                                     },
-                                    "hover": {
-                                      "mode": "nearest",
-                                      "intersect": false
-                                    },
-                                    "tooltips": {
-                                      "postfix": "k",
-                                      "hasIndicator": true,
-                                      "intersect": false
-                                    }
-                                  }
-                                }'>
-                        </canvas>
-                      </div>
-                      <!-- End Chart -->
-                    </div>
-                  </div>
-                  <!-- End Row -->
-
-                  <span class="badge badge-soft-secondary">0.0%</span>
-                  <span class="text-body font-size-sm ml-1">from 2,913</span>
-                </div>
-              </a>
-              <!-- End Card -->
-            </div>
-            <!-- End Card: Burnout Point -->
-
+                <span class="badge badge-soft-success">
+                  <i class="tio-trending-up"></i> 1.7%
+                </span>
+                <span class="text-body font-size-sm ml-1">from 2345/87</span>
+              </div>
+            </a>
+            <!-- End Card -->
           </div>
-          <!-- End Card Section -->
+          <!-- End Card: Campaign -->
 
-          <!-- Statistics: New User, Sales, Burnout Point -->
-          <div class="row gx-2 gx-lg-3">
-            <div class="col">
-              <!-- Card -->
-              <div class="card h-100">
+          <!-- Card: Sales -->
+          <div class="col-sm-6 col-lg-4 mb-3 mb-lg-5">
+            <!-- Card -->
+            <a class="card card-hover-shadow h-100" href="#">
+              <div class="card-body">
+                <h6 class="card-subtitle">Sales</h6>
 
-                <!-- Header -->
-                <div class="card-header">
-                  <h5 class="card-header-title">Monthly expenses</h5>
-                  <!-- 기간설정 -->
-                  <button id="js-daterangepicker-predefined" class="btn btn-sm btn-ghost-secondary dropdown-toggle">
-                    <i class="tio-date-range"></i>
-                    <span class="js-daterangepicker-predefined-preview ml-1">Nov 2 - Nov 2, 2020</span>
-                  </button>
-                  <!-- End 기간설정 -->
-                </div>
-                <!-- End Header -->
+                <div class="row align-items-center gx-2 mb-1">
+                  <div class="col-6">
+                    <span class="card-title h2">13,487,745</span>
+                  </div>
 
-                <!-- Body -->
-                <div class="card-body">
-                  <div class="row mb-4">
-                    <div class="col-sm mb-2 mb-sm-0">
-                      <div class="d-flex align-items-center">
-                        <span class="h1 mb-0">35%</span>
-                        <span class="text-success ml-2">
-                          <i class="tio-trending-up"></i> 25.3%
-                        </span>
-                      </div>
+                  <div class="col-6">
+                    <!-- Chart -->
+                    <div class="chartjs-custom" style="height: 3rem;">
+                      <canvas class="js-chart"
+                              data-hs-chartjs-options='{
+                                "type": "line",
+                                "data": {
+                                   "labels": ["1 May","2 May","3 May","4 May","5 May","6 May","7 May","8 May","9 May","10 May","11 May","12 May","13 May","14 May","15 May","16 May","17 May","18 May","19 May","20 May","21 May","22 May","23 May","24 May","25 May","26 May","27 May","28 May","29 May","30 May","31 May"],
+                                   "datasets": [{
+                                    "data": [25,18,30,31,35,35,60,60,60,75,21,20,24,20,18,17,15,17,30,120,120,120,100,90,75,90,90,90,75,70,60],
+                                    "backgroundColor": ["rgba(55, 125, 255, 0)", "rgba(255, 255, 255, 0)"],
+                                    "borderColor": "#377dff",
+                                    "borderWidth": 2,
+                                    "pointRadius": 0,
+                                    "pointHoverRadius": 0
+                                  }]
+                                },
+                                "options": {
+                                   "scales": {
+                                     "yAxes": [{
+                                       "display": false
+                                     }],
+                                     "xAxes": [{
+                                       "display": false
+                                     }]
+                                   },
+                                  "hover": {
+                                    "mode": "nearest",
+                                    "intersect": false
+                                  },
+                                  "tooltips": {
+                                    "postfix": "%",
+                                    "hasIndicator": true,
+                                    "intersect": false
+                                  }
+                                }
+                              }'>
+                      </canvas>
                     </div>
+                    <!-- End Chart -->
+                  </div>
+                </div>
+                <!-- End Row -->
 
-                    <div class="col-sm-auto align-self-sm-end">
-                      <!-- Legend Indicators -->
-                      <div class="row font-size-sm">
-                        <div class="col-auto">
-                          <span class="legend-indicator bg-primary"></span> New User
-                        </div>
-                        <div class="col-auto">
-                          <span class="legend-indicator bg-success"></span> Sales
-                        </div>
-                        <div class="col-auto">
-                          <span class="legend-indicator bg-danger"></span> Burnort Point
-                        </div>
-                      </div>
-                      <!-- End Legend Indicators -->
+                <span class="badge badge-soft-danger">
+                  <i class="tio-trending-down"></i> 4.4%
+                </span>
+                <span class="text-body font-size-sm ml-1">from 12,487,745</span>
+              </div>
+            </a>
+            <!-- End Card -->
+          </div>
+          <!-- End Card: Sales -->
+
+          <!-- Card: New User -->
+          <div class="col-sm-6 col-lg-4 mb-3 mb-lg-5">
+            <!-- Card -->
+            <a class="card card-hover-shadow h-100" href="#">
+              <div class="card-body">
+                <h6 class="card-subtitle">New Users</h6>
+
+                <div class="row align-items-center gx-2 mb-1">
+                  <div class="col-6">
+                    <span class="card-title h2">92,913</span>
+                  </div>
+
+                  <div class="col-6">
+                    <!-- Chart -->
+                    <div class="chartjs-custom" style="height: 3rem;">
+                      <canvas class="js-chart"
+                              data-hs-chartjs-options='{
+                                "type": "line",
+                                "data": {
+                                   "labels": ["1 May","2 May","3 May","4 May","5 May","6 May","7 May","8 May","9 May","10 May","11 May","12 May","13 May","14 May","15 May","16 May","17 May","18 May","19 May","20 May","21 May","22 May","23 May","24 May","25 May","26 May","27 May","28 May","29 May","30 May","31 May"],
+                                   "datasets": [{
+                                    "data": [21,20,24,15,17,30,30,35,35,35,40,60,12,90,90,85,70,75,43,75,90,22,120,120,90,85,100,92,92,92,92],
+                                    "backgroundColor": ["rgba(55, 125, 255, 0)", "rgba(255, 255, 255, 0)"],
+                                    "borderColor": "#377dff",
+                                    "borderWidth": 2,
+                                    "pointRadius": 0,
+                                    "pointHoverRadius": 0
+                                  }]
+                                },
+                                "options": {
+                                   "scales": {
+                                     "yAxes": [{
+                                       "display": false
+                                     }],
+                                     "xAxes": [{
+                                       "display": false
+                                     }]
+                                   },
+                                  "hover": {
+                                    "mode": "nearest",
+                                    "intersect": false
+                                  },
+                                  "tooltips": {
+                                    "postfix": "k",
+                                    "hasIndicator": true,
+                                    "intersect": false
+                                  }
+                                }
+                              }'>
+                      </canvas>
+                    </div>
+                    <!-- End Chart -->
+                  </div>
+                </div>
+                <!-- End Row -->
+
+                <span class="badge badge-soft-secondary">0.0%</span>
+                <span class="text-body font-size-sm ml-1">from 2,913</span>
+              </div>
+            </a>
+            <!-- End Card -->
+          </div>
+          <!-- End Card: New User -->
+
+          <!-- Card: Rich Shopping -->
+          <div class="col-sm-6 col-lg-4 mb-3 mb-lg-5">
+            <!-- Card -->
+            <a class="card card-hover-shadow h-100" href="#">
+              <div class="card-body">
+                <h6 class="card-subtitle">Rich Shopping</h6>
+
+                <div class="row align-items-center gx-2 mb-1">
+                  <div class="col-6">
+                    <span class="card-title h2">2,453/100</span>
+                  </div>
+
+                  <div class="col-6">
+                    <!-- Chart -->
+                    <div class="chartjs-custom" style="height: 3rem;">
+                      <canvas class="js-chart"
+                              data-hs-chartjs-options='{
+                                "type": "line",
+                                "data": {
+                                   "labels": ["1 May","2 May","3 May","4 May","5 May","6 May","7 May","8 May","9 May","10 May","11 May","12 May","13 May","14 May","15 May","16 May","17 May","18 May","19 May","20 May","21 May","22 May","23 May","24 May","25 May","26 May","27 May","28 May","29 May","30 May","31 May"],
+                                   "datasets": [{
+                                    "data": [21,20,24,15,17,30,30,35,35,35,40,60,12,90,90,85,70,75,43,75,90,22,120,120,90,85,100,92,92,92,92],
+                                    "backgroundColor": ["rgba(55, 125, 255, 0)", "rgba(255, 255, 255, 0)"],
+                                    "borderColor": "#377dff",
+                                    "borderWidth": 2,
+                                    "pointRadius": 0,
+                                    "pointHoverRadius": 0
+                                  }]
+                                },
+                                "options": {
+                                   "scales": {
+                                     "yAxes": [{
+                                       "display": false
+                                     }],
+                                     "xAxes": [{
+                                       "display": false
+                                     }]
+                                   },
+                                  "hover": {
+                                    "mode": "nearest",
+                                    "intersect": false
+                                  },
+                                  "tooltips": {
+                                    "postfix": "k",
+                                    "hasIndicator": true,
+                                    "intersect": false
+                                  }
+                                }
+                              }'>
+                      </canvas>
+                    </div>
+                    <!-- End Chart -->
+                  </div>
+                </div>
+                <!-- End Row -->
+
+                <span class="badge badge-soft-secondary">0.0%</span>
+                <span class="text-body font-size-sm ml-1">from 2,253/76</span>
+              </div>
+            </a>
+            <!-- End Card -->
+          </div>
+          <!-- End Card: Rich Shopping -->
+
+          <!-- Card: Burnout Point -->
+          <div class="col-sm-6 col-lg-4 mb-3 mb-lg-5">
+            <!-- Card -->
+            <a class="card card-hover-shadow h-100" href="#">
+              <div class="card-body">
+                <h6 class="card-subtitle">Burnout Point</h6>
+
+                <div class="row align-items-center gx-2 mb-1">
+                  <div class="col-6">
+                    <span class="card-title h2">92,913</span>
+                  </div>
+
+                  <div class="col-6">
+                    <!-- Chart -->
+                    <div class="chartjs-custom" style="height: 3rem;">
+                      <canvas class="js-chart"
+                              data-hs-chartjs-options='{
+                                "type": "line",
+                                "data": {
+                                   "labels": ["1 May","2 May","3 May","4 May","5 May","6 May","7 May","8 May","9 May","10 May","11 May","12 May","13 May","14 May","15 May","16 May","17 May","18 May","19 May","20 May","21 May","22 May","23 May","24 May","25 May","26 May","27 May","28 May","29 May","30 May","31 May"],
+                                   "datasets": [{
+                                    "data": [21,20,24,15,17,30,30,35,35,35,40,60,12,90,90,85,70,75,43,75,90,22,120,120,90,85,100,92,92,92,92],
+                                    "backgroundColor": ["rgba(55, 125, 255, 0)", "rgba(255, 255, 255, 0)"],
+                                    "borderColor": "#377dff",
+                                    "borderWidth": 2,
+                                    "pointRadius": 0,
+                                    "pointHoverRadius": 0
+                                  }]
+                                },
+                                "options": {
+                                   "scales": {
+                                     "yAxes": [{
+                                       "display": false
+                                     }],
+                                     "xAxes": [{
+                                       "display": false
+                                     }]
+                                   },
+                                  "hover": {
+                                    "mode": "nearest",
+                                    "intersect": false
+                                  },
+                                  "tooltips": {
+                                    "postfix": "k",
+                                    "hasIndicator": true,
+                                    "intersect": false
+                                  }
+                                }
+                              }'>
+                      </canvas>
+                    </div>
+                    <!-- End Chart -->
+                  </div>
+                </div>
+                <!-- End Row -->
+
+                <span class="badge badge-soft-secondary">0.0%</span>
+                <span class="text-body font-size-sm ml-1">from 2,913</span>
+              </div>
+            </a>
+            <!-- End Card -->
+          </div>
+          <!-- End Card: Burnout Point -->
+
+        </div>
+        <!-- End Card Section -->
+
+        <!-- Statistics: New User, Sales, Burnout Point -->
+        <div class="row gx-2 gx-lg-3">
+          <div class="col">
+            <!-- Card -->
+            <div class="card h-100">
+
+              <!-- Header -->
+              <div class="card-header">
+                <h5 class="card-header-title">Monthly expenses</h5>
+                <!-- 기간설정 -->
+                <button id="js-daterangepicker-predefined" class="btn btn-sm btn-ghost-secondary dropdown-toggle">
+                  <i class="tio-date-range"></i>
+                  <span class="js-daterangepicker-predefined-preview ml-1">Nov 2 - Nov 2, 2020</span>
+                </button>
+                <!-- End 기간설정 -->
+              </div>
+              <!-- End Header -->
+
+              <!-- Body -->
+              <div class="card-body">
+                <div class="row mb-4">
+                  <div class="col-sm mb-2 mb-sm-0">
+                    <div class="d-flex align-items-center">
+                      <span class="h1 mb-0">35%</span>
+                      <span class="text-success ml-2">
+                        <i class="tio-trending-up"></i> 25.3%
+                      </span>
                     </div>
                   </div>
-                  <!-- End Row -->
 
-                  <!-- line Chart -->
-                  <div class="chartjs-custom">
-                    <canvas id="updatingLineChart" style="height: 20rem;"
-                    data-hs-chartjs-options='{
-                      "type": "line",
-                      "data": {
-                         "labels": ["Feb","Jan","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
-                         "datasets": [{
-                          "backgroundColor": ["rgba(55, 125, 255, .5)", "rgba(255, 255, 255, .2)"],
-                          "borderColor": "#377dff",
-                          "borderWidth": 2,
-                          "pointRadius": 0,
-                          "hoverBorderColor": "#377dff",
-                          "pointBackgroundColor": "#377dff",
-                          "pointBorderColor": "#fff",
-                          "pointHoverRadius": 0
-                        },
-                        {
-                         "backgroundColor": ["rgba(0, 219, 167, .5)", "rgba(255, 255, 255, .2)"],
-                         "borderColor": "#00c9a7",
-                         "borderWidth": 2,
-                         "pointRadius": 0,
-                         "hoverBorderColor": "#00c9a7",
-                         "pointBackgroundColor": "#00c9a7",
-                         "pointBorderColor": "#fff",
-                         "pointHoverRadius": 0
-                        },
-                        {
-                          "backgroundColor": ["rgba(237, 76, 120, .5)", "rgba(255, 255, 255, .2)"],
-                          "borderColor": "#ed4c78",
-                          "borderWidth": 2,
-                          "pointRadius": 0,
-                          "hoverBorderColor": "#ed4c78",
-                          "pointBackgroundColor": "#ed4c78",
-                          "pointBorderColor": "#fff",
-                          "pointHoverRadius": 0
-                        }]
+                  <div class="col-sm-auto align-self-sm-end">
+                    <!-- Legend Indicators -->
+                    <div class="row font-size-sm">
+                      <div class="col-auto">
+                        <span class="legend-indicator bg-primary"></span> New User
+                      </div>
+                      <div class="col-auto">
+                        <span class="legend-indicator bg-success"></span> Sales
+                      </div>
+                      <div class="col-auto">
+                        <span class="legend-indicator bg-danger"></span> Burnort Point
+                      </div>
+                    </div>
+                    <!-- End Legend Indicators -->
+                  </div>
+                </div>
+                <!-- End Row -->
+
+                <!-- line Chart -->
+                <div class="chartjs-custom">
+                  <canvas id="updatingLineChart" style="height: 20rem;"
+                  data-hs-chartjs-options='{
+                    "type": "line",
+                    "data": {
+                       "labels": ["Feb","Jan","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+                       "datasets": [{
+                        "backgroundColor": ["rgba(55, 125, 255, .5)", "rgba(255, 255, 255, .2)"],
+                        "borderColor": "#377dff",
+                        "borderWidth": 2,
+                        "pointRadius": 0,
+                        "hoverBorderColor": "#377dff",
+                        "pointBackgroundColor": "#377dff",
+                        "pointBorderColor": "#fff",
+                        "pointHoverRadius": 0
                       },
-                      "options": {
-                        "gradientPosition": {"y1": 200},
-                         "scales": {
-                            "yAxes": [{
-                              "gridLines": {
-                                "color": "#e7eaf3",
-                                "drawBorder": false,
-                                "zeroLineColor": "#e7eaf3"
-                              },
-                              "ticks": {
-                                "min": 0,
-                                "max": 100,
-                                "stepSize": 20,
-                                "fontColor": "#97a4af",
-                                "fontFamily": "Open Sans, sans-serif",
-                                "padding": 10,
-                                "postfix": "k"
-                              }
-                            }],
-                            "xAxes": [{
-                              "gridLines": {
-                                "display": false,
-                                "drawBorder": false
-                              },
-                              "ticks": {
-                                "fontSize": 12,
-                                "fontColor": "#97a4af",
-                                "fontFamily": "Open Sans, sans-serif",
-                                "padding": 5
-                              }
-                            }]
-                        },
-                        "tooltips": {
-                          "prefix": "$",
-                          "postfix": "k",
-                          "hasIndicator": true,
-                          "mode": "index",
-                          "intersect": false,
-                          "lineMode": true,
-                          "lineWithLineColor": "rgba(19, 33, 68, 0.075)"
-                        },
-                        "hover": {
-                          "mode": "nearest",
-                          "intersect": true
-                        }
+                      {
+                       "backgroundColor": ["rgba(0, 219, 167, .5)", "rgba(255, 255, 255, .2)"],
+                       "borderColor": "#00c9a7",
+                       "borderWidth": 2,
+                       "pointRadius": 0,
+                       "hoverBorderColor": "#00c9a7",
+                       "pointBackgroundColor": "#00c9a7",
+                       "pointBorderColor": "#fff",
+                       "pointHoverRadius": 0
+                      },
+                      {
+                        "backgroundColor": ["rgba(237, 76, 120, .5)", "rgba(255, 255, 255, .2)"],
+                        "borderColor": "#ed4c78",
+                        "borderWidth": 2,
+                        "pointRadius": 0,
+                        "hoverBorderColor": "#ed4c78",
+                        "pointBackgroundColor": "#ed4c78",
+                        "pointBorderColor": "#fff",
+                        "pointHoverRadius": 0
+                      }]
+                    },
+                    "options": {
+                      "gradientPosition": {"y1": 200},
+                       "scales": {
+                          "yAxes": [{
+                            "gridLines": {
+                              "color": "#e7eaf3",
+                              "drawBorder": false,
+                              "zeroLineColor": "#e7eaf3"
+                            },
+                            "ticks": {
+                              "min": 0,
+                              "max": 100,
+                              "stepSize": 20,
+                              "fontColor": "#97a4af",
+                              "fontFamily": "Open Sans, sans-serif",
+                              "padding": 10,
+                              "postfix": "k"
+                            }
+                          }],
+                          "xAxes": [{
+                            "gridLines": {
+                              "display": false,
+                              "drawBorder": false
+                            },
+                            "ticks": {
+                              "fontSize": 12,
+                              "fontColor": "#97a4af",
+                              "fontFamily": "Open Sans, sans-serif",
+                              "padding": 5
+                            }
+                          }]
+                      },
+                      "tooltips": {
+                        "prefix": "$",
+                        "postfix": "k",
+                        "hasIndicator": true,
+                        "mode": "index",
+                        "intersect": false,
+                        "lineMode": true,
+                        "lineWithLineColor": "rgba(19, 33, 68, 0.075)"
+                      },
+                      "hover": {
+                        "mode": "nearest",
+                        "intersect": true
                       }
-                    }'></canvas>
-                  </div>
-                  <!-- End line Chart -->
+                    }
+                  }'></canvas>
                 </div>
-                <!-- End Body -->
+                <!-- End line Chart -->
               </div>
-              <!-- End Card -->
+              <!-- End Body -->
             </div>
+            <!-- End Card -->
           </div>
-          <!-- End Row -->
+        </div>
+        <!-- End Row -->
 
       </div>
       <!-- End Content -->
@@ -772,16 +775,11 @@
     <!-- JS Implementing Plugins -->
     <script src="./assets/vendor/hs-navbar-vertical-aside/hs-navbar-vertical-aside.min.js"></script>
     <script src="./assets/vendor/hs-unfold/dist/hs-unfold.min.js"></script>
-    <script src="./assets/vendor/hs-form-search/dist/hs-form-search.min.js"></script>
-    <script src="./assets/vendor/select2/dist/js/select2.full.min.js"></script>
     <script src="./assets/vendor/chart.js/dist/Chart.min.js"></script>
     <script src="./assets/vendor/chart.js.extensions/chartjs-extensions.js"></script>
     <script src="./assets/vendor/chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.min.js"></script>
     <script src="./assets/vendor/daterangepicker/moment.min.js"></script>
     <script src="./assets/vendor/daterangepicker/daterangepicker.js"></script>
-    <script src="./assets/vendor/datatables/media/js/jquery.dataTables.min.js"></script>
-    <script src="./assets/vendor/datatables.net.extensions/select/select.min.js"></script>
-    <script src="./assets/vendor/clipboard/dist/clipboard.min.js"></script>
 
     <!-- JS Front -->
     <script src="./assets/js/theme.min.js"></script>
@@ -792,7 +790,6 @@
         $('.js-navbar-vertical-aside-toggle-invoker').click(function () {
           $('.js-navbar-vertical-aside-toggle-invoker i').tooltip('hide');
         });
-
 
         // initialization of navbar vertical navigation
         var sidebar = $('.js-navbar-vertical-aside').hsSideNav();
