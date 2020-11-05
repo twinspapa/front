@@ -25940,3 +25940,41 @@ a:hover .text-hover-primary {
 /*------------------------------------
   File for your custom SCSS style
 ------------------------------------*/
+.navbar-vertical-content {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.navbar-vertical-content::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, Opera*/
+}
+
+.tab-header {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.lists.st01 .first-box {
+  display: inline-block;
+  margin-right: 16px;
+}
+
+.lists.st01 .second-box {
+  margin: auto;
+  max-width: calc(100% - 79px);
+}
+
+.line-cut-1 {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.talk-lists {
+  height: calc(100% - 164px);
+}
