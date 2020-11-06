@@ -18,13 +18,15 @@
   <!-- CSS Implementing Plugins -->
   <!-- bundlecss:vendor [@@autopath] -->
   <link rel="stylesheet" href="@@autopath/assets/vendor/icon-set/style.css">
+  <link rel="stylesheet" href="@@autopath/node_modules/daterangepicker/daterangepicker.css">
+  <link rel="stylesheet" href="@@autopath/node_modules/select2/dist/css/select2.min.css">
 
   <!-- CSS Front Template -->
   <!-- bundlecss:theme [@@autopath] -->
   <link rel="stylesheet" href="@@autopath/assets/css/theme.css">
 </head>
 
-<body class="has-navbar-vertical-aside navbar-vertical-aside-show-xl footer-offset">
+<body class="has-navbar-vertical-aside navbar-vertical-aside-show-xl">
   <!-- ========== HEADER ========== -->
   @@include("@@autopath/inculde/header/header.html")
   <!-- ========== END HEADER ========== -->
@@ -37,6 +39,7 @@
   <main id="content" role="main" class="main">
     <!-- Content -->
     <div class="content @@layoutBuilder.header.containerMode">
+
       <!-- Page Header -->
       <div class="page-header">
         <div class="row align-items-end">
@@ -66,181 +69,413 @@
       </div>
       <!-- End Page Header -->
 
-      <div class="row">
+      <div class="row position-relative">
         <div class="col-lg-4">
-          <!-- Sticky Block Start Point -->
-          <div id="accountSidebarNav"></div>
-
           <!-- Card -->
-          <div class="talk-lists js-sticky-block card mb-lg-5"
-               data-hs-sticky-block-options='{
-                 "parentSelector": "#accountSidebarNav",
-                 "breakpoint": "lg",
-                 "startPoint": "#accountSidebarNav",
-                 "endPoint": "#stickyBlockEndPoint",
-                 "stickyOffsetTop": 20
-              }'>
+          <div class="card card-auto-height mb-lg-5">
             <!-- Header -->
             <div class="card-header">
-              <!-- Form Group -->
-              <div class="form-group w-md-100 m-0">
-                <div class="input-group input-group-merge">
-                  <input type="text" class="js-form-search form-control" placeholder="Search..."
-                         data-hs-form-search-options='{
-                           "clearIcon": "#clearIcon2",
-                           "defaultIcon": "#defaultClearIconToggleEg"
+              <div class="row justify-content-between align-items-center flex-grow-1">
+                <div class="col-sm-8 mb-3 mb-sm-0">
+                  <form>
+                    <!-- Search -->
+                    <div class="input-group input-group-merge input-group-flush">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="tio-search"></i>
+                        </div>
+                      </div>
+                      <input id="datatableSearch" type="search" class="form-control" placeholder="Search users" aria-label="Search users">
+                    </div>
+                    <!-- End Search -->
+                  </form>
+                </div>
+
+                <div class="col-sm-4">
+                  <div class="d-sm-flex justify-content-sm-end align-items-sm-center">
+                    <!-- Unfold -->
+                    <div class="hs-unfold">
+                      <a class="js-hs-unfold-invoker btn btn-sm btn-white" href="javascript:;"
+                         data-hs-unfold-options='{
+                           "target": "#usersFilterDropdown",
+                           "type": "css-animation",
+                           "smartPositionOff": true
                          }'>
-                  <a class="input-group-append" href="javascript:;">
-                    <span class="input-group-text">
-                      <i id="clearIcon2" class="tio-clear tio-lg" style="display: none;"></i>
-                      <i id="defaultClearIconToggleEg" class="tio-search" style="display: none;"></i>
-                    </span>
-                  </a>
+                        <i class="tio-filter-list mr-1"></i> Filter <span class="badge badge-soft-dark rounded-circle ml-1">2</span>
+                      </a>
+
+                      <div id="usersFilterDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-sm-right dropdown-card card-dropdown-filter-centered" style="min-width: 22rem;">
+                        <!-- Card -->
+                        <div class="card">
+                          <div class="card-header">
+                            <h5 class="card-header-title">Filter users</h5>
+
+                            <!-- Toggle Button -->
+                            <a class="js-hs-unfold-invoker btn btn-icon btn-xs btn-ghost-secondary ml-2" href="javascript:;"
+                               data-hs-unfold-options='{
+                                "target": "#usersFilterDropdown",
+                                "type": "css-animation",
+                                "smartPositionOff": true
+                               }'>
+                              <i class="tio-clear tio-lg"></i>
+                            </a>
+                            <!-- End Toggle Button -->
+                          </div>
+
+                          <div class="card-body">
+                            <form>
+                              <div class="form-row">
+                                <div class="col-sm form-group">
+                                  <small class="text-cap mb-2">Status</small>
+
+                                  <!-- Select -->
+                                  <select class="js-select2-custom js-datatable-filter"
+                                          data-target-column-index="0"
+                                          data-hs-select2-options='{
+                                            "minimumResultsForSearch": "Infinity"
+                                          }'>
+                                    <option value="">Any status</option>
+                                    <option value="Active" data-option-template='<span class="legend-indicator bg-success"></span>정상'>정상</option>
+                                    <option value="Stop" data-option-template='<span class="legend-indicator bg-warning"></span>정지'>정지</option>
+                                    <option value="Secession" data-option-template='<span class="legend-indicator bg-danger"></span>탈퇴'>탈퇴</option>
+                                    <option value="Dormancy" data-option-template='<span class="legend-indicator bg-danger"></span>휴면'>휴면</option>
+                                  </select>
+                                  <!-- End Select -->
+                                </div>
+                              </div>
+                              <!-- End Row -->
+
+                              <div class="form-row">
+                                  <div class="col-sm form-group">
+                                      <small class="text-cap mb-2">Join Date</small>
+
+                                      <!-- Daterangepicker -->
+                                      <div class="input-group input-group-merge">
+                                        <div class="input-group-prepend">
+                                          <span class="input-group-text">
+                                            <i class="tio-date-range"></i>
+                                          </span>
+                                        </div>
+                                        <input type="text" class="js-daterangepicker js-datatable-filter form-control daterangepicker-custom-input"
+                                            placeholder="Select dates"
+                                           data-hs-daterangepicker-options='{
+                                             "autoUpdateInput": false,
+                                             "locale": {
+                                               "cancelLabel": "Clear"
+                                             }
+                                           }'
+                                         >
+                                      </div>
+                                      <!-- End Daterangepicker -->
+                                  </div>
+                              </div>
+
+                              <a class="js-hs-unfold-invoker btn btn-block btn-primary" href="javascript:;"
+                                 data-hs-unfold-options='{
+                                  "target": "#usersFilterDropdown",
+                                  "type": "css-animation",
+                                  "smartPositionOff": true
+                                 }'>Apply</a>
+                            </form>
+                          </div>
+                        </div>
+                        <!-- End Card -->
+                      </div>
+                    </div>
+                    <!-- End Unfold -->
+                  </div>
                 </div>
               </div>
-              <!-- End Form Group -->
+              <!-- End Row -->
             </div>
             <!-- End Header -->
 
-            <!-- Body -->
-            <div class="card-body">
-              <ul class="list-unstyled list-unstyled-py-4 mb-0">
-                <!-- List Item -->
-                <li>
-                  <div class="d-flex align-items-center">
-                    <a class="d-flex align-items-center mr-2" href="#">
-                      <div class="avatar avatar-sm avatar-soft-primary avatar-circle">
-                        <span class="avatar-initials">R</span>
-                        <span class="avatar-status avatar-sm-status avatar-status-warning"></span>
-                      </div>
-                      <div class="ml-3">
-                        <h5 class="text-hover-primary mb-0">Rachel Doe</h5>
-                        <span class="font-size-sm text-body">25 connections</span>
-                      </div>
-                    </a>
-                    <div class="ml-auto">
-                      <!-- Checkbox -->
-                      <div class="custom-control custom-checkbox-switch">
-                        <input type="checkbox" id="connectionsCheckbox1" class="custom-control-input custom-checkbox-switch-input" checked>
-                        <label class="custom-checkbox-switch-label btn-icon btn-xs rounded-circle" for="connectionsCheckbox1">
-                          <span class="custom-checkbox-switch-default">
-                            <i class="tio-user-add"></i>
-                          </span>
-                          <span class="custom-checkbox-switch-active">
-                            <i class="tio-done"></i>
-                          </span>
-                        </label>
-                      </div>
-                      <!-- End Checkbox -->
-                    </div>
-                  </div>
-                </li>
-                <!-- End List Item -->
+            <!-- Table -->
+            <div class="table-responsive datatable-custom card-body card-body-height">
+              <table id="datatable" class="table table-lg table-borderless table-thead-bordered table-nowrap table-align-middle card-table"
+                     data-hs-datatables-options='{
+                       "columnDefs": [{
+                          "targets": [0, 3],
+                          "orderable": false
+                        }],
+                       "order": [],
+                       "info": {
+                         "totalQty": "#datatableWithPaginationInfoTotalQty"
+                       },
+                       "search": "#datatableSearch",
+                       "entries": "#datatableEntries",
+                       "pageLength": 10,
+                       "isResponsive": false,
+                       "isShowPaging": false,
+                       "pagination": "datatablePagination"
+                     }'>
+                <thead class="thead-light d-none">
+                  <tr>
+                    <th>Status</th>
+                    <th>User ID</th>
+                    <th>Nick Name</th>
+                    <th>Gender</th>
+                  </tr>
+                </thead>
 
-                <!-- List Item -->
-                <li>
-                  <div class="d-flex align-items-center">
-                    <a class="d-flex align-items-center mr-2" href="#">
-                      <div class="avatar avatar-sm avatar-circle">
-                        <img class="avatar-img" src="@@autopath/assets/img/160x160/img8.jpg" alt="Image Description">
-                        <span class="avatar-status avatar-sm-status avatar-status-success"></span>
-                      </div>
-                      <div class="ml-3">
-                        <h5 class="text-hover-primary mb-0">Isabella Finley</h5>
-                        <span class="font-size-sm text-body">79 connections</span>
-                      </div>
-                    </a>
-                    <div class="ml-auto">
-                      <!-- Checkbox -->
-                      <div class="custom-control custom-checkbox-switch">
-                        <input type="checkbox" id="connectionsCheckbox2" class="custom-control-input custom-checkbox-switch-input">
-                        <label class="custom-checkbox-switch-label btn-icon btn-xs rounded-circle" for="connectionsCheckbox2">
-                          <span class="custom-checkbox-switch-default">
-                            <i class="tio-user-add"></i>
-                          </span>
-                          <span class="custom-checkbox-switch-active">
-                            <i class="tio-done"></i>
-                          </span>
-                        </label>
-                      </div>
-                      <!-- End Checkbox -->
-                    </div>
-                  </div>
-                </li>
-                <!-- End List Item -->
-
-                <!-- List Item -->
-                <li>
-                  <div class="d-flex align-items-center">
-                    <a class="d-flex align-items-center mr-2" href="#">
-                      <div class="avatar avatar-sm avatar-circle">
-                        <img class="avatar-img" src="@@autopath/assets/img/160x160/img3.jpg" alt="Image Description">
-                        <span class="avatar-status avatar-sm-status avatar-status-warning"></span>
-                      </div>
-                      <div class="ml-3">
-                        <h5 class="text-hover-primary mb-0">David Harrison</h5>
-                        <span class="font-size-sm text-body">0 connections</span>
-                      </div>
-                    </a>
-                    <div class="ml-auto">
-                      <!-- Checkbox -->
-                      <div class="custom-control custom-checkbox-switch">
-                        <input type="checkbox" id="connectionsCheckbox3" class="custom-control-input custom-checkbox-switch-input" checked>
-                        <label class="custom-checkbox-switch-label btn-icon btn-xs rounded-circle" for="connectionsCheckbox3">
-                          <span class="custom-checkbox-switch-default">
-                            <i class="tio-user-add"></i>
-                          </span>
-                          <span class="custom-checkbox-switch-active">
-                            <i class="tio-done"></i>
-                          </span>
-                        </label>
-                      </div>
-                      <!-- End Checkbox -->
-                    </div>
-                  </div>
-                </li>
-                <!-- End List Item -->
-
-                <!-- List Item -->
-                <li>
-                  <div class="d-flex align-items-center">
-                    <a class="d-flex align-items-center mr-2" href="#">
-                      <div class="avatar avatar-sm avatar-circle">
-                        <img class="avatar-img" src="@@autopath/assets/img/160x160/img6.jpg" alt="Image Description">
-                        <span class="avatar-status avatar-sm-status avatar-status-danger"></span>
-                      </div>
-                      <div class="ml-3">
-                        <h5 class="text-hover-primary mb-0">Costa Quinn</h5>
-                        <span class="font-size-sm text-body">9 connections</span>
-                      </div>
-                    </a>
-                    <div class="ml-auto">
-                      <!-- Checkbox -->
-                      <div class="custom-control custom-checkbox-switch">
-                        <input type="checkbox" id="connectionsCheckbox4" class="custom-control-input custom-checkbox-switch-input">
-                        <label class="custom-checkbox-switch-label btn-icon btn-xs rounded-circle" for="connectionsCheckbox4">
-                          <span class="custom-checkbox-switch-default">
-                            <i class="tio-user-add"></i>
-                          </span>
-                          <span class="custom-checkbox-switch-active">
-                            <i class="tio-done"></i>
-                          </span>
-                        </label>
-                      </div>
-                      <!-- End Checkbox -->
-                    </div>
-                  </div>
-                </li>
-                <!-- End List Item -->
-              </ul>
+                <tbody>
+                  <tr>
+                    <td>
+                      <span class="legend-indicator bg-success"></span>Active
+                    </td>
+                    <td>Scrich</td>
+                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+                    <td>010-3762-6202</td>
+                    <td>2020/11/02</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="legend-indicator bg-success"></span>Active
+                    </td>
+                    <td>Scrich</td>
+                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+                    <td>010-3762-6202</td>
+                    <td>2020/11/02</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="legend-indicator bg-success"></span>Active
+                    </td>
+                    <td>Scrich</td>
+                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+                    <td>010-3762-6202</td>
+                    <td>2020/11/02</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="legend-indicator bg-success"></span>Active
+                    </td>
+                    <td>Scrich</td>
+                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+                    <td>010-3762-6202</td>
+                    <td>2020/11/02</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="legend-indicator bg-success"></span>Active
+                    </td>
+                    <td>Scrich</td>
+                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+                    <td>010-3762-6202</td>
+                    <td>2020/11/02</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="legend-indicator bg-success"></span>Active
+                    </td>
+                    <td>Scrich</td>
+                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+                    <td>010-3762-6202</td>
+                    <td>2020/11/02</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="legend-indicator bg-success"></span>Active
+                    </td>
+                    <td>Scrich</td>
+                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+                    <td>010-3762-6202</td>
+                    <td>2020/11/02</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="legend-indicator bg-success"></span>Active
+                    </td>
+                    <td>Scrich</td>
+                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+                    <td>010-3762-6202</td>
+                    <td>2020/11/02</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="legend-indicator bg-success"></span>Active
+                    </td>
+                    <td>Scrich</td>
+                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+                    <td>010-3762-6202</td>
+                    <td>2020/11/02</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="legend-indicator bg-success"></span>Active
+                    </td>
+                    <td>Scrich</td>
+                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+                    <td>010-3762-6202</td>
+                    <td>2020/11/02</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="legend-indicator bg-success"></span>Active
+                    </td>
+                    <td>Scrich</td>
+                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+                    <td>010-3762-6202</td>
+                    <td>2020/11/02</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="legend-indicator bg-success"></span>Active
+                    </td>
+                    <td>Scrich</td>
+                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+                    <td>010-3762-6202</td>
+                    <td>2020/11/02</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="legend-indicator bg-success"></span>Active
+                    </td>
+                    <td>Scrich</td>
+                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+                    <td>010-3762-6202</td>
+                    <td>2020/11/02</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="legend-indicator bg-success"></span>Active
+                    </td>
+                    <td>Scrich</td>
+                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+                    <td>010-3762-6202</td>
+                    <td>2020/11/02</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="legend-indicator bg-success"></span>Active
+                    </td>
+                    <td>Scrich</td>
+                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+                    <td>010-3762-6202</td>
+                    <td>2020/11/02</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="legend-indicator bg-success"></span>Active
+                    </td>
+                    <td>Scrich</td>
+                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+                    <td>010-3762-6202</td>
+                    <td>2020/11/02</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="legend-indicator bg-success"></span>Active
+                    </td>
+                    <td>Scrich</td>
+                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+                    <td>010-3762-6202</td>
+                    <td>2020/11/02</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="legend-indicator bg-success"></span>Active
+                    </td>
+                    <td>Scrich</td>
+                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+                    <td>010-3762-6202</td>
+                    <td>2020/11/02</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="legend-indicator bg-success"></span>Active
+                    </td>
+                    <td>Scrich</td>
+                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+                    <td>010-3762-6202</td>
+                    <td>2020/11/02</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="legend-indicator bg-success"></span>Active
+                    </td>
+                    <td>Scrich</td>
+                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+                    <td>010-3762-6202</td>
+                    <td>2020/11/02</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="legend-indicator bg-success"></span>Active
+                    </td>
+                    <td>Scrich</td>
+                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+                    <td>010-3762-6202</td>
+                    <td>2020/11/02</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="legend-indicator bg-success"></span>Active
+                    </td>
+                    <td>Scrich</td>
+                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+                    <td>010-3762-6202</td>
+                    <td>2020/11/02</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="legend-indicator bg-success"></span>Active
+                    </td>
+                    <td>Scrich</td>
+                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+                    <td>010-3762-6202</td>
+                    <td>2020/11/02</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-            <!-- End Body -->
+            <!-- End Table -->
+
+            <!-- Footer -->
+            <div class="card-footer">
+              <!-- Pagination -->
+              <div class="row justify-content-center justify-content-sm-between align-items-sm-center">
+                <div class="col-sm mb-2 mb-sm-0">
+                  <div class="d-flex justify-content-center justify-content-sm-start align-items-center">
+                    <span class="mr-2">Showing:</span>
+
+                    <!-- Select -->
+                    <select id="datatableEntries" class="js-select2-custom"
+                            data-hs-select2-options='{
+                                "minimumResultsForSearch": "Infinity",
+                                "customClass": "custom-select custom-select-sm custom-select-borderless",
+                                "dropdownAutoWidth": true,
+                                "width": true
+                            }'>
+                      <option value="10">10</option>
+                      <option value="15" selected>15</option>
+                      <option value="20">20</option>
+                    </select>
+                    <!-- End Select -->
+
+                    <span class="text-secondary mr-2">of</span>
+
+                    <!-- Pagination Quantity -->
+                    <span id="datatableWithPaginationInfoTotalQty"></span>
+                  </div>
+                </div>
+
+                <div class="col-sm-auto">
+                  <div class="d-flex justify-content-center justify-content-sm-end">
+                    <!-- Pagination -->
+                    <nav id="datatablePagination" aria-label="Activity pagination"></nav>
+                  </div>
+                </div>
+              </div>
+              <!-- End Pagination -->
+            </div>
+            <!-- End Footer -->
           </div>
           <!-- End Card -->
         </div>
-        <div class="col-lg-8">
+        <div class="col-lg-8 d-none d-lg-block">
           <!-- Card -->
-          <div class="card mb-3 mb-lg-5">
+          <div class="card card-auto-height mb-3 mb-lg-5">
             <!-- Header -->
             <div class="card-header">
               <h5 class="card-header-title">Activity stream</h5>
@@ -500,305 +735,10 @@
             <!-- End Footer -->
           </div>
           <!-- End Card -->
-
-          <div class="row">
-            <div class="col-sm-6 mb-3 mb-lg-5">
-
-            </div>
-
-            <div class="col-sm-6 mb-3 mb-lg-5">
-              <!-- Card -->
-              <div class="card h-100">
-                <!-- Header -->
-                <div class="card-header">
-                  <h5 class="card-header-title">Teams</h5>
-                </div>
-                <!-- End Header -->
-
-                <!-- Body -->
-                <div class="card-body">
-                  <ul class="nav card-nav card-nav-vertical nav-pills">
-                    <!-- List Item -->
-                    <li>
-                      <a class="nav-link media" href="#">
-                        <i class="tio-group-senior nav-icon text-dark"></i>
-                        <span class="media-body">
-                          <span class="d-block text-dark">#digitalmarketing</span>
-                          <small class="d-block text-muted">8 members</small>
-                        </span>
-                      </a>
-                    </li>
-                    <!-- End List Item -->
-
-                    <!-- List Item -->
-                    <li>
-                      <a class="nav-link media" href="#">
-                        <i class="tio-group-senior nav-icon text-dark"></i>
-                        <span class="media-body">
-                          <span class="d-block text-dark">#ethereum</span>
-                          <small class="d-block text-muted">14 members</small>
-                        </span>
-                      </a>
-                    </li>
-                    <!-- End List Item -->
-
-                    <!-- List Item -->
-                    <li>
-                      <a class="nav-link media" href="#">
-                        <i class="tio-group-senior nav-icon text-dark"></i>
-                        <span class="media-body">
-                          <span class="d-block text-dark">#conference</span>
-                          <small class="d-block text-muted">3 members</small>
-                        </span>
-                      </a>
-                    </li>
-                    <!-- End List Item -->
-
-                    <!-- List Item -->
-                    <li>
-                      <a class="nav-link media" href="#">
-                        <i class="tio-group-senior nav-icon text-dark"></i>
-                        <span class="media-body">
-                          <span class="d-block text-dark">#supportteam</span>
-                          <small class="d-block text-muted">3 members</small>
-                        </span>
-                      </a>
-                    </li>
-                    <!-- End List Item -->
-
-                    <!-- List Item -->
-                    <li>
-                      <a class="nav-link media" href="#">
-                        <i class="tio-group-senior nav-icon text-dark"></i>
-                        <span class="media-body">
-                          <span class="d-block text-dark">#invoices</span>
-                          <small class="d-block text-muted">3 members</small>
-                        </span>
-                      </a>
-                    </li>
-                    <!-- End List Item -->
-                  </ul>
-                </div>
-                <!-- End Body -->
-
-                <!-- Footer -->
-                <a class="card-footer text-center" href="user-profile-teams.html">
-                  View all teams <i class="tio-chevron-right"></i>
-                </a>
-                <!-- End Footer -->
-              </div>
-              <!-- End Card -->
-            </div>
-          </div>
-          <!-- End Row -->
-
-          <!-- Card -->
-          <div class="card mb-3 mb-lg-5">
-            <!-- Header -->
-            <div class="card-header">
-              <h5 class="card-header-title">Projects</h5>
-
-              <!-- Unfold -->
-              <div class="hs-unfold">
-                <a class="js-hs-unfold-invoker btn btn-icon btn-sm btn-ghost-secondary rounded-circle" href="javascript:;"
-                   data-hs-unfold-options='{
-                     "target": "#projectReportDropdown",
-                     "type": "css-animation"
-                   }'>
-                  <i class="tio-more-vertical"></i>
-                </a>
-
-                <div id="projectReportDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right mt-1">
-                  <span class="dropdown-header">Settings</span>
-
-                  <a class="dropdown-item" href="#">
-                    <i class="tio-share dropdown-item-icon"></i>
-                    Share connections
-                  </a>
-                  <a class="dropdown-item" href="#">
-                    <i class="tio-info-outined dropdown-item-icon"></i>
-                    Suggest edits
-                  </a>
-
-                  <div class="dropdown-divider"></div>
-
-                  <span class="dropdown-header">Feedback</span>
-
-                  <a class="dropdown-item" href="#">
-                    <i class="tio-chat-outlined dropdown-item-icon"></i>
-                    Report
-                  </a>
-                </div>
-              </div>
-              <!-- End Unfold -->
-            </div>
-            <!-- End Header -->
-
-            <!-- Table -->
-            <div class="table-responsive">
-              <table class="table table-borderless table-thead-bordered table-nowrap table-align-middle card-table">
-                <thead class="thead-light">
-                  <tr>
-                    <th>Project</th>
-                    <th style="width: 40%;">Progress</th>
-                    <th class="table-column-right-aligned">Hours spent</th>
-                  </tr>
-                </thead>
-
-                <tbody>
-                  <tr>
-                    <td>
-                      <div class="d-flex">
-                        <span class="avatar avatar-xs avatar-soft-dark avatar-circle">
-                          <span class="avatar-initials">U</span>
-                        </span>
-                        <div class="ml-3">
-                          <h5 class="mb-0">UI/UX</h5>
-                          <small>Updated 2 hours ago</small>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="d-flex align-items-center">
-                        <span class="mr-3">0%</span>
-                        <div class="progress table-progress">
-                          <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="table-column-right-aligned">4:25</td>
-                  </tr>
-
-                  <tr>
-                    <td>
-                      <div class="d-flex">
-                        <img class="avatar avatar-xs" src="@@autopath/assets/svg/brands/spec.svg" alt="Image Description">
-                        <div class="ml-3">
-                          <h5 class="mb-0">Get a complete audit store</h5>
-                          <small>Updated 1 day ago</small>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="d-flex align-items-center">
-                        <span class="mr-3">45%</span>
-                        <div class="progress table-progress">
-                          <div class="progress-bar" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="table-column-right-aligned">18:42</td>
-                  </tr>
-
-                  <tr>
-                    <td>
-                      <div class="d-flex">
-                        <img class="avatar avatar-xs" src="@@autopath/assets/svg/brands/capsule.svg" alt="Image Description">
-                        <div class="ml-3">
-                          <h5 class="mb-0">Build stronger customer relationships</h5>
-                          <small>Updated 2 days ago</small>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="d-flex align-items-center">
-                        <span class="mr-3">59%</span>
-                        <div class="progress table-progress">
-                          <div class="progress-bar" role="progressbar" style="width: 59%" aria-valuenow="59" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="table-column-right-aligned">9:01</td>
-                  </tr>
-
-                  <tr>
-                    <td>
-                      <div class="d-flex">
-                        <img class="avatar avatar-xs" src="@@autopath/assets/svg/brands/mailchimp.svg" alt="Image Description">
-                        <div class="ml-3">
-                          <h5 class="mb-0">Update subscription method</h5>
-                          <small>Updated 2 days ago</small>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="d-flex align-items-center">
-                        <span class="mr-3">57%</span>
-                        <div class="progress table-progress">
-                          <div class="progress-bar bg-success" role="progressbar" style="width: 57%" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="table-column-right-aligned">0:37</td>
-                  </tr>
-
-                  <tr>
-                    <td>
-                      <div class="d-flex">
-                        <img class="avatar avatar-xs" src="@@autopath/assets/svg/brands/figma.svg" alt="Image Description">
-                        <div class="ml-3">
-                          <h5 class="mb-0">Create a new theme</h5>
-                          <small>Updated 1 week ago</small>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="d-flex align-items-center">
-                        <span class="mr-3">100%</span>
-                        <div class="progress table-progress">
-                          <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="table-column-right-aligned">24:12</td>
-                  </tr>
-
-                  <tr>
-                    <td>
-                      <div class="d-flex">
-                        <span class="avatar avatar-xs avatar-soft-info avatar-circle">
-                          <span class="avatar-initials">I</span>
-                        </span>
-                        <div class="ml-3">
-                          <h5 class="mb-0">Improve social banners</h5>
-                          <small>Updated 1 week ago</small>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="d-flex align-items-center">
-                        <span class="mr-3">0%</span>
-                        <div class="progress table-progress">
-                          <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="table-column-right-aligned">8:08</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <!-- End Table -->
-
-            <!-- Footer -->
-            <a class="card-footer text-center" href="projects.html">
-              View all projects <i class="tio-chevron-right"></i>
-            </a>
-            <!-- End Footer -->
-          </div>
-          <!-- End Card -->
-
-          <!-- Sticky Block End Point -->
-          <div id="stickyBlockEndPoint"></div>
         </div>
       </div>
-      <!-- End Row -->
-        </div>
-      </div>
-      <!-- End Row -->
     </div>
     <!-- End Content -->
-
   </main>
   <!-- ========== END CONTENTS ========== -->
 
@@ -813,11 +753,17 @@
   <script src="@@autopath/assets/vendor/hs-unfold/dist/hs-unfold.min.js"></script>
   <script src="@@autopath/assets/vendor/hs-form-search/dist/hs-form-search.min.js"></script>
   <script src="@@autopath/assets/vendor/hs-nav-scroller/dist/hs-nav-scroller.min.js"></script>
-  <script src="@@autopath/assets/vendor/hs-sticky-block/dist/hs-sticky-block.min.js"></script>
+  <script src="@@autopath/node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
+  <script src="@@autopath/node_modules/daterangepicker/moment.min.js"></script>
+  <script src="@@autopath/node_modules/daterangepicker/daterangepicker.js"></script>
+  <script src="@@autopath/node_modules/select2/dist/js/select2.full.min.js"></script>
 
   <!-- JS Front -->
   <!-- bundlejs:theme [@@autopath] -->
   <script src="@@autopath/assets/js/hs.core.js"></script>
+  <script src="@@autopath/assets/js/hs.daterangepicker.js"></script>
+  <script src="@@autopath/assets/js/hs.datatables.js"></script>
+  <script src="@@autopath/assets/js/hs.select2.js"></script>
 
   <script>
     $(document).on('ready', function () {
@@ -847,17 +793,88 @@
         new HsNavScroller($(this)).init()
       });
 
-      // initialization of sticky blocks
-      $('.js-sticky-block').each(function () {
-        var stickyBlock = new HSStickyBlock($(this), {
-          targetSelector: $('#header').hasClass('navbar-fixed') ? '#header' : null
-        }).init();
-      });
-
       // initialization of form search
       $('.js-form-search').each(function () {
         new HSFormSearch($(this)).init()
       });
+
+      // initialization of select2
+      $('.js-select2-custom').each(function () {
+        var select2 = $.HSCore.components.HSSelect2.init($(this));
+      });
+
+      // initialization of datatables
+      var datatable = $.HSCore.components.HSDatatables.init($('#datatable'), {
+        "order": [],
+        "info": {
+          "totalQty": "#datatableEntriesInfoTotalQty"
+        },
+        "entries": "#datatableEntries",
+        "isResponsive": false,
+        "isShowPaging": false,
+        "pagination": "datatableEntriesPagination"
+      });
+
+      $('.js-datatable-filter').on('change', function() {
+        var $this = $(this),
+          elVal = $this.val(),
+          targetColumnIndex = $this.data('target-column-index');
+
+        datatable.column(targetColumnIndex).search(elVal).draw();
+      });
+
+      $('#datatableSearch').on('mouseup', function (e) {
+        var $input = $(this),
+          oldValue = $input.val();
+
+        if (oldValue == "") return;
+
+        setTimeout(function(){
+          var newValue = $input.val();
+
+          if (newValue == ""){
+            // Gotcha
+            datatable.search('').draw();
+          }
+        }, 1);
+      });
+
+      // initialization of daterangepicker
+      var startDate = null,
+          endDate = null;
+
+      $('.js-daterangepicker').each(function () {
+        var d = $.HSCore.components.HSDaterangepicker.init($(this));
+      });
+
+      $('.js-daterangepicker').on('apply.daterangepicker', function(ev, picker) {
+        $(this).val(picker.startDate.format('YYYY/MM/DD') + ' - ' + picker.endDate.format('YYYY/MM/DD'));
+
+        startDate = moment(picker.startDate.format('YYYY/MM/DD'));
+        endDate = moment(picker.endDate.format('YYYY/MM/DD'));
+
+        datatable.draw();
+      });
+
+      $('.js-daterangepicker').on('cancel.daterangepicker', function(ev, picker) {
+        $(this).val('');
+
+        startDate = null;
+        endDate = null;
+
+        datatable.draw();
+      });
+
+      $.fn.dataTable.ext.search.push(
+        function (settings, data, dataIndex) {
+
+          if (!startDate || !endDate) return true;
+
+          let compareDate = moment(moment(data[6]).format('YYYY/MM/DD'));
+
+          return compareDate.isBetween(startDate -1 , endDate + 1 );
+        }
+      );
     });
   </script>
 </body>

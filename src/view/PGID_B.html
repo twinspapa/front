@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="@@autopath/assets/css/theme.css">
 </head>
 
-<body class="has-navbar-vertical-aside navbar-vertical-aside-show-xl footer-offset">
+<body class="has-navbar-vertical-aside navbar-vertical-aside-show-xl">
   <!-- ========== HEADER ========== -->
   @@include("@@autopath/inculde/header/header.html")
   <!-- ========== END HEADER ========== -->
@@ -366,10 +366,6 @@
         var select2 = $.HSCore.components.HSSelect2.init($(this));
       });
 
-      // initialization of daterangepicker
-      var startDate = null,
-      endDate = null;
-
       // initialization of datatables
       var datatable = $.HSCore.components.HSDatatables.init($('#datatable'), {
         "ordering": false,
@@ -443,6 +439,9 @@
       });
 
       // initialization of daterangepicker
+      var startDate = null,
+          endDate = null;
+
       $('.js-daterangepicker').each(function () {
         var d = $.HSCore.components.HSDaterangepicker.init($(this));
       });
