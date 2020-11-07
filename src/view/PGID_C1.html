@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="@@autopath/assets/vendor/icon-set/style.css">
   <link rel="stylesheet" href="@@autopath/node_modules/daterangepicker/daterangepicker.css">
   <link rel="stylesheet" href="@@autopath/node_modules/select2/dist/css/select2.min.css">
+  <link rel="stylesheet" href="@@autopath/node_modules/quill/dist/quill.snow.css">
 
   <!-- CSS Front Template -->
   <!-- bundlecss:theme [@@autopath] -->
@@ -54,9 +55,9 @@
           </div>
 
           <div class="col-sm-auto">
-            <div id="newProjectPopover" data-toggle="popover" data-placement="left" title="" data-content="Check out this New project modal example." data-html="true">
-              <a class="btn btn-primary" href="javascript:;" data-toggle="modal" data-target="#newProjectModal">
-                <i class="tio-add mr-1"></i> New project
+            <div id="newProjectPopover" data-toggle="popover" data-placement="left" title="" data-html="true">
+              <a class="btn btn-primary" href="javascript:;" data-toggle="modal" data-target="#newPostModal">
+                <i class="tio-add mr-1"></i> New post
               </a>
             </div>
           </div>
@@ -72,7 +73,7 @@
       <div class="row position-relative">
         <div class="col-lg-4">
           <!-- Card -->
-          <div class="card card-auto-height mb-lg-5">
+          <div class="card card-auto-height">
             <!-- Header -->
             <div class="card-header">
               <div class="row justify-content-between align-items-center flex-grow-1">
@@ -85,7 +86,7 @@
                           <i class="tio-search"></i>
                         </div>
                       </div>
-                      <input id="datatableSearch" type="search" class="form-control" placeholder="Search users" aria-label="Search users">
+                      <input id="talkListsSearchInput" type="search" class="form-control" placeholder="Search input" aria-label="Search input">
                     </div>
                     <!-- End Search -->
                   </form>
@@ -97,23 +98,23 @@
                     <div class="hs-unfold">
                       <a class="js-hs-unfold-invoker btn btn-sm btn-white" href="javascript:;"
                          data-hs-unfold-options='{
-                           "target": "#usersFilterDropdown",
+                           "target": "#talkListFilterDropdown",
                            "type": "css-animation",
                            "smartPositionOff": true
                          }'>
                         <i class="tio-filter-list mr-1"></i> Filter <span class="badge badge-soft-dark rounded-circle ml-1">2</span>
                       </a>
 
-                      <div id="usersFilterDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-sm-right dropdown-card card-dropdown-filter-centered" style="min-width: 22rem;">
+                      <div id="talkListFilterDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-sm-right dropdown-card card-dropdown-filter-centered" style="min-width: 22rem;">
                         <!-- Card -->
                         <div class="card">
                           <div class="card-header">
-                            <h5 class="card-header-title">Filter users</h5>
+                            <h5 class="card-header-title">Filter Talk Lists</h5>
 
                             <!-- Toggle Button -->
                             <a class="js-hs-unfold-invoker btn btn-icon btn-xs btn-ghost-secondary ml-2" href="javascript:;"
                                data-hs-unfold-options='{
-                                "target": "#usersFilterDropdown",
+                                "target": "#talkListFilterDropdown",
                                 "type": "css-animation",
                                 "smartPositionOff": true
                                }'>
@@ -124,30 +125,66 @@
 
                           <div class="card-body">
                             <form>
+                              <!-- Row -->
                               <div class="form-row">
                                 <div class="col-sm form-group">
-                                  <small class="text-cap mb-2">Status</small>
+                                  <small class="text-cap mb-2">상태</small>
 
                                   <!-- Select -->
                                   <select class="js-select2-custom js-datatable-filter"
-                                          data-target-column-index="0"
+                                          data-target-column-index="2"
                                           data-hs-select2-options='{
                                             "minimumResultsForSearch": "Infinity"
                                           }'>
-                                    <option value="">Any status</option>
-                                    <option value="Active" data-option-template='<span class="legend-indicator bg-success"></span>정상'>정상</option>
-                                    <option value="Stop" data-option-template='<span class="legend-indicator bg-warning"></span>정지'>정지</option>
-                                    <option value="Secession" data-option-template='<span class="legend-indicator bg-danger"></span>탈퇴'>탈퇴</option>
-                                    <option value="Dormancy" data-option-template='<span class="legend-indicator bg-danger"></span>휴면'>휴면</option>
+                                    <option value="">전체</option>
+                                    <option value="win">당첨</option>
+                                    <option value="lose">구매</option>
+                                  </select>
+                                  <!-- End Select -->
+                                </div>
+
+                                <div class="col-sm form-group">
+                                  <small class="text-cap mb-2">분류</small>
+
+                                  <!-- Select -->
+                                  <select class="js-select2-custom js-datatable-filter"
+                                          data-target-column-index="2"
+                                          data-hs-select2-options='{
+                                            "minimumResultsForSearch": "Infinity"
+                                          }'>
+                                    <option value="">전체</option>
+                                    <option value="shopping">리치쇼핑</option>
+                                    <option value="campaign">캠페인</option>
                                   </select>
                                   <!-- End Select -->
                                 </div>
                               </div>
                               <!-- End Row -->
 
+                              <!-- Row -->
+                              <div class="form-row">
+                                <div class="col-sm form-group">
+                                  <small class="text-cap mb-2">광고주</small>
+
+                                  <!-- Select -->
+                                  <select class="js-select2-custom js-datatable-filter"
+                                          data-target-column-index="2"
+                                          data-hs-select2-options='{
+                                            "minimumResultsForSearch": "Infinity"
+                                          }'>
+                                    <option value="">전체</option>
+                                    <option value="win">당첨</option>
+                                    <option value="lose">구매</option>
+                                  </select>
+                                  <!-- End Select -->
+                                </div>
+                              </div>
+                              <!-- End Row -->
+
+                              <!-- Row -->
                               <div class="form-row">
                                   <div class="col-sm form-group">
-                                      <small class="text-cap mb-2">Join Date</small>
+                                      <small class="text-cap mb-2">등록일</small>
 
                                       <!-- Daterangepicker -->
                                       <div class="input-group input-group-merge">
@@ -156,19 +193,21 @@
                                             <i class="tio-date-range"></i>
                                           </span>
                                         </div>
-                                        <input type="text" class="js-daterangepicker js-datatable-filter form-control daterangepicker-custom-input"
-                                            placeholder="Select dates"
-                                           data-hs-daterangepicker-options='{
-                                             "autoUpdateInput": false,
-                                             "locale": {
-                                               "cancelLabel": "Clear"
-                                             }
-                                           }'
-                                         >
+                                        <input type="text" class="js-daterangepicker form-control daterangepicker-custom-input"
+                                          placeholder="Select dates"
+                                          data-hs-daterangepicker-options='{
+                                            "autoApply": true,
+                                            "autoUpdateInput": false,
+                                            "drops": "up",
+                                            "locale": {
+                                            "cancelLabel": "Clear"
+                                          }
+                                        }'>
                                       </div>
                                       <!-- End Daterangepicker -->
                                   </div>
                               </div>
+                              <!-- End Row -->
 
                               <a class="js-hs-unfold-invoker btn btn-block btn-primary" href="javascript:;"
                                  data-hs-unfold-options='{
@@ -186,302 +225,687 @@
                   </div>
                 </div>
               </div>
-              <!-- End Row -->
             </div>
             <!-- End Header -->
 
-            <!-- Table -->
-            <div class="table-responsive datatable-custom card-body card-body-height">
-              <table id="datatable" class="table table-lg table-borderless table-thead-bordered table-nowrap table-align-middle card-table"
-                     data-hs-datatables-options='{
-                       "columnDefs": [{
-                          "targets": [0, 3],
-                          "orderable": false
-                        }],
-                       "order": [],
-                       "info": {
-                         "totalQty": "#datatableWithPaginationInfoTotalQty"
-                       },
-                       "search": "#datatableSearch",
-                       "entries": "#datatableEntries",
-                       "pageLength": 10,
-                       "isResponsive": false,
-                       "isShowPaging": false,
-                       "pagination": "datatablePagination"
-                     }'>
-                <thead class="thead-light d-none">
-                  <tr>
-                    <th>Status</th>
-                    <th>User ID</th>
-                    <th>Nick Name</th>
-                    <th>Gender</th>
-                  </tr>
-                </thead>
+            <!-- Body -->
+            <div class="card-body card-body-height">
+              <ul id="talkLists" class="list-unstyled list-unstyled-py-4 mb-0">
+                <!-- List Item -->
+                <li>
+                  <div class="d-flex align-items-center">
+                    <a class="d-flex align-items-center mr-2" href="#">
+                      <div class="avatar avatar-sm avatar-soft-primary avatar-circle">
+                        <span class="avatar-initials">R</span>
+                        <span class="avatar-status avatar-sm-status avatar-status-warning"></span>
+                      </div>
+                      <div class="ml-3">
+                        <h5 class="filterTxt text-hover-primary mb-0">Rachel Doe</h5>
+                        <span class="filterTxt font-size-sm text-body">25 connections</span>
+                      </div>
+                    </a>
+                    <div class="ml-auto">
+                      <!-- Checkbox -->
+                      <div class="custom-control custom-checkbox-switch">
+                        <input type="checkbox" id="connectionsCheckbox1" class="custom-control-input custom-checkbox-switch-input" checked>
+                        <label class="custom-checkbox-switch-label btn-icon btn-xs rounded-circle" for="connectionsCheckbox1">
+                          <span class="custom-checkbox-switch-default">
+                            <i class="tio-user-add"></i>
+                          </span>
+                          <span class="custom-checkbox-switch-active">
+                            <i class="tio-done"></i>
+                          </span>
+                        </label>
+                      </div>
+                      <!-- End Checkbox -->
+                    </div>
+                  </div>
+                </li>
+                <!-- End List Item -->
 
-                <tbody>
-                  <tr>
-                    <td>
-                      <span class="legend-indicator bg-success"></span>Active
-                    </td>
-                    <td>Scrich</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-                    <td>010-3762-6202</td>
-                    <td>2020/11/02</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span class="legend-indicator bg-success"></span>Active
-                    </td>
-                    <td>Scrich</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-                    <td>010-3762-6202</td>
-                    <td>2020/11/02</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span class="legend-indicator bg-success"></span>Active
-                    </td>
-                    <td>Scrich</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-                    <td>010-3762-6202</td>
-                    <td>2020/11/02</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span class="legend-indicator bg-success"></span>Active
-                    </td>
-                    <td>Scrich</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-                    <td>010-3762-6202</td>
-                    <td>2020/11/02</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span class="legend-indicator bg-success"></span>Active
-                    </td>
-                    <td>Scrich</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-                    <td>010-3762-6202</td>
-                    <td>2020/11/02</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span class="legend-indicator bg-success"></span>Active
-                    </td>
-                    <td>Scrich</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-                    <td>010-3762-6202</td>
-                    <td>2020/11/02</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span class="legend-indicator bg-success"></span>Active
-                    </td>
-                    <td>Scrich</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-                    <td>010-3762-6202</td>
-                    <td>2020/11/02</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span class="legend-indicator bg-success"></span>Active
-                    </td>
-                    <td>Scrich</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-                    <td>010-3762-6202</td>
-                    <td>2020/11/02</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span class="legend-indicator bg-success"></span>Active
-                    </td>
-                    <td>Scrich</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-                    <td>010-3762-6202</td>
-                    <td>2020/11/02</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span class="legend-indicator bg-success"></span>Active
-                    </td>
-                    <td>Scrich</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-                    <td>010-3762-6202</td>
-                    <td>2020/11/02</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span class="legend-indicator bg-success"></span>Active
-                    </td>
-                    <td>Scrich</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-                    <td>010-3762-6202</td>
-                    <td>2020/11/02</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span class="legend-indicator bg-success"></span>Active
-                    </td>
-                    <td>Scrich</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-                    <td>010-3762-6202</td>
-                    <td>2020/11/02</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span class="legend-indicator bg-success"></span>Active
-                    </td>
-                    <td>Scrich</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-                    <td>010-3762-6202</td>
-                    <td>2020/11/02</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span class="legend-indicator bg-success"></span>Active
-                    </td>
-                    <td>Scrich</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-                    <td>010-3762-6202</td>
-                    <td>2020/11/02</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span class="legend-indicator bg-success"></span>Active
-                    </td>
-                    <td>Scrich</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-                    <td>010-3762-6202</td>
-                    <td>2020/11/02</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span class="legend-indicator bg-success"></span>Active
-                    </td>
-                    <td>Scrich</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-                    <td>010-3762-6202</td>
-                    <td>2020/11/02</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span class="legend-indicator bg-success"></span>Active
-                    </td>
-                    <td>Scrich</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-                    <td>010-3762-6202</td>
-                    <td>2020/11/02</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span class="legend-indicator bg-success"></span>Active
-                    </td>
-                    <td>Scrich</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-                    <td>010-3762-6202</td>
-                    <td>2020/11/02</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span class="legend-indicator bg-success"></span>Active
-                    </td>
-                    <td>Scrich</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-                    <td>010-3762-6202</td>
-                    <td>2020/11/02</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span class="legend-indicator bg-success"></span>Active
-                    </td>
-                    <td>Scrich</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-                    <td>010-3762-6202</td>
-                    <td>2020/11/02</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span class="legend-indicator bg-success"></span>Active
-                    </td>
-                    <td>Scrich</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-                    <td>010-3762-6202</td>
-                    <td>2020/11/02</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span class="legend-indicator bg-success"></span>Active
-                    </td>
-                    <td>Scrich</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-                    <td>010-3762-6202</td>
-                    <td>2020/11/02</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span class="legend-indicator bg-success"></span>Active
-                    </td>
-                    <td>Scrich</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-                    <td>010-3762-6202</td>
-                    <td>2020/11/02</td>
-                  </tr>
-                </tbody>
-              </table>
+                <!-- List Item -->
+                <li>
+                  <div class="d-flex align-items-center">
+                    <a class="d-flex align-items-center mr-2" href="#">
+                      <div class="avatar avatar-sm avatar-circle">
+                        <img class="avatar-img" src="@@autopath/assets/img/160x160/img8.jpg" alt="Image Description">
+                        <span class="avatar-status avatar-sm-status avatar-status-success"></span>
+                      </div>
+                      <div class="ml-3">
+                        <h5 class="filterTxt text-hover-primary mb-0">Isabella Finley</h5>
+                        <span class="filterTxt font-size-sm text-body">79 connections</span>
+                      </div>
+                    </a>
+                    <div class="ml-auto">
+                      <!-- Checkbox -->
+                      <div class="custom-control custom-checkbox-switch">
+                        <input type="checkbox" id="connectionsCheckbox2" class="custom-control-input custom-checkbox-switch-input">
+                        <label class="custom-checkbox-switch-label btn-icon btn-xs rounded-circle" for="connectionsCheckbox2">
+                          <span class="custom-checkbox-switch-default">
+                            <i class="tio-user-add"></i>
+                          </span>
+                          <span class="custom-checkbox-switch-active">
+                            <i class="tio-done"></i>
+                          </span>
+                        </label>
+                      </div>
+                      <!-- End Checkbox -->
+                    </div>
+                  </div>
+                </li>
+                <!-- End List Item -->
+
+                <!-- List Item -->
+                <li>
+                  <div class="d-flex align-items-center">
+                    <a class="d-flex align-items-center mr-2" href="#">
+                      <div class="avatar avatar-sm avatar-circle">
+                        <img class="avatar-img" src="@@autopath/assets/img/160x160/img3.jpg" alt="Image Description">
+                        <span class="avatar-status avatar-sm-status avatar-status-warning"></span>
+                      </div>
+                      <div class="ml-3">
+                        <h5 class="filterTxt text-hover-primary mb-0">David Harrison</h5>
+                        <span class="filterTxt font-size-sm text-body">0 connections</span>
+                      </div>
+                    </a>
+                    <div class="ml-auto">
+                      <!-- Checkbox -->
+                      <div class="custom-control custom-checkbox-switch">
+                        <input type="checkbox" id="connectionsCheckbox3" class="custom-control-input custom-checkbox-switch-input" checked>
+                        <label class="custom-checkbox-switch-label btn-icon btn-xs rounded-circle" for="connectionsCheckbox3">
+                          <span class="custom-checkbox-switch-default">
+                            <i class="tio-user-add"></i>
+                          </span>
+                          <span class="custom-checkbox-switch-active">
+                            <i class="tio-done"></i>
+                          </span>
+                        </label>
+                      </div>
+                      <!-- End Checkbox -->
+                    </div>
+                  </div>
+                </li>
+                <!-- End List Item -->
+
+                <!-- List Item -->
+                <li>
+                  <div class="d-flex align-items-center">
+                    <a class="d-flex align-items-center mr-2" href="#">
+                      <div class="avatar avatar-sm avatar-circle">
+                        <img class="avatar-img" src="@@autopath/assets/img/160x160/img6.jpg" alt="Image Description">
+                        <span class="avatar-status avatar-sm-status avatar-status-danger"></span>
+                      </div>
+                      <div class="ml-3">
+                        <h5 class="filterTxt text-hover-primary mb-0">Costa Quinn</h5>
+                        <span class="filterTxt font-size-sm text-body">9 connections</span>
+                      </div>
+                    </a>
+                    <div class="ml-auto">
+                      <!-- Checkbox -->
+                      <div class="custom-control custom-checkbox-switch">
+                        <input type="checkbox" id="connectionsCheckbox4" class="custom-control-input custom-checkbox-switch-input">
+                        <label class="custom-checkbox-switch-label btn-icon btn-xs rounded-circle" for="connectionsCheckbox4">
+                          <span class="custom-checkbox-switch-default">
+                            <i class="tio-user-add"></i>
+                          </span>
+                          <span class="custom-checkbox-switch-active">
+                            <i class="tio-done"></i>
+                          </span>
+                        </label>
+                      </div>
+                      <!-- End Checkbox -->
+                    </div>
+                  </div>
+                </li>
+                <!-- End List Item -->
+
+                <!-- List Item -->
+                <li>
+                  <div class="d-flex align-items-center">
+                    <a class="d-flex align-items-center mr-2" href="#">
+                      <div class="avatar avatar-sm avatar-soft-primary avatar-circle">
+                        <span class="avatar-initials">R</span>
+                        <span class="avatar-status avatar-sm-status avatar-status-warning"></span>
+                      </div>
+                      <div class="ml-3">
+                        <h5 class="filterTxt text-hover-primary mb-0">Rachel Doe</h5>
+                        <span class="filterTxt font-size-sm text-body">25 connections</span>
+                      </div>
+                    </a>
+                    <div class="ml-auto">
+                      <!-- Checkbox -->
+                      <div class="custom-control custom-checkbox-switch">
+                        <input type="checkbox" id="connectionsCheckbox1" class="custom-control-input custom-checkbox-switch-input" checked>
+                        <label class="custom-checkbox-switch-label btn-icon btn-xs rounded-circle" for="connectionsCheckbox1">
+                          <span class="custom-checkbox-switch-default">
+                            <i class="tio-user-add"></i>
+                          </span>
+                          <span class="custom-checkbox-switch-active">
+                            <i class="tio-done"></i>
+                          </span>
+                        </label>
+                      </div>
+                      <!-- End Checkbox -->
+                    </div>
+                  </div>
+                </li>
+                <!-- End List Item -->
+
+                <!-- List Item -->
+                <li>
+                  <div class="d-flex align-items-center">
+                    <a class="d-flex align-items-center mr-2" href="#">
+                      <div class="avatar avatar-sm avatar-circle">
+                        <img class="avatar-img" src="@@autopath/assets/img/160x160/img8.jpg" alt="Image Description">
+                        <span class="avatar-status avatar-sm-status avatar-status-success"></span>
+                      </div>
+                      <div class="ml-3">
+                        <h5 class="filterTxt text-hover-primary mb-0">Isabella Finley</h5>
+                        <span class="filterTxt font-size-sm text-body">79 connections</span>
+                      </div>
+                    </a>
+                    <div class="ml-auto">
+                      <!-- Checkbox -->
+                      <div class="custom-control custom-checkbox-switch">
+                        <input type="checkbox" id="connectionsCheckbox2" class="custom-control-input custom-checkbox-switch-input">
+                        <label class="custom-checkbox-switch-label btn-icon btn-xs rounded-circle" for="connectionsCheckbox2">
+                          <span class="custom-checkbox-switch-default">
+                            <i class="tio-user-add"></i>
+                          </span>
+                          <span class="custom-checkbox-switch-active">
+                            <i class="tio-done"></i>
+                          </span>
+                        </label>
+                      </div>
+                      <!-- End Checkbox -->
+                    </div>
+                  </div>
+                </li>
+                <!-- End List Item -->
+
+                <!-- List Item -->
+                <li>
+                  <div class="d-flex align-items-center">
+                    <a class="d-flex align-items-center mr-2" href="#">
+                      <div class="avatar avatar-sm avatar-circle">
+                        <img class="avatar-img" src="@@autopath/assets/img/160x160/img3.jpg" alt="Image Description">
+                        <span class="avatar-status avatar-sm-status avatar-status-warning"></span>
+                      </div>
+                      <div class="ml-3">
+                        <h5 class="filterTxt text-hover-primary mb-0">David Harrison</h5>
+                        <span class="filterTxt font-size-sm text-body">0 connections</span>
+                      </div>
+                    </a>
+                    <div class="ml-auto">
+                      <!-- Checkbox -->
+                      <div class="custom-control custom-checkbox-switch">
+                        <input type="checkbox" id="connectionsCheckbox3" class="custom-control-input custom-checkbox-switch-input" checked>
+                        <label class="custom-checkbox-switch-label btn-icon btn-xs rounded-circle" for="connectionsCheckbox3">
+                          <span class="custom-checkbox-switch-default">
+                            <i class="tio-user-add"></i>
+                          </span>
+                          <span class="custom-checkbox-switch-active">
+                            <i class="tio-done"></i>
+                          </span>
+                        </label>
+                      </div>
+                      <!-- End Checkbox -->
+                    </div>
+                  </div>
+                </li>
+                <!-- End List Item -->
+
+                <!-- List Item -->
+                <li>
+                  <div class="d-flex align-items-center">
+                    <a class="d-flex align-items-center mr-2" href="#">
+                      <div class="avatar avatar-sm avatar-circle">
+                        <img class="avatar-img" src="@@autopath/assets/img/160x160/img6.jpg" alt="Image Description">
+                        <span class="avatar-status avatar-sm-status avatar-status-danger"></span>
+                      </div>
+                      <div class="ml-3">
+                        <h5 class="filterTxt text-hover-primary mb-0">Costa Quinn</h5>
+                        <span class="filterTxt font-size-sm text-body">9 connections</span>
+                      </div>
+                    </a>
+                    <div class="ml-auto">
+                      <!-- Checkbox -->
+                      <div class="custom-control custom-checkbox-switch">
+                        <input type="checkbox" id="connectionsCheckbox4" class="custom-control-input custom-checkbox-switch-input">
+                        <label class="custom-checkbox-switch-label btn-icon btn-xs rounded-circle" for="connectionsCheckbox4">
+                          <span class="custom-checkbox-switch-default">
+                            <i class="tio-user-add"></i>
+                          </span>
+                          <span class="custom-checkbox-switch-active">
+                            <i class="tio-done"></i>
+                          </span>
+                        </label>
+                      </div>
+                      <!-- End Checkbox -->
+                    </div>
+                  </div>
+                </li>
+                <!-- End List Item -->
+
+                <!-- List Item -->
+                <li>
+                  <div class="d-flex align-items-center">
+                    <a class="d-flex align-items-center mr-2" href="#">
+                      <div class="avatar avatar-sm avatar-soft-primary avatar-circle">
+                        <span class="avatar-initials">R</span>
+                        <span class="avatar-status avatar-sm-status avatar-status-warning"></span>
+                      </div>
+                      <div class="ml-3">
+                        <h5 class="filterTxt text-hover-primary mb-0">Rachel Doe</h5>
+                        <span class="filterTxt font-size-sm text-body">25 connections</span>
+                      </div>
+                    </a>
+                    <div class="ml-auto">
+                      <!-- Checkbox -->
+                      <div class="custom-control custom-checkbox-switch">
+                        <input type="checkbox" id="connectionsCheckbox1" class="custom-control-input custom-checkbox-switch-input" checked>
+                        <label class="custom-checkbox-switch-label btn-icon btn-xs rounded-circle" for="connectionsCheckbox1">
+                          <span class="custom-checkbox-switch-default">
+                            <i class="tio-user-add"></i>
+                          </span>
+                          <span class="custom-checkbox-switch-active">
+                            <i class="tio-done"></i>
+                          </span>
+                        </label>
+                      </div>
+                      <!-- End Checkbox -->
+                    </div>
+                  </div>
+                </li>
+                <!-- End List Item -->
+
+                <!-- List Item -->
+                <li>
+                  <div class="d-flex align-items-center">
+                    <a class="d-flex align-items-center mr-2" href="#">
+                      <div class="avatar avatar-sm avatar-circle">
+                        <img class="avatar-img" src="@@autopath/assets/img/160x160/img8.jpg" alt="Image Description">
+                        <span class="avatar-status avatar-sm-status avatar-status-success"></span>
+                      </div>
+                      <div class="ml-3">
+                        <h5 class="filterTxt text-hover-primary mb-0">Isabella Finley</h5>
+                        <span class="filterTxt font-size-sm text-body">79 connections</span>
+                      </div>
+                    </a>
+                    <div class="ml-auto">
+                      <!-- Checkbox -->
+                      <div class="custom-control custom-checkbox-switch">
+                        <input type="checkbox" id="connectionsCheckbox2" class="custom-control-input custom-checkbox-switch-input">
+                        <label class="custom-checkbox-switch-label btn-icon btn-xs rounded-circle" for="connectionsCheckbox2">
+                          <span class="custom-checkbox-switch-default">
+                            <i class="tio-user-add"></i>
+                          </span>
+                          <span class="custom-checkbox-switch-active">
+                            <i class="tio-done"></i>
+                          </span>
+                        </label>
+                      </div>
+                      <!-- End Checkbox -->
+                    </div>
+                  </div>
+                </li>
+                <!-- End List Item -->
+
+                <!-- List Item -->
+                <li>
+                  <div class="d-flex align-items-center">
+                    <a class="d-flex align-items-center mr-2" href="#">
+                      <div class="avatar avatar-sm avatar-circle">
+                        <img class="avatar-img" src="@@autopath/assets/img/160x160/img3.jpg" alt="Image Description">
+                        <span class="avatar-status avatar-sm-status avatar-status-warning"></span>
+                      </div>
+                      <div class="ml-3">
+                        <h5 class="filterTxt text-hover-primary mb-0">David Harrison</h5>
+                        <span class="filterTxt font-size-sm text-body">0 connections</span>
+                      </div>
+                    </a>
+                    <div class="ml-auto">
+                      <!-- Checkbox -->
+                      <div class="custom-control custom-checkbox-switch">
+                        <input type="checkbox" id="connectionsCheckbox3" class="custom-control-input custom-checkbox-switch-input" checked>
+                        <label class="custom-checkbox-switch-label btn-icon btn-xs rounded-circle" for="connectionsCheckbox3">
+                          <span class="custom-checkbox-switch-default">
+                            <i class="tio-user-add"></i>
+                          </span>
+                          <span class="custom-checkbox-switch-active">
+                            <i class="tio-done"></i>
+                          </span>
+                        </label>
+                      </div>
+                      <!-- End Checkbox -->
+                    </div>
+                  </div>
+                </li>
+                <!-- End List Item -->
+
+                <!-- List Item -->
+                <li>
+                  <div class="d-flex align-items-center">
+                    <a class="d-flex align-items-center mr-2" href="#">
+                      <div class="avatar avatar-sm avatar-circle">
+                        <img class="avatar-img" src="@@autopath/assets/img/160x160/img6.jpg" alt="Image Description">
+                        <span class="avatar-status avatar-sm-status avatar-status-danger"></span>
+                      </div>
+                      <div class="ml-3">
+                        <h5 class="filterTxt text-hover-primary mb-0">Costa Quinn</h5>
+                        <span class="filterTxt font-size-sm text-body">9 connections</span>
+                      </div>
+                    </a>
+                    <div class="ml-auto">
+                      <!-- Checkbox -->
+                      <div class="custom-control custom-checkbox-switch">
+                        <input type="checkbox" id="connectionsCheckbox4" class="custom-control-input custom-checkbox-switch-input">
+                        <label class="custom-checkbox-switch-label btn-icon btn-xs rounded-circle" for="connectionsCheckbox4">
+                          <span class="custom-checkbox-switch-default">
+                            <i class="tio-user-add"></i>
+                          </span>
+                          <span class="custom-checkbox-switch-active">
+                            <i class="tio-done"></i>
+                          </span>
+                        </label>
+                      </div>
+                      <!-- End Checkbox -->
+                    </div>
+                  </div>
+                </li>
+                <!-- End List Item -->
+
+                <!-- List Item -->
+                <li>
+                  <div class="d-flex align-items-center">
+                    <a class="d-flex align-items-center mr-2" href="#">
+                      <div class="avatar avatar-sm avatar-soft-primary avatar-circle">
+                        <span class="avatar-initials">R</span>
+                        <span class="avatar-status avatar-sm-status avatar-status-warning"></span>
+                      </div>
+                      <div class="ml-3">
+                        <h5 class="filterTxt text-hover-primary mb-0">Rachel Doe</h5>
+                        <span class="filterTxt font-size-sm text-body">25 connections</span>
+                      </div>
+                    </a>
+                    <div class="ml-auto">
+                      <!-- Checkbox -->
+                      <div class="custom-control custom-checkbox-switch">
+                        <input type="checkbox" id="connectionsCheckbox1" class="custom-control-input custom-checkbox-switch-input" checked>
+                        <label class="custom-checkbox-switch-label btn-icon btn-xs rounded-circle" for="connectionsCheckbox1">
+                          <span class="custom-checkbox-switch-default">
+                            <i class="tio-user-add"></i>
+                          </span>
+                          <span class="custom-checkbox-switch-active">
+                            <i class="tio-done"></i>
+                          </span>
+                        </label>
+                      </div>
+                      <!-- End Checkbox -->
+                    </div>
+                  </div>
+                </li>
+                <!-- End List Item -->
+
+                <!-- List Item -->
+                <li>
+                  <div class="d-flex align-items-center">
+                    <a class="d-flex align-items-center mr-2" href="#">
+                      <div class="avatar avatar-sm avatar-circle">
+                        <img class="avatar-img" src="@@autopath/assets/img/160x160/img8.jpg" alt="Image Description">
+                        <span class="avatar-status avatar-sm-status avatar-status-success"></span>
+                      </div>
+                      <div class="ml-3">
+                        <h5 class="filterTxt text-hover-primary mb-0">Isabella Finley</h5>
+                        <span class="filterTxt font-size-sm text-body">79 connections</span>
+                      </div>
+                    </a>
+                    <div class="ml-auto">
+                      <!-- Checkbox -->
+                      <div class="custom-control custom-checkbox-switch">
+                        <input type="checkbox" id="connectionsCheckbox2" class="custom-control-input custom-checkbox-switch-input">
+                        <label class="custom-checkbox-switch-label btn-icon btn-xs rounded-circle" for="connectionsCheckbox2">
+                          <span class="custom-checkbox-switch-default">
+                            <i class="tio-user-add"></i>
+                          </span>
+                          <span class="custom-checkbox-switch-active">
+                            <i class="tio-done"></i>
+                          </span>
+                        </label>
+                      </div>
+                      <!-- End Checkbox -->
+                    </div>
+                  </div>
+                </li>
+                <!-- End List Item -->
+
+                <!-- List Item -->
+                <li>
+                  <div class="d-flex align-items-center">
+                    <a class="d-flex align-items-center mr-2" href="#">
+                      <div class="avatar avatar-sm avatar-circle">
+                        <img class="avatar-img" src="@@autopath/assets/img/160x160/img3.jpg" alt="Image Description">
+                        <span class="avatar-status avatar-sm-status avatar-status-warning"></span>
+                      </div>
+                      <div class="ml-3">
+                        <h5 class="filterTxt text-hover-primary mb-0">David Harrison</h5>
+                        <span class="filterTxt font-size-sm text-body">0 connections</span>
+                      </div>
+                    </a>
+                    <div class="ml-auto">
+                      <!-- Checkbox -->
+                      <div class="custom-control custom-checkbox-switch">
+                        <input type="checkbox" id="connectionsCheckbox3" class="custom-control-input custom-checkbox-switch-input" checked>
+                        <label class="custom-checkbox-switch-label btn-icon btn-xs rounded-circle" for="connectionsCheckbox3">
+                          <span class="custom-checkbox-switch-default">
+                            <i class="tio-user-add"></i>
+                          </span>
+                          <span class="custom-checkbox-switch-active">
+                            <i class="tio-done"></i>
+                          </span>
+                        </label>
+                      </div>
+                      <!-- End Checkbox -->
+                    </div>
+                  </div>
+                </li>
+                <!-- End List Item -->
+
+                <!-- List Item -->
+                <li>
+                  <div class="d-flex align-items-center">
+                    <a class="d-flex align-items-center mr-2" href="#">
+                      <div class="avatar avatar-sm avatar-circle">
+                        <img class="avatar-img" src="@@autopath/assets/img/160x160/img6.jpg" alt="Image Description">
+                        <span class="avatar-status avatar-sm-status avatar-status-danger"></span>
+                      </div>
+                      <div class="ml-3">
+                        <h5 class="filterTxt text-hover-primary mb-0">Costa Quinn</h5>
+                        <span class="filterTxt font-size-sm text-body">9 connections</span>
+                      </div>
+                    </a>
+                    <div class="ml-auto">
+                      <!-- Checkbox -->
+                      <div class="custom-control custom-checkbox-switch">
+                        <input type="checkbox" id="connectionsCheckbox4" class="custom-control-input custom-checkbox-switch-input">
+                        <label class="custom-checkbox-switch-label btn-icon btn-xs rounded-circle" for="connectionsCheckbox4">
+                          <span class="custom-checkbox-switch-default">
+                            <i class="tio-user-add"></i>
+                          </span>
+                          <span class="custom-checkbox-switch-active">
+                            <i class="tio-done"></i>
+                          </span>
+                        </label>
+                      </div>
+                      <!-- End Checkbox -->
+                    </div>
+                  </div>
+                </li>
+                <!-- End List Item -->
+
+                <!-- List Item -->
+                <li>
+                  <div class="d-flex align-items-center">
+                    <a class="d-flex align-items-center mr-2" href="#">
+                      <div class="avatar avatar-sm avatar-soft-primary avatar-circle">
+                        <span class="avatar-initials">R</span>
+                        <span class="avatar-status avatar-sm-status avatar-status-warning"></span>
+                      </div>
+                      <div class="ml-3">
+                        <h5 class="filterTxt text-hover-primary mb-0">Rachel Doe</h5>
+                        <span class="filterTxt font-size-sm text-body">25 connections</span>
+                      </div>
+                    </a>
+                    <div class="ml-auto">
+                      <!-- Checkbox -->
+                      <div class="custom-control custom-checkbox-switch">
+                        <input type="checkbox" id="connectionsCheckbox1" class="custom-control-input custom-checkbox-switch-input" checked>
+                        <label class="custom-checkbox-switch-label btn-icon btn-xs rounded-circle" for="connectionsCheckbox1">
+                          <span class="custom-checkbox-switch-default">
+                            <i class="tio-user-add"></i>
+                          </span>
+                          <span class="custom-checkbox-switch-active">
+                            <i class="tio-done"></i>
+                          </span>
+                        </label>
+                      </div>
+                      <!-- End Checkbox -->
+                    </div>
+                  </div>
+                </li>
+                <!-- End List Item -->
+
+                <!-- List Item -->
+                <li>
+                  <div class="d-flex align-items-center">
+                    <a class="d-flex align-items-center mr-2" href="#">
+                      <div class="avatar avatar-sm avatar-circle">
+                        <img class="avatar-img" src="@@autopath/assets/img/160x160/img8.jpg" alt="Image Description">
+                        <span class="avatar-status avatar-sm-status avatar-status-success"></span>
+                      </div>
+                      <div class="ml-3">
+                        <h5 class="filterTxt text-hover-primary mb-0">Isabella Finley</h5>
+                        <span class="filterTxt font-size-sm text-body">79 connections</span>
+                      </div>
+                    </a>
+                    <div class="ml-auto">
+                      <!-- Checkbox -->
+                      <div class="custom-control custom-checkbox-switch">
+                        <input type="checkbox" id="connectionsCheckbox2" class="custom-control-input custom-checkbox-switch-input">
+                        <label class="custom-checkbox-switch-label btn-icon btn-xs rounded-circle" for="connectionsCheckbox2">
+                          <span class="custom-checkbox-switch-default">
+                            <i class="tio-user-add"></i>
+                          </span>
+                          <span class="custom-checkbox-switch-active">
+                            <i class="tio-done"></i>
+                          </span>
+                        </label>
+                      </div>
+                      <!-- End Checkbox -->
+                    </div>
+                  </div>
+                </li>
+                <!-- End List Item -->
+
+                <!-- List Item -->
+                <li>
+                  <div class="d-flex align-items-center">
+                    <a class="d-flex align-items-center mr-2" href="#">
+                      <div class="avatar avatar-sm avatar-circle">
+                        <img class="avatar-img" src="@@autopath/assets/img/160x160/img3.jpg" alt="Image Description">
+                        <span class="avatar-status avatar-sm-status avatar-status-warning"></span>
+                      </div>
+                      <div class="ml-3">
+                        <h5 class="filterTxt text-hover-primary mb-0">David Harrison</h5>
+                        <span class="filterTxt font-size-sm text-body">0 connections</span>
+                      </div>
+                    </a>
+                    <div class="ml-auto">
+                      <!-- Checkbox -->
+                      <div class="custom-control custom-checkbox-switch">
+                        <input type="checkbox" id="connectionsCheckbox3" class="custom-control-input custom-checkbox-switch-input" checked>
+                        <label class="custom-checkbox-switch-label btn-icon btn-xs rounded-circle" for="connectionsCheckbox3">
+                          <span class="custom-checkbox-switch-default">
+                            <i class="tio-user-add"></i>
+                          </span>
+                          <span class="custom-checkbox-switch-active">
+                            <i class="tio-done"></i>
+                          </span>
+                        </label>
+                      </div>
+                      <!-- End Checkbox -->
+                    </div>
+                  </div>
+                </li>
+                <!-- End List Item -->
+
+                <!-- List Item -->
+                <li>
+                  <div class="d-flex align-items-center">
+                    <a class="d-flex align-items-center mr-2" href="#">
+                      <div class="avatar avatar-sm avatar-circle">
+                        <img class="avatar-img" src="@@autopath/assets/img/160x160/img6.jpg" alt="Image Description">
+                        <span class="avatar-status avatar-sm-status avatar-status-danger"></span>
+                      </div>
+                      <div class="ml-3">
+                        <h5 class="filterTxt text-hover-primary mb-0">Costa Quinn</h5>
+                        <span class="filterTxt font-size-sm text-body">9 connections</span>
+                      </div>
+                    </a>
+                    <div class="ml-auto">
+                      <!-- Checkbox -->
+                      <div class="custom-control custom-checkbox-switch">
+                        <input type="checkbox" id="connectionsCheckbox4" class="custom-control-input custom-checkbox-switch-input">
+                        <label class="custom-checkbox-switch-label btn-icon btn-xs rounded-circle" for="connectionsCheckbox4">
+                          <span class="custom-checkbox-switch-default">
+                            <i class="tio-user-add"></i>
+                          </span>
+                          <span class="custom-checkbox-switch-active">
+                            <i class="tio-done"></i>
+                          </span>
+                        </label>
+                      </div>
+                      <!-- End Checkbox -->
+                    </div>
+                  </div>
+                </li>
+                <!-- End List Item -->
+              </ul>
             </div>
-            <!-- End Table -->
+            <!-- End Body -->
 
             <!-- Footer -->
-            <div class="card-footer">
-              <!-- Pagination -->
-              <div class="row justify-content-center justify-content-sm-between align-items-sm-center">
-                <div class="col-sm mb-2 mb-sm-0">
-                  <div class="d-flex justify-content-center justify-content-sm-start align-items-center">
-                    <span class="mr-2">Showing:</span>
-
-                    <!-- Select -->
-                    <select id="datatableEntries" class="js-select2-custom"
-                            data-hs-select2-options='{
-                                "minimumResultsForSearch": "Infinity",
-                                "customClass": "custom-select custom-select-sm custom-select-borderless",
-                                "dropdownAutoWidth": true,
-                                "width": true
-                            }'>
-                      <option value="10">10</option>
-                      <option value="15" selected>15</option>
-                      <option value="20">20</option>
-                    </select>
-                    <!-- End Select -->
-
-                    <span class="text-secondary mr-2">of</span>
-
-                    <!-- Pagination Quantity -->
-                    <span id="datatableWithPaginationInfoTotalQty"></span>
-                  </div>
-                </div>
-
-                <div class="col-sm-auto">
-                  <div class="d-flex justify-content-center justify-content-sm-end">
-                    <!-- Pagination -->
-                    <nav id="datatablePagination" aria-label="Activity pagination"></nav>
-                  </div>
-                </div>
-              </div>
-              <!-- End Pagination -->
-            </div>
+            <a class="card-footer text-center" href="#">
+              More Lists <i class="tio-refresh"></i>
+            </a>
             <!-- End Footer -->
           </div>
           <!-- End Card -->
+
+
         </div>
         <div class="col-lg-8 d-none d-lg-block">
           <!-- Card -->
           <div class="card card-auto-height mb-3 mb-lg-5">
             <!-- Header -->
             <div class="card-header">
-              <h5 class="card-header-title">Activity stream</h5>
+              <!-- Writer Info -->
+              <div class="d-flex align-items-center mr-2">
+                <div id="postViewAvatar" class="avatar avatar-sm avatar-soft-primary avatar-circle">
+                  <span class="avatar-initials">R</span>
+                  <span class="avatar-status avatar-sm-status avatar-status-warning"></span>
+                </div>
+                <div class="ml-3">
+                  <h5 class="text-hover-primary mb-0">Rachel Doe</h5>
+                  <span class="font-size-sm text-body"><i class="tio-search"></i>1123</span>
+                  <span class="ml-3 font-size-sm text-body"><i class="tio-heart text-danger"></i>300</span>
+                </div>
+              </div>
+              <!-- End Writer Info -->
 
               <!-- Unfold -->
               <div class="hs-unfold">
+                <span>2020/11/09</span>
                 <a class="js-hs-unfold-invoker btn btn-icon btn-sm btn-ghost-secondary rounded-circle" href="javascript:;"
                    data-hs-unfold-options='{
                      "target": "#contentActivityStreamDropdown",
@@ -517,222 +941,190 @@
             <!-- End Header -->
 
             <!-- Body -->
-            <div class="card-body card-body-height" style="height: 30rem;">
-              <!-- Step -->
-              <ul class="step step-icon-xs">
-                <!-- Step Item -->
-                <li class="step-item">
-                  <div class="step-content-wrapper">
-                    <span class="step-icon step-icon-pseudo step-icon-soft-dark"></span>
+            <div class="card-body card-body-height">
 
-                    <div class="step-content">
-                      <h5 class="mb-1">
-                        <a class="text-dark" href="#">Task report - uploaded weekly reports</a>
-                      </h5>
-
-                      <p class="font-size-sm mb-1">Added 3 files to task <a class="text-uppercase" href="#"><i class="tio-folder-bookmarked"></i> Fd-7</a></p>
-
-                      <ul class="list-group">
-                        <!-- List Item -->
-                        <li class="list-group-item list-group-item-light">
-                          <div class="row gx-1">
-                            <div class="col">
-                              <div class="media">
-                                <span class="mt-1 mr-2">
-                                  <img class="avatar avatar-xs" src="@@autopath/assets/svg/brands/excel.svg" alt="Image Description">
-                                </span>
-                                <div class="media-body text-truncate">
-                                  <span class="d-block font-size-sm text-dark text-truncate" title="weekly-reports.xls">weekly-reports.xls</span>
-                                  <small class="d-block text-muted">12kb</small>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col">
-                              <div class="media">
-                                <span class="mt-1 mr-2">
-                                  <img class="avatar avatar-xs" src="@@autopath/assets/svg/brands/word.svg" alt="Image Description">
-                                </span>
-                                <div class="media-body text-truncate">
-                                  <span class="d-block font-size-sm text-dark text-truncate" title="weekly-reports.xls">weekly-reports.xls</span>
-                                  <small class="d-block text-muted">4kb</small>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col">
-                              <div class="media">
-                                <span class="mt-1 mr-2">
-                                  <img class="avatar avatar-xs" src="@@autopath/assets/svg/brands/word.svg" alt="Image Description">
-                                </span>
-                                <div class="media-body text-truncate">
-                                  <span class="d-block font-size-sm text-dark text-truncate" title="monthly-reports.xls">monthly-reports.xls</span>
-                                  <small class="d-block text-muted">8kb</small>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </li>
-                        <!-- End List Item -->
-                      </ul>
-
-                      <small class="text-muted text-uppercase">Now</small>
+              <!-- Post View -->
+              <div class="post-view">
+                <!-- Quill -->
+                <div class="quill-custom">
+                  <!-- Edit Toolbar -->
+                  <div id="qlToolbarContainer" class="border-0">
+                    <div class="row align-items-center">
+                      <div class="col-sm">
+                        <!-- Toolbar List -->
+                        <ul class="list-inline ql-toolbar-list">
+                          <li class="list-inline-item">
+                            <button class="ql-bold"></button>
+                          </li>
+                          <li class="list-inline-item">
+                            <button class="ql-italic"></button>
+                          </li>
+                          <li class="list-inline-item">
+                            <button class="ql-underline"></button>
+                          </li>
+                          <li class="list-inline-item">
+                            <button class="ql-strike"></button>
+                          </li>
+                          <li class="list-inline-item">
+                            <button class="ql-link"></button>
+                          </li>
+                          <li class="list-inline-item">
+                            <button class="ql-image"></button>
+                          </li>
+                          <li class="list-inline-item">
+                            <button class="ql-blockquote"></button>
+                          </li>
+                          <li class="list-inline-item">
+                            <button class="ql-code"></button>
+                          </li>
+                          <li class="list-inline-item">
+                            <button class="ql-list" value="bullet"></button>
+                          </li>
+                        </ul>
+                        <!-- End Toolbar List -->
+                      </div>
                     </div>
+                    <!-- End Row -->
                   </div>
-                </li>
-                <!-- End Step Item -->
+                  <!-- End Edit Toolbar -->
 
-                <!-- Step Item -->
-                <li class="step-item">
-                  <div class="step-content-wrapper">
-                    <span class="step-icon step-icon-pseudo step-icon-soft-dark"></span>
+                  <span class="divider my-2 text-info">Post Start</span>
 
-                    <div class="step-content">
-                      <h5 class="mb-1">
-                        <a class="text-dark" href="#">Project status updated</a>
-                      </h5>
+                  <!-- Edit -->
+                  <div class="js-quill ql-editor-content border-0"
+                       data-hs-quill-options='{
+                          "placeholder": "Type your message...",
+                          "toolbarBottom": false,
+                          "modules": {
+                            "toolbar": "#qlToolbarContainer"
+                          }
+                         }'>
+                  </div>
+                  <!-- End Edit -->
+                </div>
+                <!-- End Quill -->
+              </div>
+              <!-- End Post View -->
 
-                      <p class="font-size-sm mb-1">Marked <a class="text-uppercase" href="#"><i class="tio-folder-bookmarked"></i> Fr-6</a> as <span class="badge badge-soft-success badge-pill"><span class="legend-indicator bg-success"></span>"Completed"</span></p>
+              <span class="divider my-4 text-info">Comment Start</span>
 
-                      <small class="text-muted text-uppercase">Today</small>
+              <!-- comment view -->
+              <div class="comment-view">
+                <!-- List Comment -->
+                <ul class="list-comment">
+                  <!-- Review -->
+                  <li class="list-comment-item">
+                    <!-- Media -->
+                    <div class="media align-items-center mb-3">
+                      <!-- Avatar -->
+                      <div class="avatar avatar-sm avatar-circle mr-2">
+                        <img class="avatar-img" src="../assets/img/160x160/img10.jpg" alt="Image Description">
+                      </div>
+                      <!-- End Avatar -->
+
+                      <div class="media-body">
+                        <h5 class="mb-0">Amanda Harvey</h5>
+                      </div>
                     </div>
-                  </div>
-                </li>
-                <!-- End Step Item -->
+                    <!-- End Media -->
 
-                <!-- Step Item -->
-                <li class="step-item">
-                  <div class="step-content-wrapper">
-                    <span class="step-icon step-icon-pseudo step-icon-soft-dark"></span>
+                    <h5 class="mb-1">Great template</h5>
+                    <p>Another great template from Htmlstream! Refreshing and Thought provoking design and it changes my view about how I design the websites. Great typography, modern clean white design, nice tones of the color. SVG artifacts are a plus.</p>
 
-                    <div class="step-content">
-                      <h5 class="mb-1">
-                        <a class="text-dark" href="#">New card styles added</a>
-                      </h5>
+                    <a href="#">
+                      <i class="tio-reply"></i> Reply
+                    </a>
+                  </li>
+                  <!-- End Review -->
 
-                      <p class="font-size-sm mb-1">Added 5 card to <a href="#">Payments</a></p>
+                  <!-- Review -->
+                  <li class="list-comment-item">
+                    <!-- Media -->
+                    <div class="media align-items-center mb-3">
+                      <!-- Avatar -->
+                      <div class="avatar avatar-sm avatar-circle mr-2">
+                        <img class="avatar-img" src="../assets/img/160x160/img3.jpg" alt="Image Description">
+                      </div>
+                      <!-- End Avatar -->
 
-                      <ul class="list-group">
-                        <!-- List Item -->
-                        <li class="list-group-item list-group-item-light">
-                          <div class="row gx-1">
-                            <div class="col">
-                              <img class="img-fluid rounded ie-card-img" src="@@autopath/assets/svg/illustrations/card-1.svg" alt="Image Description">
-                            </div>
-                            <div class="col">
-                              <img class="img-fluid rounded ie-card-img" src="@@autopath/assets/svg/illustrations/card-2.svg" alt="Image Description">
-                            </div>
-                            <div class="col">
-                              <img class="img-fluid rounded ie-card-img" src="@@autopath/assets/svg/illustrations/card-3.svg" alt="Image Description">
-                            </div>
-                            <div class="col">
-                              <img class="img-fluid rounded ie-card-img" src="@@autopath/assets/svg/illustrations/card-4.svg" alt="Image Description">
-                            </div>
-                            <div class="col">
-                              <img class="img-fluid rounded ie-card-img" src="@@autopath/assets/svg/illustrations/card-5.svg" alt="Image Description">
-                            </div>
-                            <div class="col-auto align-self-center">
-                              <div class="text-center">
-                                <a href="#">+2</a>
-                              </div>
-                            </div>
-                          </div>
-                        </li>
-                        <!-- List Item -->
-                      </ul>
-
-                      <small class="text-muted text-uppercase">May 12</small>
+                      <div class="media-body">
+                        <h5 class="mb-0">David Harrison</h5>
+                      </div>
                     </div>
-                  </div>
-                </li>
-                <!-- End Step Item -->
+                    <!-- End Media -->
 
-                <!-- Step Item -->
-                <li class="step-item">
-                  <div class="step-content-wrapper">
-                    <span class="step-icon step-icon-pseudo step-icon-soft-dark"></span>
+                    <h5 class="mb-1">Well documented! Lots of possibilities!</h5>
+                    <p>Truly great. Well done. Carefully structured. Happy with the template.</p>
 
-                    <div class="step-content">
-                      <h5 class="mb-1">
-                        <a class="text-dark" href="#">Dean added a new team member</a>
-                      </h5>
+                    <blockquote class="blockquote mt-4">
+                      <!-- Media -->
+                      <div class="media">
+                        <div class="avatar avatar-sm avatar-circle mb-2 mr-2">
+                          <img class="avatar-img" src="../assets/svg/brands/htmlstream.svg" alt="Image Description">
+                        </div>
 
-                      <p class="font-size-sm mb-1">Added a new member to Front Dashboard</p>
+                        <div class="media-body">
+                          <h5 class="mb-0">Htmlstream</h5>
 
-                      <small class="text-muted text-uppercase">May 15</small>
+                          <ul class="list-inline font-size-sm">
+                            <li class="list-inline-item">Author</li>
+                            <li class="list-inline-item">3 weeks ago</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <!-- End Media -->
+
+                      Awesome! We are super glad to hear that everything is working great for you!
+                    </blockquote>
+                  </li>
+                  <!-- End Review -->
+
+                  <!-- Review -->
+                  <li class="list-comment-item">
+                    <!-- Media -->
+                    <div class="media align-items-center mb-3">
+                      <!-- Avatar -->
+                      <div class="avatar avatar-sm avatar-soft-dark avatar-circle mr-2">
+                        <span class="avatar-initials">B</span>
+                      </div>
+                      <!-- End Avatar -->
+
+                      <div class="media-body">
+                        <h5 class="mb-0">Bob Dean</h5>
+                      </div>
                     </div>
-                  </div>
-                </li>
-                <!-- End Step Item -->
+                    <!-- End Media -->
 
-                <!-- Step Item -->
-                <li class="step-item">
-                  <div class="step-content-wrapper">
-                    <span class="step-icon step-icon-pseudo step-icon-soft-dark"></span>
+                    <h5 class="mb-1">Beautifull template great support</h5>
+                    <p>Got a very quick response on my inquiry, very nice! Love the template, beautifull components!</p>
 
-                    <div class="step-content">
-                      <h5 class="mb-1">
-                        <a class="text-dark" href="#">Project status updated</a>
-                      </h5>
+                    <blockquote class="blockquote mt-4">
+                      <!-- Media -->
+                      <div class="media">
+                        <div class="avatar avatar-sm avatar-circle mb-2 mr-2">
+                          <img class="avatar-img" src="../assets/svg/brands/htmlstream.svg" alt="Image Description">
+                        </div>
 
-                      <p class="font-size-sm mb-1">Marked <a class="text-uppercase" href="#"><i class="tio-folder-bookmarked"></i> Fr-3</a> as <span class="badge badge-soft-primary badge-pill"><span class="legend-indicator bg-primary"></span>"In progress"</span></p>
+                        <div class="media-body">
+                          <h5 class="mb-0">Htmlstream</h5>
 
-                      <small class="text-muted text-uppercase">Apr 29</small>
-                    </div>
-                  </div>
-                </li>
-                <!-- End Step Item -->
+                          <ul class="list-inline font-size-sm">
+                            <li class="list-inline-item">Author</li>
+                            <li class="list-inline-item">2 months ago</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <!-- End Media -->
 
-                <!-- Step Item -->
-                <li class="step-item">
-                  <div class="step-content-wrapper">
-                    <span class="step-icon step-icon-pseudo step-icon-soft-dark"></span>
-
-                    <div class="step-content">
-                      <h5 class="mb-1">
-                        <a class="text-dark" href="#">Achievements</a>
-                      </h5>
-
-                      <p class="font-size-sm mb-1">Earned a "Top endorsed" <i class="tio-verified text-primary"></i> badge</p>
-
-                      <small class="text-muted text-uppercase">Apr 06</small>
-                    </div>
-                  </div>
-                </li>
-                <!-- End Step Item -->
-
-                <!-- Step Item -->
-                <li id="collapseActivitySection" class="step-item collapse">
-                  <div class="step-content-wrapper">
-                    <span class="step-icon step-icon-pseudo step-icon-soft-dark"></span>
-
-                    <div class="step-content">
-                      <h5 class="mb-1">
-                        <a class="text-dark" href="#">Project status updated</a>
-                      </h5>
-
-                      <p class="font-size-sm mb-1">Updated <a class="text-uppercase" href="#"><i class="tio-folder-bookmarked"></i> Fr-3</a> as <span class="badge badge-soft-secondary badge-pill"><span class="legend-indicator bg-secondary"></span>"To do"</span></p>
-
-                      <small class="text-muted text-uppercase">Feb 10</small>
-                    </div>
-                  </div>
-                </li>
-                <!-- End Step Item -->
-              </ul>
-              <!-- End Step -->
+                      Hey Bob, thanks a lot for sharing your experience - we do much appreciate it! Cheers!
+                    </blockquote>
+                  </li>
+                  <!-- End Review -->
+                </ul>
+                <!-- End List Comment -->
+              </div>
             </div>
             <!-- End Body -->
-
-            <!-- Footer -->
-            <div class="card-footer">
-              <a class="btn btn-sm btn-ghost-secondary" data-toggle="collapse" href="#collapseActivitySection" role="button" aria-expanded="false" aria-controls="collapseActivitySection">
-                <span class="btn-toggle-default">
-                  <i class="tio-chevron-down mr-1"></i> View more
-                </span>
-                <span class="btn-toggle-toggled">
-                  <i class="tio-chevron-up mr-1"></i> View less
-                </span>
-              </a>
-            </div>
-            <!-- End Footer -->
           </div>
           <!-- End Card -->
         </div>
@@ -751,19 +1143,20 @@
   <!-- bundlejs:vendor [@@autopath] -->
   <script src="@@autopath/assets/vendor/hs-navbar-vertical-aside/hs-navbar-vertical-aside.min.js"></script>
   <script src="@@autopath/assets/vendor/hs-unfold/dist/hs-unfold.min.js"></script>
-  <script src="@@autopath/assets/vendor/hs-form-search/dist/hs-form-search.min.js"></script>
   <script src="@@autopath/assets/vendor/hs-nav-scroller/dist/hs-nav-scroller.min.js"></script>
-  <script src="@@autopath/node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
   <script src="@@autopath/node_modules/daterangepicker/moment.min.js"></script>
   <script src="@@autopath/node_modules/daterangepicker/daterangepicker.js"></script>
   <script src="@@autopath/node_modules/select2/dist/js/select2.full.min.js"></script>
+  <script src="@@autopath/assets/vendor/hs-form-search/dist/hs-form-search.min.js"></script>
+  <script src="@@autopath/node_modules/quill/dist/quill.min.js"></script>
 
   <!-- JS Front -->
   <!-- bundlejs:theme [@@autopath] -->
   <script src="@@autopath/assets/js/hs.core.js"></script>
+  <script src="@@autopath/assets/js/theme-custom.js"></script>
   <script src="@@autopath/assets/js/hs.daterangepicker.js"></script>
-  <script src="@@autopath/assets/js/hs.datatables.js"></script>
   <script src="@@autopath/assets/js/hs.select2.js"></script>
+  <script src="@@autopath/assets/js/hs.quill.js"></script>
 
   <script>
     $(document).on('ready', function () {
@@ -793,50 +1186,14 @@
         new HsNavScroller($(this)).init()
       });
 
-      // initialization of form search
-      $('.js-form-search').each(function () {
-        new HSFormSearch($(this)).init()
-      });
-
       // initialization of select2
       $('.js-select2-custom').each(function () {
         var select2 = $.HSCore.components.HSSelect2.init($(this));
       });
 
-      // initialization of datatables
-      var datatable = $.HSCore.components.HSDatatables.init($('#datatable'), {
-        "order": [],
-        "info": {
-          "totalQty": "#datatableEntriesInfoTotalQty"
-        },
-        "entries": "#datatableEntries",
-        "isResponsive": false,
-        "isShowPaging": false,
-        "pagination": "datatableEntriesPagination"
-      });
-
-      $('.js-datatable-filter').on('change', function() {
-        var $this = $(this),
-          elVal = $this.val(),
-          targetColumnIndex = $this.data('target-column-index');
-
-        datatable.column(targetColumnIndex).search(elVal).draw();
-      });
-
-      $('#datatableSearch').on('mouseup', function (e) {
-        var $input = $(this),
-          oldValue = $input.val();
-
-        if (oldValue == "") return;
-
-        setTimeout(function(){
-          var newValue = $input.val();
-
-          if (newValue == ""){
-            // Gotcha
-            datatable.search('').draw();
-          }
-        }, 1);
+      // initialization of form search
+      $('.js-form-search').each(function () {
+        new HSFormSearch($(this)).init()
       });
 
       // initialization of daterangepicker
@@ -865,16 +1222,12 @@
         datatable.draw();
       });
 
-      $.fn.dataTable.ext.search.push(
-        function (settings, data, dataIndex) {
+      // initialization of quilljs editor
+      var quill = $.HSCore.components.HSQuill.init('.js-quill');
 
-          if (!startDate || !endDate) return true;
-
-          let compareDate = moment(moment(data[6]).format('YYYY/MM/DD'));
-
-          return compareDate.isBetween(startDate -1 , endDate + 1 );
-        }
-      );
+      $('#talkListsSearchInput').on('keyup',function() {
+        filterList('talkListsSearchInput', 'talkLists');
+      });
     });
   </script>
 </body>

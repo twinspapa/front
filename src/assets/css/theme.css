@@ -25976,5 +25976,11 @@ a:hover .text-hover-primary {
 }
 
 .card-auto-height {
-  height: calc(100vh - 274px);
+  height: calc(100vh - 306px);
+}
+
+.comment-view {
+  position: relative;
+  min-height: 10rem;
+  padding: 1.3125rem 1.3125rem;
 }
