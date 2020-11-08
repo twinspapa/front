@@ -3,23 +3,26 @@
 // list filter : PGID_C1
 function filterList(inputEl,el) {
   // Declare variables
-  var input = document.getElementById(inputEl),
-      filter = input.value.toUpperCase(),
-      ul = document.getElementById(el),
-      li = ul.getElementsByTagName('li'),
-      i,
-      txtValue;
 
-  // Loop through all list items, and hide those who don't match the search query
-  for (i = 0; i < li.length; i++) {
-    filterTxt = li[i].getElementsByClassName('filterTxt')[0];
-    txtValue = filterTxt.textContent || filterTxt.innerText;
-    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      li[i].style.display = "";
-    } else {
-      li[i].style.display = "none";
+  $('#'+inputEl).on('keyup',function() {
+    var input = document.getElementById(inputEl),
+        filter = input.value.toUpperCase(),
+        ul = document.getElementById(el),
+        li = ul.getElementsByTagName('li'),
+        i,
+        txtValue;
+
+    // Loop through all list items, and hide those who don't match the search query
+    for (i = 0; i < li.length; i++) {
+      filterTxt = li[i].getElementsByClassName('filterTxt')[0];
+      txtValue = filterTxt.textContent || filterTxt.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        li[i].style.display = "";
+      } else {
+        li[i].style.display = "none";
+      }
     }
-  }
+  });
 }
 
 // sidebar nav el addClass active : all pages
@@ -42,12 +45,13 @@ function navActiveClass() {
 }
 
 
-
+//
 // function listClickPostLoad(clickEl, viewEl) {
 //   $el.click(function(){
 //     var postId = $(this).attr('post-id'),
 //       postInfo = {
 //       'avatarImgSrc' : null,
+//       'postStatus' : normal,
 //       'nicName' : 'nick name',
 //       'views' : 3112,
 //       'likes' : 312,
@@ -85,8 +89,7 @@ function navActiveClass() {
 
 // function listClickPostLoad(clickEl, viewEl) {
 //   $el.click(function(){
-//     var postId = $(this).attr('post-id'),
-//         postInfo = {};
+//     var postId = $(this).attr('post-id');
 //
 //     // ajax 추가해야한다....
 //     $.ajax({
@@ -97,21 +100,14 @@ function navActiveClass() {
 //           postId: postId
 //         },
 //         success: function(data){
-//             var getdata = "";
+//           var getdata = data;
 //
-//             $()
-//             $.each(result, function(index, value) {
 //
-//             });
-//
-//             $("#example").append(getdata);
 //         }
 //     });
 //
 //   });
 // }
-
-
 
 
 

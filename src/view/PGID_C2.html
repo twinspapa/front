@@ -602,7 +602,66 @@
             <div class="card-body card-body-height">
 
               <!-- Post View -->
-              <div id="postContents" class="post-view" style="padding: 1.3125rem;"></div>
+              <div class="post-view">
+                <!-- Quill -->
+                <div class="quill-custom">
+                  <!-- Edit Toolbar -->
+                  <div id="qlToolbarContainer" class="border-0">
+                    <div class="row align-items-center">
+                      <div class="col-sm">
+                        <!-- Toolbar List -->
+                        <ul class="list-inline ql-toolbar-list">
+                          <li class="list-inline-item">
+                            <button class="ql-bold"></button>
+                          </li>
+                          <li class="list-inline-item">
+                            <button class="ql-italic"></button>
+                          </li>
+                          <li class="list-inline-item">
+                            <button class="ql-underline"></button>
+                          </li>
+                          <li class="list-inline-item">
+                            <button class="ql-strike"></button>
+                          </li>
+                          <li class="list-inline-item">
+                            <button class="ql-link"></button>
+                          </li>
+                          <li class="list-inline-item">
+                            <button class="ql-image"></button>
+                          </li>
+                          <li class="list-inline-item">
+                            <button class="ql-blockquote"></button>
+                          </li>
+                          <li class="list-inline-item">
+                            <button class="ql-code"></button>
+                          </li>
+                          <li class="list-inline-item">
+                            <button class="ql-list" value="bullet"></button>
+                          </li>
+                        </ul>
+                        <!-- End Toolbar List -->
+                      </div>
+                    </div>
+                    <!-- End Row -->
+                  </div>
+                  <!-- End Edit Toolbar -->
+
+                  <span class="divider my-2 text-info">Post Start</span>
+
+                  <!-- Edit -->
+                  <div id="postContents" class="js-quill ql-editor-content border-0"
+                       data-hs-quill-options='{
+                          "placeholder": "게시글을 선택하세요",
+                          "toolbarBottom": false,
+                          "modules": {
+                            "toolbar": "#qlToolbarContainer"
+                          }
+                         }'>
+                  </div>
+                  <!-- End Edit -->
+                </div>
+                <!-- End Quill -->
+              </div>
               <!-- End Post View -->
 
               <span class="divider my-4 text-info">Comment Start</span>
@@ -834,7 +893,7 @@
         }
 
         $('#postDate').html(postData.date);
-        $('#postContents').html(postData.contents);
+        $('#postContents .ql-editor').html(postData.contents);
 
         for (var i = 0; i < postData.comment.length; i++) {
           var el = postData.comment[i],
