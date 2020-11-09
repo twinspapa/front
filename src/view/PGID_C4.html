@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Title -->
-  <title>Scrich admin 2.0 | Talk List</title>
+  <title>Scrich admin 2.0 | Campaign</title>
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="@@autopath/favicon.ico">
@@ -48,10 +48,10 @@
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb breadcrumb-no-gutter">
                 <li class="breadcrumb-item">Posts</li>
-                <li class="breadcrumb-item active" aria-current="page">Talk</li>
+                <li class="breadcrumb-item active" aria-current="page">Campaign</li>
               </ol>
             </nav>
-            <h1 class="page-title">Talk</h1>
+            <h1 class="page-title">Campaign</h1>
           </div>
 
           <div class="col-sm-auto">
@@ -102,14 +102,14 @@
                            "type": "css-animation",
                            "smartPositionOff": true
                          }'>
-                        <i class="tio-filter-list mr-1"></i> Filter <span class="badge badge-soft-dark rounded-circle ml-1">1</span>
+                        <i class="tio-filter-list mr-1"></i> Filter <span class="badge badge-soft-dark rounded-circle ml-1">4</span>
                       </a>
 
                       <div id="talkListFilterDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-sm-right dropdown-card card-dropdown-filter-centered" style="min-width: 22rem;">
                         <!-- Card -->
                         <div class="card">
                           <div class="card-header">
-                            <h5 class="card-header-title">Filter Talk Lists</h5>
+                            <h5 class="card-header-title">Filter Campaign Lists</h5>
 
                             <!-- Toggle Button -->
                             <a class="js-hs-unfold-invoker btn btn-icon btn-xs btn-ghost-secondary ml-2" href="javascript:;"
@@ -125,6 +125,46 @@
 
                           <div class="card-body">
                             <form>
+                              <!-- Row -->
+                              <div class="form-row">
+                                <div class="col-sm form-group">
+                                  <small class="text-cap mb-2">광고주</small>
+
+                                  <!-- Select -->
+                                  <select class="js-select2-custom js-datatable-filter"
+                                          data-target-column-index="2"
+                                          data-hs-select2-options='{
+                                            "minimumResultsForSearch": "Infinity"
+                                          }'>
+                                    <option value="">광고주를 선택하세요</option>
+                                    <option value="001">광고주A</option>
+                                    <option value="002">광고주B</option>
+                                  </select>
+                                  <!-- End Select -->
+                                </div>
+                              </div>
+                              <!-- End Row -->
+
+                              <!-- Row -->
+                              <div class="form-row">
+                                <div class="col-sm form-group">
+                                  <small class="text-cap mb-2">캠페인</small>
+
+                                  <!-- Select -->
+                                  <select class="js-select2-custom js-datatable-filter"
+                                          data-target-column-index="2"
+                                          data-hs-select2-options='{
+                                            "minimumResultsForSearch": "Infinity"
+                                          }'>
+                                    <option value="">캠페인을 선택하세요</option>
+                                    <option value="001">캠페인A</option>
+                                    <option value="002">캠페인B</option>
+                                  </select>
+                                  <!-- End Select -->
+                                </div>
+                              </div>
+                              <!-- End Row -->
+
                               <!-- Row -->
                               <div class="form-row">
                                   <div class="col-sm form-group">
