@@ -46,6 +46,10 @@
     padding: 1.3125rem 1.3125rem;
 }
 
+.custom-select[aria-disabled="true"] {
+    background-color: #f8fafd;
+    opacity: 1;
+}
 
 
 /*------------------------------------
@@ -65,3 +69,26 @@
     background-color: #00c9a7;
   }
 }
+
+.hide {
+    opacity: 0;
+}
+
+label[for="avatarUploader"] {
+    position: absolute;
+    top: 0;
+    right: 16px;
+}
+
+
+@media (min-width: 576px) {}
+@media (min-width: 768px) {}
+@media (min-width: 992px) {}
+@media (min-width: 1200px) {
+  .col-xl-20 {
+    -ms-flex: 0 0 20%;
+        flex: 0 0 20%;
+    max-width: 20%;
+  }
+}
+@media (min-width: 1400px) {}
