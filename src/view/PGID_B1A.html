@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Title -->
-  <title>Scrich 2.0 | User List</title>
+  <title>Scrich 2.0 | Point log</title>
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="@@autopath/favicon.ico">
@@ -46,10 +46,12 @@
           <div class="col-sm mb-2 mb-sm-0">
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb breadcrumb-no-gutter">
-                <li class="breadcrumb-item active" aria-current="page">Users</li>
+                <li class="breadcrumb-item">Users</li>
+                <li class="breadcrumb-item">Profile</li>
+                <li class="breadcrumb-item active" aria-current="page">Point</li>
               </ol>
             </nav>
-            <h1 class="page-title">Users</h1>
+            <h1 class="page-title">Point</h1>
           </div>
         </div>
         <!-- End Row -->
@@ -157,11 +159,32 @@
                                       data-hs-select2-options='{
                                         "minimumResultsForSearch": "Infinity"
                                       }'>
-                                <option value="">Any status</option>
-                                <option value="Active" data-option-template='<span class="legend-indicator bg-success"></span>정상'>정상</option>
-                                <option value="Stop" data-option-template='<span class="legend-indicator bg-warning"></span>정지'>정지</option>
-                                <option value="Secession" data-option-template='<span class="legend-indicator bg-danger"></span>탈퇴'>탈퇴</option>
-                                <option value="Dormancy" data-option-template='<span class="legend-indicator bg-danger"></span>휴면'>휴면</option>
+                                <option value="">전체</option>
+                                <option value="Save">적립</option>
+                                <option value="Use">소진</option>
+                              </select>
+                              <!-- End Select -->
+                            </div>
+                          </div>
+                          <!-- End Row -->
+
+                          <div class="form-row">
+                            <div class="col-sm form-group">
+                              <small class="text-cap mb-2">Division</small>
+
+                              <!-- Select -->
+                              <select class="js-select2-custom js-datatable-filter"
+                                      data-target-column-index="1"
+                                      data-hs-select2-options='{
+                                        "minimumResultsForSearch": "Infinity"
+                                      }'>
+                                <option value="">전체</option>
+                                <option value="Campaign">캠페인</option>
+                                <option value="Richshopping">리치쇼핑</option>
+                                <option value="Richbox">리치박스</option>
+                                <option value="Save">충전소</option>
+                                <option value="Save">관리자</option>
+                                <option value="Save">리뷰</option>
                               </select>
                               <!-- End Select -->
                             </div>
@@ -218,7 +241,7 @@
           <table id="datatable" class="table table-lg table-borderless table-thead-bordered table-nowrap table-align-middle card-table table-hover"
                  data-hs-datatables-options='{
                    "columnDefs": [{
-                      "targets": [0, 6],
+                      "targets": [0, 3],
                       "orderable": false
                     }],
                    "order": [],
@@ -235,246 +258,209 @@
             <thead class="thead-light">
               <tr>
                 <th>Status</th>
-                <th>User ID</th>
-                <th>Nick Name</th>
-                <th>Gender</th>
-                <th>Location</th>
-                <th>Phone</th>
-                <th>Join Date</th>
+                <th>Division</th>
+                <th>Contents</th>
+                <th>Point</th>
+                <th>Date</th>
               </tr>
             </thead>
 
             <tbody>
               <tr>
-                <td>
-                  <span class="legend-indicator bg-success"></span>Active
-                </td>
-                <td class="user_id"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
-                <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
-                <td>010-3762-6202</td>
-                <td>2020/11/02</td>
+                <td>적립</td>
+                <td>캠페인</td>
+                <td>캠페인 타이틀</td>
+                <td>100</td>
+                <td>2020.12.02 23:59:59</td>
               </tr>
               <tr>
-                <td>
-                  <span class="legend-indicator bg-success"></span>Active
-                </td>
-                <td class="user_id"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
-                <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
-                <td>010-3762-6202</td>
-                <td>2020/11/02</td>
+                <td>적립</td>
+                <td>리치쇼핑</td>
+                <td>리치쇼 타이틀</td>
+                <td>-100</td>
+                <td>2020.12.02 23:59:59</td>
               </tr>
               <tr>
-                <td>
-                  <span class="legend-indicator bg-success"></span>Active
-                </td>
-                <td class="user_id"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
-                <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
-                <td>010-3762-6202</td>
-                <td>2020/11/02</td>
+                <td>적립</td>
+                <td>캠페인</td>
+                <td>캠페인 타이틀</td>
+                <td>100</td>
+                <td>2020.12.02 23:59:59</td>
               </tr>
               <tr>
-                <td>
-                  <span class="legend-indicator bg-success"></span>Active
-                </td>
-                <td class="user_id"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
-                <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
-                <td>010-3762-6202</td>
-                <td>2020/11/02</td>
+                <td>적립</td>
+                <td>리치쇼핑</td>
+                <td>리치쇼 타이틀</td>
+                <td>-100</td>
+                <td>2020.12.02 23:59:59</td>
               </tr>
               <tr>
-                <td>
-                  <span class="legend-indicator bg-success"></span>Active
-                </td>
-                <td class="user_id"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
-                <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
-                <td>010-3762-6202</td>
-                <td>2020/11/02</td>
+                <td>적립</td>
+                <td>캠페인</td>
+                <td>캠페인 타이틀</td>
+                <td>100</td>
+                <td>2020.12.02 23:59:59</td>
               </tr>
               <tr>
-                <td>
-                  <span class="legend-indicator bg-success"></span>Active
-                </td>
-                <td class="user_id"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
-                <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
-                <td>010-3762-6202</td>
-                <td>2020/11/02</td>
+                <td>적립</td>
+                <td>리치쇼핑</td>
+                <td>리치쇼 타이틀</td>
+                <td>-100</td>
+                <td>2020.12.02 23:59:59</td>
               </tr>
               <tr>
-                <td>
-                  <span class="legend-indicator bg-success"></span>Active
-                </td>
-                <td class="user_id"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
-                <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
-                <td>010-3762-6202</td>
-                <td>2020/11/02</td>
+                <td>적립</td>
+                <td>캠페인</td>
+                <td>캠페인 타이틀</td>
+                <td>100</td>
+                <td>2020.12.02 23:59:59</td>
               </tr>
               <tr>
-                <td>
-                  <span class="legend-indicator bg-success"></span>Active
-                </td>
-                <td class="user_id"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
-                <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
-                <td>010-3762-6202</td>
-                <td>2020/11/02</td>
+                <td>적립</td>
+                <td>리치쇼핑</td>
+                <td>리치쇼 타이틀</td>
+                <td>-100</td>
+                <td>2020.12.02 23:59:59</td>
               </tr>
               <tr>
-                <td>
-                  <span class="legend-indicator bg-success"></span>Active
-                </td>
-                <td class="user_id"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
-                <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
-                <td>010-3762-6202</td>
-                <td>2020/11/02</td>
+                <td>적립</td>
+                <td>캠페인</td>
+                <td>캠페인 타이틀</td>
+                <td>100</td>
+                <td>2020.12.02 23:59:59</td>
               </tr>
               <tr>
-                <td>
-                  <span class="legend-indicator bg-success"></span>Active
-                </td>
-                <td class="user_id"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
-                <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
-                <td>010-3762-6202</td>
-                <td>2020/11/02</td>
+                <td>적립</td>
+                <td>리치쇼핑</td>
+                <td>리치쇼 타이틀</td>
+                <td>-100</td>
+                <td>2020.12.02 23:59:59</td>
               </tr>
               <tr>
-                <td>
-                  <span class="legend-indicator bg-success"></span>Active
-                </td>
-                <td class="user_id"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
-                <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
-                <td>010-3762-6202</td>
-                <td>2020/11/02</td>
+                <td>적립</td>
+                <td>캠페인</td>
+                <td>캠페인 타이틀</td>
+                <td>100</td>
+                <td>2020.12.02 23:59:59</td>
               </tr>
               <tr>
-                <td>
-                  <span class="legend-indicator bg-success"></span>Active
-                </td>
-                <td class="user_id"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
-                <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
-                <td>010-3762-6202</td>
-                <td>2020/11/02</td>
+                <td>적립</td>
+                <td>리치쇼핑</td>
+                <td>리치쇼 타이틀</td>
+                <td>-100</td>
+                <td>2020.12.02 23:59:59</td>
               </tr>
               <tr>
-                <td>
-                  <span class="legend-indicator bg-success"></span>Active
-                </td>
-                <td class="user_id"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
-                <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
-                <td>010-3762-6202</td>
-                <td>2020/11/02</td>
+                <td>적립</td>
+                <td>캠페인</td>
+                <td>캠페인 타이틀</td>
+                <td>100</td>
+                <td>2020.12.02 23:59:59</td>
               </tr>
               <tr>
-                <td>
-                  <span class="legend-indicator bg-success"></span>Active
-                </td>
-                <td class="user_id"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
-                <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
-                <td>010-3762-6202</td>
-                <td>2020/11/02</td>
+                <td>적립</td>
+                <td>리치쇼핑</td>
+                <td>리치쇼 타이틀</td>
+                <td>-100</td>
+                <td>2020.12.02 23:59:59</td>
               </tr>
               <tr>
-                <td>
-                  <span class="legend-indicator bg-success"></span>Active
-                </td>
-                <td class="user_id"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
-                <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
-                <td>010-3762-6202</td>
-                <td>2020/11/02</td>
+                <td>적립</td>
+                <td>캠페인</td>
+                <td>캠페인 타이틀</td>
+                <td>100</td>
+                <td>2020.12.02 23:59:59</td>
               </tr>
               <tr>
-                <td>
-                  <span class="legend-indicator bg-success"></span>Active
-                </td>
-                <td class="user_id"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
-                <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
-                <td>010-3762-6202</td>
-                <td>2020/11/02</td>
+                <td>적립</td>
+                <td>리치쇼핑</td>
+                <td>리치쇼 타이틀</td>
+                <td>-100</td>
+                <td>2020.12.02 23:59:59</td>
               </tr>
               <tr>
-                <td>
-                  <span class="legend-indicator bg-success"></span>Active
-                </td>
-                <td class="user_id"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
-                <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
-                <td>010-3762-6202</td>
-                <td>2020/11/02</td>
+                <td>적립</td>
+                <td>캠페인</td>
+                <td>캠페인 타이틀</td>
+                <td>100</td>
+                <td>2020.12.02 23:59:59</td>
               </tr>
               <tr>
-                <td>
-                  <span class="legend-indicator bg-success"></span>Active
-                </td>
-                <td class="user_id"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
-                <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
-                <td>010-3762-6202</td>
-                <td>2020/11/02</td>
+                <td>적립</td>
+                <td>리치쇼핑</td>
+                <td>리치쇼 타이틀</td>
+                <td>-100</td>
+                <td>2020.12.02 23:59:59</td>
               </tr>
               <tr>
-                <td>
-                  <span class="legend-indicator bg-success"></span>Active
-                </td>
-                <td class="user_id"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
-                <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
-                <td>010-3762-6202</td>
-                <td>2020/11/02</td>
+                <td>적립</td>
+                <td>캠페인</td>
+                <td>캠페인 타이틀</td>
+                <td>100</td>
+                <td>2020.12.02 23:59:59</td>
               </tr>
               <tr>
-                <td>
-                  <span class="legend-indicator bg-success"></span>Active
-                </td>
-                <td class="user_id"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
-                <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
-                <td>010-3762-6202</td>
-                <td>2020/11/02</td>
+                <td>적립</td>
+                <td>리치쇼핑</td>
+                <td>리치쇼 타이틀</td>
+                <td>-100</td>
+                <td>2020.12.02 23:59:59</td>
               </tr>
               <tr>
-                <td>
-                  <span class="legend-indicator bg-success"></span>Active
-                </td>
-                <td class="user_id"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
-                <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
-                <td>010-3762-6202</td>
-                <td>2020/11/02</td>
+                <td>적립</td>
+                <td>캠페인</td>
+                <td>캠페인 타이틀</td>
+                <td>100</td>
+                <td>2020.12.02 23:59:59</td>
+              </tr>
+              <tr>
+                <td>적립</td>
+                <td>리치쇼핑</td>
+                <td>리치쇼 타이틀</td>
+                <td>-100</td>
+                <td>2020.12.02 23:59:59</td>
+              </tr>
+              <tr>
+                <td>적립</td>
+                <td>캠페인</td>
+                <td>캠페인 타이틀</td>
+                <td>100</td>
+                <td>2020.12.02 23:59:59</td>
+              </tr>
+              <tr>
+                <td>적립</td>
+                <td>리치쇼핑</td>
+                <td>리치쇼 타이틀</td>
+                <td>-100</td>
+                <td>2020.12.02 23:59:59</td>
+              </tr>
+              <tr>
+                <td>적립</td>
+                <td>캠페인</td>
+                <td>캠페인 타이틀</td>
+                <td>100</td>
+                <td>2020.12.02 23:59:59</td>
+              </tr>
+              <tr>
+                <td>적립</td>
+                <td>리치쇼핑</td>
+                <td>리치쇼 타이틀</td>
+                <td>-100</td>
+                <td>2020.12.02 23:59:59</td>
+              </tr>
+              <tr>
+                <td>적립</td>
+                <td>캠페인</td>
+                <td>캠페인 타이틀</td>
+                <td>100</td>
+                <td>2020.12.02 23:59:59</td>
+              </tr>
+              <tr>
+                <td>적립</td>
+                <td>리치쇼핑</td>
+                <td>리치쇼 타이틀</td>
+                <td>-100</td>
+                <td>2020.12.02 23:59:59</td>
               </tr>
             </tbody>
           </table>
