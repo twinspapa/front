@@ -46,12 +46,18 @@
           <div class="col-sm mb-2 mb-sm-0">
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb breadcrumb-no-gutter">
-                <li class="breadcrumb-item">Users</li>
-                <li class="breadcrumb-item">Profile</li>
+                <li class="breadcrumb-item"><a href="breadcrumb-link" href="javascript:;">Users</a></li>
+                <li class="breadcrumb-item"><a href="breadcrumb-link" href="javascript:;">Profile</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Point</li>
               </ol>
             </nav>
             <h1 class="page-title">Point</h1>
+          </div>
+
+          <div class="col-sm-auto">
+            <a href="#" class="btn btn-primary">
+              <i class="tio-user-add mr-1"></i> Point
+            </a>
           </div>
         </div>
         <!-- End Row -->
@@ -126,7 +132,7 @@
                        "type": "css-animation",
                        "smartPositionOff": true
                      }'>
-                    <i class="tio-filter-list mr-1"></i> Filter <span class="badge badge-soft-dark rounded-circle ml-1">2</span>
+                    <i class="tio-filter-list mr-1"></i> Filter <span class="badge badge-soft-dark rounded-circle ml-1">3</span>
                   </a>
 
                   <div id="usersFilterDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-sm-right dropdown-card card-dropdown-filter-centered" style="min-width: 22rem;">
@@ -160,8 +166,8 @@
                                         "minimumResultsForSearch": "Infinity"
                                       }'>
                                 <option value="">전체</option>
-                                <option value="Save">적립</option>
-                                <option value="Use">소진</option>
+                                <option value="적립">적립</option>
+                                <option value="소진">소진</option>
                               </select>
                               <!-- End Select -->
                             </div>
@@ -179,12 +185,12 @@
                                         "minimumResultsForSearch": "Infinity"
                                       }'>
                                 <option value="">전체</option>
-                                <option value="Campaign">캠페인</option>
-                                <option value="Richshopping">리치쇼핑</option>
-                                <option value="Richbox">리치박스</option>
-                                <option value="Save">충전소</option>
-                                <option value="Save">관리자</option>
-                                <option value="Save">리뷰</option>
+                                <option value="캠페인">캠페인</option>
+                                <option value="리치쇼핑">리치쇼핑</option>
+                                <option value="리치박스">리치박스</option>
+                                <option value="충전소">충전소</option>
+                                <option value="관리자">관리자</option>
+                                <option value="리뷰">리뷰</option>
                               </select>
                               <!-- End Select -->
                             </div>
@@ -193,7 +199,7 @@
 
                           <div class="form-row">
                               <div class="col-sm form-group">
-                                  <small class="text-cap mb-2">Join Date</small>
+                                  <small class="text-cap mb-2">Date</small>
 
                                   <!-- Daterangepicker -->
                                   <div class="input-group input-group-merge">
@@ -241,7 +247,7 @@
           <table id="datatable" class="table table-lg table-borderless table-thead-bordered table-nowrap table-align-middle card-table table-hover"
                  data-hs-datatables-options='{
                    "columnDefs": [{
-                      "targets": [0, 3],
+                      "targets": [0, 4],
                       "orderable": false
                     }],
                    "order": [],
@@ -645,18 +651,11 @@
 
           if (!startDate || !endDate) return true;
 
-          let compareDate = moment(moment(data[6]).format('YYYY/MM/DD'));
+          let compareDate = moment(moment(data[4]).format('YYYY/MM/DD'));
 
           return compareDate.isBetween(startDate -1 , endDate + 1 );
         }
       );
-
-      $("#datatable .user_id").on("click", function(){
-          let seq = $(this).text();
-
-          console.log(seq);
-          location.href="PGID_B1.html?user_id="+seq;
-      });
     });
   </script>
 </body>

@@ -89,7 +89,7 @@
                 </div>
               </div>
             </div>
-            <a class="stretched-link" href="#"></a>
+            <a class="stretched-link" href="#" href_data="PGID_B1A.html"></a>
           </div>
           <!-- End Card -->
         </div>
@@ -103,12 +103,12 @@
               <div class="d-flex align-items-center">
                 <i class="tio-folder-shared tio-xl text-body mr-2"></i>
                 <div class="">
-                  <h5 class="card-title text-truncate mr-2">Premium images</h5>
+                  <h5 class="card-title text-truncate mr-2">리치쇼핑</h5>
                   <p class="card-title text-truncate mr-2"><span>50,000</span>/<span>78,000</span></p>
                 </div>
               </div>
             </div>
-            <a class="stretched-link" href="#"></a>
+            <a class="stretched-link" href="#" href_data="PGID_B1B.html"></a>
           </div>
           <!-- End Card -->
         </div>
@@ -122,12 +122,12 @@
               <div class="d-flex align-items-center">
                 <i class="tio-folder-shared tio-xl text-body mr-2"></i>
                 <div class="">
-                  <h5 class="card-title text-truncate mr-2">Premium images</h5>
+                  <h5 class="card-title text-truncate mr-2">캠페인</h5>
                   <p class="card-title text-truncate mr-2"><span>50,000</span>/<span>78,000</span></p>
                 </div>
               </div>
             </div>
-            <a class="stretched-link" href="#"></a>
+            <a class="stretched-link" href="#" href_data="PGID_B1C.html"></a>
           </div>
           <!-- End Card -->
         </div>
@@ -141,12 +141,12 @@
               <div class="d-flex align-items-center">
                 <i class="tio-folder-shared tio-xl text-body mr-2"></i>
                 <div class="">
-                  <h5 class="card-title text-truncate mr-2">Premium images</h5>
+                  <h5 class="card-title text-truncate mr-2">보유상품</h5>
                   <p class="card-title text-truncate mr-2"><span>50,000</span>/<span>78,000</span></p>
                 </div>
               </div>
             </div>
-            <a class="stretched-link" href="#"></a>
+            <a class="stretched-link" href="#" href_data="PGID_B1D.html"></a>
           </div>
           <!-- End Card -->
         </div>
@@ -160,12 +160,12 @@
               <div class="d-flex align-items-center">
                 <i class="tio-folder-shared tio-xl text-body mr-2"></i>
                 <div class="">
-                  <h5 class="card-title text-truncate mr-2">Premium images</h5>
+                  <h5 class="card-title text-truncate mr-2">신고</h5>
                   <p class="card-title text-truncate mr-2"><span>50,000</span>/<span>78,000</span></p>
                 </div>
               </div>
             </div>
-            <a class="stretched-link" href="#"></a>
+            <a class="stretched-link" href="#" href_data="PGID_B1E.html"></a>
           </div>
           <!-- End Card -->
         </div>
@@ -391,12 +391,21 @@
   <script src="@@autopath/assets/js/hs.pwstrength.js"></script>
 
   <script>
+    let userId = getParameterByName('user_id');
+
     $(document).on('ready', function () {
       // initialization of Input Masks
       $('.js-masked-input').each(function () {
         $.HSCore.components.HSMask.init($(this));
       });
 
+      // 회원 상세 정보 이동
+      $('.stretched-link').on('click', function(){
+          let go_page = $(this).attr('href_data'),
+              go_url = go_page+"?user_id="+userId
+
+          location.href = go_url;
+      });
 
       // 회원정보 edit 모드 진입
       $('.basicInfoEdit').click(function() {
