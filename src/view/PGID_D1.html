@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Title -->
+  <title>Scrich 2.0 | Campaign info</title>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="@@autopath/favicon.ico">
+
+  <!-- Font -->
+  <link href="@@vars.googleFont" rel="stylesheet">
+
+  <!-- CSS Implementing Plugins -->
+  <!-- bundlecss:vendor [@@autopath] -->
+  <link rel="stylesheet" href="@@autopath/assets/vendor/icon-set/style.css">
+  <link rel="stylesheet" href="@@autopath/node_modules/daterangepicker/daterangepicker.css">
+  <link rel="stylesheet" href="@@autopath/node_modules/select2/dist/css/select2.min.css">
+  <link rel="stylesheet" href="@@autopath/node_modules/@yaireo/tagify/dist/tagify.css">
+
+  <!-- CSS Front Template -->
+  <!-- bundlecss:theme [@@autopath] -->
+  <link rel="stylesheet" href="@@autopath/assets/css/theme.css">
+</head>
+
+<body class="has-navbar-vertical-aside navbar-vertical-aside-show-xl">
+  <!-- ========== HEADER ========== -->
+  @@include("@@autopath/inculde/header/header.html")
+  <!-- ========== END HEADER ========== -->
+
+  <!-- ========== ASIDE : NAVBAR ========== -->
+  @@include("@@autopath/inculde/navbar/navbar.html")
+  <!-- ========== END ASIDE : NAVBAR ========== -->
+
+  <!-- ========== CONTENTS ========== -->
+  <main id="content" role="main" class="main">
+
+    <!-- Content -->
+    <div class="content container-fluid">
+      <!-- Page Header -->
+      <div class="page-header">
+        <div class="row align-items-end">
+          <div class="col-sm mb-2 mb-sm-0" style="position:relative;">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb breadcrumb-no-gutter">
+                <li class="breadcrumb-item">Campaign</li>
+                <li class="breadcrumb-item active" aria-current="page">Campaign info</li>
+              </ol>
+            </nav>
+            <h1 class="page-title">Campaign info</h1>
+          </div>
+        </div>
+        <!-- End Row -->
+      </div>
+      <!-- End Page Header -->
+
+      <!-- Card Section -->
+      <div class="row gx-2 gx-lg-3">
+
+        <!-- Card: 노출수 -->
+        <div class="col-lg-4 mb-3 mb-lg-5">
+          <!-- Card -->
+          <div class="card card-sm card-hover-shadow h-100">
+            <div class="card-body">
+              <div class="d-flex align-items-center">
+                <i class="tio-folder-shared tio-xl text-body mr-2"></i>
+                <div class="">
+                  <h5 class="card-title text-truncate mr-2">노출수</h5>
+                  <p class="card-title text-truncate mr-2"><span>50,000</span></p>
+                </div>
+              </div>
+            </div>
+            <a class="stretched-link" href="#" href_data="PGID_H5.html"></a>
+          </div>
+          <!-- End Card -->
+        </div>
+        <!-- End Card: Burnout Point -->
+
+        <!-- Card: 순사용자/전환수 -->
+        <div class="col-lg-4 mb-3 mb-lg-5">
+          <!-- Card -->
+          <div class="card card-sm card-hover-shadow h-100">
+            <div class="card-body">
+              <div class="d-flex align-items-center">
+                <i class="tio-folder-shared tio-xl text-body mr-2"></i>
+                <div class="">
+                  <h5 class="card-title text-truncate mr-2">순사용자/전환수</h5>
+                  <p class="card-title text-truncate mr-2"><span>50,000</span>/<span>78,000</span></p>
+                </div>
+              </div>
+            </div>
+            <a class="stretched-link" href="#" href_data="PGID_H5.html"></a>
+          </div>
+          <!-- End Card -->
+        </div>
+        <!-- End Card: Burnout Point -->
+
+        <!-- Card: 참여수/당첨수 -->
+        <div class="col-lg-4 mb-3 mb-lg-5">
+          <!-- Card -->
+          <div class="card card-sm card-hover-shadow h-100">
+            <div class="card-body">
+              <div class="d-flex align-items-center">
+                <i class="tio-folder-shared tio-xl text-body mr-2"></i>
+                <div class="">
+                  <h5 class="card-title text-truncate mr-2">참여수/당첨수</h5>
+                  <p class="card-title text-truncate mr-2"><span>50,000</span>/<span>78,000</span></p>
+                </div>
+              </div>
+            </div>
+            <a class="stretched-link" href="#" href_data="PGID_H7.html"></a>
+          </div>
+          <!-- End Card -->
+        </div>
+        <!-- End Card: Burnout Point -->
+      </div>
+      <!-- End Card Section -->
+
+      <div class="row gx2 gx-lg-3">
+        <div class="col-lg-8">
+          <form class="" action="index.html" method="post">
+            <!-- Card -->
+            <div class="card mb-3 mb-lg-5">
+              <div class="card-header">
+                <div class="row form-group">
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control" name="organization" id="campaignTitle" placeholder="campaign title" aria-label="campaign title" value="캠페인타이틀" disabled>
+                  </div>
+                </div>
+                <div class="btn-wrap">
+                  <button class="basicInfoEdit btn btn-sm btn-white">Edit</button>
+                  <button type="submit" form="userInfo" class="basicInfoSave btn btn-sm btn-white d-none">Save</button>
+                </div>
+              </div>
+
+              <!-- Body -->
+              <div class="card-body">
+                <div class="">
+                  <div class="form-group">
+                    <textarea id="campaignCnt" class="form-control" placeholder="campaignCnt" rows="4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</textarea>
+                  </div>
+                  <!-- Tagify -->
+                  <div class="pb-3 mb-3 border-bottom">
+                    <input type="text" class="js-tagify tagify-form-control form-control" placeholder="Write some tags" value="new, bestseller, apple" data-hs-tagify-options='{"blacklist": ["apple", "ananas"]}'>
+                  </div>
+                </div>
+                <div class="d-flex">
+                  <!-- thumbImg -->
+                  <label class="avatar avatar-md avatar-uploader mr-5" for="thumb-uploader">
+                    <img id="thumbImg" class="avatar-img" src="../assets/img/160x160/img1.jpg" alt="Image Description">
+
+                    <input type="file" class="js-file-attach avatar-uploader-input" id="thumb-uploader"
+                    data-hs-file-attach-options='{
+                      "textTarget": "#thumbImg",
+                      "mode": "image",
+                      "targetAttr": "src",
+                      "resetTarget": ".js-file-attach-reset-img",
+                      "resetImg": "../assets/img/160x160/img1.jpg",
+                      "allowTypes": [".png", ".jpeg", ".jpg"]
+                    }'>
+                  </label>
+                  <!-- End thumbImg -->
+                  <!-- titleImg -->
+                  <label class="avatar avatar-md avatar-uploader mr-5" for="titleImg-uploader">
+                    <img id="titleImg" class="avatar-img" src="../assets/img/160x160/img1.jpg" alt="Image Description">
+
+                    <input type="file" class="js-file-attach avatar-uploader-input" id="titleImg-uploader"
+                    data-hs-file-attach-options='{
+                      "textTarget": "#titleImg",
+                      "mode": "image",
+                      "targetAttr": "src",
+                      "resetTarget": ".js-file-attach-reset-img",
+                      "resetImg": "../assets/img/160x160/img1.jpg",
+                      "allowTypes": [".png", ".jpeg", ".jpg"]
+                    }'>
+                  </label>
+                  <!-- End titleImg -->
+                  <!-- detailImg -->
+                  <label class="avatar avatar-md avatar-uploader mr-5" for="detailImg-uploader">
+                    <img id="detailImg" class="avatar-img" src="../assets/img/160x160/img1.jpg" alt="Image Description">
+
+                    <input type="file" class="js-file-attach avatar-uploader-input" id="detailImg-uploader"
+                    data-hs-file-attach-options='{
+                      "textTarget": "#detailImg",
+                      "mode": "image",
+                      "targetAttr": "src",
+                      "resetTarget": ".js-file-attach-reset-img",
+                      "resetImg": "../assets/img/160x160/img1.jpg",
+                      "allowTypes": [".png", ".jpeg", ".jpg"]
+                    }'>
+                  </label>
+                  <!-- End detailImg -->
+                  <!-- campaignImg -->
+                  <label class="avatar avatar-md avatar-uploader mr-5" for="campaignImg-uploader">
+                    <img id="campaignImg" class="avatar-img" src="../assets/img/160x160/img1.jpg" alt="Image Description">
+
+                    <input type="file" class="js-file-attach avatar-uploader-input" id="campaignImg-uploader"
+                    data-hs-file-attach-options='{
+                      "textTarget": "#campaignImg",
+                      "mode": "image",
+                      "targetAttr": "src",
+                      "resetTarget": ".js-file-attach-reset-img",
+                      "resetImg": "../assets/img/160x160/img1.jpg",
+                      "allowTypes": [".png", ".jpeg", ".jpg"]
+                    }'>
+                  </label>
+                  <!-- End campaignImg -->
+                </div>
+              </div>
+              <!-- End Body -->
+            </div>
+            <!-- End Card -->
+          </form>
+
+          <div class="card">
+            <!-- Header -->
+              <div class="card-header">
+                <div class="row justify-content-between align-items-center flex-grow-1">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <h2 class="card-title h4" style="line-height:35px;">캠페인 상품</h2>
+                  </div>
+
+                  <div class="col-sm-6">
+                    <div class="d-sm-flex justify-content-sm-end align-items-sm-center">
+                      <form>
+                        <!-- Search -->
+                        <div class="input-group input-group-merge input-group-flush">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <i class="tio-search"></i>
+                            </div>
+                          </div>
+                          <input id="datatableSearch" type="search" class="form-control" placeholder="Search product" aria-label="Search product">
+                        </div>
+                        <!-- End Search -->
+                      </form>
+                      <a class="btn btn-sm btn-primary" href="#">
+                        <i class="tio-add mr-1"></i> New product
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Row -->
+              </div>
+            <!-- End Header -->
+
+            <!-- Table -->
+            <div class="table-responsive datatable-custom">
+              <table id="datatable" class="table table-lg table-borderless table-thead-bordered table-nowrap table-align-middle card-table table-hover"
+                     data-hs-datatables-options='{
+                       "columnDefs": [{
+                          "targets": [0, 6],
+                          "orderable": false
+                        }],
+                       "order": [],
+                       "info": {
+                         "totalQty": "#datatableWithPaginationInfoTotalQty"
+                       },
+                       "search": "#datatableSearch",
+                       "entries": "#datatableEntries",
+                       "pageLength": 15,
+                       "isResponsive": false,
+                       "isShowPaging": false,
+                       "pagination": "datatablePagination"
+                     }'>
+                <thead class="thead-light">
+                  <tr>
+                    <th></th>
+                    <th>상품명</th>
+                    <th>당첨구분</th>
+                    <th>누적당첨수/총당첨수</th>
+                    <th>일당첨수/일제한수</th>
+                    <th>비율</th>
+                    <th>상품구분</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td><img src="" alt=""></td>
+                    <td><a href="#">상품명</a></td>
+                    <td>당첨</td>
+                    <td>12/100</td>
+                    <td>12/10</td>
+                    <td>12</td>
+                    <td>기프티콘</td>
+                  </tr>
+                  <tr>
+                    <td><img src="" alt=""></td>
+                    <td><a href="#">상품명</a></td>
+                    <td>당첨</td>
+                    <td>12/100</td>
+                    <td>12/10</td>
+                    <td>12</td>
+                    <td><a type="button" class="btn btn-soft-primary btn-xs btn-pill">배송상품</a></td>
+                  </tr>
+                  <tr>
+                    <td><img src="" alt=""></td>
+                    <td><a href="#">상품명</a></td>
+                    <td>당첨</td>
+                    <td>12/100</td>
+                    <td>12/10</td>
+                    <td>12</td>
+                    <td>포인트</td>
+                  </tr>
+                  <tr>
+                    <td><img src="" alt=""></td>
+                    <td><a href="#">상품명</a></td>
+                    <td>당첨</td>
+                    <td>12/100</td>
+                    <td>12/10</td>
+                    <td>12</td>
+                    <td>쿠폰</td>
+                  </tr>
+                  <tr>
+                    <td><img src="" alt=""></td>
+                    <td><a href="#">상품명</a></td>
+                    <td>당첨</td>
+                    <td>12/100</td>
+                    <td>12/10</td>
+                    <td>12</td>
+                    <td><a type="button" class="btn btn-soft-secondary btn-xs btn-pill">바코드</a></td>
+                  </tr>
+                  <tr>
+                    <td><img src="" alt=""></td>
+                    <td><a href="#">상품명</a></td>
+                    <td>당첨</td>
+                    <td>12/100</td>
+                    <td>12/10</td>
+                    <td>12</td>
+                    <td><a type="button" class="btn btn-soft-success btn-xs btn-pill">핀넘버</a></td>
+                  </tr>
+                  <tr>
+                    <td><img src="" alt=""></td>
+                    <td><a href="#">상품명</a></td>
+                    <td>당첨</td>
+                    <td>12/100</td>
+                    <td>12/10</td>
+                    <td>12</td>
+                    <td>꽝</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- End Table -->
+
+            <!-- Footer -->
+            <div class="card-footer">
+              <!-- Pagination -->
+              <div class="row justify-content-center justify-content-sm-between align-items-sm-center">
+                <div class="col-sm mb-2 mb-sm-0">
+                  <div class="d-flex justify-content-center justify-content-sm-start align-items-center">
+                    <span class="mr-2">Showing:</span>
+
+                    <!-- Select -->
+                    <select id="datatableEntries" class="js-select2-custom"
+                            data-hs-select2-options='{
+                                "minimumResultsForSearch": "Infinity",
+                                "customClass": "custom-select custom-select-sm custom-select-borderless",
+                                "dropdownAutoWidth": true,
+                                "width": true
+                            }'>
+                      <option value="10">10</option>
+                      <option value="15" selected>15</option>
+                      <option value="20">20</option>
+                    </select>
+                    <!-- End Select -->
+
+                    <span class="text-secondary mr-2">of</span>
+
+                    <!-- Pagination Quantity -->
+                    <span id="datatableWithPaginationInfoTotalQty"></span>
+                  </div>
+                </div>
+
+                <div class="col-sm-auto">
+                  <div class="d-flex justify-content-center justify-content-sm-end">
+                    <!-- Pagination -->
+                    <nav id="datatablePagination" aria-label="Activity pagination"></nav>
+                  </div>
+                </div>
+              </div>
+              <!-- End Pagination -->
+            </div>
+            <!-- End Footer -->
+          </div>
+
+        </div>
+        <div class="col-lg-4">
+          <!-- Card -->
+          <div class="card mb-3 mb-lg-5">
+            <div class="card-header">
+              <!-- Select2 -->
+              <select class="js-select2-custom custom-select" size="1" style="opacity: 0;" disabled
+                      data-hs-select2-options='{
+                        "placeholder": "Select a advertiser",
+                        "searchInputPlaceholder": "Search a advertiser"
+                      }'>
+                    <option value="1">Bruce Maynard</option>
+                    <option value="2">Hollis Clark</option>
+                    <option value="3">Lester Howard</option>
+                    <option value="4">George Marino</option>
+                    <option value="5">Tyler Johnson</option>
+                    <option value="6">Jennifer Craig</option>
+                    <option value="7">Martha Barnwell</option>
+                    <option value="8">Florencia Todd</option>
+                    <option value="9">Henry Sloan</option>
+                    <option value="10">Abigail Watson</option>
+              </select>
+              <!-- End Select2 -->
+            </div>
+
+            <!-- Body -->
+            <div class="card-body">
+              <!-- Form -->
+              <form id="userInfo" action="userInfo.php" method="post" onsubmit="return userInfoSubmit(this);">
+                <!-- Form Group -->
+                <div class="row form-group">
+                  <label for="viewStatus" class="col-sm-5 col-form-label input-label">노출상태</label>
+
+                  <div class="col-sm-7">
+                    <input type="text" class="form-control" name="viewStatus" id="viewStatus" placeholder="View status" aria-label="View status" value="대기" disabled>
+                  </div>
+                </div>
+                <!-- End Form Group -->
+
+                <!-- Form Group -->
+                <div class="row form-group">
+                  <label for="viewRank" class="col-sm-5 col-form-label input-label">노출순위</label>
+
+                  <div class="col-sm-7">
+                    <input type="text" class="form-control" name="viewRank" id="viewRank" placeholder="View rank" aria-label="View rank" value="10" disabled>
+                  </div>
+                </div>
+                <!-- End Form Group -->
+
+                <!-- Form Group -->
+                <div class="row form-group">
+                  <label for="viewAge" class="col-sm-5 col-form-label input-label">노출연령</label>
+
+                  <div class="col-sm-7">
+                    <input type="text" class="form-control" name="viewAge" id="viewAge" placeholder="View age" aria-label="View age" value="00~99" disabled>
+                  </div>
+                </div>
+                <!-- End Form Group -->
+
+                <!-- Form Group -->
+                <div class="row form-group">
+                  <label for="againTime" class="col-sm-5 col-form-label input-label">재참여시간</label>
+
+                  <div class="col-sm-7">
+                    <input type="text" class="form-control" name="againTime" id="againTime" placeholder="Again time" aria-label="Again time" value="00~99" disabled>
+                  </div>
+                </div>
+                <!-- End Form Group -->
+
+                <!-- Form Group -->
+                <div class="row form-group">
+                  <label for="livePeriod" class="col-sm-5 col-form-label input-label">집행기간</label>
+
+                  <div class="col-sm-7">
+                    <input type="text" class="form-control" name="livePeriod" id="livePeriod" placeholder="Live period" aria-label="Live period" value="2020.12.12 ~ 2020.12.12" disabled>
+                  </div>
+                </div>
+                <!-- End Form Group -->
+
+                <!-- Form Group -->
+                <div class="row form-group">
+                  <label for="spendCost" class="col-sm-5 col-form-label input-label">소진비용/집행예산</label>
+
+                  <div class="col-sm-7">
+                    <input type="text" class="form-control" name="spendCost" id="spendCost" placeholder="Spend cost" aria-label="Spend cost" value="0/10,000,000" disabled>
+                  </div>
+                </div>
+                <!-- End Form Group -->
+
+                <!-- Form Group -->
+                <div class="row form-group">
+                  <label for="campaignType" class="col-sm-5 col-form-label input-label">캠페인 타입</label>
+
+                  <div class="col-sm-7">
+                    <input type="text" class="form-control" name="campaignType" id="campaignType" placeholder="Campaign type" aria-label="Campaign type" value="중복참여" disabled>
+                  </div>
+                </div>
+                <!-- End Form Group -->
+              </form>
+              <!-- End Form -->
+            </div>
+            <!-- End Body -->
+          </div>
+          <!-- End Card -->
+        </div>
+      </div>
+
+    </div>
+    <!-- End Content -->
+  </main>
+  <!-- ========== END CONTENTS ========== -->
+
+  <!-- JS Global Compulsory @@deleteLine:build -->
+  <script src="@@autopath/node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="@@autopath/node_modules/jquery-migrate/dist/jquery-migrate.min.js"></script>
+  <script src="@@autopath/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- JS Implementing Plugins -->
+  <!-- bundlejs:vendor [@@autopath] -->
+  @@include("@@autopath/inculde/res/vendor.html")
+  <script src="@@autopath/node_modules/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
+  <script src="@@autopath/node_modules/@yaireo/tagify/dist/tagify.min.js"></script>
+
+  <!-- JS Front -->
+  <!-- bundlejs:theme [@@autopath] -->
+  @@include("@@autopath/inculde/res/theme.html")
+  <script src="@@autopath/assets/js/hs.mask.js"></script>
+  <script src="@@autopath/assets/js/hs.pwstrength.js"></script>
+  <script src="@@autopath/assets/js/hs.tagify.js"></script>
+
+  <script>
+    let userId = getParameterByName('user_id');
+
+    $(document).on('ready', function () {
+      // initialization of Input Masks
+      $('.js-masked-input').each(function () {
+        $.HSCore.components.HSMask.init($(this));
+      });
+
+      // INITIALIZATION OF TAGIFY
+      // =======================================================
+      $('.js-tagify').each(function () {
+        var tagify = $.HSCore.components.HSTagify.init($(this));
+      });
+
+      // 회원 상세 정보 이동
+      $('.stretched-link').on('click', function(){
+          let go_page = $(this).attr('href_data'),
+              go_url = go_page+"?user_id="+userId
+
+          location.href = go_url;
+      });
+
+      // 회원정보 edit 모드 진입
+      $('.basicInfoEdit').click(function() {
+        $(this).addClass('d-none');
+        $('.editInput').removeAttr('disabled');
+        $('.basicInfoSave').removeClass('d-none');
+      });
+
+      function userInfoSubmit() {
+        let submit = new SubmitForm($('#userInfo')).userInfoChange();
+      }
+
+      class SubmitForm{
+        'use strict';
+
+        constructor(formId) {
+          this.el = formId;
+        }
+
+        userInfoChange(){
+          $.ajax({
+            type: this.el.attr('method'),
+            url: this.el.attr('action'),
+            dataType: 'json',
+            async: false,
+            data: this.el.serialize(),
+            success: function(data) {
+              if (data['result'] == 'fail') {
+                alert('회원정보 변경에 실패하였습니다. 관리자에게 문의하세요.');
+              } else if (data['result'] == 'sucess'){
+                alert('회원정보가 변경 되었습니다.')
+                $(this).addClass('d-none');
+                $('.editInput').attr('disabled');
+                $('.basicInfoSave').removeClass('d-none');
+              }
+            },
+            error: function(xhr, status, error) {
+              let error_confirm = confirm('데이터 전송 오류 입니다. 확인을 누르시면 페이지가 새로고침 됩니다.');
+              if (error_confirm == true) {
+                window.location.reload();
+              }
+            }
+          });
+        }
+      }
+
+    });
+  </script>
+</body>
+
+</html>

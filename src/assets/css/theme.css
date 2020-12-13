@@ -25990,6 +25990,10 @@ a:hover .text-hover-primary {
   opacity: 1;
 }
 
+.custom-card-1 {
+  width: calc(50% - 32px);
+}
+
 /*------------------------------------
   Avatar Styles
 ------------------------------------*/
