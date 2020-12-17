@@ -89,7 +89,7 @@
                 </div>
               </div>
             </div>
-            <a class="stretched-link" href="#" href_data="PGID_B1A.html"></a>
+            <a class="stretched-link" href="#" href-data="PGID_B1A.html"></a>
           </div>
           <!-- End Card -->
         </div>
@@ -108,7 +108,7 @@
                 </div>
               </div>
             </div>
-            <a class="stretched-link" href="#" href_data="PGID_B1B.html"></a>
+            <a class="stretched-link" href="#" href-data="PGID_B1B.html"></a>
           </div>
           <!-- End Card -->
         </div>
@@ -127,7 +127,7 @@
                 </div>
               </div>
             </div>
-            <a class="stretched-link" href="#" href_data="PGID_B1C.html"></a>
+            <a class="stretched-link" href="#" href-data="PGID_B1C.html"></a>
           </div>
           <!-- End Card -->
         </div>
@@ -146,7 +146,7 @@
                 </div>
               </div>
             </div>
-            <a class="stretched-link" href="#" href_data="PGID_B1D.html"></a>
+            <a class="stretched-link" href="#" href-data="PGID_B1D.html"></a>
           </div>
           <!-- End Card -->
         </div>
@@ -165,7 +165,7 @@
                 </div>
               </div>
             </div>
-            <a class="stretched-link" href="#" href_data="PGID_B1E.html"></a>
+            <a class="stretched-link" href="#" href-data="PGID_B1E.html"></a>
           </div>
           <!-- End Card -->
         </div>
@@ -391,20 +391,16 @@
   <script src="@@autopath/assets/js/hs.pwstrength.js"></script>
 
   <script>
-    let userId = getParameterByName('user_id');
+    let userId = getParameterByName('user-id'),
+        parameter = {
+          'user_id' : userId,
+          'campaign-id' : 'campaignId',
+        };
 
     $(document).on('ready', function () {
       // initialization of Input Masks
       $('.js-masked-input').each(function () {
         $.HSCore.components.HSMask.init($(this));
-      });
-
-      // 회원 상세 정보 이동
-      $('.stretched-link').on('click', function(){
-          let go_page = $(this).attr('href_data'),
-              go_url = go_page+"?user_id="+userId
-
-          location.href = go_url;
       });
 
       // 회원정보 edit 모드 진입
@@ -452,6 +448,7 @@
         }
       }
 
+      goLink1('.stretched-link', 'href-data');
     });
   </script>
 </body>

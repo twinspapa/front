@@ -52,7 +52,8 @@
 }
 
 .custom-card-1{
-  width: calc(50% - 32px);
+  width: 100%;
+  cursor: pointer;
 }
 
 /*------------------------------------
@@ -85,8 +86,14 @@ label[for="avatarUploader"] {
 
 
 @media (min-width: 576px) {}
-@media (min-width: 768px) {}
-@media (min-width: 992px) {}
+@media (min-width: 768px) {
+  .custom-card-1{
+    width: calc(50% - 32px);
+  }
+}
+@media (min-width: 992px) {
+
+}
 @media (min-width: 1200px) {
   .col-xl-20 {
     -ms-flex: 0 0 20%;

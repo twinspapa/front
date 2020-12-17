@@ -100,3 +100,73 @@ function get_query(){
     }
     return result;
 }
+
+
+// attr 추출 링크 이동
+function goLink1(object, attribute) {
+    $(object).on("click", function() {
+      let url = $(this).attr(attribute);
+      console.log(url);
+
+      if (attribute !== undefined) {
+        console.log(url);
+        location.href=url;
+      } else {
+        return false;
+      }
+    });
+}
+
+// 데이터 체크후 파라미터 생성 링크 이동
+function goLink2(object, pageUrl, attribute, variable) {
+  let url = pageUrl;
+  console.log(url);
+
+  $(object).on("click", function() {
+    let parameter = $(this).attr(attribute);
+
+    console.log(parameter);
+
+    console.log(url + "?" + attribute + "=" + parameter);
+    location.href=url + "?" + attribute + "=" + parameter;
+  });
+}
+
+// 데이터 체크후 파라미터 생성 링크 이동
+// 없는 데이터는 none 입력
+function goLink(object, pageUrl, attrLink, attrParameter, parameterName, parameterValue) {
+  let url, parameter;
+
+  console.log(url);
+  console.log(parameter);
+
+  $(object).on("click", function() {
+
+    if (pageUrl !== 'none') {
+      url = pageUrl;
+
+      if (attrParameter === 'none' && objParameter ==='none') {
+        location.href=url;
+      } else if (attrParameter !== 'none' && objParameter ==='none') {
+        location.href=url + '?' + attrParameter + '=' $(this).attr(attrParameter);
+      } else if (attrParameter === 'none' && objParameter !=='none') {
+        location.href=url + '?' + objParameter + '=' objParameter;
+      }
+
+    } else {
+      url = $(this).attr(attrLink);
+    }
+
+    parameter = variableParameter;
+    parameter = $(this).attr(attrParameter);
+    if (attrParameter !== 'none') {
+      parameter = $(this).attr(attrParameter);
+    } else {
+      parameter = variableParameter;
+    }
+
+
+    location.href=url;
+
+  });
+}

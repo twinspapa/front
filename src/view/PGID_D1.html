@@ -53,6 +53,14 @@
             </nav>
             <h1 class="page-title">Campaign info</h1>
           </div>
+          <div class="col-sm-auto">
+            <a class="btn btn-primary mr-3" href="PGID_D2.html">
+              <i class="tio-add mr-1"></i> New Campaign
+            </a>
+            <a class="btn btn-success" href="#none">
+              <i class="tio-add mr-1"></i> Edit Campaign
+            </a>
+          </div>
         </div>
         <!-- End Row -->
       </div>
@@ -64,7 +72,7 @@
         <!-- Card: 노출수 -->
         <div class="col-lg-4 mb-3 mb-lg-5">
           <!-- Card -->
-          <div class="card card-sm card-hover-shadow h-100">
+          <div class="card card-sm h-100">
             <div class="card-body">
               <div class="d-flex align-items-center">
                 <i class="tio-folder-shared tio-xl text-body mr-2"></i>
@@ -74,7 +82,7 @@
                 </div>
               </div>
             </div>
-            <a class="stretched-link" href="#" href_data="PGID_H5.html"></a>
+            <a class="stretched-link" href="#none"></a>
           </div>
           <!-- End Card -->
         </div>
@@ -93,7 +101,7 @@
                 </div>
               </div>
             </div>
-            <a class="stretched-link" href="#" href_data="PGID_H5.html"></a>
+            <a class="stretched-link" href="#none" herf-data="PGID_H5.html"></a>
           </div>
           <!-- End Card -->
         </div>
@@ -112,7 +120,7 @@
                 </div>
               </div>
             </div>
-            <a class="stretched-link" href="#" href_data="PGID_H7.html"></a>
+            <a class="stretched-link" href="#none" herf-data="PGID_H7.html"></a>
           </div>
           <!-- End Card -->
         </div>
@@ -121,6 +129,110 @@
       <!-- End Card Section -->
 
       <div class="row gx2 gx-lg-3">
+        <div class="col-lg-4 order-lg-last">
+          <!-- Card -->
+          <div class="card mb-3 mb-lg-5">
+            <div class="card-header">
+              <!-- Select2 -->
+              <select class="js-select2-custom custom-select" size="1" style="opacity: 0;" disabled
+              data-hs-select2-options='{
+                "placeholder": "Select a advertiser",
+                "searchInputPlaceholder": "Search a advertiser"
+              }'>
+              <option value="1">Bruce Maynard</option>
+              <option value="2">Hollis Clark</option>
+              <option value="3">Lester Howard</option>
+              <option value="4">George Marino</option>
+              <option value="5">Tyler Johnson</option>
+              <option value="6">Jennifer Craig</option>
+              <option value="7">Martha Barnwell</option>
+              <option value="8">Florencia Todd</option>
+              <option value="9">Henry Sloan</option>
+              <option value="10">Abigail Watson</option>
+            </select>
+            <!-- End Select2 -->
+          </div>
+
+          <!-- Body -->
+          <div class="card-body">
+            <!-- Form -->
+            <form id="userInfo" action="userInfo.php" method="post" onsubmit="return userInfoSubmit(this);">
+              <!-- Form Group -->
+              <div class="row form-group">
+                <label for="viewStatus" class="col-sm-5 col-form-label input-label">노출상태</label>
+
+                <div class="col-sm-7">
+                  <input type="text" class="form-control" name="viewStatus" id="viewStatus" placeholder="View status" aria-label="View status" value="대기" disabled>
+                </div>
+              </div>
+              <!-- End Form Group -->
+
+              <!-- Form Group -->
+              <div class="row form-group">
+                <label for="viewRank" class="col-sm-5 col-form-label input-label">노출순위</label>
+
+                <div class="col-sm-7">
+                  <input type="text" class="form-control" name="viewRank" id="viewRank" placeholder="View rank" aria-label="View rank" value="10" disabled>
+                </div>
+              </div>
+              <!-- End Form Group -->
+
+              <!-- Form Group -->
+              <div class="row form-group">
+                <label for="viewAge" class="col-sm-5 col-form-label input-label">노출연령</label>
+
+                <div class="col-sm-7">
+                  <input type="text" class="form-control" name="viewAge" id="viewAge" placeholder="View age" aria-label="View age" value="00~99" disabled>
+                </div>
+              </div>
+              <!-- End Form Group -->
+
+              <!-- Form Group -->
+              <div class="row form-group">
+                <label for="againTime" class="col-sm-5 col-form-label input-label">재참여시간</label>
+
+                <div class="col-sm-7">
+                  <input type="text" class="form-control" name="againTime" id="againTime" placeholder="Again time" aria-label="Again time" value="00~99" disabled>
+                </div>
+              </div>
+              <!-- End Form Group -->
+
+              <!-- Form Group -->
+              <div class="row form-group">
+                <label for="livePeriod" class="col-sm-5 col-form-label input-label">집행기간</label>
+
+                <div class="col-sm-7">
+                  <input type="text" class="form-control" name="livePeriod" id="livePeriod" placeholder="Live period" aria-label="Live period" value="2020.12.12 ~ 2020.12.12" disabled>
+                </div>
+              </div>
+              <!-- End Form Group -->
+
+              <!-- Form Group -->
+              <div class="row form-group">
+                <label for="spendCost" class="col-sm-5 col-form-label input-label">소진비용/집행예산</label>
+
+                <div class="col-sm-7">
+                  <input type="text" class="form-control" name="spendCost" id="spendCost" placeholder="Spend cost" aria-label="Spend cost" value="0/10,000,000" disabled>
+                </div>
+              </div>
+              <!-- End Form Group -->
+
+              <!-- Form Group -->
+              <div class="row form-group">
+                <label for="campaignType" class="col-sm-5 col-form-label input-label">캠페인 타입</label>
+
+                <div class="col-sm-7">
+                  <input type="text" class="form-control" name="campaignType" id="campaignType" placeholder="Campaign type" aria-label="Campaign type" value="중복참여" disabled>
+                </div>
+              </div>
+              <!-- End Form Group -->
+            </form>
+            <!-- End Form -->
+          </div>
+          <!-- End Body -->
+        </div>
+        <!-- End Card -->
+      </div>
         <div class="col-lg-8">
           <form class="" action="index.html" method="post">
             <!-- Card -->
@@ -238,7 +350,7 @@
                         </div>
                         <!-- End Search -->
                       </form>
-                      <a class="btn btn-sm btn-primary" href="#">
+                      <a class="btn btn-sm btn-primary" href="#none">
                         <i class="tio-add mr-1"></i> New product
                       </a>
                     </div>
@@ -282,7 +394,7 @@
                 <tbody>
                   <tr>
                     <td><img src="" alt=""></td>
-                    <td><a href="#">상품명</a></td>
+                    <td><a href="#none">상품명</a></td>
                     <td>당첨</td>
                     <td>12/100</td>
                     <td>12/10</td>
@@ -291,7 +403,7 @@
                   </tr>
                   <tr>
                     <td><img src="" alt=""></td>
-                    <td><a href="#">상품명</a></td>
+                    <td><a href="#none">상품명</a></td>
                     <td>당첨</td>
                     <td>12/100</td>
                     <td>12/10</td>
@@ -300,7 +412,7 @@
                   </tr>
                   <tr>
                     <td><img src="" alt=""></td>
-                    <td><a href="#">상품명</a></td>
+                    <td><a href="#none">상품명</a></td>
                     <td>당첨</td>
                     <td>12/100</td>
                     <td>12/10</td>
@@ -309,7 +421,7 @@
                   </tr>
                   <tr>
                     <td><img src="" alt=""></td>
-                    <td><a href="#">상품명</a></td>
+                    <td><a href="#none">상품명</a></td>
                     <td>당첨</td>
                     <td>12/100</td>
                     <td>12/10</td>
@@ -318,7 +430,7 @@
                   </tr>
                   <tr>
                     <td><img src="" alt=""></td>
-                    <td><a href="#">상품명</a></td>
+                    <td><a href="#none">상품명</a></td>
                     <td>당첨</td>
                     <td>12/100</td>
                     <td>12/10</td>
@@ -327,7 +439,7 @@
                   </tr>
                   <tr>
                     <td><img src="" alt=""></td>
-                    <td><a href="#">상품명</a></td>
+                    <td><a href="#none">상품명</a></td>
                     <td>당첨</td>
                     <td>12/100</td>
                     <td>12/10</td>
@@ -336,7 +448,7 @@
                   </tr>
                   <tr>
                     <td><img src="" alt=""></td>
-                    <td><a href="#">상품명</a></td>
+                    <td><a href="#none">상품명</a></td>
                     <td>당첨</td>
                     <td>12/100</td>
                     <td>12/10</td>
@@ -390,110 +502,6 @@
           </div>
 
         </div>
-        <div class="col-lg-4">
-          <!-- Card -->
-          <div class="card mb-3 mb-lg-5">
-            <div class="card-header">
-              <!-- Select2 -->
-              <select class="js-select2-custom custom-select" size="1" style="opacity: 0;" disabled
-                      data-hs-select2-options='{
-                        "placeholder": "Select a advertiser",
-                        "searchInputPlaceholder": "Search a advertiser"
-                      }'>
-                    <option value="1">Bruce Maynard</option>
-                    <option value="2">Hollis Clark</option>
-                    <option value="3">Lester Howard</option>
-                    <option value="4">George Marino</option>
-                    <option value="5">Tyler Johnson</option>
-                    <option value="6">Jennifer Craig</option>
-                    <option value="7">Martha Barnwell</option>
-                    <option value="8">Florencia Todd</option>
-                    <option value="9">Henry Sloan</option>
-                    <option value="10">Abigail Watson</option>
-              </select>
-              <!-- End Select2 -->
-            </div>
-
-            <!-- Body -->
-            <div class="card-body">
-              <!-- Form -->
-              <form id="userInfo" action="userInfo.php" method="post" onsubmit="return userInfoSubmit(this);">
-                <!-- Form Group -->
-                <div class="row form-group">
-                  <label for="viewStatus" class="col-sm-5 col-form-label input-label">노출상태</label>
-
-                  <div class="col-sm-7">
-                    <input type="text" class="form-control" name="viewStatus" id="viewStatus" placeholder="View status" aria-label="View status" value="대기" disabled>
-                  </div>
-                </div>
-                <!-- End Form Group -->
-
-                <!-- Form Group -->
-                <div class="row form-group">
-                  <label for="viewRank" class="col-sm-5 col-form-label input-label">노출순위</label>
-
-                  <div class="col-sm-7">
-                    <input type="text" class="form-control" name="viewRank" id="viewRank" placeholder="View rank" aria-label="View rank" value="10" disabled>
-                  </div>
-                </div>
-                <!-- End Form Group -->
-
-                <!-- Form Group -->
-                <div class="row form-group">
-                  <label for="viewAge" class="col-sm-5 col-form-label input-label">노출연령</label>
-
-                  <div class="col-sm-7">
-                    <input type="text" class="form-control" name="viewAge" id="viewAge" placeholder="View age" aria-label="View age" value="00~99" disabled>
-                  </div>
-                </div>
-                <!-- End Form Group -->
-
-                <!-- Form Group -->
-                <div class="row form-group">
-                  <label for="againTime" class="col-sm-5 col-form-label input-label">재참여시간</label>
-
-                  <div class="col-sm-7">
-                    <input type="text" class="form-control" name="againTime" id="againTime" placeholder="Again time" aria-label="Again time" value="00~99" disabled>
-                  </div>
-                </div>
-                <!-- End Form Group -->
-
-                <!-- Form Group -->
-                <div class="row form-group">
-                  <label for="livePeriod" class="col-sm-5 col-form-label input-label">집행기간</label>
-
-                  <div class="col-sm-7">
-                    <input type="text" class="form-control" name="livePeriod" id="livePeriod" placeholder="Live period" aria-label="Live period" value="2020.12.12 ~ 2020.12.12" disabled>
-                  </div>
-                </div>
-                <!-- End Form Group -->
-
-                <!-- Form Group -->
-                <div class="row form-group">
-                  <label for="spendCost" class="col-sm-5 col-form-label input-label">소진비용/집행예산</label>
-
-                  <div class="col-sm-7">
-                    <input type="text" class="form-control" name="spendCost" id="spendCost" placeholder="Spend cost" aria-label="Spend cost" value="0/10,000,000" disabled>
-                  </div>
-                </div>
-                <!-- End Form Group -->
-
-                <!-- Form Group -->
-                <div class="row form-group">
-                  <label for="campaignType" class="col-sm-5 col-form-label input-label">캠페인 타입</label>
-
-                  <div class="col-sm-7">
-                    <input type="text" class="form-control" name="campaignType" id="campaignType" placeholder="Campaign type" aria-label="Campaign type" value="중복참여" disabled>
-                  </div>
-                </div>
-                <!-- End Form Group -->
-              </form>
-              <!-- End Form -->
-            </div>
-            <!-- End Body -->
-          </div>
-          <!-- End Card -->
-        </div>
       </div>
 
     </div>
@@ -520,7 +528,7 @@
   <script src="@@autopath/assets/js/hs.tagify.js"></script>
 
   <script>
-    let userId = getParameterByName('user_id');
+    let campaignId = getParameterByName('cmapaign-id');
 
     $(document).on('ready', function () {
       // initialization of Input Masks
@@ -534,13 +542,6 @@
         var tagify = $.HSCore.components.HSTagify.init($(this));
       });
 
-      // 회원 상세 정보 이동
-      $('.stretched-link').on('click', function(){
-          let go_page = $(this).attr('href_data'),
-              go_url = go_page+"?user_id="+userId
-
-          location.href = go_url;
-      });
 
       // 회원정보 edit 모드 진입
       $('.basicInfoEdit').click(function() {
@@ -587,6 +588,7 @@
         }
       }
 
+      goLink1('.stretched-link', 'herf-data');
     });
   </script>
 </body>
