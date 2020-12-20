@@ -56,6 +56,12 @@
   cursor: pointer;
 }
 
+.w-33{
+  width: 33.33%;
+}
+
+.hr-line::after {content: '';display: block;position: absolute;left: 0;margin-top: 1rem;width: 100%;border: 1px solid #eee;}
+
 /*------------------------------------
   Avatar Styles
 ------------------------------------*/

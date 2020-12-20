@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Title -->
-  <title>Scrich 2.0 | 회원</title>
+  <title>Scrich 2.0 | 리치박스A</title>
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="@@autopath/favicon.ico">
@@ -37,23 +37,27 @@
 
   <!-- ========== CONTENTS ========== -->
   <main id="content" role="main" class="main">
-
     <!-- Content -->
-    <div class="content container-fluid">
+    <div class="content @@layoutBuilder.header.containerMode">
+
       <!-- Page Header -->
       <div class="page-header">
         <div class="row align-items-end">
           <div class="col-sm mb-2 mb-sm-0">
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb breadcrumb-no-gutter">
-                <li class="breadcrumb-item" aria-current="page">회원</li>
-                <li class="breadcrumb-item active" aria-current="page">회원</li>
+                <li class="breadcrumb-item">콘텐츠</li>
+                <li class="breadcrumb-item active" aria-current="page">리치박스A</li>
               </ol>
             </nav>
-            <h1 class="page-title">회원</h1>
+            <h1 class="page-title">리치박스A</h1>
           </div>
         </div>
         <!-- End Row -->
+
+        <!-- Nav -->
+        @@include("@@autopath/inculde/contents/nav-menu-contents.html")
+        <!-- End Nav -->
       </div>
       <!-- End Page Header -->
 
@@ -556,118 +560,119 @@
   <script src="@@autopath/assets/js/hs.daterangepicker.js"></script>
   <script src="@@autopath/assets/js/hs.datatables.js"></script>
 
+
   <script>
-    $(document).on('ready', function () {
-      // initialization of datatables
-      var datatable = $.HSCore.components.HSDatatables.init($('#datatable'), {
-        dom: 'Bfrtip',
-        buttons: [
-          {
-            extend: 'copy',
-            className: 'd-none'
-          },
-          {
-            extend: 'excel',
-            className: 'd-none'
-          },
-          {
-            extend: 'csv',
-            className: 'd-none'
-          },
-          {
-            extend: 'pdf',
-            className: 'd-none'
-          },
-          {
-            extend: 'print',
-            className: 'd-none'
-          },
-        ]
-      });
+  $(document).on('ready', function () {
+    // initialization of datatables
+    var datatable = $.HSCore.components.HSDatatables.init($('#datatable'), {
+      dom: 'Bfrtip',
+      buttons: [
+        {
+          extend: 'copy',
+          className: 'd-none'
+        },
+        {
+          extend: 'excel',
+          className: 'd-none'
+        },
+        {
+          extend: 'csv',
+          className: 'd-none'
+        },
+        {
+          extend: 'pdf',
+          className: 'd-none'
+        },
+        {
+          extend: 'print',
+          className: 'd-none'
+        },
+      ]
+    });
 
-      $('#export-copy').click(function() {
-        datatable.button('.buttons-copy').trigger()
-      });
+    $('#export-copy').click(function() {
+      datatable.button('.buttons-copy').trigger()
+    });
 
-      $('#export-excel').click(function() {
-        datatable.button('.buttons-excel').trigger()
-      });
+    $('#export-excel').click(function() {
+      datatable.button('.buttons-excel').trigger()
+    });
 
-      $('#export-csv').click(function() {
-        datatable.button('.buttons-csv').trigger()
-      });
+    $('#export-csv').click(function() {
+      datatable.button('.buttons-csv').trigger()
+    });
 
-      $('#export-pdf').click(function() {
-        datatable.button('.buttons-pdf').trigger()
-      });
+    $('#export-pdf').click(function() {
+      datatable.button('.buttons-pdf').trigger()
+    });
 
-      $('#export-print').click(function() {
-        datatable.button('.buttons-print').trigger()
-      });
+    $('#export-print').click(function() {
+      datatable.button('.buttons-print').trigger()
+    });
 
-      $('.js-datatable-filter').on('change', function() {
-        var $this = $(this),
-          elVal = $this.val(),
-          targetColumnIndex = $this.data('target-column-index');
+    $('.js-datatable-filter').on('change', function() {
+      var $this = $(this),
+        elVal = $this.val(),
+        targetColumnIndex = $this.data('target-column-index');
 
-        datatable.column(targetColumnIndex).search(elVal).draw();
-      });
+      datatable.column(targetColumnIndex).search(elVal).draw();
+    });
 
-      $('#datatableSearch').on('mouseup', function (e) {
-        var $input = $(this),
-          oldValue = $input.val();
+    $('#datatableSearch').on('mouseup', function (e) {
+      var $input = $(this),
+        oldValue = $input.val();
 
-        if (oldValue == "") return;
+      if (oldValue == "") return;
 
-        setTimeout(function(){
-          var newValue = $input.val();
+      setTimeout(function(){
+        var newValue = $input.val();
 
-          if (newValue == ""){
-            // Gotcha
-            datatable.search('').draw();
-          }
-        }, 1);
-      });
+        if (newValue == ""){
+          // Gotcha
+          datatable.search('').draw();
+        }
+      }, 1);
+    });
 
-      // initialization of daterangepicker
-      var startDate = null,
-          endDate = null;
-
-      $('.js-daterangepicker').each(function () {
-        var d = $.HSCore.components.HSDaterangepicker.init($(this));
-      });
-
-      $('.js-daterangepicker').on('apply.daterangepicker', function(ev, picker) {
-        $(this).val(picker.startDate.format('YYYY/MM/DD') + ' - ' + picker.endDate.format('YYYY/MM/DD'));
-
-        startDate = moment(picker.startDate.format('YYYY/MM/DD'));
-        endDate = moment(picker.endDate.format('YYYY/MM/DD'));
-
-        datatable.draw();
-      });
-
-      $('.js-daterangepicker').on('cancel.daterangepicker', function(ev, picker) {
-        $(this).val('');
-
-        startDate = null;
+    // initialization of daterangepicker
+    var startDate = null,
         endDate = null;
 
-        datatable.draw();
-      });
-
-      $.fn.dataTable.ext.search.push(
-        function (settings, data, dataIndex) {
-
-          if (!startDate || !endDate) return true;
-
-          let compareDate = moment(moment(data[6]).format('YYYY/MM/DD'));
-
-          return compareDate.isBetween(startDate -1 , endDate + 1 );
-        }
-      );
-
-      goLink2('.user_id', 'PGID_B1.html', 'user-id');
+    $('.js-daterangepicker').each(function () {
+      var d = $.HSCore.components.HSDaterangepicker.init($(this));
     });
+
+    $('.js-daterangepicker').on('apply.daterangepicker', function(ev, picker) {
+      $(this).val(picker.startDate.format('YYYY/MM/DD') + ' - ' + picker.endDate.format('YYYY/MM/DD'));
+
+      startDate = moment(picker.startDate.format('YYYY/MM/DD'));
+      endDate = moment(picker.endDate.format('YYYY/MM/DD'));
+
+      datatable.draw();
+    });
+
+    $('.js-daterangepicker').on('cancel.daterangepicker', function(ev, picker) {
+      $(this).val('');
+
+      startDate = null;
+      endDate = null;
+
+      datatable.draw();
+    });
+
+    $.fn.dataTable.ext.search.push(
+      function (settings, data, dataIndex) {
+
+        if (!startDate || !endDate) return true;
+
+        let compareDate = moment(moment(data[6]).format('YYYY/MM/DD'));
+
+        return compareDate.isBetween(startDate -1 , endDate + 1 );
+      }
+    );
+
+    urlCompareAddClass($('.page-header-tabs .nav-link'), 'active');
+  });
   </script>
 </body>
 

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Title -->
-  <title>Scrich 2.0 | 회원</title>
+  <title>Scrich 2.0 | 주문내역</title>
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="@@autopath/favicon.ico">
@@ -46,11 +46,11 @@
           <div class="col-sm mb-2 mb-sm-0">
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb breadcrumb-no-gutter">
-                <li class="breadcrumb-item" aria-current="page">회원</li>
-                <li class="breadcrumb-item active" aria-current="page">회원</li>
+                <li class="breadcrumb-item" aria-current="page">주문내역</li>
+                <li class="breadcrumb-item active" aria-current="page">주문내역</li>
               </ol>
             </nav>
-            <h1 class="page-title">회원</h1>
+            <h1 class="page-title">주문내역</h1>
           </div>
         </div>
         <!-- End Row -->
@@ -71,7 +71,7 @@
                       <i class="tio-search"></i>
                     </div>
                   </div>
-                  <input id="datatableSearch" type="search" class="form-control" placeholder="Search users" aria-label="Search users">
+                  <input id="datatableSearch" type="search" class="form-control" placeholder="Search order" aria-label="Search order">
                 </div>
                 <!-- End Search -->
               </form>
@@ -125,14 +125,14 @@
                        "type": "css-animation",
                        "smartPositionOff": true
                      }'>
-                    <i class="tio-filter-list mr-1"></i> Filter <span class="badge badge-soft-dark rounded-circle ml-1">2</span>
+                    <i class="tio-filter-list mr-1"></i> Filter <span class="badge badge-soft-dark rounded-circle ml-1">5</span>
                   </a>
 
                   <div id="usersFilterDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-sm-right dropdown-card card-dropdown-filter-centered" style="min-width: 22rem;">
                     <!-- Card -->
                     <div class="card">
                       <div class="card-header">
-                        <h5 class="card-header-title">Filter users</h5>
+                        <h5 class="card-header-title">Filter order list</h5>
 
                         <!-- Toggle Button -->
                         <a class="js-hs-unfold-invoker btn btn-icon btn-xs btn-ghost-secondary ml-2" href="javascript:;"
@@ -150,7 +150,7 @@
                         <form>
                           <div class="form-row">
                             <div class="col-sm form-group">
-                              <small class="text-cap mb-2">Status</small>
+                              <small class="text-cap mb-2">배송상태</small>
 
                               <!-- Select -->
                               <select class="js-select2-custom js-datatable-filter"
@@ -158,11 +158,55 @@
                                       data-hs-select2-options='{
                                         "minimumResultsForSearch": "Infinity"
                                       }'>
-                                <option value="">Any status</option>
-                                <option value="Active" data-option-template='<span class="legend-indicator bg-success"></span>정상'>정상</option>
-                                <option value="Stop" data-option-template='<span class="legend-indicator bg-warning"></span>정지'>정지</option>
-                                <option value="Secession" data-option-template='<span class="legend-indicator bg-danger"></span>탈퇴'>탈퇴</option>
-                                <option value="Dormancy" data-option-template='<span class="legend-indicator bg-danger"></span>휴면'>휴면</option>
+                                <option value="">전체</option>
+                                <option value="입금대기">입금대기</option>
+                                <option value="주문완료">주문완료</option>
+                                <option value="배송준비중">배송준비중</option>
+                                <option value="배송중">배송중</option>
+                                <option value="배송완료">배송완료</option>
+                                <option value="교환처리중">교환처리중</option>
+                                <option value="반품처리중">반품처리중</option>
+                                <option value="교환완료">교환완료</option>
+                                <option value="반품완료">반품완료</option>
+                                <option value="취소완료">취소완료</option>
+                                <option value="구매확정">구매확정</option>
+                              </select>
+                              <!-- End Select -->
+                            </div>
+                          </div>
+                          <!-- End Row -->
+
+                          <div class="form-row">
+                            <div class="col-sm form-group">
+                              <small class="text-cap mb-2">구분</small>
+
+                              <!-- Select -->
+                              <select class="js-select2-custom js-datatable-filter"
+                                      data-target-column-index="0"
+                                      data-hs-select2-options='{
+                                        "minimumResultsForSearch": "Infinity"
+                                      }'>
+                                <option value="">전체</option>
+                                <option value="캠페인">캠페인</option>
+                                <option value="리치쇼핑">리치쇼핑</option>
+                              </select>
+                              <!-- End Select -->
+                            </div>
+                          </div>
+                          <!-- End Row -->
+
+                          <div class="form-row">
+                            <div class="col-sm form-group">
+                              <small class="text-cap mb-2">광고주</small>
+
+                              <!-- Select -->
+                              <select class="js-select2-custom js-datatable-filter"
+                                      data-target-column-index="0"
+                                      data-hs-select2-options='{
+                                        "minimumResultsForSearch": "Infinity"
+                                      }'>
+                                <option value="">전체</option>
+                                <option value="광고주1">광고주1</option>
                               </select>
                               <!-- End Select -->
                             </div>
