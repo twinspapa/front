@@ -75,7 +75,7 @@
                       <i class="tio-search"></i>
                     </div>
                   </div>
-                  <input id="datatableSearch" type="search" class="form-control" placeholder="Search users" aria-label="Search users">
+                  <input id="datatableSearch" type="search" class="form-control" placeholder="Search text" aria-label="Search text">
                 </div>
                 <!-- End Search -->
               </form>
@@ -125,23 +125,23 @@
                 <div class="hs-unfold">
                   <a class="js-hs-unfold-invoker btn btn-sm btn-white" href="javascript:;"
                      data-hs-unfold-options='{
-                       "target": "#usersFilterDropdown",
+                       "target": "#filterDropdown",
                        "type": "css-animation",
                        "smartPositionOff": true
                      }'>
                     <i class="tio-filter-list mr-1"></i> Filter <span class="badge badge-soft-dark rounded-circle ml-1">2</span>
                   </a>
 
-                  <div id="usersFilterDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-sm-right dropdown-card card-dropdown-filter-centered" style="min-width: 22rem;">
+                  <div id="filterDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-sm-right dropdown-card card-dropdown-filter-centered" style="min-width: 22rem;">
                     <!-- Card -->
                     <div class="card">
                       <div class="card-header">
-                        <h5 class="card-header-title">Filter users</h5>
+                        <h5 class="card-header-title">Filter 광고주 리스트</h5>
 
                         <!-- Toggle Button -->
                         <a class="js-hs-unfold-invoker btn btn-icon btn-xs btn-ghost-secondary ml-2" href="javascript:;"
                            data-hs-unfold-options='{
-                            "target": "#usersFilterDropdown",
+                            "target": "#filterDropdown",
                             "type": "css-animation",
                             "smartPositionOff": true
                            }'>
@@ -154,7 +154,7 @@
                         <form>
                           <div class="form-row">
                             <div class="col-sm form-group">
-                              <small class="text-cap mb-2">Status</small>
+                              <small class="text-cap mb-2">광고주 상태</small>
 
                               <!-- Select -->
                               <select class="js-select2-custom js-datatable-filter"
@@ -163,10 +163,9 @@
                                         "minimumResultsForSearch": "Infinity"
                                       }'>
                                 <option value="">Any status</option>
-                                <option value="Active" data-option-template='<span class="legend-indicator bg-success"></span>정상'>정상</option>
-                                <option value="Stop" data-option-template='<span class="legend-indicator bg-warning"></span>정지'>정지</option>
-                                <option value="Secession" data-option-template='<span class="legend-indicator bg-danger"></span>탈퇴'>탈퇴</option>
-                                <option value="Dormancy" data-option-template='<span class="legend-indicator bg-danger"></span>휴면'>휴면</option>
+                                <option value="정상" data-option-template='<span class="legend-indicator bg-success"></span>정상'>정상</option>
+                                <option value="정지" data-option-template='<span class="legend-indicator bg-danger"></span>정지'>정지</option>
+                                <option value="탈퇴" data-option-template='<span class="legend-indicator bg-secondary"></span>탈퇴'>탈퇴</option>
                               </select>
                               <!-- End Select -->
                             </div>
@@ -175,7 +174,7 @@
 
                           <div class="form-row">
                               <div class="col-sm form-group">
-                                  <small class="text-cap mb-2">Join Date</small>
+                                  <small class="text-cap mb-2">가입일</small>
 
                                   <!-- Daterangepicker -->
                                   <div class="input-group input-group-merge">
@@ -200,7 +199,7 @@
 
                           <a class="js-hs-unfold-invoker btn btn-block btn-primary" href="javascript:;"
                              data-hs-unfold-options='{
-                              "target": "#usersFilterDropdown",
+                              "target": "#filterDropdown",
                               "type": "css-animation",
                               "smartPositionOff": true
                              }'>Apply</a>
@@ -223,8 +222,8 @@
           <table id="datatable" class="table table-lg table-borderless table-thead-bordered table-nowrap table-align-middle card-table table-hover"
                  data-hs-datatables-options='{
                    "columnDefs": [{
-                      "targets": [0, 6],
-                      "orderable": false
+                      "targets": [0, 8],
+                      "orderable": true
                     }],
                    "order": [],
                    "info": {
@@ -239,247 +238,117 @@
                  }'>
             <thead class="thead-light">
               <tr>
-                <th>Status</th>
-                <th>User ID</th>
-                <th>Nick Name</th>
-                <th>Gender</th>
-                <th>Location</th>
-                <th>Phone</th>
-                <th>Join Date</th>
+                <th>광고주상태</th>
+                <th>아이디</th>
+                <th>광고주명</th>
+                <th>캠페인</th>
+                <th>리치쇼핑</th>
+                <th>소진캐쉬</th>
+                <th>보유캐쉬</th>
+                <th>가입일</th>
+                <th>ACTIONS</th>
               </tr>
             </thead>
 
             <tbody>
               <tr>
                 <td>
-                  <span class="legend-indicator bg-success"></span>Active
+                  <span class="legend-indicator bg-success"></span>정상
                 </td>
-                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td>scrich@scrich.com</td>
                 <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
-                <td>010-3762-6202</td>
-                <td>2020/11/02</td>
-              </tr>
-              <tr>
+                <td>1/3</td>
+                <td>1/3</td>
+                <td>1,000,000</td>
+                <td>1,000,000</td>
+                <td>2020/11/01</td>
                 <td>
-                  <span class="legend-indicator bg-success"></span>Active
+                  <!-- Unfold -->
+                  <div class="hs-unfold btn-group">
+                    <a class="js-hs-unfold-invoker btn btn-sm btn-white dropdown-toggle dropdown-toggle-empty" href="javascript:;"
+                       data-hs-unfold-options='{
+                         "target": "#productsEditDropdown1",
+                         "type": "css-animation",
+                         "smartPositionOffEl": "#datatable"
+                       }'>More</a>
+
+                    <div id="productsEditDropdown1" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right mt-1">
+                      <a class="detailLink dropdown-item" href="#" advertiser-id="scrich@scrich.com">
+                        <i class="tio-document-text dropdown-item-icon"></i> 상세정보
+                      </a>
+                      <a class="loginLink dropdown-item" href="#" advertiser-id="scrich@scrich.com">
+                        <i class="tio-sign-in dropdown-item-icon"></i> 로그인
+                      </a>
+                    </div>
+                  </div>
+                  <!-- End Unfold -->
                 </td>
-                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
-                <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
-                <td>010-3762-6202</td>
-                <td>2020/11/02</td>
               </tr>
-              <tr>
+              <tr class="advertiser_id" advertiser-id="scrich@scrich.com">
                 <td>
-                  <span class="legend-indicator bg-success"></span>Active
+                  <span class="legend-indicator bg-danger"></span>정지
                 </td>
-                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td>scrich@scrich.com</td>
                 <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
-                <td>010-3762-6202</td>
-                <td>2020/11/02</td>
+                <td>1/3</td>
+                <td>1/3</td>
+                <td>1,000,000</td>
+                <td>1,000,000</td>
+                <td>2020/12/02</td>
+                <td>
+                  <!-- Unfold -->
+                  <div class="hs-unfold btn-group">
+                    <a class="js-hs-unfold-invoker btn btn-sm btn-white dropdown-toggle dropdown-toggle-empty" href="javascript:;"
+                       data-hs-unfold-options='{
+                         "target": "#productsEditDropdown2",
+                         "type": "css-animation",
+                         "smartPositionOffEl": "#datatable"
+                       }'>More</a>
+
+                    <div id="productsEditDropdown2" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right mt-1">
+                      <a class="detailLink dropdown-item" href="#" advertiser-id="scrich@scrich.com">
+                        <i class="tio-document-text dropdown-item-icon"></i> 상세정보
+                      </a>
+                      <a class="loginLink dropdown-item" href="#" advertiser-id="scrich@scrich.com">
+                        <i class="tio-sign-in dropdown-item-icon"></i> 로그인
+                      </a>
+                    </div>
+                  </div>
+                  <!-- End Unfold -->
+                </td>
               </tr>
-              <tr>
+              <tr class="advertiser_id" advertiser-id="scrich@scrich.com">
                 <td>
-                  <span class="legend-indicator bg-success"></span>Active
+                  <span class="legend-indicator bg-secondary"></span>탈퇴
                 </td>
-                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td>scrich@scrich.com</td>
                 <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
-                <td>010-3762-6202</td>
-                <td>2020/11/02</td>
-              </tr>
-              <tr>
+                <td>1/3</td>
+                <td>1/3</td>
+                <td>1,000,000</td>
+                <td>1,000,000</td>
+                <td>2021/01/02</td>
                 <td>
-                  <span class="legend-indicator bg-success"></span>Active
+                  <!-- Unfold -->
+                  <div class="hs-unfold btn-group">
+                    <a class="js-hs-unfold-invoker btn btn-sm btn-white dropdown-toggle dropdown-toggle-empty" href="javascript:;"
+                       data-hs-unfold-options='{
+                         "target": "#productsEditDropdown3",
+                         "type": "css-animation",
+                         "smartPositionOffEl": "#datatable"
+                       }'>More</a>
+
+                    <div id="productsEditDropdown3" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right mt-1">
+                      <a class="detailLink dropdown-item" href="#" advertiser-id="scrich@scrich.com">
+                        <i class="tio-document-text dropdown-item-icon"></i> 상세정보
+                      </a>
+                      <a class="loginLink dropdown-item" href="#" advertiser-id="scrich@scrich.com">
+                        <i class="tio-sign-in dropdown-item-icon"></i> 로그인
+                      </a>
+                    </div>
+                  </div>
+                  <!-- End Unfold -->
                 </td>
-                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
-                <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
-                <td>010-3762-6202</td>
-                <td>2020/11/02</td>
-              </tr>
-              <tr>
-                <td>
-                  <span class="legend-indicator bg-success"></span>Active
-                </td>
-                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
-                <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
-                <td>010-3762-6202</td>
-                <td>2020/11/02</td>
-              </tr>
-              <tr>
-                <td>
-                  <span class="legend-indicator bg-success"></span>Active
-                </td>
-                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
-                <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
-                <td>010-3762-6202</td>
-                <td>2020/11/02</td>
-              </tr>
-              <tr>
-                <td>
-                  <span class="legend-indicator bg-success"></span>Active
-                </td>
-                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
-                <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
-                <td>010-3762-6202</td>
-                <td>2020/11/02</td>
-              </tr>
-              <tr>
-                <td>
-                  <span class="legend-indicator bg-success"></span>Active
-                </td>
-                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
-                <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
-                <td>010-3762-6202</td>
-                <td>2020/11/02</td>
-              </tr>
-              <tr>
-                <td>
-                  <span class="legend-indicator bg-success"></span>Active
-                </td>
-                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
-                <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
-                <td>010-3762-6202</td>
-                <td>2020/11/02</td>
-              </tr>
-              <tr>
-                <td>
-                  <span class="legend-indicator bg-success"></span>Active
-                </td>
-                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
-                <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
-                <td>010-3762-6202</td>
-                <td>2020/11/02</td>
-              </tr>
-              <tr>
-                <td>
-                  <span class="legend-indicator bg-success"></span>Active
-                </td>
-                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
-                <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
-                <td>010-3762-6202</td>
-                <td>2020/11/02</td>
-              </tr>
-              <tr>
-                <td>
-                  <span class="legend-indicator bg-success"></span>Active
-                </td>
-                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
-                <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
-                <td>010-3762-6202</td>
-                <td>2020/11/02</td>
-              </tr>
-              <tr>
-                <td>
-                  <span class="legend-indicator bg-success"></span>Active
-                </td>
-                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
-                <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
-                <td>010-3762-6202</td>
-                <td>2020/11/02</td>
-              </tr>
-              <tr>
-                <td>
-                  <span class="legend-indicator bg-success"></span>Active
-                </td>
-                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
-                <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
-                <td>010-3762-6202</td>
-                <td>2020/11/02</td>
-              </tr>
-              <tr>
-                <td>
-                  <span class="legend-indicator bg-success"></span>Active
-                </td>
-                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
-                <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
-                <td>010-3762-6202</td>
-                <td>2020/11/02</td>
-              </tr>
-              <tr>
-                <td>
-                  <span class="legend-indicator bg-success"></span>Active
-                </td>
-                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
-                <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
-                <td>010-3762-6202</td>
-                <td>2020/11/02</td>
-              </tr>
-              <tr>
-                <td>
-                  <span class="legend-indicator bg-success"></span>Active
-                </td>
-                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
-                <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
-                <td>010-3762-6202</td>
-                <td>2020/11/02</td>
-              </tr>
-              <tr>
-                <td>
-                  <span class="legend-indicator bg-success"></span>Active
-                </td>
-                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
-                <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
-                <td>010-3762-6202</td>
-                <td>2020/11/02</td>
-              </tr>
-              <tr>
-                <td>
-                  <span class="legend-indicator bg-success"></span>Active
-                </td>
-                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
-                <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
-                <td>010-3762-6202</td>
-                <td>2020/11/02</td>
-              </tr>
-              <tr>
-                <td>
-                  <span class="legend-indicator bg-success"></span>Active
-                </td>
-                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
-                <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
-                <td>010-3762-6202</td>
-                <td>2020/11/02</td>
               </tr>
             </tbody>
           </table>
@@ -665,13 +534,16 @@
 
         if (!startDate || !endDate) return true;
 
-        let compareDate = moment(moment(data[6]).format('YYYY/MM/DD'));
+        let compareDate = moment(moment(data[7]).format('YYYY/MM/DD'));
 
         return compareDate.isBetween(startDate -1 , endDate + 1 );
       }
     );
 
     urlCompareAddClass($('.page-header-tabs .nav-link'), 'active');
+
+    goLink2('.detailLink', 'PGID_I1A.html', 'advertiser-id');
+    goLink2('.loginLink', 'test.html', 'advertiser-id');
   });
   </script>
 </body>
