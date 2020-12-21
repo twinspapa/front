@@ -52,6 +52,12 @@
             </nav>
             <h1 class="page-title">관리자</h1>
           </div>
+
+          <div class="col-sm-auto">
+            <a class="btn btn-primary" href="PGID_K1.html">
+              <i class="tio-add mr-1"></i> 관리자 등록
+            </a>
+          </div>
         </div>
         <!-- End Row -->
       </div>
@@ -125,7 +131,7 @@
                        "type": "css-animation",
                        "smartPositionOff": true
                      }'>
-                    <i class="tio-filter-list mr-1"></i> Filter <span class="badge badge-soft-dark rounded-circle ml-1">5</span>
+                    <i class="tio-filter-list mr-1"></i> Filter <span class="badge badge-soft-dark rounded-circle ml-1">2</span>
                   </a>
 
                   <div id="usersFilterDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-sm-right dropdown-card card-dropdown-filter-centered" style="min-width: 22rem;">
@@ -150,7 +156,7 @@
                         <form>
                           <div class="form-row">
                             <div class="col-sm form-group">
-                              <small class="text-cap mb-2">배송상태</small>
+                              <small class="text-cap mb-2">관리자 상태</small>
 
                               <!-- Select -->
                               <select class="js-select2-custom js-datatable-filter"
@@ -159,54 +165,8 @@
                                         "minimumResultsForSearch": "Infinity"
                                       }'>
                                 <option value="">전체</option>
-                                <option value="입금대기">입금대기</option>
-                                <option value="주문완료">주문완료</option>
-                                <option value="배송준비중">배송준비중</option>
-                                <option value="배송중">배송중</option>
-                                <option value="배송완료">배송완료</option>
-                                <option value="교환처리중">교환처리중</option>
-                                <option value="반품처리중">반품처리중</option>
-                                <option value="교환완료">교환완료</option>
-                                <option value="반품완료">반품완료</option>
-                                <option value="취소완료">취소완료</option>
-                                <option value="구매확정">구매확정</option>
-                              </select>
-                              <!-- End Select -->
-                            </div>
-                          </div>
-                          <!-- End Row -->
-
-                          <div class="form-row">
-                            <div class="col-sm form-group">
-                              <small class="text-cap mb-2">구분</small>
-
-                              <!-- Select -->
-                              <select class="js-select2-custom js-datatable-filter"
-                                      data-target-column-index="0"
-                                      data-hs-select2-options='{
-                                        "minimumResultsForSearch": "Infinity"
-                                      }'>
-                                <option value="">전체</option>
-                                <option value="캠페인">캠페인</option>
-                                <option value="리치쇼핑">리치쇼핑</option>
-                              </select>
-                              <!-- End Select -->
-                            </div>
-                          </div>
-                          <!-- End Row -->
-
-                          <div class="form-row">
-                            <div class="col-sm form-group">
-                              <small class="text-cap mb-2">광고주</small>
-
-                              <!-- Select -->
-                              <select class="js-select2-custom js-datatable-filter"
-                                      data-target-column-index="0"
-                                      data-hs-select2-options='{
-                                        "minimumResultsForSearch": "Infinity"
-                                      }'>
-                                <option value="">전체</option>
-                                <option value="광고주1">광고주1</option>
+                                <option value="정상">정상</option>
+                                <option value="정지">정지</option>
                               </select>
                               <!-- End Select -->
                             </div>
@@ -215,7 +175,7 @@
 
                           <div class="form-row">
                               <div class="col-sm form-group">
-                                  <small class="text-cap mb-2">Join Date</small>
+                                  <small class="text-cap mb-2">가입일</small>
 
                                   <!-- Daterangepicker -->
                                   <div class="input-group input-group-merge">
@@ -263,8 +223,8 @@
           <table id="datatable" class="table table-lg table-borderless table-thead-bordered table-nowrap table-align-middle card-table table-hover"
                  data-hs-datatables-options='{
                    "columnDefs": [{
-                      "targets": [0, 6],
-                      "orderable": false
+                      "targets": [0, 5],
+                      "orderable": true
                     }],
                    "order": [],
                    "info": {
@@ -279,245 +239,373 @@
                  }'>
             <thead class="thead-light">
               <tr>
-                <th>Status</th>
-                <th>User ID</th>
-                <th>Nick Name</th>
-                <th>Gender</th>
-                <th>Location</th>
-                <th>Phone</th>
-                <th>Join Date</th>
+                <th>관리자상태</th>
+                <th>아이디</th>
+                <th>닉네임</th>
+                <th>이름</th>
+                <th>연락처</th>
+                <th>가입일</th>
               </tr>
             </thead>
 
             <tbody>
               <tr>
                 <td>
-                  <span class="legend-indicator bg-success"></span>Active
+                  <span class="legend-indicator bg-success"></span>정상
                 </td>
-                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td class="manager_id" manager-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
                 <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
+                <td>김진혁</td>
                 <td>010-3762-6202</td>
                 <td>2020/11/02</td>
               </tr>
               <tr>
                 <td>
-                  <span class="legend-indicator bg-success"></span>Active
+                  <span class="legend-indicator bg-danger"></span>정지
                 </td>
-                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td class="manager_id" manager-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
                 <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
+                <td>김진혁</td>
                 <td>010-3762-6202</td>
                 <td>2020/11/02</td>
               </tr>
               <tr>
                 <td>
-                  <span class="legend-indicator bg-success"></span>Active
+                  <span class="legend-indicator bg-success"></span>정상
                 </td>
-                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td class="manager_id" manager-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
                 <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
+                <td>김진혁</td>
                 <td>010-3762-6202</td>
                 <td>2020/11/02</td>
               </tr>
               <tr>
                 <td>
-                  <span class="legend-indicator bg-success"></span>Active
+                  <span class="legend-indicator bg-danger"></span>정지
                 </td>
-                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td class="manager_id" manager-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
                 <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
+                <td>김진혁</td>
                 <td>010-3762-6202</td>
                 <td>2020/11/02</td>
               </tr>
               <tr>
                 <td>
-                  <span class="legend-indicator bg-success"></span>Active
+                  <span class="legend-indicator bg-success"></span>정상
                 </td>
-                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td class="manager_id" manager-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
                 <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
+                <td>김진혁</td>
                 <td>010-3762-6202</td>
                 <td>2020/11/02</td>
               </tr>
               <tr>
                 <td>
-                  <span class="legend-indicator bg-success"></span>Active
+                  <span class="legend-indicator bg-danger"></span>정지
                 </td>
-                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td class="manager_id" manager-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
                 <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
+                <td>김진혁</td>
                 <td>010-3762-6202</td>
                 <td>2020/11/02</td>
               </tr>
               <tr>
                 <td>
-                  <span class="legend-indicator bg-success"></span>Active
+                  <span class="legend-indicator bg-success"></span>정상
                 </td>
-                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td class="manager_id" manager-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
                 <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
+                <td>김진혁</td>
                 <td>010-3762-6202</td>
                 <td>2020/11/02</td>
               </tr>
               <tr>
                 <td>
-                  <span class="legend-indicator bg-success"></span>Active
+                  <span class="legend-indicator bg-danger"></span>정지
                 </td>
-                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td class="manager_id" manager-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
                 <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
+                <td>김진혁</td>
                 <td>010-3762-6202</td>
                 <td>2020/11/02</td>
               </tr>
               <tr>
                 <td>
-                  <span class="legend-indicator bg-success"></span>Active
+                  <span class="legend-indicator bg-success"></span>정상
                 </td>
-                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td class="manager_id" manager-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
                 <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
+                <td>김진혁</td>
                 <td>010-3762-6202</td>
                 <td>2020/11/02</td>
               </tr>
               <tr>
                 <td>
-                  <span class="legend-indicator bg-success"></span>Active
+                  <span class="legend-indicator bg-danger"></span>정지
                 </td>
-                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td class="manager_id" manager-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
                 <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
+                <td>김진혁</td>
                 <td>010-3762-6202</td>
                 <td>2020/11/02</td>
               </tr>
               <tr>
                 <td>
-                  <span class="legend-indicator bg-success"></span>Active
+                  <span class="legend-indicator bg-success"></span>정상
                 </td>
-                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td class="manager_id" manager-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
                 <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
+                <td>김진혁</td>
                 <td>010-3762-6202</td>
                 <td>2020/11/02</td>
               </tr>
               <tr>
                 <td>
-                  <span class="legend-indicator bg-success"></span>Active
+                  <span class="legend-indicator bg-danger"></span>정지
                 </td>
-                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td class="manager_id" manager-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
                 <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
+                <td>김진혁</td>
                 <td>010-3762-6202</td>
                 <td>2020/11/02</td>
               </tr>
               <tr>
                 <td>
-                  <span class="legend-indicator bg-success"></span>Active
+                  <span class="legend-indicator bg-success"></span>정상
                 </td>
-                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td class="manager_id" manager-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
                 <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
+                <td>김진혁</td>
                 <td>010-3762-6202</td>
                 <td>2020/11/02</td>
               </tr>
               <tr>
                 <td>
-                  <span class="legend-indicator bg-success"></span>Active
+                  <span class="legend-indicator bg-danger"></span>정지
                 </td>
-                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td class="manager_id" manager-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
                 <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
+                <td>김진혁</td>
                 <td>010-3762-6202</td>
                 <td>2020/11/02</td>
               </tr>
               <tr>
                 <td>
-                  <span class="legend-indicator bg-success"></span>Active
+                  <span class="legend-indicator bg-success"></span>정상
                 </td>
-                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td class="manager_id" manager-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
                 <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
+                <td>김진혁</td>
                 <td>010-3762-6202</td>
                 <td>2020/11/02</td>
               </tr>
               <tr>
                 <td>
-                  <span class="legend-indicator bg-success"></span>Active
+                  <span class="legend-indicator bg-danger"></span>정지
                 </td>
-                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td class="manager_id" manager-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
                 <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
+                <td>김진혁</td>
                 <td>010-3762-6202</td>
                 <td>2020/11/02</td>
               </tr>
               <tr>
                 <td>
-                  <span class="legend-indicator bg-success"></span>Active
+                  <span class="legend-indicator bg-success"></span>정상
                 </td>
-                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td class="manager_id" manager-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
                 <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
+                <td>김진혁</td>
                 <td>010-3762-6202</td>
                 <td>2020/11/02</td>
               </tr>
               <tr>
                 <td>
-                  <span class="legend-indicator bg-success"></span>Active
+                  <span class="legend-indicator bg-danger"></span>정지
                 </td>
-                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td class="manager_id" manager-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
                 <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
+                <td>김진혁</td>
                 <td>010-3762-6202</td>
                 <td>2020/11/02</td>
               </tr>
               <tr>
                 <td>
-                  <span class="legend-indicator bg-success"></span>Active
+                  <span class="legend-indicator bg-success"></span>정상
                 </td>
-                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td class="manager_id" manager-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
                 <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
+                <td>김진혁</td>
                 <td>010-3762-6202</td>
                 <td>2020/11/02</td>
               </tr>
               <tr>
                 <td>
-                  <span class="legend-indicator bg-success"></span>Active
+                  <span class="legend-indicator bg-danger"></span>정지
                 </td>
-                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td class="manager_id" manager-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
                 <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
+                <td>김진혁</td>
                 <td>010-3762-6202</td>
                 <td>2020/11/02</td>
               </tr>
               <tr>
                 <td>
-                  <span class="legend-indicator bg-success"></span>Active
+                  <span class="legend-indicator bg-success"></span>정상
                 </td>
-                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td class="manager_id" manager-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
                 <td>Scrich</td>
-                <td>남</td>
-                <td>서울</td>
+                <td>김진혁</td>
+                <td>010-3762-6202</td>
+                <td>2020/11/02</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="legend-indicator bg-danger"></span>정지
+                </td>
+                <td class="manager_id" manager-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td>Scrich</td>
+                <td>김진혁</td>
+                <td>010-3762-6202</td>
+                <td>2020/11/02</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="legend-indicator bg-success"></span>정상
+                </td>
+                <td class="manager_id" manager-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td>Scrich</td>
+                <td>김진혁</td>
+                <td>010-3762-6202</td>
+                <td>2020/11/02</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="legend-indicator bg-danger"></span>정지
+                </td>
+                <td class="manager_id" manager-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td>Scrich</td>
+                <td>김진혁</td>
+                <td>010-3762-6202</td>
+                <td>2020/11/02</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="legend-indicator bg-success"></span>정상
+                </td>
+                <td class="manager_id" manager-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td>Scrich</td>
+                <td>김진혁</td>
+                <td>010-3762-6202</td>
+                <td>2020/11/02</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="legend-indicator bg-danger"></span>정지
+                </td>
+                <td class="manager_id" manager-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td>Scrich</td>
+                <td>김진혁</td>
+                <td>010-3762-6202</td>
+                <td>2020/11/02</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="legend-indicator bg-success"></span>정상
+                </td>
+                <td class="manager_id" manager-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td>Scrich</td>
+                <td>김진혁</td>
+                <td>010-3762-6202</td>
+                <td>2020/11/02</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="legend-indicator bg-danger"></span>정지
+                </td>
+                <td class="manager_id" manager-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td>Scrich</td>
+                <td>김진혁</td>
+                <td>010-3762-6202</td>
+                <td>2020/11/02</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="legend-indicator bg-success"></span>정상
+                </td>
+                <td class="manager_id" manager-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td>Scrich</td>
+                <td>김진혁</td>
+                <td>010-3762-6202</td>
+                <td>2020/11/02</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="legend-indicator bg-danger"></span>정지
+                </td>
+                <td class="manager_id" manager-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td>Scrich</td>
+                <td>김진혁</td>
+                <td>010-3762-6202</td>
+                <td>2020/11/02</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="legend-indicator bg-success"></span>정상
+                </td>
+                <td class="manager_id" manager-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td>Scrich</td>
+                <td>김진혁</td>
+                <td>010-3762-6202</td>
+                <td>2020/11/02</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="legend-indicator bg-danger"></span>정지
+                </td>
+                <td class="manager_id" manager-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td>Scrich</td>
+                <td>김진혁</td>
+                <td>010-3762-6202</td>
+                <td>2020/11/02</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="legend-indicator bg-success"></span>정상
+                </td>
+                <td class="manager_id" manager-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td>Scrich</td>
+                <td>김진혁</td>
+                <td>010-3762-6202</td>
+                <td>2020/11/02</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="legend-indicator bg-danger"></span>정지
+                </td>
+                <td class="manager_id" manager-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td>Scrich</td>
+                <td>김진혁</td>
+                <td>010-3762-6202</td>
+                <td>2020/11/02</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="legend-indicator bg-success"></span>정상
+                </td>
+                <td class="manager_id" manager-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td>Scrich</td>
+                <td>김진혁</td>
+                <td>010-3762-6202</td>
+                <td>2020/11/02</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="legend-indicator bg-danger"></span>정지
+                </td>
+                <td class="manager_id" manager-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td>Scrich</td>
+                <td>김진혁</td>
                 <td>010-3762-6202</td>
                 <td>2020/11/02</td>
               </tr>
@@ -704,13 +792,13 @@
 
           if (!startDate || !endDate) return true;
 
-          let compareDate = moment(moment(data[6]).format('YYYY/MM/DD'));
+          let compareDate = moment(moment(data[5]).format('YYYY/MM/DD'));
 
           return compareDate.isBetween(startDate -1 , endDate + 1 );
         }
       );
 
-      goLink2('.user_id', 'PGID_B1.html', 'user-id');
+      goLink2('.manager_id', 'PGID_K2.html', 'manager-id');
     });
   </script>
 </body>
