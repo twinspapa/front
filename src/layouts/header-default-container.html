@@ -75,17 +75,22 @@
   <!-- JS Plugins Init. -->
   <script>
     $(document).on('ready', function () {
-      // initialization of unfold
+      // INITIALIZATION OF UNFOLD
+      // =======================================================
       $('.js-hs-unfold-invoker').each(function () {
         var unfold = new HSUnfold($(this)).init();
       });
 
-      // initialization of form search
+
+      // INITIALIZATION OF FORM SEARCH
+      // =======================================================
       $('.js-form-search').each(function () {
         new HSFormSearch($(this)).init()
       });
 
-      // initialization of mega menu
+      
+      // INITIALIZATION OF MEGA MENU
+      // =======================================================
       var megaMenu = new HSMegaMenu($('.js-mega-menu'), {
         desktop: {
           position: 'left'

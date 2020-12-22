@@ -6,6 +6,10 @@ export default {
         this.DOM.dropdown.content = this.DOM.dropdown.querySelector('.' + this.settings.classNames.dropdownWrapper)
     },
 
+    /**
+     * shows the suggestions select box
+     * @param {String} value [optional, filter the whitelist by this value]
+     */
     show( value ){
         var _s = this.settings,
             firstListItem,
@@ -15,6 +19,9 @@ export default {
             noWhitelist =  !_s.whitelist || !_s.whitelist.length,
             noMatchListItem,
             isManual = _s.dropdown.position == 'manual';
+
+        // if text still exists in the input, and `show` method has no argument, then the input's text should be used
+        value = value === undefined ? this.state.inputText : value
 
         // ⚠️ Do not render suggestions list  if:
         // 1. there's no whitelist (can happen while async loading) AND new tags arn't allowed
@@ -203,6 +210,8 @@ export default {
     },
 
     position( ddHeight ){
+        if( this.settings.dropdown.position == 'manual' ) return
+
         var placeAbove, rect, top, bottom, left, width, parentsPositions,
             ddElm = this.DOM.dropdown,
             viewportHeight = document.documentElement.clientHeight,
@@ -326,14 +335,15 @@ export default {
                             return
                     case 'Tab' : {
                         // in mix-mode, treat arrowRight like Enter key, so a tag will be created
-                        if( this.settings.mode != 'mix' && !this.settings.autoComplete.rightKey && !this.state.editing ){
-                            try{
-                                let value = selectedElm ? selectedElm.textContent : this.suggestedListItems[0].value;
-                                this.input.autocomplete.set.call(this, value)
-                            }
-                            catch(err){}
-                            return false;
+                        if( this.settings.mode != 'mix' && selectedElm && !this.settings.autoComplete.rightKey && !this.state.editing ){
+                            e.preventDefault() // prevents blur so the autocomplete suggestion will not become a tag
+                            var tagifySuggestionIdx = selectedElm.getAttribute('tagifySuggestionIdx'),
+                                data = tagifySuggestionIdx ? this.suggestedListItems[+tagifySuggestionIdx] : '';
+
+                            this.input.autocomplete.set.call(this, data.value || data)
+                            return false
                         }
+                        return true
                     }
                     case 'Enter' : {
                         e.preventDefault();
@@ -343,7 +353,7 @@ export default {
                     case 'Backspace' : {
                         if( this.settings.mode == 'mix' || this.state.editing.scope ) return;
 
-                        let value = this.input.value.trim()
+                        let value = this.state.inputText.trim()
 
                         if( value == "" || value.charCodeAt(0) == 8203 ){
                             if( this.settings.backspace === true )
@@ -431,8 +441,7 @@ export default {
         // Try to autocomplete the typed value with the currently highlighted dropdown item
         if( this.settings.autoComplete ){
             this.input.autocomplete.suggest.call(this, itemData)
-            if( this.settings.dropdown.position != 'manual' )
-                this.dropdown.position.call(this) // suggestions might alter the height of the tagify wrapper because of unkown suggested term length that could drop to the next line
+            this.dropdown.position.call(this) // suggestions might alter the height of the tagify wrapper because of unkown suggested term length that could drop to the next line
         }
     },
 
@@ -444,7 +453,7 @@ export default {
         var {clearOnSelect, closeOnSelect} = this.settings.dropdown
 
         if( !elm ) {
-            this.addTags(this.input.value, true)
+            this.addTags(this.state.inputText, true)
             closeOnSelect && this.dropdown.hide.call(this)
             return;
         }
@@ -453,25 +462,22 @@ export default {
         // the scenario is that "addTags" was called from a dropdown suggested option selected while editing
 
         var tagifySuggestionIdx = elm.getAttribute('tagifySuggestionIdx'),
-            selectedOption = tagifySuggestionIdx ? this.suggestedListItems[+tagifySuggestionIdx] : '',
-            tagData = selectedOption || this.input.value;
+            tagData = this.suggestedListItems[+tagifySuggestionIdx];
+
+        if( !tagifySuggestionIdx || !tagData ){
+            return
+        }
 
         this.trigger("dropdown:select", {data:tagData, elm})
 
         if( this.state.editing ){
-            this.onEditTagDone(this.state.editing.scope, {
-                ...this.state.editing.scope.__tagifyTagData,
-                value: tagData.value,
-                ...(tagData instanceof Object ? tagData : {}),  // if "tagData" is an Object, include all its properties
-                __isValid: true
-            })
+            this.onEditTagDone(null, extend({__isValid: true}, tagData))
         }
 
         // Tagify instances should re-focus to the input element once an option was selected, to allow continuous typing
         else{
             this.addTags([tagData], clearOnSelect)
         }
-
 
         // todo: consider not doing this on mix-mode
         setTimeout(() => {
@@ -487,40 +493,39 @@ export default {
     },
 
     selectAll(){
-        // some whitelist items might have already been added as tags so when addings all of them,
-        // skip shoing already-added ones
-        var skipInvalid = this.settings.skipInvalid;
-        this.settings.skipInvalid = true;
-
-        this.addTags(this.settings.whitelist, true)
-
-        this.settings.skipInvalid = skipInvalid;
-
+        // having suggestedListItems with items messes with "normalizeTags" when wanting
+        // to add all tags
+        this.suggestedListItems.length = 0;
         this.dropdown.hide.call(this)
+
+        // some whitelist items might have already been added as tags so when addings all of them,
+        // skip adding already-added ones, so best to use "filterListItems" method over "settings.whitelist"
+        this.addTags(this.dropdown.filterListItems.call(this, ''), true)
         return this
     },
 
     /**
      * returns an HTML string of the suggestions' list items
-     * @param {string} value string to filter the whitelist by
+     * @param {String} value string to filter the whitelist by
+     * @param {Object} options "exact" - for exact complete match
      * @return {Array} list of filtered whitelist items according to the settings provided and current value
      */
-    filterListItems( value ){
+    filterListItems( value, options ){
         var _s = this.settings,
             _sd = _s.dropdown,
+            options = options || {},
             list = [],
             whitelist = _s.whitelist,
             suggestionsCount = _sd.maxItems || Infinity,
             searchKeys = _sd.searchKeys,
             whitelistItem,
             valueIsInWhitelist,
-            whitelistItemValueIndex,
             searchBy,
             isDuplicate,
             niddle,
             i = 0;
 
-        if( !value ){
+        if( !value || !searchKeys.length ){
             return (_s.duplicates
                 ? whitelist
                 : whitelist.filter(item => !this.isTagDuplicate( isObject(item) ? item.value : item )) // don't include tags which have already been added.
@@ -531,22 +536,27 @@ export default {
             ? ""+value
             : (""+value).toLowerCase()
 
+        function stringHasAll(s, query){
+            return query.toLowerCase().split(' ').every(q => s.includes(q.toLowerCase()))
+        }
+
         for( ; i < whitelist.length; i++ ){
             whitelistItem = whitelist[i] instanceof Object ? whitelist[i] : { value:whitelist[i] } //normalize value as an Object
 
-            if( _sd.fuzzySearch ){
+            if( _sd.fuzzySearch && !options.exact ){
                 searchBy = searchKeys.reduce((values, k) => values + " " + (whitelistItem[k]||""), "").toLowerCase()
 
-                whitelistItemValueIndex = _sd.accentedSearch
-                    ? unaccent(searchBy).indexOf(unaccent(niddle))
-                    : searchBy.indexOf(niddle)
+                if( _sd.accentedSearch ){
+                    searchBy = unaccent(searchBy)
+                    niddle = unaccent(niddle)
+                }
 
-                valueIsInWhitelist = whitelistItemValueIndex >= 0
+                valueIsInWhitelist = stringHasAll(searchBy, niddle)
             }
 
             else {
                 valueIsInWhitelist = searchKeys.some(k => {
-                    var v = (""+whitelistItem[k]||"")
+                    var v = '' + (whitelistItem[k] || '') // if key exists, cast to type String
 
                     if( _sd.accentedSearch ){
                         v = unaccent(v)
@@ -556,7 +566,9 @@ export default {
                     if( !_sd.caseSensitive )
                         v = v.toLowerCase()
 
-                    return v.indexOf(niddle) == 0
+                    return options.exact
+                        ? v == niddle
+                        : v.indexOf(niddle) == 0
                 })
             }
 
@@ -585,11 +597,18 @@ export default {
             var mapValueTo = this.settings.dropdown.mapValueTo,
                 value = (mapValueTo
                     ? typeof mapValueTo == 'function' ? mapValueTo(suggestion) : suggestion[mapValueTo]
-                    : suggestion.value),
-                escapedValue = value && typeof value == 'string' ? escapeHTML(value) : value,
-                data = extend({}, suggestion, { value:escapedValue, tagifySuggestionIdx:idx })
+                    : suggestion.value);
 
-            return this.settings.templates.dropdownItem.call(this, data)
+            suggestion.value = value && typeof value == 'string'
+                ? escapeHTML(value)
+                : value
+
+            var tagHTMLString = this.settings.templates.dropdownItem.call(this, suggestion)
+
+            // make sure the sugestion index is present as attribute, to match the data when one is selected
+            tagHTMLString = tagHTMLString.replace('>', ` tagifySuggestionIdx="${idx}">`)
+
+            return tagHTMLString
         }).join("")
     }
 }

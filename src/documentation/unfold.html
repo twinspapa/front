@@ -75,7 +75,8 @@
               <code class="language-html" data-lang="html">
                 &lt;script&gt;
                   $(document).on('ready', function () {
-                    // initialization of unfold
+                    // INITIALIZATION OF UNFOLD
+                    // =======================================================
                     var unfold = new HSUnfold('.js-hs-unfold-invoker').init();
                   });
                 &lt;/script&gt;
@@ -199,7 +200,7 @@
 
                   <!-- Sidebar -->
                   <div id="activitySidebar" class="hs-unfold-content sidebar sidebar-bordered sidebar-box-shadow">
-                    <div class="card card-lg sidebar-card sidebar-scrollbar">
+                    <div class="card card-lg sidebar-card sidebar-footer-fixed">
                       <div class="card-header">
                         <h4 class="card-header-title">Sidebar title</h4>
 
@@ -219,10 +220,16 @@
                       </div>
 
                       <!-- Body -->
-                      <div class="card-body sidebar-body">
+                      <div class="card-body sidebar-body sidebar-scrollbar">
                         Sidebar body...
                       </div>
                       <!-- End Body -->
+
+                      <!-- Footer -->
+                      <div class="card-footer sidebar-footer">
+                        <button type="button" class="btn btn-block btn-primary">Done</button>
+                      </div>
+                      <!-- End Footer -->
                     </div>
                   </div>
                   <!-- End Sidebar -->
@@ -249,7 +256,7 @@
 
                       &lt;!-- Sidebar --&gt;
                       &lt;div id="activitySidebar" class="hs-unfold-content sidebar sidebar-bordered sidebar-box-shadow"&gt;
-                        &lt;div class="card card-lg sidebar-card sidebar-scrollbar"&gt;
+                        &lt;div class="card card-lg sidebar-card sidebar-footer-fixed"&gt;
                           &lt;div class="card-header"&gt;
                             &lt;h4 class="card-header-title"&gt;Sidebar title&lt;/h4&gt;
 
@@ -269,10 +276,16 @@
                           &lt;/div&gt;
 
                           &lt;!-- Body --&gt;
-                          &lt;div class="card-body sidebar-body"&gt;
+                          &lt;div class="card-body sidebar-body sidebar-scrollbar"&gt;
                             Sidebar body...
                           &lt;/div&gt;
                           &lt;!-- End Body --&gt;
+
+                          &lt;!-- Footer --&gt;
+                          &lt;div class="card-footer sidebar-footer"&gt;
+                            &lt;button type="button" class="btn btn-block btn-primary"&gt;Done&lt;/button&gt;
+                          &lt;/div&gt;
+                          &lt;!-- End Footer --&gt;
                         &lt;/div&gt;
                       &lt;/div&gt;
                       &lt;!-- End Sidebar --&gt;
@@ -517,38 +530,50 @@
     <!-- bundlejs:theme [@@autopath] -->
     <script src="@@autopath/assets/js/hs.core.js"></script>
     <script src="@@autopath/assets/js/hs.list.js"></script>
-    <script src="@@autopath/assets/js/hs.leaflet.js"></script>
 
     <!-- JS Plugins Init. -->
     <script>
       $(document).on('ready', function () {
-        // initialization of navbar vertical navigation
+        // INITIALIZATION OF NAVBAR VERTICAL NAVIGATION
+        // =======================================================
         var sidebar = $('.js-navbar-vertical-aside').hsSideNav();
 
-        // initialization of tooltip in navbar vertical menu
+
+        // INITIALIZATION OF TOOLTIP IN NAVBAR VERTICAL MENU
+        // =======================================================
         $('.js-nav-tooltip-link').tooltip({ boundary: 'window' })
 
-        // initialization of go to
+
+        // INITIALIZATION OF GO TO
+        // =======================================================
         $('.js-go-to').each(function () {
           var goTo = new HSGoTo($(this)).init();
         });
 
-        // initialization of nav scroller
+
+        // INITIALIZATION OF NAV SCROLLER
+        // =======================================================
         $('.js-nav-scroller').each(function () {
           new HsNavScroller($(this), {
             delay: 400,
           }).init()
         });
 
-        // initialization of ListJs component
+
+        // INITIALIZATION OF LISTJS COMPONENT
+        // =======================================================
         var docsSearch = $.HSCore.components.HSList.init('#docsSearch');
 
-        // Get JSON file results
+
+        // GET JSON FILE RESULTS
+        // =======================================================
         $.getJSON('@@autopath/assets/json/docs-search.json', function(data) {
           docsSearch.add(data);
         });
 
-        // initialization of unfold
+
+        // INITIALIZATION OF UNFOLD
+        // =======================================================
         var unfold = new HSUnfold('.js-hs-unfold-invoker').init();
       });
     </script>

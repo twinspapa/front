@@ -210,6 +210,11 @@
     "link": "./daterangepicker.html"
   },
   {
+    "component": "Calendar (Fullcalendar)",
+    "category": "Advanced forms",
+    "link": "./calendar.html"
+  },
+  {
     "component": "File attachments",
     "category": "Advanced forms",
     "link": "./file-attach.html"
@@ -373,6 +378,11 @@
     "component": "Go-to",
     "category": "Others",
     "link": "./go-to.html"
+  },
+  {
+    "component": "FanxyBox",
+    "category": "Others",
+    "link": "./fancybox.html"
   },
   {
     "component": "Unfold",

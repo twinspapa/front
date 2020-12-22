@@ -166,7 +166,7 @@
             <pre class="rounded">
               <code class="language-scss" data-lang="scss">
                 // Your variable overrides
-                $blue: #377dff; // Primary color
+                $blue: @@vars.style.color; // Primary color
               </code>
             </pre>
 
@@ -181,7 +181,7 @@
             <pre class="rounded">
               <code class="language-scss" data-lang="scss">
                 $theme-colors: (
-                  "primary": #377dff,
+                  "primary": @@vars.style.color,
                   "danger": #de4437
                 );
               </code>
@@ -198,7 +198,7 @@
             <pre class="rounded">
               <code class="language-scss" data-lang="scss">
                 $theme-colors: (
-                  "primary": #377dff,
+                  "primary": @@vars.style.color,
                   "danger": #de4437
                 );
               </code>
@@ -217,7 +217,7 @@
             <pre class="rounded mb-4">
               <code class="language-scss" data-lang="scss">
                 $theme-colors: (
-                  "primary": #377dff,
+                  "primary": @@vars.style.color,
                   "danger": #de4437
                 );
               </code>
@@ -295,7 +295,7 @@
 
             <div class="row gx-2">
               <div class="col-md-4">
-                <div class="rounded text-white p-3 mb-3" style="background-color: #377dff;">Primary</div>
+                <div class="rounded text-white p-3 mb-3" style="background-color: @@vars.style.color;">Primary</div>
               </div>
               <div class="col-md-4">
                 <div class="rounded text-white p-3 mb-3" style="background-color: #77838f;">Secondary</div>
@@ -411,28 +411,39 @@
     <!-- JS Plugins Init. -->
     <script>
       $(document).on('ready', function () {
-        // initialization of navbar vertical navigation
+        // INITIALIZATION OF NAVBAR VERTICAL NAVIGATION
+        // =======================================================
         var sidebar = $('.js-navbar-vertical-aside').hsSideNav();
 
-        // initialization of tooltip in navbar vertical menu
+
+        // INITIALIZATION OF TOOLTIP IN NAVBAR VERTICAL MENU
+        // =======================================================
         $('.js-nav-tooltip-link').tooltip({ boundary: 'window' })
 
-        // initialization of go to
+
+        // INITIALIZATION OF GO TO
+        // =======================================================
         $('.js-go-to').each(function () {
           var goTo = new HSGoTo($(this)).init();
         });
 
-        // initialization of nav scroller
+
+        // INITIALIZATION OF NAV SCROLLER
+        // =======================================================
         $('.js-nav-scroller').each(function () {
           new HsNavScroller($(this), {
             delay: 400,
           }).init()
         });
 
-        // initialization of ListJs component
+
+        // INITIALIZATION OF LISTJS COMPONENT
+        // =======================================================
         var docsSearch = $.HSCore.components.HSList.init('#docsSearch');
 
-        // Get JSON file results
+
+        // GET JSON FILE RESULTS
+        // =======================================================
         $.getJSON('@@autopath/assets/json/docs-search.json', function(data) {
           docsSearch.add(data);
         });

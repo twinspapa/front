@@ -85,7 +85,7 @@
 }
 
 // JVector Map
-.card .jvectormap-custom {
+.card-jvectormap {
   .jvectormap-container {
     @include border-bottom-radius($card-border-radius);
   }

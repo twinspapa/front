@@ -1,5 +1,5 @@
 /*------------------------------------
-  Custom Select
+  Custom Forms
 ------------------------------------*/
 
 .custom-select,
@@ -11,6 +11,10 @@
   .custom-control-label {
     width: 100%;
   }
+}
+
+.custom-control-input:checked:disabled ~ .custom-control-label::before {
+  border-color: rgba($custom-control-indicator-checked-disabled-bg, 0);
 }
 
 .custom-select-lg {

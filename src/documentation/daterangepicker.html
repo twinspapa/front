@@ -94,7 +94,8 @@
               <code class="language-html" data-lang="html">
                 &lt;script&gt;
                   $(document).on('ready', function () {
-                    // initialization of daterangepicker
+                    // INITIALIZATION OF DATERANGEPICKER
+                    // =======================================================
                     $('.js-daterangepicker').each(function () {
                       var d = $.HSCore.components.HSDaterangepicker.init($(this));
                     });
@@ -145,7 +146,6 @@
               <!-- End Tab Content -->
             </div>
             <!-- End Card -->
-                    <!-- End Input Group -->
 
             <!-- Heading -->
             <h2 id="dropup" class="hs-docs-heading">
@@ -192,7 +192,6 @@
                   </pre>
                 </div>
               </div>
-                    <!-- End Input Group -->
               <!-- End Tab Content -->
             </div>
             <!-- End Card -->
@@ -242,7 +241,6 @@
                   </pre>
                 </div>
               </div>
-                    <!-- End Input Group -->
               <!-- End Tab Content -->
             </div>
             <!-- End Card -->
@@ -657,6 +655,45 @@
               <!-- End Tab Content -->
             </div>
             <!-- End Card -->
+
+            <!-- Heading -->
+            <h2 id="methods" class="hs-docs-heading">
+              Methods <a class="anchorjs-link" href="#methods" aria-label="Anchor" data-anchorjs-icon="#"></a>
+            </h2>
+            <!-- End Heading -->
+
+            <!-- Card -->
+            <div class="card overflow-hidden">
+              <!-- Table -->
+              <div class="table-responsive">
+                <table class="table table-thead-bordered card-table">
+                  <thead class="thead-light">
+                  <tr>
+                    <th>Parameters</th>
+                    <th style="width: 50%;">Description</th>
+                    <th class="text-nowrap">Default value</th>
+                  </tr>
+                  </thead>
+
+                  <tbody>
+
+                  <tr>
+                    <td><code>nextArrow</code></td>
+                    <td>Next arrow template.</td>
+                    <td><code>&lt;i class="tio-chevron-right daterangepicker-custom-arrow">&lt;/i></code></td>
+                  </tr>
+
+                  <tr>
+                    <td><code>prevArrow</code></td>
+                    <td>Previous arrow template.</td>
+                    <td><code>&lt;i class="tio-chevron-left daterangepicker-custom-arrow">&lt;/i></code></td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- End Table -->
+            </div>
+            <!-- End Card -->
           </div>
         </div>
         <!-- End Row -->
@@ -695,33 +732,46 @@
     <!-- JS Plugins Init. -->
     <script>
       $(document).on('ready', function () {
-        // initialization of navbar vertical navigation
+        // INITIALIZATION OF NAVBAR VERTICAL NAVIGATION
+        // =======================================================
         var sidebar = $('.js-navbar-vertical-aside').hsSideNav();
 
-        // initialization of tooltip in navbar vertical menu
+
+        // INITIALIZATION OF TOOLTIP IN NAVBAR VERTICAL MENU
+        // =======================================================
         $('.js-nav-tooltip-link').tooltip({ boundary: 'window' })
 
-        // initialization of go to
+
+        // INITIALIZATION OF GO TO
+        // =======================================================
         $('.js-go-to').each(function () {
           var goTo = new HSGoTo($(this)).init();
         });
 
-        // initialization of nav scroller
+
+        // INITIALIZATION OF NAV SCROLLER
+        // =======================================================
         $('.js-nav-scroller').each(function () {
           new HsNavScroller($(this), {
             delay: 400,
           }).init()
         });
 
-        // initialization of ListJs component
+
+        // INITIALIZATION OF LISTJS COMPONENT
+        // =======================================================
         var docsSearch = $.HSCore.components.HSList.init('#docsSearch');
 
-        // Get JSON file results
+
+        // GET JSON FILE RESULTS
+        // =======================================================
         $.getJSON('@@autopath/assets/json/docs-search.json', function(data) {
           docsSearch.add(data);
         });
 
-        // initialization of daterangepicker
+        
+        // INITIALIZATION OF DATERANGEPICKER
+        // =======================================================
         $('.js-daterangepicker').each(function () {
           var d = $.HSCore.components.HSDaterangepicker.init($(this));
         });

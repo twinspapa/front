@@ -23,6 +23,10 @@
 .page-header-tabs {
   margin-bottom: -$page-header-padding-y;
   border-bottom-width: 0;
+
+  .hs-nav-scroller-horizontal & {
+    margin-bottom: -($page-header-padding-y + .1rem);
+  }
 }
 
 .page-header-reset {

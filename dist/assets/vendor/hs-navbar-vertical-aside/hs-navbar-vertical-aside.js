@@ -106,6 +106,8 @@
         });
 
         self.topLevels.find(self.options.hasSubMenuClass).click(function(e) {
+          e.stopPropagation()
+
           if ($(self.options.mainContainer).hasClass(self.className(self.options.minClass)) || $(self.options.mainContainer).hasClass(self.className(self.options.compactMinClass))) {
             self.toggleSubMenu($(e.currentTarget), self, true)
           }

@@ -19,27 +19,27 @@
 
   &.avatar-circle {
     .avatar-lg-status {
-      bottom: -($avatar-status-height-lg / 5);
-      right: -($avatar-status-height-lg / 5);
+      bottom: -($avatar-status-lg-height / 5);
+      right: -($avatar-status-lg-height / 5);
     }
   }
 }
 
 .avatar-xss {
-  width: $avatar-width-xss;
-  height: $avatar-height-xss;
+  width: $avatar-xss-width;
+  height: $avatar-xss-height;
 
   .avatar-initials {
-    font-size: $avatar-font-size-xss;
+    font-size: $avatar-xss-font-size;
   }
 }
 
 .avatar-xs {
-  width: $avatar-width-xs;
-  height: $avatar-height-xs;
+  width: $avatar-xs-width;
+  height: $avatar-xs-height;
 
   .avatar-initials {
-    font-size: $avatar-font-size-xs;
+    font-size: $avatar-xs-font-size;
   }
 
   &.avatar-circle {
@@ -51,25 +51,25 @@
 
   &.avatar-circle {
     .avatar-sm-status {
-      bottom: -($avatar-status-height-sm / 8);
-      right: -($avatar-status-height-sm / 8);
+      bottom: -($avatar-status-sm-height / 8);
+      right: -($avatar-status-sm-height / 8);
     }
   }
 
   &.avatar-circle {
     .avatar-lg-status {
-      bottom: -($avatar-status-height-lg / 5);
-      right: -($avatar-status-height-lg / 5);
+      bottom: -($avatar-status-lg-height / 5);
+      right: -($avatar-status-lg-height / 5);
     }
   }
 }
 
 .avatar-sm {
-	width: $avatar-width-sm;
-	height: $avatar-height-sm;
+	width: $avatar-sm-width;
+	height: $avatar-sm-height;
 
   .avatar-initials {
-    font-size: $avatar-font-size-sm;
+    font-size: $avatar-sm-font-size;
   }
 
   &.avatar-circle {
@@ -81,25 +81,25 @@
 
   &.avatar-circle {
     .avatar-sm-status {
-      bottom: -($avatar-status-height-sm / 10);
-      right: -($avatar-status-height-sm / 10);
+      bottom: -($avatar-status-sm-height / 10);
+      right: -($avatar-status-sm-height / 10);
     }
   }
 
   &.avatar-circle {
     .avatar-lg-status {
-      bottom: -($avatar-status-height-lg / 4);
-      right: -($avatar-status-height-lg / 4);
+      bottom: -($avatar-status-lg-height / 4);
+      right: -($avatar-status-lg-height / 4);
     }
   }
 }
 
 .avatar-lg {
-  width: $avatar-width-lg;
-  height: $avatar-height-lg;
+  width: $avatar-lg-width;
+  height: $avatar-lg-height;
 
   .avatar-initials {
-    font-size: $avatar-font-size-lg;
+    font-size: $avatar-lg-font-size;
   }
 
   &.avatar-circle {
@@ -111,25 +111,25 @@
 
   &.avatar-circle {
     .avatar-sm-status {
-      bottom: ($avatar-status-height-sm / 10);
-      right: ($avatar-status-height-sm / 10);
+      bottom: ($avatar-status-sm-height / 10);
+      right: ($avatar-status-sm-height / 10);
     }
   }
 
   &.avatar-circle {
     .avatar-lg-status {
-      bottom: -($avatar-status-height-lg / 8);
-      right: -($avatar-status-height-lg / 8);
+      bottom: -($avatar-status-lg-height / 8);
+      right: -($avatar-status-lg-height / 8);
     }
   }
 }
 
 .avatar-xl {
-  width: $avatar-width-xl;
-  height: $avatar-height-xl;
+  width: $avatar-xl-width;
+  height: $avatar-xl-height;
 
   .avatar-initials {
-    font-size: $avatar-font-size-xl;
+    font-size: $avatar-xl-font-size;
   }
 
   &.avatar-circle {
@@ -141,25 +141,25 @@
 
   &.avatar-circle {
     .avatar-sm-status {
-      bottom: ($avatar-status-height-sm / 4);
-      right: ($avatar-status-height-sm / 4);
+      bottom: ($avatar-status-sm-height / 4);
+      right: ($avatar-status-sm-height / 4);
     }
   }
 
   &.avatar-circle {
     .avatar-lg-status {
-      bottom: ($avatar-status-height-lg / 12);
-      right: ($avatar-status-height-lg / 12);
+      bottom: ($avatar-status-lg-height / 12);
+      right: ($avatar-status-lg-height / 12);
     }
   }
 }
 
 .avatar-xxl {
-  width: $avatar-width-xxl;
-  height: $avatar-height-xxl;
+  width: $avatar-xxl-width;
+  height: $avatar-xxl-height;
 
   .avatar-initials {
-    font-size: $avatar-font-size-xxl;
+    font-size: $avatar-xxl-font-size;
   }
 
   &.avatar-circle {
@@ -171,15 +171,15 @@
 
   &.avatar-circle {
     .avatar-sm-status {
-      bottom: $avatar-status-height-sm;
-      right: $avatar-status-height-sm;
+      bottom: $avatar-status-sm-height;
+      right: $avatar-status-sm-height;
     }
   }
 
   &.avatar-circle {
     .avatar-lg-status {
-      bottom: ($avatar-status-height-lg / 4);
-      right: ($avatar-status-height-lg / 4);
+      bottom: ($avatar-status-lg-height / 4);
+      right: ($avatar-status-lg-height / 4);
     }
   }
 }

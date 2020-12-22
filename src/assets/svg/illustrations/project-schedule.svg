@@ -8,7 +8,7 @@
 	.st1{opacity:0.8;fill:#BDC5D1;enable-background:new    ;}
 	.st2{fill:none;stroke:#E7EAF3;stroke-miterlimit:10;}
 	.st3{fill:#FFFFFF;}
-	.st4{opacity:0.7;fill:#377DFF;}
+	.st4{opacity:0.7;fill:#377dff;}
 	.st5{opacity:0.3;fill:#FFFFFF;}
 	.st6{clip-path:url(#SVGID_13_);}
 	.st7{clip-path:url(#SVGID_15_);}
@@ -78,8 +78,8 @@
 	.st71{clip-path:url(#SVGID_107_);}
 	.st72{clip-path:url(#SVGID_109_);}
 	.st73{clip-path:url(#SVGID_111_);fill:#2C1B18;}
-	.st74{display:none;fill:#377DFF;}
-	.st75{opacity:0.7;fill:none;stroke:#377DFF;stroke-width:3;stroke-miterlimit:10;}
+	.st74{display:none;fill:#377dff;}
+	.st75{opacity:0.7;fill:none;stroke:#377dff;stroke-width:3;stroke-miterlimit:10;}
 </style>
 <g>
 	<path class="st0" d="M970.4,0H8.6C3.8,0,0,3.8,0,8.6v24.9h979V8.6C979,3.8,975.2,0,970.4,0z"/>

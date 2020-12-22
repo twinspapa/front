@@ -27,7 +27,8 @@
           indicatorWidth: '8px',
           indicatorHeight: '8px',
           transition: '0.2s',
-          lineWithLineColor: null
+          lineWithLineColor: null,
+          yearStamp: true
         },
         gradientPosition: {
           x0: 0,
@@ -63,7 +64,9 @@
                     }
                   }
 
-                  if (prefix) {
+                  if (prefix && postfix) {
+                    return prefix + value + postfix;
+                  } else if (prefix) {
                     return prefix + value;
                   } else if (postfix) {
                     return value + postfix;
@@ -107,7 +110,9 @@
 										}
 									}
 
-									if (prefix) {
+                  if (prefix && postfix) {
+                    return prefix + value + postfix;
+                  } else if (prefix) {
 										return prefix + value;
 									} else if (postfix) {
 										return value + postfix;
@@ -171,7 +176,7 @@
                 var innerHtml = '<header class="hs-chartjs-tooltip-header">';
 
                 titleLines.forEach(function (title) {
-                  innerHtml += title + ', ' + today.getFullYear();
+                  innerHtml += settings.options.tooltips.yearStamp ? title +  ', ' + today.getFullYear() : title;
                 });
 
                 innerHtml += '</header><div class="hs-chartjs-tooltip-body">';

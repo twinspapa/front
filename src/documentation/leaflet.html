@@ -83,7 +83,7 @@
 
             <pre class="rounded mb-4">
               <code class="language-html" data-lang="html">
-                &lt;script href="@@autopath/assets/js/hs.leaflet.js"&gt;&lt;/script&gt;
+                &lt;script src="@@autopath/assets/js/hs.leaflet.js"&gt;&lt;/script&gt;
               </code>
             </pre>
 
@@ -93,7 +93,8 @@
               <code class="language-html" data-lang="html">
                 &lt;script&gt;
                   $(document).on('ready', function () {
-                    // initialization of leaflet
+                    // INITIALIZATION OF LEAFLET
+                    // =======================================================
                     $('#map').each(function () {
                       var leaflet = $.HSCore.components.HSLeaflet.init($(this)[0]);
 
@@ -107,8 +108,8 @@
             </pre>
 
             <!-- Heading -->
-            <h2 id="basic-example" class="hs-docs-heading">
-              Basic example <a class="anchorjs-link" href="#basic-example" aria-label="Anchor" data-anchorjs-icon="#"></a>
+            <h2 id="example" class="hs-docs-heading">
+              Example <a class="anchorjs-link" href="#example" aria-label="Anchor" data-anchorjs-icon="#"></a>
             </h2>
             <!-- End Heading -->
 
@@ -133,7 +134,7 @@
               <div class="tab-content" id="navTabContent1">
                 <div class="tab-pane fade p-4 show active" id="nav-result1" role="tabpanel" aria-labelledby="nav-resultTab1">
                   <!-- Leaflet (Map) -->
-                  <div id="map" style="min-height: 20rem;"
+                  <div id="map" class="leaflet-custom" style="min-height: 20rem;"
                        data-hs-leaflet-options='{
                          "map": {
                            "scrollWheelZoom": false,
@@ -159,7 +160,7 @@
                   <pre>
                     <code class="language-markup" data-lang="html">
                       &lt;!-- Leaflet (Map) --&gt;
-                      &lt;div id="map" class="min-h-450rem rounded"
+                      &lt;div id="map" class="leaflet-custom" class="min-h-450rem rounded"
                            data-hs-leaflet-options='{
                              "map": {
                                "scrollWheelZoom": false,
@@ -308,33 +309,46 @@
     <!-- JS Plugins Init. -->
     <script>
       $(document).on('ready', function () {
-        // initialization of navbar vertical navigation
+        // INITIALIZATION OF NAVBAR VERTICAL NAVIGATION
+        // =======================================================
         var sidebar = $('.js-navbar-vertical-aside').hsSideNav();
 
-        // initialization of tooltip in navbar vertical menu
+
+        // INITIALIZATION OF TOOLTIP IN NAVBAR VERTICAL MENU
+        // =======================================================
         $('.js-nav-tooltip-link').tooltip({ boundary: 'window' })
 
-        // initialization of go to
+
+        // INITIALIZATION OF GO TO
+        // =======================================================
         $('.js-go-to').each(function () {
           var goTo = new HSGoTo($(this)).init();
         });
 
-        // initialization of nav scroller
+
+        // INITIALIZATION OF NAV SCROLLER
+        // =======================================================
         $('.js-nav-scroller').each(function () {
           new HsNavScroller($(this), {
             delay: 400,
           }).init()
         });
 
-        // initialization of ListJs component
+
+        // INITIALIZATION OF LISTJS COMPONENT
+        // =======================================================
         var docsSearch = $.HSCore.components.HSList.init('#docsSearch');
 
-        // Get JSON file results
+
+        // GET JSON FILE RESULTS
+        // =======================================================
         $.getJSON('@@autopath/assets/json/docs-search.json', function(data) {
           docsSearch.add(data);
         });
 
-        // initialization of leaflet
+
+        // INITIALIZATION OF LEAFLET
+        // =======================================================
         $('#map').each(function () {
           var leaflet = $.HSCore.components.HSLeaflet.init($(this)[0]);
 

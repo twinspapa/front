@@ -20,3 +20,15 @@
   font-size: $form-control-single-number-font-size;
   text-align: center;
 }
+
+.form-control-title {
+  font-size: $input-title-font-size;
+  line-height: $input-title-line-height;
+  font-weight: $input-title-font-weight;
+  border: none;
+  padding: 0;
+
+  &:focus {
+    box-shadow: none;
+  }
+}

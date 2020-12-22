@@ -22,6 +22,10 @@
   }
 }
 
+.form-control-flush:focus {
+  box-shadow: none;
+}
+
 .input-group-flush {
   .custom-select,
   .form-control {

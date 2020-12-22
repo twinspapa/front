@@ -6,7 +6,7 @@
 	.st0{fill:#E7EAF3;}
 	.st1{fill:#F8FAFD;}
 	.st2{fill:#BDC5D1;}
-	.st3{fill:#377DFF;}
+	.st3{fill:#377dff;}
 </style>
 <path class="st0" d="M145,210H15c-8.3,0-15-6.7-15-15V15C0,6.7,6.7,0,15,0h95l50,50v145C160,203.3,153.3,210,145,210z"/>
 <path class="st1" d="M160,50h-50V0L160,50z"/>

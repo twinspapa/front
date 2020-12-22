@@ -6,23 +6,21 @@
 * Copyright 2020 Htmlstream
 */
 
-const fs                                                            = require('fs');
-const del                                                           = require('del');
+const fs                                        = require('fs');
+const del                                       = require('del');
 
-const {config, context, pathLevel, shieldingVariables}              = require('./core');
-const paths                                                         = require('./paths')
-const {svgCompiler}                                                 = require('./svg-compiler')
+const {config, context, pathLevel, shieldingVariables, shieldingFunctions, gulpRGBA, gulpLighten, gulpDarken}              = require('./core');
+const paths                                     = require('./paths')
+const {svgCompiler}                             = require('./svg-compiler')
 
-const gulp                                                          = require('gulp');
-const browsersync                                                   = require('browser-sync').create();
-const fileinclude                                                   = require('gulp-file-include');
-const cached                                                        = require('gulp-cached')
-const replace                                                       = require('gulp-replace');
-const sass                                                          = require('gulp-sass')
-const autoprefixer                                                  = require('gulp-autoprefixer');
+const gulp                                      = require('gulp');
+const browsersync                               = require('browser-sync').create();
+const fileinclude                               = require('gulp-file-include');
+const cached                                    = require('gulp-cached')
+const replace                                   = require('gulp-replace');
+const sass                                      = require('gulp-sass')
+const autoprefixer                              = require('gulp-autoprefixer');
 
-
-console.log()
 var url = null;
 
 function browserSync(done) {
@@ -35,7 +33,8 @@ function browserSync(done) {
         if (/\.json|\.txt|\.html/.test(req.url) && req.method.toUpperCase() == 'POST') {
           req.method = 'GET';
         }
-        
+
+
         url = req.url;
         var index = 0;
         index = req.url.indexOf('?');
@@ -92,8 +91,20 @@ function fileIncludeAll() {
     .pipe(replace(/@@autopath/g, function (match) {
       return pathLevel(this.file)
     }))
+    .pipe(replace(/gulpLighten\[(.*?)\]/g, function (math, p1) {
+      return gulpLighten(p1)
+    }))
+    .pipe(replace(/gulpDarken\[(.*?)\]/g, function (math, p1) {
+      return gulpDarken(p1)
+    }))
+    .pipe(replace(/gulpRGBA\[(.*?)\]/g, function (math, p1) {
+      return gulpRGBA(p1)
+    }))
     .pipe(replace(/(\[\@\@\]).*?/g, function (match, p1) {
       return shieldingVariables(match, p1);
+    }))
+    .pipe(replace(/(\[@\@F\]).*?/g, function (match, p1) {
+      return shieldingFunctions(match, p1);
     }))
     .pipe(gulp.dest(paths.src.tmp.dir))
 };
@@ -120,8 +131,20 @@ function fileInclude(callback = {}) {
         .pipe(replace(/@@autopath/g, function (match) {
           return pathLevel(this.file)
         }))
+        .pipe(replace(/gulpLighten\[(.*?)\]/g, function (math, p1) {
+          return gulpLighten(p1)
+        }))
+        .pipe(replace(/gulpDarken\[(.*?)\]/g, function (math, p1) {
+          return gulpDarken(p1)
+        }))
+        .pipe(replace(/gulpRGBA\[(.*?)\]/g, function (math, p1) {
+          return gulpRGBA(p1)
+        }))
         .pipe(replace(/(\[\@\@\]).*?/g, function (match, p1) {
           return shieldingVariables(match, p1);
+        }))
+        .pipe(replace(/(\[@\@F\]).*?/g, function (match, p1) {
+          return shieldingFunctions(match, p1);
         }))
         .pipe(gulp.dest(paths.src.tmp.dir))
         .on('end', resolve)
@@ -153,7 +176,7 @@ function scss() {
 }
 
 function clean() {
-  return del(paths.src.tmp.dir, {force: true});
+  return del(paths.src.tmp.dir + '/**', {force: true});
 }
 
 function watch() {

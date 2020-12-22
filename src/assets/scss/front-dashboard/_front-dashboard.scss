@@ -117,6 +117,7 @@
 @import "forms/checkbox/checkbox-card";
 @import "forms/checkbox/checkbox-list";
 @import "forms/checkbox/checkbox-switch";
+@import "forms/checkbox/checkbox-styles";
 @import "forms/toggle-switch/toggle-switch";
 @import "forms/toggle-switch/toggle-switch-sizes";
 @import "forms/file-attachment/custom-file-boxed";
@@ -165,7 +166,9 @@
 // Utilities
 //
 @import "utilities/bg-image-hero";
+@import "utilities/bg-soft-colors";
 @import "utilities/borders";
+@import "utilities/content-centered";
 @import "utilities/gutters";
 @import "utilities/opacity";
 @import "utilities/position-spaces";
@@ -185,6 +188,8 @@
 @import "vendor/datatables";
 @import "vendor/daterangepicker";
 @import "vendor/dropzone";
+@import "vendor/fancybox";
+@import "vendor/fullcalendar";
 @import "vendor/flatpickr";
 @import "vendor/hs-form-search";
 @import "vendor/hs-loading-state";

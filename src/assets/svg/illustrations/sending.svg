@@ -6,7 +6,7 @@
 	.st0{fill:#F4F6F9;}
 	.st1{fill:none;stroke:#132144;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;}
 	.st2{fill:#132144;}
-	.st3{fill:#377DFF;stroke:#377DFF;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;}
+	.st3{fill:#377dff;stroke:#377dff;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;}
 </style>
 <path id="BG" class="st0" d="M25.7,356.3l4.3-5.1c9.3-11.3,44.4-53,53.5-63.5c12.7-14.7,23.8-24.4,36.5-38.5
 	c6.1-6.7,15.4-12.6,18.2-21.3c2.9-9,6.4-22.1,11.3-29.9c0.8,0,1.6,0.1,2.4,0.3l3.8-23.6c0,0,1.6-12.6,3-21.3l0,0

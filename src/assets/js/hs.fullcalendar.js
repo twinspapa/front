@@ -13,7 +13,8 @@
 	
 	$.HSCore.components.HSFullcalendar = {
 		defaults: {
-			plugins: ['dayGrid']
+			contentHeight:"auto",
+			dayMaxEventRows: 2
 		},
 		
 		init: function (el, options) {
@@ -32,7 +33,7 @@
 			newFullcalendar.render();
 			
 			/* End : Init */
-			
+
 			return newFullcalendar;
 		}
 	};

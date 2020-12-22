@@ -1,32 +1,27 @@
 {
-  "_args": [
-    [
-      "list.js@1.5.0",
-      "C:\\Users\\ACE\\Desktop\\local\\front-dashboard"
-    ]
-  ],
-  "_from": "list.js@1.5.0",
+  "_from": "list.js@^1.5.0",
   "_id": "list.js@1.5.0",
   "_inBundle": false,
   "_integrity": "sha1-pMv8goHd78Av2y0wyHSL+uJfvNo=",
   "_location": "/list.js",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
+    "type": "range",
     "registry": true,
-    "raw": "list.js@1.5.0",
+    "raw": "list.js@^1.5.0",
     "name": "list.js",
     "escapedName": "list.js",
-    "rawSpec": "1.5.0",
+    "rawSpec": "^1.5.0",
     "saveSpec": null,
-    "fetchSpec": "1.5.0"
+    "fetchSpec": "^1.5.0"
   },
   "_requiredBy": [
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/list.js/-/list.js-1.5.0.tgz",
-  "_spec": "1.5.0",
-  "_where": "C:\\Users\\ACE\\Desktop\\local\\front-dashboard",
+  "_shasum": "a4cbfc8281ddefc02fdb2d30c8748bfae25fbcda",
+  "_spec": "list.js@^1.5.0",
+  "_where": "/Applications/MAMP/htdocs/front/front-dashboard",
   "author": {
     "name": "Jonny Strömberg",
     "email": "jonny.stromberg@gmail.com",
@@ -35,9 +30,11 @@
   "bugs": {
     "url": "https://github.com/javve/list.js/issues"
   },
+  "bundleDependencies": false,
   "dependencies": {
     "string-natural-compare": "^2.0.2"
   },
+  "deprecated": false,
   "description": "The perfect library for lists. Supports search, sort, filters and flexibility. Built to be invisible and work on existing HTML",
   "devDependencies": {
     "jest": "^18.1.0",

@@ -1,3 +1,4 @@
+
 /*
 * HSStepForm Plugin
 * @version: 2.0.0 (Mon, 25 Nov 2019)
@@ -29,10 +30,17 @@ export default class HSStepForm {
         active: 'active',
         checked: 'is-valid',
         error: 'is-invalid',
-        required: 'js-step-required'
+        required: 'js-step-required',
+        focus: 'focus'
       },
 
       finish: () => {
+      },
+
+      onNextStep: () => {
+      },
+
+      onPrevStep: () => {
       }
     };
     this.settings = settings;
@@ -67,7 +75,7 @@ export default class HSStepForm {
     let options = params;
 
     options.stepsItems.not(`.${options.classMap.active}`).hide();
-    options.progressItems.eq(options.stepsActiveItem.index()).addClass(options.classMap.active);
+    options.progressItems.eq(options.stepsActiveItem.index()).addClass(options.classMap.active).addClass(options.classMap.focus);
   }
 
   _endClickEvents(el, params) {
@@ -84,8 +92,6 @@ export default class HSStepForm {
       },
       nextItemOptions = $.extend(true, nextItemDefaults, nextDataSettings);
 
-    options.progressItems.removeClass(options.classMap.active);
-
     for (let i = 0; i < options.progressItems.length; i++) {
       if (typeof $(window).validate !== 'undefined' && options.isValidate) {
         if ($(nextItemOptions.targetSelector).index() > i) {
@@ -96,7 +102,6 @@ export default class HSStepForm {
           options.stepsItems.hide().removeClass(options.classMap.active);
 
           $(JSON.parse(requiredSelector).targetSelector).show().addClass(options.classMap.active);
-
 
           if (!el.valid()) {
             return false;
@@ -119,10 +124,13 @@ export default class HSStepForm {
       }
     }
 
-    options.progressItems.eq($(nextItemOptions.targetSelector).index()).addClass(options.classMap.active);
+    options.progressItems.removeClass(options.classMap.active).removeClass(options.classMap.focus);
+    options.progressItems.eq($(nextItemOptions.targetSelector).index()).addClass(options.classMap.active).addClass(options.classMap.focus);
 
     options.stepsItems.hide().removeClass(options.classMap.active);
     $(nextItemOptions.targetSelector).fadeIn(400).addClass(options.classMap.active);
+
+    return options.onNextStep();
   }
 
   _prevClickEvents(el, params, prevEl) {
@@ -134,8 +142,6 @@ export default class HSStepForm {
     const prevDataSettings = prevEl.attr('data-hs-step-form-prev-options') ? JSON.parse(prevEl.attr('data-hs-step-form-prev-options')) : {};
     let prevItemOptions = $.extend(true, prevItemDefaults, prevDataSettings);
 
-    options.progressItems.removeClass(options.classMap.active);
-
     for (let i = 0; i < options.progressItems.length; i++) {
       if (typeof $(window).validate !== 'undefined' && options.isValidate) {
         if ($(prevItemOptions.targetSelector).index() > i) {
@@ -146,7 +152,6 @@ export default class HSStepForm {
           options.stepsItems.hide().removeClass(options.classMap.active);
 
           $(JSON.parse(requiredSelector).targetSelector).show().addClass(options.classMap.active);
-
 
           if (!el.valid()) {
             return false;
@@ -169,9 +174,12 @@ export default class HSStepForm {
       }
     }
 
-    options.progressItems.eq($(prevItemOptions.targetSelector).index()).addClass(options.classMap.active);
+    options.progressItems.removeClass(options.classMap.active).removeClass(options.classMap.focus);
+    options.progressItems.eq($(prevItemOptions.targetSelector).index()).addClass(options.classMap.active).addClass(options.classMap.focus);
 
     options.stepsItems.hide().removeClass(options.classMap.active);
     $(prevItemOptions.targetSelector).fadeIn(400).addClass(options.classMap.active);
+
+    return options.onPrevStep();
   }
 }

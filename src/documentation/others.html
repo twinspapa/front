@@ -90,6 +90,7 @@
             <pre class="rounded">
               <code class="language-markup" data-lang="html">
                 &lt;div class="z-index-2"&gt;&lt;/div&gt;
+                &lt;div class="z-index-99"&gt;&lt;/div&gt;
               </code>
             </pre>
 
@@ -105,6 +106,18 @@
                 &lt;div class="opacity-sm"&gt;&lt;/div&gt;
                 &lt;div class="opacity"&gt;&lt;/div&gt;
                 &lt;div class="opacity-lg"&gt;&lt;/div&gt;
+              </code>
+            </pre>
+
+            <!-- Heading -->
+            <h2 id="content-centered" class="hs-docs-heading">
+              Content centered <a class="anchorjs-link" href="#content-centered" aria-label="Anchor" data-anchorjs-icon="#"></a>
+            </h2>
+            <!-- End Heading -->
+
+            <pre class="rounded">
+              <code class="language-markup" data-lang="html">
+                &lt;div class="content-centered-x"&gt;I am horizontally center aligned&lt;/div&gt;
               </code>
             </pre>
           </div>
@@ -142,28 +155,39 @@
     <!-- JS Plugins Init. -->
     <script>
       $(document).on('ready', function () {
-        // initialization of navbar vertical navigation
+        // INITIALIZATION OF NAVBAR VERTICAL NAVIGATION
+        // =======================================================
         var sidebar = $('.js-navbar-vertical-aside').hsSideNav();
 
-        // initialization of tooltip in navbar vertical menu
+
+        // INITIALIZATION OF TOOLTIP IN NAVBAR VERTICAL MENU
+        // =======================================================
         $('.js-nav-tooltip-link').tooltip({ boundary: 'window' })
 
-        // initialization of go to
+
+        // INITIALIZATION OF GO TO
+        // =======================================================
         $('.js-go-to').each(function () {
           var goTo = new HSGoTo($(this)).init();
         });
 
-        // initialization of nav scroller
+
+        // INITIALIZATION OF NAV SCROLLER
+        // =======================================================
         $('.js-nav-scroller').each(function () {
           new HsNavScroller($(this), {
             delay: 400,
           }).init()
         });
 
-        // initialization of ListJs component
+
+        // INITIALIZATION OF LISTJS COMPONENT
+        // =======================================================
         var docsSearch = $.HSCore.components.HSList.init('#docsSearch');
 
-        // Get JSON file results
+
+        // GET JSON FILE RESULTS
+        // =======================================================
         $.getJSON('@@autopath/assets/json/docs-search.json', function(data) {
           docsSearch.add(data);
         });

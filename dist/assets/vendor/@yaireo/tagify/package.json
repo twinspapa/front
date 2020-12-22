@@ -1,14 +1,8 @@
 {
-  "_args": [
-    [
-      "@yaireo/tagify@3.17.7",
-      "C:\\Users\\ACE\\Desktop\\local\\front-dashboard"
-    ]
-  ],
-  "_from": "@yaireo/tagify@3.17.7",
-  "_id": "@yaireo/tagify@3.17.7",
+  "_from": "@yaireo/tagify@^3.17.6",
+  "_id": "@yaireo/tagify@3.21.0",
   "_inBundle": false,
-  "_integrity": "sha512-DF9RxT3CGt8BVCjQUpoQMtF27Cin1TuNYCq3Pl1d5OLAtSb8PnxmFn5b0ZshXMDB0D9sQC38oxMGsh8bI6NRnw==",
+  "_integrity": "sha512-pTr85RlPa7skaUgWCZkaqKpwsAkAiNi5FdLbXFnrhTo+oDMZb0w2rndKIca2bggwWUSsHC+TP2BY7ju8KZu9Gg==",
   "_location": "/@yaireo/tagify",
   "_npmUser": {
     "name": "vsync",
@@ -16,29 +10,39 @@
   },
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
+    "type": "range",
     "registry": true,
-    "raw": "@yaireo/tagify@3.17.7",
+    "raw": "@yaireo/tagify@^3.17.6",
     "name": "@yaireo/tagify",
     "escapedName": "@yaireo%2ftagify",
     "scope": "@yaireo",
-    "rawSpec": "3.17.7",
+    "rawSpec": "^3.17.6",
     "saveSpec": null,
-    "fetchSpec": "3.17.7"
+    "fetchSpec": "^3.17.6"
   },
   "_requiredBy": [
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/@yaireo/tagify/-/tagify-3.17.7.tgz",
-  "_spec": "3.17.7",
-  "_where": "C:\\Users\\ACE\\Desktop\\local\\front-dashboard",
+  "_resolved": "https://registry.npmjs.org/@yaireo/tagify/-/tagify-3.21.0.tgz",
+  "_shasum": "4864edc827911d397b519d702791987445f97031",
+  "_spec": "@yaireo/tagify@^3.17.6",
+  "_where": "/Applications/MAMP/htdocs/front/front-dashboard",
   "author": {
     "name": "Yair Even-Or",
     "email": "vsync.design@gmail.com"
   },
+  "browserslist": [
+    ">1%",
+    "not dead",
+    "not ie < 11",
+    "not IE_Mob 11",
+    "not op_mini all"
+  ],
   "bugs": {
     "url": "https://github.com/yaireo/tagify/issues"
   },
+  "bundleDependencies": false,
+  "deprecated": false,
   "description": "lightweight, efficient Tags input component in Vanilla JS / React / Angular [super customizable, tiny size & top performance]",
   "devDependencies": {
     "@babel/core": "^7.5.5",
@@ -89,6 +93,13 @@
   "jest": {
     "preset": "jest-puppeteer"
   },
+  "keywords": [
+    "tags",
+    "tagging",
+    "component",
+    "tag",
+    "ui"
+  ],
   "license": "MIT",
   "main": "./dist/tagify.min.js",
   "name": "@yaireo/tagify",
@@ -97,9 +108,11 @@
     "url": "git+https://github.com/yairEO/tagify.git"
   },
   "scripts": {
+    "push": "git push origin",
+    "push:tags": "git push origin --tags",
     "serve": "npx http-server -o index.html -c-1",
-    "start": "npx gulp@3.9.1",
+    "start": "npx gulp@4.0.2",
     "test": "jest"
   },
-  "version": "3.17.7"
+  "version": "3.21.0"
 }

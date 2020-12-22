@@ -19,17 +19,28 @@
 }
 
 .flatpickr-calendar {
-  padding: $flatpickr-calendar-padding-y $flatpickr-calendar-padding-x;
-  box-shadow: $flatpickr-calendar-box-shadow;
-  @include border-radius($flatpickr-calendar-border-radius);
+  width: $flatpickr-width;
+  padding: $flatpickr-padding-y $flatpickr-padding-x;
+  box-shadow: $flatpickr-box-shadow;
+  @include border-radius($flatpickr-border-radius);
+  margin-top: $flatpickr-pseudo-border-width;
 
-  &::before,
+  &::before {
+    left: $flatpickr-pseudo-left-offset;
+    border-width: $flatpickr-pseudo-border-width;
+    margin: 0 $flatpickr-pseudo-border-width;
+  }
+
+  &.arrowTop::before {
+    border-bottom-color: $flatpickr-pseudo-border-color;
+  }
+
   &::after {
     display: none;
   }
 
   &.animate.open {
-    animation: $flatpickr-calendar-active-open-animation;
+    animation: $flatpickr-active-open-animation;
   }
 
   .flatpickr-months {
@@ -92,7 +103,8 @@
   }
 
   .flatpickr-day {
-    border-color: $flatpickr-border-color;
+    color: $flatpickr-day-color;
+    border: none;
 
     &:focus,
     &:hover {
@@ -192,7 +204,7 @@
   }
 }
 
-// Options
+// Borderless
 .flatpickr-custom-borderless {
   width: 0 !important;
   min-width: $flatpickr-custom-min-width !important;

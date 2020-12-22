@@ -67,7 +67,7 @@
 
             <pre class="rounded mb-4">
               <code class="language-html" data-lang="html">
-                &lt;script src="@@autopath/node_modules/sortablejs/Sortable.min.js"&gt;&lt;/script&gt;
+                &lt;script src="@@autopath/node_modules/sortablejs/dist/sortable.umd.js"&gt;&lt;/script&gt;
               </code>
             </pre>
 
@@ -75,7 +75,7 @@
 
             <pre class="rounded mb-4">
               <code class="language-html" data-lang="html">
-                &lt;script href="@@autopath/assets/js/hs.sortable.js"&gt;&lt;/script&gt;
+                &lt;script src="@@autopath/assets/js/hs.sortable.js"&gt;&lt;/script&gt;
               </code>
             </pre>
 
@@ -85,7 +85,8 @@
               <code class="language-html" data-lang="html">
                 &lt;script&gt;
                   $(document).on('ready', function () {
-                    // initialization of sortable
+                    // INITIALIZATION OF SORTABLE
+                    // =======================================================
                     $('.js-sortable').each(function () {
                       var sortable = $.HSCore.components.HSSortable.init($(this));
                     });
@@ -1058,7 +1059,8 @@
                     <code class="language-markup" data-lang="html">
                       &lt;script&gt;
                         $(document).on('ready', function () {
-                          // initialization of sortable link
+                          // INITIALIZATION OF SORTABLE LINK
+                          // =======================================================
                           $('.js-sortable-link').click(function (e) {
                             if ($(e.target).hasClass('hs-unfold') || $(e.target).parents('.hs-unfold').length) {
                               return false;
@@ -1183,7 +1185,8 @@
                     <code class="language-markup" data-lang="html">
                       &lt;script&gt;
                         $(document).on('ready', function () {
-                          // initialization of sortable modal link
+                          // INITIALIZATION OF SORTABLE MODAL LINK
+                          // =======================================================
                           $('.js-sortable-modal-link').click(function (e) {
                             if ($(e.target).hasClass('hs-unfold') || $(e.target).parents('.hs-unfold').length) {
                               return false;
@@ -1260,7 +1263,7 @@
     <script src="@@autopath/assets/vendor/hs-go-to/dist/hs-go-to.min.js"></script>
     <script src="@@autopath/node_modules/list.js/dist/list.min.js"></script>
     <script src="@@autopath/assets/vendor/prism/prism.js"></script>
-    <script src="@@autopath/node_modules/sortablejs/Sortable.min.js"></script>
+    <script src="@@autopath/node_modules/sortablejs/dist/sortable.umd.js"></script>
 
     <!-- JS Front -->
     <!-- bundlejs:theme [@@autopath] -->
@@ -1271,38 +1274,53 @@
     <!-- JS Plugins Init. -->
     <script>
       $(document).on('ready', function () {
-        // initialization of navbar vertical navigation
+        // INITIALIZATION OF NAVBAR VERTICAL NAVIGATION
+        // =======================================================
         var sidebar = $('.js-navbar-vertical-aside').hsSideNav();
 
-        // initialization of tooltip in navbar vertical menu
+
+        // INITIALIZATION OF TOOLTIP IN NAVBAR VERTICAL MENU
+        // =======================================================
         $('.js-nav-tooltip-link').tooltip({ boundary: 'window' })
 
-        // initialization of go to
+
+        // INITIALIZATION OF GO TO
+        // =======================================================
         $('.js-go-to').each(function () {
           var goTo = new HSGoTo($(this)).init();
         });
 
-        // initialization of nav scroller
+
+        // INITIALIZATION OF NAV SCROLLER
+        // =======================================================
         $('.js-nav-scroller').each(function () {
           new HsNavScroller($(this), {
             delay: 400,
           }).init()
         });
 
-        // initialization of ListJs component
+
+        // INITIALIZATION OF LISTJS COMPONENT
+        // =======================================================
         var docsSearch = $.HSCore.components.HSList.init('#docsSearch');
 
-        // Get JSON file results
+
+        // GET JSON FILE RESULTS
+        // =======================================================
         $.getJSON('@@autopath/assets/json/docs-search.json', function(data) {
           docsSearch.add(data);
         });
 
-        // initialization of sortable
+        
+        // INITIALIZATION OF SORTABLE
+        // =======================================================
         $('.js-sortable').each(function () {
           var sortable = $.HSCore.components.HSSortable.init($(this));
         });
 
-        // initialization of sortable link
+        
+        // INITIALIZATION OF SORTABLE LINK
+        // =======================================================
         $('.js-sortable-link').click(function (e) {
           if ($(e.target).hasClass('hs-unfold') || $(e.target).parents('.hs-unfold').length) {
             return false;
@@ -1311,7 +1329,9 @@
           window.location.replace($(this).attr('data-href'))
         });
 
-        // initialization of sortable modal link
+        
+        // INITIALIZATION OF SORTABLE MODAL LINK
+        // =======================================================
         $('.js-sortable-modal-link').click(function (e) {
           if ($(e.target).hasClass('hs-unfold') || $(e.target).parents('.hs-unfold').length) {
             return false;

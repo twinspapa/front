@@ -76,7 +76,7 @@
 
             <pre class="rounded mb-4">
               <code class="language-html" data-lang="html">
-                &lt;script href="@@autopath/assets/js/hs.jvector-map.js"&gt;&lt;/script&gt;
+                &lt;script src="@@autopath/assets/js/hs.jvector-map.js"&gt;&lt;/script&gt;
               </code>
             </pre>
 
@@ -123,8 +123,9 @@
                 <div class="tab-pane fade p-4 show active" id="nav-result1" role="tabpanel" aria-labelledby="nav-resultTab1">
                   <!-- jVector Map -->
                   <div style="height: 20rem;">
-                    <div class="js-jvectormap jvectormap-custom"
+                    <div class="js-jvectormap jvectormap-custom card-jvectormap"
                          data-hs-jvector-map-options='{
+                           "tipCentered": true,
                            "focusOn": {
                              "x": 0.5,
                              "y": 0.5,
@@ -142,12 +143,12 @@
                            "markerStyle": {
                              "initial": {
                                "stroke-width": 2,
-                               "fill": "#377dff",
+                               "fill": "@@vars.style.color",
                                "stroke": "#fff",
                                "r": 6
                              },
                              "hover": {
-                              "fill": "#377dff",
+                              "fill": "@@vars.style.color",
                               "stroke": "#fff"
                              }
                            },
@@ -183,8 +184,9 @@
                     <code class="language-markup" data-lang="html">
                       &lt;!-- jVector Map --&gt;
                       &lt;div style="height: 20rem;"&gt;
-                        &lt;div class="js-jvectormap jvectormap-custom"
+                        &lt;div class="js-jvectormap jvectormap-custom card-jvectormap"
                              data-hs-jvector-map-options='{
+                               "tipCentered": true,
                                "focusOn": {
                                  "x": 0.5,
                                  "y": 0.5,
@@ -202,12 +204,12 @@
                                "markerStyle": {
                                  "initial": {
                                    "stroke-width": 2,
-                                   "fill": "#377dff",
+                                   "fill": "@@vars.style.color",
                                    "stroke": "#fff",
                                    "r": 6
                                  },
                                  "hover": {
-                                  "fill": "#377dff",
+                                  "fill": "@@vars.style.color",
                                   "stroke": "#fff"
                                  }
                                },
@@ -275,7 +277,7 @@
                 <div class="tab-pane fade show active" id="nav-result2" role="tabpanel" aria-labelledby="nav-resultTab2">
                   <!-- Vector Map -->
                   <div style="height: 30rem;">
-                    <div class="js-jvectormap-custom-with-stats jvectormap-custom"
+                    <div class="js-jvectormap-custom-with-stats jvectormap-custom card-jvectormap"
                          data-hs-jvector-map-options='{
                            "tipCentered": true,
                            "focusOn": {
@@ -288,7 +290,7 @@
                               "fill": "rgba(55, 125, 255, .3)"
                             },
                             "hover": {
-                              "fill": "#377dff"
+                              "fill": "@@vars.style.color"
                             }
                            },
                            "backgroundColor": "#132144",
@@ -315,7 +317,7 @@
                     <code class="language-markup" data-lang="html">
                       &lt;!-- Vector Map --&gt;
                       &lt;div style="height: 30rem;"&gt;
-                        &lt;div class="js-jvectormap-custom-with-stats jvectormap-custom"
+                        &lt;div class="js-jvectormap-custom-with-stats jvectormap-custom card-jvectormap"
                              data-hs-jvector-map-options='{
                                "tipCentered": true,
                                "focusOn": {
@@ -328,7 +330,7 @@
                                   "fill": "rgba(55, 125, 255, .3)"
                                 },
                                 "hover": {
-                                  "fill": "#377dff"
+                                  "fill": "@@vars.style.color"
                                 }
                                },
                                "backgroundColor": "#132144",
@@ -569,38 +571,53 @@
     <!-- JS Plugins Init. -->
     <script>
       $(document).on('ready', function () {
-        // initialization of navbar vertical navigation
+        // INITIALIZATION OF NAVBAR VERTICAL NAVIGATION
+        // =======================================================
         var sidebar = $('.js-navbar-vertical-aside').hsSideNav();
 
-        // initialization of tooltip in navbar vertical menu
+
+        // INITIALIZATION OF TOOLTIP IN NAVBAR VERTICAL MENU
+        // =======================================================
         $('.js-nav-tooltip-link').tooltip({ boundary: 'window' })
 
-        // initialization of go to
+
+        // INITIALIZATION OF GO TO
+        // =======================================================
         $('.js-go-to').each(function () {
           var goTo = new HSGoTo($(this)).init();
         });
 
-        // initialization of nav scroller
+
+        // INITIALIZATION OF NAV SCROLLER
+        // =======================================================
         $('.js-nav-scroller').each(function () {
           new HsNavScroller($(this), {
             delay: 400,
           }).init()
         });
 
-        // initialization of ListJs component
+
+        // INITIALIZATION OF LISTJS COMPONENT
+        // =======================================================
         var docsSearch = $.HSCore.components.HSList.init('#docsSearch');
 
-        // Get JSON file results
+
+        // GET JSON FILE RESULTS
+        // =======================================================
         $.getJSON('@@autopath/assets/json/docs-search.json', function(data) {
           docsSearch.add(data);
         });
 
-        // initialization of jvectormap
+
+        // INITIALIZATION OF JVECTORMAP
+        // =======================================================
         $('.js-jvectormap').each(function () {
           var jVectorMap = $.HSCore.components.HSJVectorMap.init($(this));
         });
 
-        // initialization of jvectormap
+        
+        // INITIALIZATION OF JVECTORMAP
+        // =======================================================
         var markers = [
           {
             "latLng": [38, -97],

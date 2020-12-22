@@ -19,14 +19,13 @@
     overflow: hidden;
 
     &:after {
-      position: absolute;
-      top: 50%;
+      display: inline-flex;
+      align-items: center;
       width: $datatable-sort-arrow-width;
       height: $datatable-sort-arrow-height;
       background: $datatable-link-sorting-pseudo-bg;
       content: "";
       margin-left: $datatable-link-sorting-pseudo-margin-x;
-      margin-top: $datatable-link-sorting-pseudo-margin-y;
       transform: translateY(-50%);
     }
   }

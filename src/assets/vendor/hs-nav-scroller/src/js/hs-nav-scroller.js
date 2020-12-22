@@ -35,7 +35,7 @@ export default class HsNavScroller {
       }
 
       $(window).on('load resize', () => {
-        var scrollMaxLeft = (nav[0].scrollWidth.toFixed() - nav.outerWidth()).toFixed(),
+        var scrollMaxLeft = (parseInt(nav[0].scrollWidth.toFixed()) - parseInt(nav.outerWidth().toFixed())),
           scrollPosition = nav.scrollLeft();
 
         if (scrollPosition <= 0) {

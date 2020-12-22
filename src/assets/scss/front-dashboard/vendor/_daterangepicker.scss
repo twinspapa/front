@@ -17,10 +17,23 @@
   font-family: $daterangepicker-font-family;
   z-index: $daterangepicker-z-index;
   box-shadow: $daterangepicker-box-shadow;
+  margin-top: $daterangepicker-margin-y;
   @include border-radius($daterangepicker-border-radius);
 
-  &::before {
-    border-bottom-color: $daterangepicker-pseudo-border-bottom-color;
+  &.opensright::before,
+  &.opensright::after {
+    left: $daterangepicker-pseudo-left-offset;
+  }
+
+  &::before,
+  &::after {
+    top: -$daterangepicker-pseudo-top-offset;
+    border-bottom-color: $daterangepicker-pseudo-border-color;
+    border-bottom-width: $daterangepicker-pseudo-border-width;
+  }
+
+  &.drop-up::before {
+    border-top-color: $daterangepicker-pseudo-border-color;
   }
 
   .drp-calendar {
@@ -35,72 +48,28 @@
     }
   }
 
+  th.prev,
+  th.next {
+    min-width: auto;
+    width: $daterangepicker-prev-next-btn-icon-width;
+    height: $daterangepicker-prev-next-btn-icon-height;
+    color: $daterangepicker-prev-next-btn-icon-hover-color;
+    font-size: $daterangepicker-prev-next-btn-icon-font-size;
+    @include border-radius($daterangepicker-prev-next-btn-border-radius);
+
+    &:hover {
+      background-color: $daterangepicker-prev-next-btn-icon-hover-bg-color;
+
+      .daterangepicker-custom-arrow {
+        color: $daterangepicker-prev-next-btn-icon-hover-color;
+      }
+    }
+  }
+
   .calendar-table {
     table {
       border-collapse: separate;
       border-spacing: 0 $daterangepicker-calendar-table-border-spacing;
-    }
-
-    th.prev,
-    th.next {
-      &:hover {
-        background-color: $daterangepicker-prev-next-btn-icon-hover-bg-color;
-
-        span {
-          color: $daterangepicker-prev-next-btn-icon-hover-color;
-        }
-      }
-
-      span {
-        position: relative;
-        border: none;
-        color: $daterangepicker-prev-next-btn-icon-color;
-        transform: rotate(0deg);
-      }
-    }
-
-    th.prev,
-    th.next {
-      min-width: auto;
-      width: $daterangepicker-prev-next-btn-icon-width;
-      height: $daterangepicker-prev-next-btn-icon-height;
-      @include border-radius($daterangepicker-prev-next-btn-border-radius);
-
-      span {
-        padding: 0;
-
-        &::before {
-          display: inline-block;
-          background-color: $daterangepicker-prev-next-btn-icon-color;
-          width: $daterangepicker-prev-next-btn-icon-pseudo-width;
-          height: $daterangepicker-prev-next-btn-icon-pseudo-height;
-          content: "";
-        }
-      }
-    }
-
-    th.prev {
-      span::before {
-        background: $daterangepicker-prev-next-btn-icon-prev-pseudo-bg;
-      }
-
-      &:hover {
-        span::before {
-          background: $daterangepicker-prev-next-btn-icon-prev-hover-pseudo-bg;
-        }
-      }
-    }
-
-    th.next {
-      span::before {
-        background: $daterangepicker-prev-next-btn-icon-next-pseudo-bg;
-      }
-
-      &:hover {
-        span::before {
-          background: $daterangepicker-prev-next-btn-icon-next-hover-pseudo-bg;
-        }
-      }
     }
 
     th:not(.month) {
@@ -162,7 +131,9 @@
   }
 
   td.off,
-  td.off.in-range {
+  td.off.in-range,
+  td.off.start-date,
+  td.off.end-date {
     color: $daterangepicker-off-date-color;
   }
 
@@ -176,8 +147,9 @@
     padding: $daterangepicker-padding-y $daterangepicker-padding-x;
 
     .btn {
+      font-size: $btn-font-size;
       font-weight: $daterangepicker-buttons-btn-font-weight;
-      padding: $btn-padding-y-sm $btn-padding-x-sm;
+      padding: $btn-padding-y $btn-padding-x;
     }
   }
 
@@ -235,6 +207,17 @@
   select.minuteselect,
   select.secondselect,
   select.ampmselect {
+    cursor: pointer;
+    width: $daterangepicker-select-width;
+    font-size: $daterangepicker-select-font-size;
+    color: $daterangepicker-select-color;
     background-color: $daterangepicker-select-bg-color;
+    border-color: $daterangepicker-select-border-color;
+    padding: $daterangepicker-select-padding-y $daterangepicker-select-padding-x;
+    @include border-radius($daterangepicker-select-border-radius);
+
+    &:hover {
+      color: $daterangepicker-select-hover-color;
+    }
   }
 }

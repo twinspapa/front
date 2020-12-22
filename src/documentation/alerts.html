@@ -174,28 +174,28 @@
               <div class="tab-content" id="navTabContent2">
                 <div class="tab-pane fade p-4 show active" id="nav-result2" role="tabpanel" aria-labelledby="nav-resultTab2">
                   <div class="alert alert-soft-primary" role="alert">
-                    This is a primary alert—check it out!
+                    This is a soft primary alert—check it out!
                   </div>
                   <div class="alert alert-soft-secondary" role="alert">
-                    This is a secondary alert—check it out!
+                    This is a soft secondary alert—check it out!
                   </div>
                   <div class="alert alert-soft-success" role="alert">
-                    This is a success alert—check it out!
+                    This is a soft success alert—check it out!
                   </div>
                   <div class="alert alert-soft-danger" role="alert">
-                    This is a danger alert—check it out!
+                    This is a soft danger alert—check it out!
                   </div>
                   <div class="alert alert-soft-warning" role="alert">
-                    This is a warning alert—check it out!
+                    This is a soft warning alert—check it out!
                   </div>
                   <div class="alert alert-soft-info" role="alert">
-                    This is a info alert—check it out!
+                    This is a soft info alert—check it out!
                   </div>
                   <div class="alert alert-soft-light" role="alert">
-                    This is a light alert—check it out!
+                    This is a soft light alert—check it out!
                   </div>
                   <div class="alert alert-soft-dark" role="alert">
-                    This is a dark alert—check it out!
+                    This is a soft dark alert—check it out!
                   </div>
                 </div>
 
@@ -203,28 +203,28 @@
                   <pre>
                     <code class="language-markup" data-lang="html">
                       &lt;div class="alert alert-soft-primary" role="alert"&gt;
-                        This is a primary alert—check it out!
+                        This is a soft primary alert—check it out!
                       &lt;/div&gt;
                       &lt;div class="alert alert-soft-secondary" role="alert"&gt;
-                        This is a secondary alert—check it out!
+                        This is a soft secondary alert—check it out!
                       &lt;/div&gt;
                       &lt;div class="alert alert-soft-success" role="alert"&gt;
-                        This is a success alert—check it out!
+                        This is a soft success alert—check it out!
                       &lt;/div&gt;
                       &lt;div class="alert alert-soft-danger" role="alert"&gt;
-                        This is a danger alert—check it out!
+                        This is a soft danger alert—check it out!
                       &lt;/div&gt;
                       &lt;div class="alert alert-soft-warning" role="alert"&gt;
-                        This is a warning alert—check it out!
+                        This is a soft warning alert—check it out!
                       &lt;/div&gt;
                       &lt;div class="alert alert-soft-info" role="alert"&gt;
-                        This is a info alert—check it out!
+                        This is a soft info alert—check it out!
                       &lt;/div&gt;
                       &lt;div class="alert alert-soft-light" role="alert"&gt;
-                        This is a light alert—check it out!
+                        This is a soft light alert—check it out!
                       &lt;/div&gt;
                       &lt;div class="alert alert-soft-dark" role="alert"&gt;
-                        This is a dark alert—check it out!
+                        This is a soft dark alert—check it out!
                       &lt;/div&gt;
                     </code>
                   </pre>
@@ -472,28 +472,39 @@
     <!-- JS Plugins Init. -->
     <script>
       $(document).on('ready', function () {
-        // initialization of navbar vertical navigation
+        // INITIALIZATION OF NAVBAR VERTICAL NAVIGATION
+        // =======================================================
         var sidebar = $('.js-navbar-vertical-aside').hsSideNav();
 
-        // initialization of tooltip in navbar vertical menu
+
+        // INITIALIZATION OF TOOLTIP IN NAVBAR VERTICAL MENU
+        // =======================================================
         $('.js-nav-tooltip-link').tooltip({ boundary: 'window' })
 
-        // initialization of go to
+
+        // INITIALIZATION OF GO TO
+        // =======================================================
         $('.js-go-to').each(function () {
           var goTo = new HSGoTo($(this)).init();
         });
 
-        // initialization of nav scroller
+
+        // INITIALIZATION OF NAV SCROLLER
+        // =======================================================
         $('.js-nav-scroller').each(function () {
           new HsNavScroller($(this), {
             delay: 400,
           }).init()
         });
 
-        // initialization of ListJs component
+
+        // INITIALIZATION OF LISTJS COMPONENT
+        // =======================================================
         var docsSearch = $.HSCore.components.HSList.init('#docsSearch');
 
-        // Get JSON file results
+
+        // GET JSON FILE RESULTS
+        // =======================================================
         $.getJSON('@@autopath/assets/json/docs-search.json', function(data) {
           docsSearch.add(data);
         });

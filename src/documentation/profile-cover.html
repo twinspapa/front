@@ -91,7 +91,7 @@
                   <!-- End Profile Cover -->
 
                   <!-- Profile Header -->
-                  <div class="text-center mb-5">
+                  <div class="text-center">
                     <!-- Avatar -->
                     <div class="avatar avatar-xxl avatar-circle avatar-border-lg profile-cover-avatar">
                       <img class="avatar-img" src="@@autopath/assets/img/160x160/img9.jpg" alt="Image Description">
@@ -99,7 +99,7 @@
                     </div>
                     <!-- End Avatar -->
 
-                    <h1 class="page-title">Ella Lauda <i class="tio-verified tio-lg text-primary" data-toggle="tooltip" data-placement="top" title="Top endorsed"></i></h1>
+                    <h1 class="page-header-title">Ella Lauda <i class="tio-verified tio-lg text-primary" data-toggle="tooltip" data-placement="top" title="Top endorsed"></i></h1>
 
                     <!-- List -->
                     <ul class="list-inline list-inline-m-1">
@@ -144,7 +144,7 @@
                         &lt;/div&gt;
                         &lt;!-- End Avatar --&gt;
 
-                        &lt;h1 class="page-title"&gt;Ella Lauda &lt;i class="tio-verified tio-lg text-primary" data-toggle="tooltip" data-placement="top" title="Top endorsed"&gt;&lt;/i&gt;&lt;/h1&gt;
+                        &lt;h1 class="page-header-title"&gt;Ella Lauda &lt;i class="tio-verified tio-lg text-primary" data-toggle="tooltip" data-placement="top" title="Top endorsed"&gt;&lt;/i&gt;&lt;/h1&gt;
 
                         &lt;!-- List --&gt;
                         &lt;ul class="list-inline list-inline-m-1"&gt;
@@ -265,7 +265,7 @@
 
                           <!-- Select -->
                           <div class="select2-custom">
-                            <select class="js-select2-custom"
+                            <select class="js-select2-custom custom-select" size="1" style="opacity: 0;"
                                     data-hs-select2-options='{
                                       "minimumResultsForSearch": "Infinity"
                                     }'>
@@ -338,7 +338,7 @@
 
                               &lt;!-- Select --&gt;
                               &lt;div class="select2-custom"&gt;
-                                &lt;select class="js-select2-custom"
+                                &lt;select class="js-select2-custom custom-select" size="1" style="opacity: 0;"
                                         data-hs-select2-options='{
                                           "minimumResultsForSearch": "Infinity"
                                         }'&gt;
@@ -379,12 +379,15 @@
                       &lt;!-- JS Plugins Init. --&gt;
                       &lt;script&gt;
                         $(document).on('ready', function () {
-                          // initialization of file attach
+                          // INITIALIZATION OF FILE ATTACH
+                          // =======================================================
                           $('.js-file-attach').each(function () {
                             var customFile = new HSFileAttach($(this)).init();
                           });
 
-                          // initialization of select2
+
+                          // INITIALIZATION OF SELECT2
+                          // =======================================================
                           $('.js-select2-custom').each(function () {
                             var select2 = $.HSCore.components.HSSelect2.init($(this));
                           });
@@ -435,38 +438,53 @@
     <!-- JS Plugins Init. -->
     <script>
       $(document).on('ready', function () {
-        // initialization of navbar vertical navigation
+        // INITIALIZATION OF NAVBAR VERTICAL NAVIGATION
+        // =======================================================
         var sidebar = $('.js-navbar-vertical-aside').hsSideNav();
 
-        // initialization of tooltip in navbar vertical menu
+
+        // INITIALIZATION OF TOOLTIP IN NAVBAR VERTICAL MENU
+        // =======================================================
         $('.js-nav-tooltip-link').tooltip({ boundary: 'window' })
 
-        // initialization of go to
+
+        // INITIALIZATION OF GO TO
+        // =======================================================
         $('.js-go-to').each(function () {
           var goTo = new HSGoTo($(this)).init();
         });
 
-        // initialization of nav scroller
+
+        // INITIALIZATION OF NAV SCROLLER
+        // =======================================================
         $('.js-nav-scroller').each(function () {
           new HsNavScroller($(this), {
             delay: 400,
           }).init()
         });
 
-        // initialization of ListJs component
+
+        // INITIALIZATION OF LISTJS COMPONENT
+        // =======================================================
         var docsSearch = $.HSCore.components.HSList.init('#docsSearch');
 
-        // Get JSON file results
+
+        // GET JSON FILE RESULTS
+        // =======================================================
         $.getJSON('@@autopath/assets/json/docs-search.json', function(data) {
           docsSearch.add(data);
         });
 
-        // initialization of file attach
+        
+        // INITIALIZATION OF FILE ATTACH
+        // =======================================================
         $('.js-file-attach').each(function () {
           var customFile = new HSFileAttach($(this)).init();
         });
 
-        // initialization of select2
+        
+        // INITIALIZATION OF SELECT2
+        // =======================================================
         $('.js-select2-custom').each(function () {
           var select2 = $.HSCore.components.HSSelect2.init($(this));
         });

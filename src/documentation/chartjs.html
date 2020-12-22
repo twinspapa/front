@@ -83,7 +83,7 @@
 
             <pre class="rounded mb-4">
               <code class="language-html" data-lang="html">
-                &lt;script href="@@autopath/assets/js/hs.chartjs.js"&gt;&lt;/script&gt;
+                &lt;script src="@@autopath/assets/js/hs.chartjs.js"&gt;&lt;/script&gt;
               </code>
             </pre>
 
@@ -93,7 +93,8 @@
               <code class="language-html" data-lang="html">
                 &lt;script&gt;
                   $(document).on('ready', function () {
-                    // initialization of chartjs
+                    // INITIALIZATION OF CHARTJS
+                    // =======================================================
                     $('.js-chart').each(function () {
                       $.HSCore.components.HSChartJS.init($(this));
                     });
@@ -164,11 +165,11 @@
                                  "datasets": [{
                                   "data": [18,51,60,38,88,50,40,52,88,80,60,70],
                                   "backgroundColor": "transparent",
-                                  "borderColor": "#377dff",
+                                  "borderColor": "@@vars.style.color",
                                   "borderWidth": 2,
                                   "pointRadius": 0,
-                                  "hoverBorderColor": "#377dff",
-                                  "pointBackgroundColor": "#377dff",
+                                  "hoverBorderColor": "@@vars.style.color",
+                                  "pointBackgroundColor": "@@vars.style.color",
                                   "pointBorderColor": "#fff",
                                   "pointHoverRadius": 0
                                 },
@@ -274,11 +275,11 @@
                                      "datasets": [{
                                       "data": [18,51,60,38,88,50,40,52,88,80,60,70],
                                       "backgroundColor": "transparent",
-                                      "borderColor": "#377dff",
+                                      "borderColor": "@@vars.style.color",
                                       "borderWidth": 2,
                                       "pointRadius": 0,
-                                      "hoverBorderColor": "#377dff",
-                                      "pointBackgroundColor": "#377dff",
+                                      "hoverBorderColor": "@@vars.style.color",
+                                      "pointBackgroundColor": "@@vars.style.color",
                                       "pointBorderColor": "#fff",
                                       "pointHoverRadius": 0
                                     },
@@ -421,11 +422,11 @@
                                  "labels": ["Feb","Jan","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
                                  "datasets": [{
                                   "backgroundColor": ["rgba(55, 125, 255, .5)", "rgba(255, 255, 255, .2)"],
-                                  "borderColor": "#377dff",
+                                  "borderColor": "@@vars.style.color",
                                   "borderWidth": 2,
                                   "pointRadius": 0,
-                                  "hoverBorderColor": "#377dff",
-                                  "pointBackgroundColor": "#377dff",
+                                  "hoverBorderColor": "@@vars.style.color",
+                                  "pointBackgroundColor": "@@vars.style.color",
                                   "pointBorderColor": "#fff",
                                   "pointHoverRadius": 0
                                 },
@@ -534,11 +535,11 @@
                                      "labels": ["Feb","Jan","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
                                      "datasets": [{
                                       "backgroundColor": ["rgba(55, 125, 255, .5)", "rgba(255, 255, 255, .2)"],
-                                      "borderColor": "#377dff",
+                                      "borderColor": "@@vars.style.color",
                                       "borderWidth": 2,
                                       "pointRadius": 0,
-                                      "hoverBorderColor": "#377dff",
-                                      "pointBackgroundColor": "#377dff",
+                                      "hoverBorderColor": "@@vars.style.color",
+                                      "pointBackgroundColor": "@@vars.style.color",
                                       "pointBorderColor": "#fff",
                                       "pointHoverRadius": 0
                                     },
@@ -612,7 +613,8 @@
                     <code class="language-markup" data-lang="html">
                       &lt;script&gt;
                         $(document).on('ready', function () {
-                          // initialization of chartjs
+                          // INITIALIZATION OF CHARTJS
+                          // =======================================================
                           var updatingChartDatasets = [
                             [
                               [18,51,60,38,88,50,40,52,88,80,60,70],
@@ -624,7 +626,8 @@
                             ]
                           ]
 
-                          // initialization of chartjs
+                          // INITIALIZATION OF CHARTJS
+                          // =======================================================
                           var updatingLineChart = $.HSCore.components.HSChartJS.init($('#updatingLineChart'), {
                             data: {
                               datasets: [
@@ -694,12 +697,12 @@
                              "datasets": [{
                               "data": [8516, 8520, 8547, 8575, 8588, 8604, 8601, 8595, 8617, 8612, 8607, 8632, 8636, 8641, 8638, 8641, 8624, 8633, 8643, 8630, 8646, 8662, 8670, 8667, 8658, 8660, 8657, 8648, 8645, 8647, 8652, 8637, 8647, 8640, 8667, 8658, 8660, 8713, 8703, 8705, 8747, 8620, 8635, 8680, 8675, 8667, 8620, 8645, 8645, 8625, 8635, 8645, 8665, 8660, 8670, 8640, 8650, 8640, 8635, 8645, 8695, 8703, 8705, 8640, 8650, 8640, 8620, 8610, 8640, 8630, 8610, 8620, 8600, 8590, 8610, 8620, 8600, 8610, 8605, 8610, 8660, 8665, 8664, 8640, 8645, 8650, 8610, 8620, 8630, 8670, 8675, 8674, 8660, 8665, 8650, 8610, 8612, 8607, 8632, 8636, 8641, 8638, 8641, 8638, 8641, 8624, 8633, 8643, 8630, 8646, 8662, 8638, 8641, 8624, 8633, 8643, 8630, 8646, 8632, 8636],
                               "backgroundColor": "transparent",
-                              "borderColor": "#377dff",
+                              "borderColor": "@@vars.style.color",
                               "borderWidth": 2,
                               "pointBackgroundColor": "transparent",
-                              "pointHoverBackgroundColor": "#377dff",
+                              "pointHoverBackgroundColor": "@@vars.style.color",
                               "pointBorderColor": "transparent",
-                              "pointHoverBorderColor": "#377dff",
+                              "pointHoverBorderColor": "@@vars.style.color",
                               "pointRadius": 2,
                               "pointHoverRadius": 2,
                               "lineTension": 0
@@ -754,12 +757,12 @@
                                  "datasets": [{
                                   "data": [8516, 8520, 8547, 8575, 8588, 8604, 8601, 8595, 8617, 8612, 8607, 8632, 8636, 8641, 8638, 8641, 8624, 8633, 8643, 8630, 8646, 8662, 8670, 8667, 8658, 8660, 8657, 8648, 8645, 8647, 8652, 8637, 8647, 8640, 8667, 8658, 8660, 8713, 8703, 8705, 8747, 8620, 8635, 8680, 8675, 8667, 8620, 8645, 8645, 8625, 8635, 8645, 8665, 8660, 8670, 8640, 8650, 8640, 8635, 8645, 8695, 8703, 8705, 8640, 8650, 8640, 8620, 8610, 8640, 8630, 8610, 8620, 8600, 8590, 8610, 8620, 8600, 8610, 8605, 8610, 8660, 8665, 8664, 8640, 8645, 8650, 8610, 8620, 8630, 8670, 8675, 8674, 8660, 8665, 8650, 8610, 8612, 8607, 8632, 8636, 8641, 8638, 8641, 8638, 8641, 8624, 8633, 8643, 8630, 8646, 8662, 8638, 8641, 8624, 8633, 8643, 8630, 8646, 8632, 8636],
                                   "backgroundColor": "transparent",
-                                  "borderColor": "#377dff",
+                                  "borderColor": "@@vars.style.color",
                                   "borderWidth": 2,
                                   "pointBackgroundColor": "transparent",
-                                  "pointHoverBackgroundColor": "#377dff",
+                                  "pointHoverBackgroundColor": "@@vars.style.color",
                                   "pointBorderColor": "transparent",
-                                  "pointHoverBorderColor": "#377dff",
+                                  "pointHoverBorderColor": "@@vars.style.color",
                                   "pointRadius": 2,
                                   "pointHoverRadius": 2,
                                   "lineTension": 0
@@ -864,7 +867,7 @@
                             {
                               "data": [70,52,47,58,38,40,57,40,31,53,60,43,70,52,47,58,38,40,57,40,31,53,60,43],
                               "backgroundColor": "transparent",
-                              "borderColor": "#377dff",
+                              "borderColor": "@@vars.style.color",
                               "borderWidth": 2,
                               "pointRadius": 0,
                               "pointHoverRadius": 1,
@@ -951,7 +954,7 @@
                                 {
                                   "data": [70,52,47,58,38,40,57,40,31,53,60,43,70,52,47,58,38,40,57,40,31,53,60,43],
                                   "backgroundColor": "transparent",
-                                  "borderColor": "#377dff",
+                                  "borderColor": "@@vars.style.color",
                                   "borderWidth": 2,
                                   "pointRadius": 0,
                                   "pointHoverRadius": 1,
@@ -1052,9 +1055,9 @@
                                 "labels": ["May 1", "May 2", "May 3", "May 4", "May 5", "May 6", "May 7", "May 8", "May 9", "May 10"],
                                 "datasets": [{
                                   "data": [200, 300, 290, 350, 150, 350, 300, 100, 125, 220],
-                                  "backgroundColor": "#377dff",
-                                  "hoverBackgroundColor": "#377dff",
-                                  "borderColor": "#377dff"
+                                  "backgroundColor": "@@vars.style.color",
+                                  "hoverBackgroundColor": "@@vars.style.color",
+                                  "borderColor": "@@vars.style.color"
                                 }]
                               },
                               "options": {
@@ -1126,9 +1129,9 @@
                                     "labels": ["May 1", "May 2", "May 3", "May 4", "May 5", "May 6", "May 7", "May 8", "May 9", "May 10"],
                                     "datasets": [{
                                       "data": [200, 300, 290, 350, 150, 350, 300, 100, 125, 220],
-                                      "backgroundColor": "#377dff",
-                                      "hoverBackgroundColor": "#377dff",
-                                      "borderColor": "#377dff"
+                                      "backgroundColor": "@@vars.style.color",
+                                      "hoverBackgroundColor": "@@vars.style.color",
+                                      "borderColor": "@@vars.style.color"
                                     }]
                                   },
                                   "options": {
@@ -1475,7 +1478,7 @@
                                 "labels": ["USD", "USD", "USD"],
                                 "datasets": [{
                                   "data": [45, 25, 30],
-                                  "backgroundColor": ["#377dff", "#00c9db", "#e7eaf3"],
+                                  "backgroundColor": ["@@vars.style.color", "#00c9db", "#e7eaf3"],
                                   "borderWidth": 5,
                                   "hoverBorderColor": "#fff"
                                 }]
@@ -1529,7 +1532,7 @@
                                     "labels": ["USD", "USD", "USD"],
                                     "datasets": [{
                                       "data": [45, 25, 30],
-                                      "backgroundColor": ["#377dff", "#00c9db", "#e7eaf3"],
+                                      "backgroundColor": ["@@vars.style.color", "#00c9db", "#e7eaf3"],
                                       "borderWidth": 5,
                                       "hoverBorderColor": "#fff"
                                     }]
@@ -1627,7 +1630,7 @@
                               "data": {
                                 "labels": ["USD", "USD", "USD"],
                                 "datasets": [{
-                                  "backgroundColor": ["#377dff", "#00c9db", "#e7eaf3"],
+                                  "backgroundColor": ["@@vars.style.color", "#00c9db", "#e7eaf3"],
                                   "borderWidth": 5,
                                   "hoverBorderColor": "#fff"
                                 }]
@@ -1693,7 +1696,7 @@
                                   "data": {
                                     "labels": ["USD", "USD", "USD"],
                                     "datasets": [{
-                                      "backgroundColor": ["#377dff", "#00c9db", "#e7eaf3"],
+                                      "backgroundColor": ["@@vars.style.color", "#00c9db", "#e7eaf3"],
                                       "borderWidth": 5,
                                       "hoverBorderColor": "#fff"
                                     }]
@@ -1742,7 +1745,8 @@
                     <code class="language-markup" data-lang="html">
                       &lt;script&gt;
                         $(document).on('ready', function () {
-                          // initialization of chartjs
+                          // INITIALIZATION OF CHARTJS
+                          // =======================================================
                           var updatingDoughnutChart = $.HSCore.components.HSChartJS.init($('#updatingDoughnutChart'));
 
                           // Datasets for chart, can be loaded from AJAX request
@@ -1819,7 +1823,7 @@
                               "labels": ["Current status", "Goal"],
                               "datasets": [{
                                 "data": [64, 35],
-                                "backgroundColor": ["#377dff", "rgba(55, 125, 255, 0.35)"],
+                                "backgroundColor": ["@@vars.style.color", "rgba(55, 125, 255, 0.35)"],
                                 "borderWidth": 4,
                                 "hoverBorderColor": "#ffffff"
                               }]
@@ -1846,7 +1850,7 @@
                                   "labels": ["Current status", "Goal"],
                                   "datasets": [{
                                     "data": [64, 35],
-                                    "backgroundColor": ["#377dff", "rgba(55, 125, 255, 0.35)"],
+                                    "backgroundColor": ["@@vars.style.color", "rgba(55, 125, 255, 0.35)"],
                                     "borderWidth": 4,
                                     "hoverBorderColor": "#ffffff"
                                   }]
@@ -1868,7 +1872,8 @@
                     <code class="language-markup" data-lang="html">
                       &lt;script&gt;
                         $(document).on('ready', function () {
-                          // initialization of chartjs
+                          // INITIALIZATION OF CHARTJS
+                          // =======================================================
                           $.HSCore.components.HSChartJS.init($('.js-chartjs-doughnut-half'), {
                             options: {
                               tooltips: {
@@ -1938,7 +1943,7 @@
                               "labels": ["Current status", "Goal"],
                               "datasets": [{
                                 "data": [64, 35],
-                                "backgroundColor": ["#377dff", "rgba(55, 125, 255, 0.35)"],
+                                "backgroundColor": ["@@vars.style.color", "rgba(55, 125, 255, 0.35)"],
                                 "borderWidth": 4,
                                 "hoverBorderColor": "#ffffff"
                               }]
@@ -1976,7 +1981,7 @@
                                   "labels": ["Current status", "Goal"],
                                   "datasets": [{
                                     "data": [64, 35],
-                                    "backgroundColor": ["#377dff", "rgba(55, 125, 255, 0.35)"],
+                                    "backgroundColor": ["@@vars.style.color", "rgba(55, 125, 255, 0.35)"],
                                     "borderWidth": 4,
                                     "hoverBorderColor": "#ffffff"
                                   }]
@@ -1998,7 +2003,8 @@
                     <code class="language-markup" data-lang="html">
                       &lt;script&gt;
                         $(document).on('ready', function () {
-                          // initialization of chartjs
+                          // INITIALIZATION OF CHARTJS
+                          // =======================================================
                            var halfChart = $.HSCore.components.HSChartJS.init($('.js-chartjs-doughnut-half-dynamic'), {
                               options: {
                                 tooltips: {
@@ -2243,7 +2249,8 @@
 
                       &lt;script&gt;
                         $(document).on('ready', function () {
-                          // initialization of bubble chartjs with Datalabels plugin
+                          // INITIALIZATION OF BUBBLE CHARTJS WITH DATALABELS PLUGIN
+                          // =======================================================
                           $('.js-chart-datalabels').each(function () {
                             $.HSCore.components.HSChartJS.init($(this), {
                               plugins: [ChartDataLabels],
@@ -2338,7 +2345,7 @@
                               data-hs-chartjs-options='{
                             "options": {
                               "matrixBackgroundColor": {
-                                 "color": "#377dff",
+                                 "color": "@@vars.style.color",
                                  "accent": 50,
                                  "additionToValue": 2
                               },
@@ -2365,7 +2372,7 @@
                                   data-hs-chartjs-options='{
                                 &quot;options&quot;: {
                                   &quot;matrixBackgroundColor&quot;: {
-                                     &quot;color&quot;: &quot;#377dff&quot;,
+                                     &quot;color&quot;: &quot;@@vars.style.color&quot;,
                                      &quot;accent&quot;: 50,
                                      &quot;additionToValue&quot;: 2
                                   },
@@ -2398,12 +2405,15 @@
 
                       &lt;script&gt;
                         $(document).on('ready', function () {
-                          // initialization of chartjs
+                          // INITIALIZATION OF CHARTJS
+                          // =======================================================
                           $('.js-chart').each(function () {
                             $.HSCore.components.HSChartJS.init($(this));
                           });
 
-                          // initialization of matrix chartjs with Chartjs Matrix plugin
+
+                          // INITIALIZATION OF MATRIX CHARTJS WITH CHARTJS MATRIX PLUGIN
+                          // =======================================================
                           function generateHoursData() {
                             var data = [];
                             var dt = moment().subtract(365, 'days').startOf('day');
@@ -2581,6 +2591,12 @@
                     </tr>
 
                     <tr>
+                      <td><code>options.tooltips.yearStamp</code></td>
+                      <td>Added year after title.</td>
+                      <td><code>true</code></td>
+                    </tr>
+
+                    <tr>
                       <td><code>options.tooltips.hasIndicator</code></td>
                       <td>Add indicator for tooltip.</td>
                       <td><code>false</code></td>
@@ -2742,40 +2758,55 @@
     <!-- JS Plugins Init. -->
     <script>
       $(document).on('ready', function () {
-        // initialization of navbar vertical navigation
+        // INITIALIZATION OF NAVBAR VERTICAL NAVIGATION
+        // =======================================================
         var sidebar = $('.js-navbar-vertical-aside').hsSideNav();
 
-        // initialization of tooltip in navbar vertical menu
+
+        // INITIALIZATION OF TOOLTIP IN NAVBAR VERTICAL MENU
+        // =======================================================
         $('.js-nav-tooltip-link').tooltip({ boundary: 'window' })
 
-        // initialization of go to
+
+        // INITIALIZATION OF GO TO
+        // =======================================================
         $('.js-go-to').each(function () {
           var goTo = new HSGoTo($(this)).init();
         });
 
-        // initialization of nav scroller
+
+        // INITIALIZATION OF NAV SCROLLER
+        // =======================================================
         $('.js-nav-scroller').each(function () {
           new HsNavScroller($(this), {
             delay: 400,
           }).init()
         });
 
-        // initialization of ListJs component
+
+        // INITIALIZATION OF LISTJS COMPONENT
+        // =======================================================
         var docsSearch = $.HSCore.components.HSList.init('#docsSearch');
 
-        // Get JSON file results
+
+        // GET JSON FILE RESULTS
+        // =======================================================
         $.getJSON('@@autopath/assets/json/docs-search.json', function(data) {
           docsSearch.add(data);
         });
 
-        // initialization of chartjs
+
+        // INITIALIZATION OF CHARTJS
+        // =======================================================
         Chart.plugins.unregister(ChartDataLabels);
 
         $('.js-chart').each(function () {
           $.HSCore.components.HSChartJS.init($(this));
         });
 
-        // initialization of chartjs
+
+        // INITIALIZATION OF CHARTJS
+        // =======================================================
         var updatingChartDatasets = [
           [
             [18,51,60,38,88,50,40,52,88,80,60,70],
@@ -2787,7 +2818,9 @@
           ]
         ]
 
-        // initialization of chartjs
+
+        // INITIALIZATION OF CHARTJS
+        // =======================================================
         var updatingLineChart = $.HSCore.components.HSChartJS.init($('#updatingLineChart'), {
           data: {
             datasets: [
@@ -2853,7 +2886,9 @@
          }
         })
 
-        // initialization of chartjs
+
+        // INITIALIZATION OF CHARTJS
+        // =======================================================
         var updatingDoughnutChart = $.HSCore.components.HSChartJS.init($('#updatingDoughnutChart'));
 
         // Datasets for chart, can be loaded from AJAX request
@@ -2883,7 +2918,9 @@
           updatingDoughnutChart.update();
         })
 
-        // initialization of chartjs
+
+        // INITIALIZATION OF CHARTJS
+        // =======================================================
         $.HSCore.components.HSChartJS.init($('.js-chartjs-doughnut-half'), {
           options: {
             tooltips: {
@@ -2895,7 +2932,9 @@
           }
         });
 
-        // initialization of chartjs
+
+        // INITIALIZATION OF CHARTJS
+        // =======================================================
         var halfChart = $.HSCore.components.HSChartJS.init($('.js-chartjs-doughnut-half-dynamic'), {
           options: {
             tooltips: {
@@ -2919,7 +2958,9 @@
           halfChart.update();
         });
 
-        // initialization of bubble chartjs with Datalabels plugin
+
+        // INITIALIZATION OF BUBBLE CHARTJS WITH DATALABELS PLUGIN
+        // =======================================================
         $('.js-chart-datalabels').each(function () {
           $.HSCore.components.HSChartJS.init($(this), {
             plugins: [ChartDataLabels],
@@ -2963,7 +3004,9 @@
           });
         });
 
-        // initialization of matrix chartjs with Chartjs Matrix plugin
+
+        // INITIALIZATION OF MATRIX CHARTJS WITH CHARTJS MATRIX PLUGIN
+        // =======================================================
         function generateHoursData() {
           var data = [];
           var dt = moment().subtract(365, 'days').startOf('day');

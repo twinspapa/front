@@ -24,6 +24,11 @@
   font-weight: $step-title-font-weight;
 }
 
+.step-text:last-child {
+  color: $step-text-color;
+  margin-bottom: 0;
+}
+
 .step-border-last-0 {
   .step-item:last-child {
     .step-icon::after {
@@ -60,4 +65,13 @@
 
 .step-item.collapse:not(.show) {
   display: none;
+}
+
+// Description show/hide on focus
+.step-item .step-title-description {
+  display: none;
+}
+
+.step-item.focus .step-title-description {
+  display: block;
 }

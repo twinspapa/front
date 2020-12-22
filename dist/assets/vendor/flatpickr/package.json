@@ -1,32 +1,27 @@
 {
-  "_args": [
-    [
-      "flatpickr@4.6.6",
-      "C:\\Users\\ACE\\Desktop\\local\\front-dashboard"
-    ]
-  ],
-  "_from": "flatpickr@4.6.6",
+  "_from": "flatpickr@^4.6.3",
   "_id": "flatpickr@4.6.6",
   "_inBundle": false,
   "_integrity": "sha512-EZ48CJMttMg3maMhJoX+GvTuuEhX/RbA1YeuI19attP3pwBdbYy6+yqAEVm0o0hSBFYBiLbVxscLW6gJXq6H3A==",
   "_location": "/flatpickr",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
+    "type": "range",
     "registry": true,
-    "raw": "flatpickr@4.6.6",
+    "raw": "flatpickr@^4.6.3",
     "name": "flatpickr",
     "escapedName": "flatpickr",
-    "rawSpec": "4.6.6",
+    "rawSpec": "^4.6.3",
     "saveSpec": null,
-    "fetchSpec": "4.6.6"
+    "fetchSpec": "^4.6.3"
   },
   "_requiredBy": [
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/flatpickr/-/flatpickr-4.6.6.tgz",
-  "_spec": "4.6.6",
-  "_where": "C:\\Users\\ACE\\Desktop\\local\\front-dashboard",
+  "_shasum": "34d2ad80adfa34254e62583a34264d472f1038d6",
+  "_spec": "flatpickr@^4.6.3",
+  "_where": "/Applications/MAMP/htdocs/front/front-dashboard",
   "author": {
     "name": "Gregory",
     "email": "gregory.mkv@gmail.com"
@@ -39,6 +34,8 @@
   "bugs": {
     "url": "https://github.com/chmln/flatpickr/issues"
   },
+  "bundleDependencies": false,
+  "deprecated": false,
   "description": "A lightweight, powerful javascript datetime picker",
   "devDependencies": {
     "@babel/core": "^7.10.2",

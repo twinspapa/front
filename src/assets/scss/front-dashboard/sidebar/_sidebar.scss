@@ -41,6 +41,12 @@
   z-index: $sidebar-close-z-index;
 }
 
+.sidebar-card {
+  position: relative;
+  height: 100%;
+  @include border-radius(0);
+}
+
 .sidebar-body {
   min-height: auto;
 }
@@ -66,6 +72,18 @@
   }
 }
 
-.sidebar-card {
-  @include border-radius(0);
+.sidebar-footer-fixed {
+  padding-bottom: $sidebar-footer-height;
+
+  .sidebar-body {
+    height: calc(100% - #{$sidebar-footer-height});
+  }
+}
+
+.sidebar-footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: $sidebar-footer-height;
 }

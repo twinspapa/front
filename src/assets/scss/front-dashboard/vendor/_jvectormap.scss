@@ -53,6 +53,7 @@
   text-align: center;
   color: $jvectormap-zoom-color;
   background-color: $jvectormap-zoom-bg-color;
+  border: $jvectormap-zoom-border-width $jvectormap-zoom-border-type $jvectormap-zoom-border-color;
   width: $jvectormap-indicators-width;
   height: $jvectormap-indicators-height;
   cursor: pointer;
@@ -60,7 +61,6 @@
   &:hover,
   &:focus {
     color: $jvectormap-indicators-hover-color;
-    background-color: $jvectormap-zoom-hover-bg-color;
   }
 }
 

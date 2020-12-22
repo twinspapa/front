@@ -382,16 +382,13 @@
                     <span class="dropdown-header">Settings</span>
 
                     <a class="dropdown-item" href="#">
-                      <i class="tio-share dropdown-item-icon"></i>
-                      Share chart
+                      <i class="tio-share dropdown-item-icon"></i> Share chart
                     </a>
                     <a class="dropdown-item" href="#">
-                      <i class="tio-download-to dropdown-item-icon"></i>
-                      Download
+                      <i class="tio-download-to dropdown-item-icon"></i> Download
                     </a>
                     <a class="dropdown-item" href="#">
-                      <i class="tio-alt dropdown-item-icon"></i>
-                      Connect other apps
+                      <i class="tio-alt dropdown-item-icon"></i> Connect other apps
                     </a>
 
                     <div class="dropdown-divider"></div>
@@ -399,8 +396,7 @@
                     <span class="dropdown-header">Feedback</span>
 
                     <a class="dropdown-item" href="#">
-                      <i class="tio-chat-outlined dropdown-item-icon"></i>
-                      Report
+                      <i class="tio-chat-outlined dropdown-item-icon"></i> Report
                     </a>
                   </div>
                 </div>
@@ -658,7 +654,7 @@
                       <span class="text-secondary mr-2">Status:</span>
 
                       <!-- Select -->
-                      <select class="js-select2-custom js-datatable-filter"
+                      <select class="js-select2-custom js-datatable-filter custom-select-sm" size="1" style="opacity: 0;"
                               data-target-column-index="2"
                               data-hs-select2-options='{
                                 "minimumResultsForSearch": "Infinity",
@@ -680,7 +676,7 @@
                       <span class="text-secondary mr-2">Signed up:</span>
 
                       <!-- Select -->
-                      <select class="js-select2-custom js-datatable-filter"
+                      <select class="js-select2-custom js-datatable-filter custom-select-sm" size="1" style="opacity: 0;"
                               data-target-column-index="5"
                               data-hs-select2-options='{
                                 "minimumResultsForSearch": "Infinity",
@@ -1275,7 +1271,7 @@
                                     {"x": 55, "y": 65, "r": 99}
                                   ],
                                   "color": "#fff",
-                                  "backgroundColor": "rgba(55, 125, 255, 0.9)",
+                                  "backgroundColor": "gulpRGBA[@@vars.style.color,.9]",
                                   "borderColor": "transparent"
                                 },
                                 {
@@ -1369,16 +1365,13 @@
                     <span class="dropdown-header">Settings</span>
 
                     <a class="dropdown-item" href="#">
-                      <i class="tio-share dropdown-item-icon"></i>
-                      Share reports
+                      <i class="tio-share dropdown-item-icon"></i> Share reports
                     </a>
                     <a class="dropdown-item" href="#">
-                      <i class="tio-download-to dropdown-item-icon"></i>
-                      Download
+                      <i class="tio-download-to dropdown-item-icon"></i> Download
                     </a>
                     <a class="dropdown-item" href="#">
-                      <i class="tio-alt dropdown-item-icon"></i>
-                      Connect other apps
+                      <i class="tio-alt dropdown-item-icon"></i> Connect other apps
                     </a>
 
                     <div class="dropdown-divider"></div>
@@ -1386,8 +1379,7 @@
                     <span class="dropdown-header">Feedback</span>
 
                     <a class="dropdown-item" href="#">
-                      <i class="tio-chat-outlined dropdown-item-icon"></i>
-                      Report
+                      <i class="tio-chat-outlined dropdown-item-icon"></i> Report
                     </a>
                   </div>
                 </div>
@@ -1530,12 +1522,18 @@
     <!-- JS Plugins Init. -->
     <script>
       $(document).on('ready', function () {
+        // =======================================================
+
+
+        // BUILDER TOGGLE INVOKER
+        // =======================================================
         $('.js-navbar-vertical-aside-toggle-invoker').click(function () {
           $('.js-navbar-vertical-aside-toggle-invoker i').tooltip('hide');
         });
 
         @@if (layoutBuilder.header.layoutMode !== 'default') {
-          // initialization of mega menu
+          // INITIALIZATION OF MEGA MENU
+          // =======================================================
           var megaMenu = new HSMegaMenu($('.js-mega-menu'), {
             desktop: {
               position: 'left'
@@ -1543,10 +1541,14 @@
           }).init();
         }
 
-        // initialization of navbar vertical navigation
+        
+        // INITIALIZATION OF NAVBAR VERTICAL NAVIGATION
+        // =======================================================
         var sidebar = $('.js-navbar-vertical-aside').hsSideNav();
 
-        // initialization of tooltip in navbar vertical menu
+        
+        // INITIALIZATION OF TOOLTIP IN NAVBAR VERTICAL MENU
+        // =======================================================
         $('.js-nav-tooltip-link').tooltip({ boundary: 'window' })
 
         $(".js-nav-tooltip-link").on("show.bs.tooltip", function(e) {
@@ -1555,22 +1557,30 @@
           }
         });
 
-        // initialization of unfold
+        
+        // INITIALIZATION OF UNFOLD
+        // =======================================================
         $('.js-hs-unfold-invoker').each(function () {
           var unfold = new HSUnfold($(this)).init();
         });
 
-        // initialization of form search
+        
+        // INITIALIZATION OF FORM SEARCH
+        // =======================================================
         $('.js-form-search').each(function () {
           new HSFormSearch($(this)).init()
         });
 
-        // initialization of select2
+        
+        // INITIALIZATION OF SELECT2
+        // =======================================================
         $('.js-select2-custom').each(function () {
           var select2 = $.HSCore.components.HSSelect2.init($(this));
         });
 
-        // initialization of chartjs
+        
+        // INITIALIZATION OF CHARTJS
+        // =======================================================
         Chart.plugins.unregister(ChartDataLabels);
 
         $('.js-chart').each(function () {
@@ -1579,7 +1589,8 @@
 
         var updatingChart = $.HSCore.components.HSChartJS.init($('#updatingData'));
 
-        // Call when tab is clicked
+        // CALL WHEN TAB IS CLICKED
+        // =======================================================
         $('[data-toggle="chart-bar"]').click(function(e) {
           let keyDataset = $(e.currentTarget).attr('data-datasets')
 
@@ -1618,7 +1629,9 @@
          }
         })
 
-        // initialization of bubble chartjs with Datalabels plugin
+        
+        // INITIALIZATION OF BUBBLE CHARTJS WITH DATALABELS PLUGIN
+        // =======================================================
         $('.js-chart-datalabels').each(function () {
           $.HSCore.components.HSChartJS.init($(this), {
             plugins: [ChartDataLabels],
@@ -1662,7 +1675,9 @@
           });
         });
 
-        // initialization of daterangepicker
+        
+        // INITIALIZATION OF DATERANGEPICKER
+        // =======================================================
         $('.js-daterangepicker').daterangepicker();
 
         $('.js-daterangepicker-times').daterangepicker({
@@ -1696,7 +1711,9 @@
 
         cb(start, end);
 
-        // initialization of datatables
+        
+        // INITIALIZATION OF DATATABLES
+        // =======================================================
         var datatable = $.HSCore.components.HSDatatables.init($('#datatable'), {
           select: {
             style: 'multi',
@@ -1739,7 +1756,9 @@
           }, 1);
         });
 
-        // initialization of clipboard
+        
+        // INITIALIZATION OF CLIPBOARD
+        // =======================================================
         $('.js-clipboard').each(function() {
           var clipboard = $.HSCore.components.HSClipboard.init(this);
         });

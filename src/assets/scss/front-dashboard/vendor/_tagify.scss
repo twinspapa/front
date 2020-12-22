@@ -18,6 +18,10 @@
   }
 }
 
+.tagify__tag--hide {
+  height: 0;
+}
+
 .tagify__tag {
   margin: $tagify-tag-margin-y $tagify-tag-margin-x $tagify-tag-margin-y 0;
 
@@ -30,18 +34,13 @@
 
   > div {
     color: $tagify-tag-color;
-    line-height: $tagify-tag-line-height;
     padding: $tagify-tag-padding-y $tagify-tag-padding-x;
     @include border-radius($tagify-tag-border-radius);
-
-    * {
-      display: inline-flex;
-      vertical-align: baseline;
-    }
   }
 }
 
 .tagify__tag__removeBtn {
+  color: $tagify-removebtn-color;
   width: $tagify-removebtn-width;
   height: $tagify-removebtn-height;
   line-height: $tagify-removebtn-line-height;
@@ -65,6 +64,10 @@
   display: flex;
   height: auto;
   padding: 0 $tagify-tag-margin-y;
+
+  &.tagify--empty {
+    padding: 0 $input-padding-x;
+  }
 }
 
 .tagify__input {
@@ -81,28 +84,38 @@
   .tagify__tag {
     > div {
       padding: $tagify-tag-padding-y $tagify-tag-padding-x;
-      line-height: $tagify-input-tag-line-height;
+      line-height: normal;
     }
   }
 }
 
 .tagify__dropdown__menu {
+  overflow: hidden;
   border: $tagify-dropdown-menu-border-width $tagify-dropdown-menu-border-type $tagify-dropdown-menu-border-color;
   @include border-bottom-right-radius($tagify-dropdown-menu-bottom-radius);
   @include border-bottom-left-radius($tagify-dropdown-menu-bottom-radius);
   margin-top: -1px;
 }
 
+.tagify__dropdown__wrapper {
+  border: none;
+  box-shadow: none;
+  transition: none !important;
+}
+
+.tagify__dropdown__item {
+  color: $tagify-dropdown-item-color;
+  padding: $input-padding-y $input-padding-x;
+  margin: 0;
+  @include border-radius(0);
+}
+
 .tagify__dropdown__item--active {
-  color: $tagify-dropdown-item-active-color;
+  // color: $tagify-dropdown-item-active-color;
   background-color: $tagify-dropdown-item-active-bg-color;
 }
 
 .tagify.tagify-form-control-list {
   @include border-bottom-right-radius($tagify-form-control-list-bottom-radius);
   @include border-bottom-left-radius($tagify-form-control-list-bottom-radius);
-}
-
-.tagify__dropdown__wrapper {
-  border: none;
 }

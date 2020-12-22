@@ -1,6 +1,8 @@
-import { decode, extend } from './helpers'
+import { decode, extend, getfirstTextNode } from './helpers'
 
 export function triggerChangeEvent(){
+    if( this.settings.mixMode.integrated ) return;
+
     var inputElm = this.DOM.originalInput,
         changed = this.state.lastOriginalValueReported !== inputElm.value,
         event = new CustomEvent("change", {bubbles: true}); // must use "CustomEvent" and not "Event" to support IE
@@ -124,12 +126,10 @@ export default {
 
                     if (selection.getRangeAt && selection.rangeCount)
                         this.state.selection.range = selection.getRangeAt(0)
-
                 }
 
                 return
             }
-
 
             if( type == "focus" ){
                 this.trigger("focus", eventData)
@@ -152,7 +152,6 @@ export default {
                 shouldAddTags && this.addTags(text, true)
             }
 
-
             this.DOM.input.removeAttribute('style')
             this.dropdown.hide.call(this)
         },
@@ -174,39 +173,74 @@ export default {
                         this.state.actions.ArrowLeft = true
                         break
                     }
-
                     case 'Delete':
                     case 'Backspace' : {
                         if( this.state.editing ) return
 
-                        var selection = document.getSelection(),
-                            deleteKeyTagDetected = e.key == 'Delete' && selection.anchorOffset == selection.anchorNode.length,
-                            backspaceKeyTagDetected =  selection.anchorNode.nodeType == 1 || !selection.anchorOffset && selection.anchorNode.previousElementSibling,
+                        var sel = document.getSelection(),
+                            deleteKeyTagDetected = e.key == 'Delete' && sel.anchorOffset == (sel.anchorNode.length || 0),
+                            isCaretAfterTag = sel.anchorNode.nodeType == 1 || !sel.anchorOffset && sel.anchorNode.previousElementSibling,
                             lastInputValue = decode(this.DOM.input.innerHTML),
-                            lastTagElems = this.getTagElms();
+                            lastTagElems = this.getTagElms(),
+                            //  isCaretInsideTag = sel.anchorNode.parentNode('.' + this.settings.classNames.tag),
+                            tagElmToBeDeleted;
 
-                        if( selection.anchorNode.nodeType == 3 &&   // node at caret location is a Text node
-                            !selection.anchorNode.nodeValue    &&   // has some text
-                            selection.anchorNode.previousElementSibling )  // text node has a Tag node before it
+                        if( sel.anchorNode.nodeName == 'BR')
+                            return
+
+                        if( (deleteKeyTagDetected || isCaretAfterTag) && sel.anchorNode.nodeType == 1 )
+                            if( sel.anchorOffset == 0 ) // caret is at the very begining, before a tag
+                                tagElmToBeDeleted = deleteKeyTagDetected // delete key pressed
+                                    ? lastTagElems[0]
+                                    : null;
+                            else
+                                tagElmToBeDeleted = lastTagElems[sel.anchorOffset - 1]
+
+                        // find out if a tag *might* be a candidate for deletion, and if so, which
+                        else if( deleteKeyTagDetected )
+                            tagElmToBeDeleted = sel.anchorNode.nextElementSibling;
+
+                        else if( isCaretAfterTag )
+                            tagElmToBeDeleted = isCaretAfterTag;
+
+                        // tagElm.hasAttribute('readonly')
+                        if( sel.anchorNode.nodeType == 3 &&   // node at caret location is a Text node
+                            !sel.anchorNode.nodeValue    &&   // has some text
+                            sel.anchorNode.previousElementSibling )  // text node has a Tag node before it
                             e.preventDefault()
 
+                        // if backspace not allowed, do nothing
                         // TODO: a better way to detect if nodes were deleted is simply check the "this.value" before & after
-                        if( (backspaceKeyTagDetected || deleteKeyTagDetected) && !this.settings.backspace ){
+                        if( (isCaretAfterTag || deleteKeyTagDetected) && !this.settings.backspace ){
                             e.preventDefault()
                             return
                         }
 
-                        // if( isFirefox && selection && selection.anchorOffset == 0 )
-                        //     this.removeTags(selection.anchorNode.previousSibling)
+                        if( sel.type != 'Range' && tagElmToBeDeleted && tagElmToBeDeleted.hasAttribute('readonly') ){
+                            // allows the continuation of deletion by placing the caret on the first previous textNode.
+                            // since a few readonly-tags might be one after the other, iteration is needed:
+                            this.placeCaretAfterNode( getfirstTextNode(tagElmToBeDeleted) )
+                            return
+                        }
 
-                        // a minimum delay is needed before the node actually gets ditached from the document (don't know why),
+                        // nodeType is "1" only when the caret is at the end after last tag (no text after), or before first first (no text before)
+                        if( this.isFirefox && sel.anchorNode.nodeType == 1 && sel.anchorOffset != 0 ){
+                            this.removeTags() // removes last tag by default if no parameter supplied
+                            // place caret inside last textNode, if exist. it's an annoying bug only in FF,
+                            // if the last tag is removed, and there is a textNode before it, the caret is not placed at its end
+                            this.placeCaretAfterNode( this.setRangeAtStartEnd() )
+                        }
+
+                        // a minimum delay is needed before the node actually gets detached from the document (don't know why),
                         // to know exactly which tag was deleted. This is the easiest way of knowing besides using MutationObserver
                         setTimeout(() => {
-                            var currentValue = decode(this.DOM.input.innerHTML);
+                            var sel = document.getSelection(),
+                                currentValue = decode(this.DOM.input.innerHTML),
+                                prevElm = sel.anchorNode.previousElementSibling;
 
                             // fixes #384, where the first and only tag will not get removed with backspace
-                            if( currentValue.length >= lastInputValue.length ){
-                                this.removeTags(selection.anchorNode.previousElementSibling)
+                            if( currentValue.length >= lastInputValue.length && prevElm && !prevElm.hasAttribute('readonly') ){
+                                this.removeTags(prevElm)
                                 this.fixFirefoxLastTagNoCaret()
 
                                 // the above "removeTag" methods removes the tag with a transition. Chrome adds a <br> element for some reason at this stage
@@ -220,14 +254,15 @@ export default {
                             // find out which tag(s) were deleted and trigger "remove" event
                             // iterate over the list of tags still in the document and then filter only those from the "this.value" collection
                             this.value = [].map.call(lastTagElems, (node, nodeIdx) => {
-                                var tagData = node.__tagifyTagData
+                                var tagData = this.tagData(node)
 
-                                if( node.parentNode )
+                                // since readonly cannot be removed (it's technically resurrected if removed somehow)
+                                if( node.parentNode || tagData.readonly )
                                     return tagData
                                 else
                                     this.trigger('remove', { tag:node, index:nodeIdx, data:tagData })
                             })
-                            .filter(n=>n)  // remove empty items in the mapped array
+                                .filter(n=>n)  // remove empty items in the mapped array
                         }, 50) // Firefox needs this higher duration for some reason or things get buggy when deleting text from the end
                         break;
                     }
@@ -304,7 +339,7 @@ export default {
 
             // for IE; since IE doesn't have an "input" event so "keyDown" is used instead to trigger the "onInput" callback,
             // and so many keys do not change the input, and for those do not continue.
-            if( this.input.value == value ) return;
+            if( this.state.inputText == value ) return;
 
             // save the value on the input's State object
             this.input.set.call(this, value, false); // update the input with the normalized value and run validations
@@ -327,12 +362,26 @@ export default {
                 lastTagsCount = this.value.length,
                 matchFlaggedTag,
                 matchDelimiters,
-                tagsCount = this.getTagElms().length;
+                tagsElems = this.getTagElms(),
+                fragment = document.createDocumentFragment(),
+                range = window.getSelection().getRangeAt(0),
+                remainingTagsValues = [].map.call(tagsElems, node => this.tagData(node).value);
 
-            // check if ANY tags were magically added through browser redo/undo
-            if( tagsCount > lastTagsCount ){
-                this.value = [].map.call(this.getTagElms(), node => node.__tagifyTagData)
-                this.update({withoutChangeEvent:true})
+            // re-add "readonly" tags which might have been removed
+            this.value.slice().forEach(item => {
+                if( item.readonly && !remainingTagsValues.includes(item.value) )
+                    fragment.appendChild( this.createTagElem(item) )
+            })
+
+            if( fragment.childNodes.length ){
+                range.insertNode(fragment)
+                this.setRangeAtStartEnd(false, fragment.lastChild)
+            }
+
+            // check if tags were "magically" added/removed (browser redo/undo or CTRL-A -> delete)
+            if( tagsElems.length != lastTagsCount ){
+                this.value = [].map.call(this.getTagElms(), node => this.tagData(node))
+                this.update({ withoutChangeEvent:true })
                 return
             }
 
@@ -434,8 +483,8 @@ export default {
         },
 
         onClickScope(e){
-            var tagElm = e.target.closest('.' + this.settings.classNames.tag),
-                _s = this.settings,
+            var _s = this.settings,
+                tagElm = e.target.closest('.' + _s.classNames.tag),
                 timeDiffFocus = +new Date() - this.state.hasFocus;
 
             if( e.target == this.DOM.scope ){
@@ -444,7 +493,7 @@ export default {
                 return
             }
 
-            else if( e.target.classList.contains(this.settings.classNames.tagX) ){
+            else if( e.target.classList.contains(_s.classNames.tagX) ){
                 this.removeTags( e.target.parentNode );
                 return
             }
@@ -452,7 +501,7 @@ export default {
             else if( tagElm ){
                 this.trigger("click", { tag:tagElm, index:this.getNodeIndex(tagElm), data:this.tagData(tagElm), originalEvent:this.cloneEvent(e) })
 
-                if( this.settings.editTags == 1 )
+                if( _s.editTags === 1 || _s.editTags.clicks === 1 )
                     this.events.callbacks.onDoubleClickScope.call(this, e)
 
                 return
@@ -479,19 +528,22 @@ export default {
                 !this.state.dropdown.visible && this.dropdown.show.call(this);
         },
 
+        // special proccess is needed for pasted content in order to "clean" it
         onPaste(e){
             var clipboardData, pastedData;
 
             e.preventDefault()
 
+            if( this.settings.readonly ) return;
+
             // Get pasted data via clipboard API
             clipboardData = e.clipboardData || window.clipboardData
             pastedData = clipboardData.getData('Text')
 
-            if( this.settings.mode == 'mix' )
-                this.injectAtCaret(pastedData, window.getSelection().getRangeAt(0))
-            else
-                this.addTags(pastedData)
+            this.injectAtCaret(pastedData, window.getSelection().getRangeAt(0))
+
+            if( this.settings.mode != 'mix' )
+                this.addTags(this.DOM.input.textContent, true)
         },
 
         onEditTagInput( editableElm, e ){
@@ -499,8 +551,8 @@ export default {
                 tagElmIdx = this.getNodeIndex(tagElm),
                 tagData = this.tagData(tagElm),
                 value = this.input.normalize.call(this, editableElm),
-                hasChanged = value != tagData.__originalData.value,
-                isValid = this.validateTag({value}); // the value could have been invalid in the first-place so make sure to re-validate it (via "addEmptyTag" method)
+                hasChanged = tagElm.innerHTML != tagElm.__tagifyTagData.__originalHTML,
+                isValid = this.validateTag({[this.settings.tagTextProp]:value}); // the value could have been invalid in the first-place so make sure to re-validate it (via "addEmptyTag" method)
 
             // if the value is same as before-editing and the tag was valid before as well, ignore the  current "isValid" result, which is false-positive
             if( !hasChanged && editableElm.originalIsValid === true )
@@ -535,62 +587,67 @@ export default {
         },
 
         onEditTagBlur( editableElm ){
-            this.state.editing = false;
-
             if( !this.state.hasFocus )
                 this.toggleFocusClass()
 
             // one scenario is when selecting a suggestion from the dropdown, when editing, and by selecting it
-            // the "onEditTagDone" is called directly, already replacing the tag, so the argument "editableElm" node isn't in the DOM
+            // the "onEditTagDone" is called directly, already replacing the tag, so the argument "editableElm"
+            // node isn't in the DOM anynmore because it has been replaced.
             if( !this.DOM.scope.contains(editableElm) ) return;
 
-            var tagElm       = editableElm.closest('.' + this.settings.classNames.tag),
-                currentValue = this.input.normalize.call(this, editableElm),
-                value        = currentValue,
-                newTagData   = extend({}, this.tagData(tagElm), {value}),
-                hasChanged   = value != newTagData.__originalData.value,
-                isValid      = this.validateTag(newTagData);
+            var _s           = this.settings,
+                tagElm       = editableElm.closest('.' + _s.classNames.tag),
+                textValue    = this.input.normalize.call(this, editableElm),
+                originalData = this.tagData(tagElm).__originalData, // pre-edit data
+                hasChanged   = tagElm.innerHTML != tagElm.__tagifyTagData.__originalHTML,
+                isValid      = this.validateTag({[_s.tagTextProp]:textValue}),
+                newTagData;
 
             //  this.DOM.input.focus()
-
-            if( !currentValue ){
-                this.removeTags(tagElm)
-                this.onEditTagDone(null, newTagData)
+            if( !textValue ){
+                this.onEditTagDone(tagElm)
                 return
             }
 
-            if( hasChanged ){
-                this.settings.transformTag.call(this, newTagData)
-                // MUST re-validate after tag transformation
-                isValid = this.validateTag(newTagData)
-            }
-            else{
-                // if nothing changed revert back to how it was before editing
-                this.onEditTagDone(tagElm, newTagData.__originalData)
+            // if nothing changed revert back to how it was before editing
+            if( !hasChanged ){
+                this.onEditTagDone(tagElm, originalData)
                 return
             }
+
+            newTagData = this.getWhitelistItem(textValue) || {[_s.tagTextProp]:textValue, value:textValue}
+
+            _s.transformTag.call(this, newTagData, originalData)
+
+            // MUST re-validate after tag transformation
+            // only validate the "tagTextProp" because is the only thing that metters for validation
+            isValid = this.validateTag({[_s.tagTextProp]:newTagData[_s.tagTextProp]})
 
             if( isValid !== true ){
-                this.trigger("invalid", {data:newTagData, tag:tagElm, message:isValid})
-                return;
+                this.trigger("invalid", { data:newTagData, tag:tagElm, message:isValid })
+
+                // do nothing if invalid, stay in edit-mode until corrected or reverted by presssing esc
+                if( _s.editTags.keepInvalid ) return
+
+                if( _s.keepInvalidTags )
+                    newTagData.__isValid = isValid
+                else
+                    // revert back if not specified to keep
+                    newTagData = originalData
             }
 
-            // check if the new value is in the whiteilst, if not check if there
-            // is any pre-invalidation data, and lastly resort to fresh emptty Object
-            newTagData = this.getWhitelistItemByValue(value) || newTagData.__preInvalidData || {}
-            newTagData = Object.assign({}, newTagData, {value}) // clone it, not to mess with the whitelist
-            //transform it again
-            this.settings.transformTag.call(this, newTagData)
+            // tagElm.classList.toggle(_s.classNames.tagInvalid, true)
 
             this.onEditTagDone(tagElm, newTagData)
         },
 
         onEditTagkeydown(e, tagElm){
             this.trigger("edit:keydown", {originalEvent:this.cloneEvent(e)})
+
             switch( e.key ){
                 case 'Esc' :
                 case 'Escape' :
-                    e.target.textContent = tagElm.__tagifyTagData.__originalData.value
+                    tagElm.innerHTML = tagElm.__tagifyTagData.__originalHTML
                 case 'Enter' :
                 case 'Tab' :
                     e.preventDefault()

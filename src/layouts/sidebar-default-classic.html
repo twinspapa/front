@@ -94,15 +94,20 @@
   <!-- JS Plugins Init. -->
   <script>
     $(document).on('ready', function () {
-      // initialization of navbar vertical navigation
+      // INITIALIZATION OF NAVBAR VERTICAL NAVIGATION
+      // =======================================================
       var sidebar = $('.js-navbar-vertical-aside').hsSideNav();
 
-      // initialization of unfold
+
+      // INITIALIZATION OF UNFOLD
+      // =======================================================
       $('.js-hs-unfold-invoker').each(function () {
         var unfold = new HSUnfold($(this)).init();
       });
 
-      // initialization of form search
+
+      // INITIALIZATION OF FORM SEARCH
+      // =======================================================
       $('.js-form-search').each(function () {
         new HSFormSearch($(this)).init()
       });

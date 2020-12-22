@@ -93,7 +93,8 @@
               <code class="language-html" data-lang="html">
                 &lt;script&gt;
                   $(document).on('ready', function () {
-                    // initialization of ion range slider
+                    // INITIALIZATION OF ION RANGE SLIDER
+                    // =======================================================
                     $('.js-ion-range-slider').each(function () {
                       $.HSCore.components.HSIonRangeSlider.init($(this));
                     });
@@ -900,8 +901,8 @@
                                     "labels": ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
                                     "datasets": [{
                                       "data": [2, 3, 5, 7, 8, 5, 3, 2, 3, 6, 5, 4, 7, 5, 4, 3, 2],
-                                      "backgroundColor": "#377dff",
-                                      "borderColor": "#377dff"
+                                      "backgroundColor": "@@vars.style.color",
+                                      "borderColor": "@@vars.style.color"
                                     }]
                                   },
                                   "options": {
@@ -1007,8 +1008,8 @@
                                         "labels": ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
                                         "datasets": [{
                                           "data": [2, 3, 5, 7, 8, 5, 3, 2, 3, 6, 5, 4, 7, 5, 4, 3, 2],
-                                          "backgroundColor": "#377dff",
-                                          "borderColor": "#377dff"
+                                          "backgroundColor": "@@vars.style.color",
+                                          "borderColor": "@@vars.style.color"
                                         }]
                                       },
                                       "options": {
@@ -1113,7 +1114,8 @@
 
                       &lt;script&gt;
                         $(document).on('ready', function () {
-                          // initialization of chartjs
+                          // INITIALIZATION OF CHARTJS
+                          // =======================================================
                           $('.js-chart').each(function () {
                             $.HSCore.components.HSChartJS.init($(this));
                           });
@@ -1210,8 +1212,8 @@
                                     "labels": ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
                                     "datasets": [{
                                       "data": [2, 3, 5, 7, 8, 5, 3, 2, 3, 6, 5, 4, 7, 5, 4, 3, 2],
-                                      "backgroundColor": "#377dff",
-                                      "borderColor": "#377dff"
+                                      "backgroundColor": "@@vars.style.color",
+                                      "borderColor": "@@vars.style.color"
                                     }]
                                   },
                                   "options": {
@@ -1326,8 +1328,8 @@
                                         "labels": ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
                                         "datasets": [{
                                           "data": [2, 3, 5, 7, 8, 5, 3, 2, 3, 6, 5, 4, 7, 5, 4, 3, 2],
-                                          "backgroundColor": "#377dff",
-                                          "borderColor": "#377dff"
+                                          "backgroundColor": "@@vars.style.color",
+                                          "borderColor": "@@vars.style.color"
                                         }]
                                       },
                                       "options": {
@@ -1400,7 +1402,8 @@
 
                       &lt;script&gt;
                         $(document).on('ready', function () {
-                          // initialization of chartjs
+                          // INITIALIZATION OF CHARTJS
+                          // =======================================================
                           $('.js-chart').each(function () {
                             $.HSCore.components.HSChartJS.init($(this));
                           });
@@ -1462,8 +1465,8 @@
                                     "labels": ["", "", "", "", "", "", "", "", ""],
                                     "datasets": [{
                                       "data": [0, 100, 700, 500, 1500, 200, 100, 50, 0],
-                                      "backgroundColor": "#377dff",
-                                      "borderColor": "#377dff"
+                                      "backgroundColor": "@@vars.style.color",
+                                      "borderColor": "@@vars.style.color"
                                     }]
                                   },
                                   "options": {
@@ -1586,8 +1589,8 @@
                                         "labels": ["", "", "", "", "", "", "", "", ""],
                                         "datasets": [{
                                           "data": [0, 100, 700, 500, 1500, 200, 100, 50, 0],
-                                          "backgroundColor": "#377dff",
-                                          "borderColor": "#377dff"
+                                          "backgroundColor": "@@vars.style.color",
+                                          "borderColor": "@@vars.style.color"
                                         }]
                                       },
                                       "options": {
@@ -1709,7 +1712,8 @@
 
                       &lt;script&gt;
                         $(document).on('ready', function () {
-                          // initialization of chartjs
+                          // INITIALIZATION OF CHARTJS
+                          // =======================================================
                           $('.js-chart').each(function () {
                             $.HSCore.components.HSChartJS.init($(this));
                           });
@@ -1816,8 +1820,8 @@
                                     "labels": ["", "", "", "", "", "", "", "", ""],
                                     "datasets": [{
                                       "data": [0, 100, 700, 500, 1500, 200, 100, 50, 0],
-                                      "backgroundColor": "#377dff",
-                                      "borderColor": "#377dff"
+                                      "backgroundColor": "@@vars.style.color",
+                                      "borderColor": "@@vars.style.color"
                                     }]
                                   },
                                   "options": {
@@ -1953,8 +1957,8 @@
                                         "labels": ["", "", "", "", "", "", "", "", ""],
                                         "datasets": [{
                                           "data": [0, 100, 700, 500, 1500, 200, 100, 50, 0],
-                                          "backgroundColor": "#377dff",
-                                          "borderColor": "#377dff"
+                                          "backgroundColor": "@@vars.style.color",
+                                          "borderColor": "@@vars.style.color"
                                         }]
                                       },
                                       "options": {
@@ -2038,7 +2042,8 @@
 
                       &lt;script&gt;
                         $(document).on('ready', function () {
-                          // initialization of chartjs
+                          // INITIALIZATION OF CHARTJS
+                          // =======================================================
                           $('.js-chart').each(function () {
                             $.HSCore.components.HSChartJS.init($(this));
                           });
@@ -2166,38 +2171,53 @@
     <!-- JS Plugins Init. -->
     <script>
       $(document).on('ready', function () {
-        // initialization of navbar vertical navigation
+        // INITIALIZATION OF NAVBAR VERTICAL NAVIGATION
+        // =======================================================
         var sidebar = $('.js-navbar-vertical-aside').hsSideNav();
 
-        // initialization of tooltip in navbar vertical menu
+
+        // INITIALIZATION OF TOOLTIP IN NAVBAR VERTICAL MENU
+        // =======================================================
         $('.js-nav-tooltip-link').tooltip({ boundary: 'window' })
 
-        // initialization of go to
+
+        // INITIALIZATION OF GO TO
+        // =======================================================
         $('.js-go-to').each(function () {
           var goTo = new HSGoTo($(this)).init();
         });
 
-        // initialization of nav scroller
+
+        // INITIALIZATION OF NAV SCROLLER
+        // =======================================================
         $('.js-nav-scroller').each(function () {
           new HsNavScroller($(this), {
             delay: 400,
           }).init()
         });
 
-        // initialization of ListJs component
+
+        // INITIALIZATION OF LISTJS COMPONENT
+        // =======================================================
         var docsSearch = $.HSCore.components.HSList.init('#docsSearch');
 
-        // Get JSON file results
+
+        // GET JSON FILE RESULTS
+        // =======================================================
         $.getJSON('@@autopath/assets/json/docs-search.json', function(data) {
           docsSearch.add(data);
         });
 
-        // initialization of ion range slider
+        
+        // INITIALIZATION OF ION RANGE SLIDER
+        // =======================================================
         $('.js-ion-range-slider').each(function () {
           $.HSCore.components.HSIonRangeSlider.init($(this));
         });
 
-        // initialization of chartjs
+        
+        // INITIALIZATION OF CHARTJS
+        // =======================================================
         $('.js-chart').each(function () {
           $.HSCore.components.HSChartJS.init($(this));
         });

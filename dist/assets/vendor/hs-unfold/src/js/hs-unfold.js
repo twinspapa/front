@@ -112,7 +112,6 @@ export default class HSUnfold {
 				e.which !== ESC_KEYCODE &&
 				e.which !== TAB_KEYCODE &&
 				e.which !== ENTER_KEYCODE &&
-				e.which !== SPACE_KEYCODE &&
 				e.which !== ARROW_UP_KEYCODE &&
 				e.which !== ARROW_DOWN_KEYCODE
 			) {

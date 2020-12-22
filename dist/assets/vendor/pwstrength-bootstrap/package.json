@@ -1,32 +1,27 @@
 {
-  "_args": [
-    [
-      "pwstrength-bootstrap@3.0.9",
-      "C:\\Users\\ACE\\Desktop\\local\\front-dashboard"
-    ]
-  ],
-  "_from": "pwstrength-bootstrap@3.0.9",
+  "_from": "pwstrength-bootstrap@^3.0.5",
   "_id": "pwstrength-bootstrap@3.0.9",
   "_inBundle": false,
   "_integrity": "sha512-Q99PECtZP0JnlNzaYr74hUtbsI7Jz7h53Ye59fhHlu3TglEfY/Hrf9F23FboudVzSUZ2fWdH/ccZEYmXNAJh1g==",
   "_location": "/pwstrength-bootstrap",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
+    "type": "range",
     "registry": true,
-    "raw": "pwstrength-bootstrap@3.0.9",
+    "raw": "pwstrength-bootstrap@^3.0.5",
     "name": "pwstrength-bootstrap",
     "escapedName": "pwstrength-bootstrap",
-    "rawSpec": "3.0.9",
+    "rawSpec": "^3.0.5",
     "saveSpec": null,
-    "fetchSpec": "3.0.9"
+    "fetchSpec": "^3.0.5"
   },
   "_requiredBy": [
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/pwstrength-bootstrap/-/pwstrength-bootstrap-3.0.9.tgz",
-  "_spec": "3.0.9",
-  "_where": "C:\\Users\\ACE\\Desktop\\local\\front-dashboard",
+  "_shasum": "53edeb9250451e16a897c2058d7a1ae683fa62de",
+  "_spec": "pwstrength-bootstrap@^3.0.5",
+  "_where": "/Applications/MAMP/htdocs/front/front-dashboard",
   "author": {
     "name": "Alejandro Blanco",
     "email": "alejandro.b.e@gmail.com"
@@ -34,6 +29,8 @@
   "bugs": {
     "url": "https://github.com/ablanco/jquery.pwstrength.bootstrap/issues"
   },
+  "bundleDependencies": false,
+  "deprecated": false,
   "description": "jQuery plugin for Twitter Bootstrap that provides rulesets for visualy displaying the quality of a users typed in password.",
   "devDependencies": {
     "grunt": "^1.1.0",

@@ -498,6 +498,218 @@
             <!-- End Card -->
 
             <!-- Heading -->
+            <h2 id="images" class="hs-docs-heading">
+              Images <a class="anchorjs-link" href="#images" aria-label="Anchor" data-anchorjs-icon="#"></a>
+            </h2>
+            <!-- End Heading -->
+
+            <p>Cards include a few options for working with images. Choose from appending "image caps" at either end of a card, overlaying images with card content, or simply embedding the image in a card.</p>
+
+            <!-- Heading -->
+            <h2 id="image-caps" class="hs-docs-heading">
+              Image caps <a class="anchorjs-link" href="#image-caps" aria-label="Anchor" data-anchorjs-icon="#"></a>
+            </h2>
+            <!-- End Heading -->
+
+            <p>Similar to headers and footers, cards can include top and bottom “image caps”—images at the top or bottom of a card.</p>
+
+            <!-- Card -->
+            <div class="card">
+              <!-- Header -->
+              <div class="card-header">
+                <!-- Nav -->
+                <ul class="nav nav-segment" id="navTab25" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active" id="nav-resultTab25" data-toggle="pill" href="#nav-result25" role="tab" aria-controls="nav-result25" aria-selected="true">Preview</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="nav-htmlTab25" data-toggle="pill" href="#nav-html25" role="tab" aria-controls="nav-html25" aria-selected="false">HTML</a>
+                  </li>
+                </ul>
+                <!-- End Nav -->
+              </div>
+              <!-- End Header -->
+
+              <!-- Tab Content -->
+              <div class="tab-content" id="navTabContent25">
+                <div class="tab-pane fade p-4 show active" id="nav-result25" role="tabpanel" aria-labelledby="nav-resultTab25">
+                  <!-- Card -->
+                  <div class="card mb-3" style="max-width: 20rem;">
+                    <img class="card-img-top" src="@@autopath/assets/svg/components/placeholder-lg.svg" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                  </div>
+                  <!-- End Card -->
+
+                  <!-- Card -->
+                  <div class="card" style="max-width: 20rem;">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                    <img class="card-img-bottom" src="@@autopath/assets/svg/components/placeholder-lg.svg" alt="Card image cap">
+                  </div>
+                  <!-- End Card -->
+                </div>
+
+                <div class="tab-pane fade" id="nav-html25" role="tabpanel" aria-labelledby="nav-htmlTab25">
+                  <pre>
+                    <code class="language-markup" data-lang="html">
+                      &lt;!-- Card --&gt;
+                      &lt;div class="card mb-3"&gt;
+                        &lt;img class="card-img-top" src="@@autopath/assets/svg/components/placeholder-lg.svg" alt="Card image cap"&gt;
+                        &lt;div class="card-body"&gt;
+                          &lt;h5 class="card-title"&gt;Card title&lt;/h5&gt;
+                          &lt;p class="card-text"&gt;This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.&lt;/p&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+                      &lt;!-- End Card --&gt;
+
+                      &lt;!-- Card --&gt;
+                      &lt;div class="card"&gt;
+                        &lt;div class="card-body"&gt;
+                          &lt;h5 class="card-title"&gt;Card title&lt;/h5&gt;
+                          &lt;p class="card-text"&gt;This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;img class="card-img-bottom" src="@@autopath/assets/svg/components/placeholder-lg.svg" alt="Card image cap"&gt;
+                      &lt;/div&gt;
+                      &lt;!-- End Card --&gt;
+                    </code>
+                  </pre>
+                </div>
+              </div>
+              <!-- End Tab Content -->
+            </div>
+            <!-- End Card -->
+
+            <!-- Heading -->
+            <h2 id="image-overlays" class="hs-docs-heading">
+              Image overlays <a class="anchorjs-link" href="#image-overlays" aria-label="Anchor" data-anchorjs-icon="#"></a>
+            </h2>
+            <!-- End Heading -->
+
+            <p>Turn an image into a card background and overlay your card’s text. Depending on the image, you may or may not need additional styles or utilities.</p>
+
+            <!-- Card -->
+            <div class="card mb-3">
+              <!-- Header -->
+              <div class="card-header">
+                <!-- Nav -->
+                <ul class="nav nav-segment" id="navTab26" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active" id="nav-resultTab26" data-toggle="pill" href="#nav-result26" role="tab" aria-controls="nav-result26" aria-selected="true">Preview</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="nav-htmlTab26" data-toggle="pill" href="#nav-html26" role="tab" aria-controls="nav-html26" aria-selected="false">HTML</a>
+                  </li>
+                </ul>
+                <!-- End Nav -->
+              </div>
+              <!-- End Header -->
+
+              <!-- Tab Content -->
+              <div class="tab-content" id="navTabContent26">
+                <div class="tab-pane fade p-4 show active" id="nav-result26" role="tabpanel" aria-labelledby="nav-resultTab26">
+                  <!-- Card -->
+                  <div class="card">
+                    <img class="card-img card-img-top" src="@@autopath/assets/svg/components/placeholder-lg.svg" alt="Card image cap">
+                    <div class="card-img-overlay">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <p class="card-text">Last updated 3 mins ago</p>
+                    </div>
+                  </div>
+                  <!-- End Card -->
+                </div>
+
+                <div class="tab-pane fade" id="nav-html26" role="tabpanel" aria-labelledby="nav-htmlTab26">
+                  <pre>
+                    <code class="language-markup" data-lang="html">
+                      &lt;!-- Card --&gt;
+                      &lt;div class="card"&gt;
+                        &lt;img class="card-img card-img-top" src="@@autopath/assets/svg/components/placeholder-lg.svg" alt="Card image cap"&gt;
+                        &lt;div class="card-img-overlay"&gt;
+                          &lt;h5 class="card-title"&gt;Card title&lt;/h5&gt;
+                          &lt;p class="card-text"&gt;This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.&lt;/p&gt;
+                          &lt;p class="card-text"&gt;Last updated 3 mins ago&lt;/p&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+                      &lt;!-- End Card --&gt;
+                    </code>
+                  </pre>
+                </div>
+              </div>
+              <!-- End Tab Content -->
+            </div>
+            <!-- End Card -->
+
+            <!-- Alert -->
+            <div class="alert alert-soft-dark" role="alert">
+              <span class="font-weight-bold">Heads up!</span> Note that content should not be larger than the height of the image. If content is larger than the image the content will be displayed outside the image.
+            </div>
+            <!-- End Alert -->
+
+            <!-- Heading -->
+            <h2 id="horizontal" class="hs-docs-heading">
+              Horizontal <a class="anchorjs-link" href="#horizontal" aria-label="Anchor" data-anchorjs-icon="#"></a>
+            </h2>
+            <!-- End Heading -->
+
+            <p>Using a combination of grid and utility classes, cards can be made horizontal in a mobile-friendly and responsive way. In the example below, we remove the grid gutters with <code>.no-gutters</code> and use <code>.col-md-*</code> classes to make the card horizontal at the <code>md</code> breakpoint. Further adjustments may be needed depending on your card content.</p>
+
+            <!-- Card -->
+            <div class="card">
+              <!-- Header -->
+              <div class="card-header">
+                <!-- Nav -->
+                <ul class="nav nav-segment" id="navTab27" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active" id="nav-resultTab27" data-toggle="pill" href="#nav-result27" role="tab" aria-controls="nav-result27" aria-selected="true">Preview</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="nav-htmlTab27" data-toggle="pill" href="#nav-html27" role="tab" aria-controls="nav-html27" aria-selected="false">HTML</a>
+                  </li>
+                </ul>
+                <!-- End Nav -->
+              </div>
+              <!-- End Header -->
+
+              <!-- Tab Content -->
+              <div class="tab-content" id="navTabContent27">
+                <div class="tab-pane fade p-4 show active" id="nav-result27" role="tabpanel" aria-labelledby="nav-resultTab27">
+                  <!-- Card -->
+                  <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row no-gutters">
+                      <div class="col-md-4">
+                        <img class="img-fluid" src="@@autopath/assets/img/400x400/img2.jpg" alt="Card image cap">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End Card -->
+                </div>
+
+                <div class="tab-pane fade" id="nav-html27" role="tabpanel" aria-labelledby="nav-htmlTab27">
+                  <pre>
+                    <code class="language-markup" data-lang="html">
+                      
+                    </code>
+                  </pre>
+                </div>
+              </div>
+              <!-- End Tab Content -->
+            </div>
+            <!-- End Card -->
+
+            <!-- Heading -->
             <h2 id="header-borderless" class="hs-docs-heading">
               Header borderless <a class="anchorjs-link" href="#header-borderless" aria-label="Anchor" data-anchorjs-icon="#"></a>
             </h2>
@@ -2275,7 +2487,8 @@
 
                       &lt;script&gt;
                         $(document).on('ready', function () {
-                          // initialization of toggle
+                          // INITIALIZATION OF FULLSCREEN
+                          // =======================================================
                           $('.js-fullscreen-invoker').each(function () {
                             var fullscreen = new HSFullscreen($(this)).init();
                           });
@@ -2459,7 +2672,8 @@
 
                       &lt;script&gt;
                         $(document).on('ready', function () {
-                          // initialization of loading state
+                          // INITIALIZATION OF LOADING STATE
+                          // =======================================================
                           $('.js-loading-state-invoker').each(function () {
                             var loadingState = new HSLoadingState($(this)).init();
                           });
@@ -2609,7 +2823,8 @@
 
                       &lt;script&gt;
                         $(document).on('ready', function () {
-                          // initialization of loading state
+                          // INITIALIZATION OF LOADING STATE
+                          // =======================================================
                           $('.js-loading-state-invoker').each(function () {
                             var loadingState = new HSLoadingState($(this)).init();
                           });
@@ -2971,7 +3186,8 @@
 
                       &lt;script&gt;
                         $(document).on('ready', function () {
-                          // initialization of delete element
+                          // INITIALIZATION OF DELETE ELEMENT
+                          // =======================================================
                           $('.js-remove-element-invoker').each(function () {
                             var removeElement = new HSRemoveElement($(this), {
                               beforeDelete: function (el) {
@@ -3141,38 +3357,53 @@
     <!-- JS Plugins Init. -->
     <script>
       $(document).on('ready', function () {
-        // initialization of navbar vertical navigation
+        // INITIALIZATION OF NAVBAR VERTICAL NAVIGATION
+        // =======================================================
         var sidebar = $('.js-navbar-vertical-aside').hsSideNav();
 
-        // initialization of tooltip in navbar vertical menu
+
+        // INITIALIZATION OF TOOLTIP IN NAVBAR VERTICAL MENU
+        // =======================================================
         $('.js-nav-tooltip-link').tooltip({ boundary: 'window' })
 
-        // initialization of go to
+
+        // INITIALIZATION OF GO TO
+        // =======================================================
         $('.js-go-to').each(function () {
           var goTo = new HSGoTo($(this)).init();
         });
 
-        // initialization of nav scroller
+
+        // INITIALIZATION OF NAV SCROLLER
+        // =======================================================
         $('.js-nav-scroller').each(function () {
           new HsNavScroller($(this), {
             delay: 400,
           }).init()
         });
 
-        // initialization of ListJs component
+
+        // INITIALIZATION OF LISTJS COMPONENT
+        // =======================================================
         var docsSearch = $.HSCore.components.HSList.init('#docsSearch');
 
-        // Get JSON file results
+
+        // GET JSON FILE RESULTS
+        // =======================================================
         $.getJSON('@@autopath/assets/json/docs-search.json', function(data) {
           docsSearch.add(data);
         });
 
-        // initialization of unfold
+        
+        // INITIALIZATION OF UNFOLD
+        // =======================================================
         $('.js-hs-unfold-invoker').each(function () {
           var unfold = new HSUnfold($(this)).init();
         });
 
-        // initialization of toggle
+        
+        // INITIALIZATION OF FULLSCREEN
+        // =======================================================
         $('.js-fullscreen-invoker').each(function () {
           var fullscreen = new HSFullscreen($(this)).init();
         });
@@ -3182,12 +3413,16 @@
           $('.hs-fullscreen-icon-default').tooltip('hide')
         });
 
-        // initialization of loading state
+        
+        // INITIALIZATION OF LOADING STATE
+        // =======================================================
         $('.js-loading-state-invoker').each(function () {
           var loadingState = new HSLoadingState($(this)).init();
         });
 
-        // initialization of delete element
+        
+        // INITIALIZATION OF DELETE ELEMENT
+        // =======================================================
         $('.js-remove-element-invoker').each(function () {
           var removeElement = new HSRemoveElement($(this), {
             beforeDelete: function (el) {

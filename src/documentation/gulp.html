@@ -720,7 +720,7 @@
                       googleFont: "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap",
                       version: "?v=1.0",
                       style: {
-                        color: '#377dff', // Primary Color
+                        color: '@@vars.style.color', // Primary Color
                         font: 'Open Sans' // Primary Font
                       }
                     },
@@ -755,10 +755,36 @@
 
                 <p>The examples can be found in any SVG files at <code>./src/assets/svg-src/*</code> folder.</p>
 
+                <h5>Variables in functions</h5>
+                <p>In addition, we added color functions that can be used inside <code>html</code> and <code>svg</code> files.</p>
+
+                <p>Convert HEX color to rgba with <code>[@@F]RGBA[color, opacity]</code> function. The opacity values can be between <code>0.1</code> to <code>1</code> same like in SASS.</p>
+                <pre class="rounded prism-light mb-4">
+                  <code class="language-js" data-lang="js">
+                    [@@F]RGBA[[@@]vars.style.color,.5]
+                  </code>
+                </pre>
+
+                <p>Make color lighter with <code>[@@F]Lighten[color, value]</code> function. The larger the integer value, the lighter.</p>
+                <pre class="rounded prism-light mb-4">
+                  <code class="language-js" data-lang="js">
+                    [@@F]Lighten[[@@]vars.style.color, 50]
+                  </code>
+                </pre>
+
+                <p>Make color darker with <code>[@@F]Darken[color, value]</code> function. The larger the integer value, the lighter.</p>
+                <pre class="rounded prism-light">
+                  <code class="language-js" data-lang="js">
+                    [@@F]Darken[[@@]vars.style.color, 50]
+                  </code>
+                </pre>
+
+                <br>
+
                 <!-- Alert -->
                 <div class="alert alert-soft-dark media align-items-baseline mb-0" role="alert">
                   <i class="tio-info-outined mr-1"></i>
-                  <div class="media-body">Please note, compiling the SVG files requires to restart the Gulp.</div>
+                  <div class="media-body">Please note, compiling the SVG files or applying any changes to <code>config.js</code> file requires to restart the Gulp.</div>
                 </div>
                 <!-- End Alert -->
               </div>
@@ -1293,28 +1319,39 @@
     <!-- JS Plugins Init. -->
     <script>
       $(document).on('ready', function () {
-        // initialization of navbar vertical navigation
+        // INITIALIZATION OF NAVBAR VERTICAL NAVIGATION
+        // =======================================================
         var sidebar = $('.js-navbar-vertical-aside').hsSideNav();
 
-        // initialization of tooltip in navbar vertical menu
+
+        // INITIALIZATION OF TOOLTIP IN NAVBAR VERTICAL MENU
+        // =======================================================
         $('.js-nav-tooltip-link').tooltip({ boundary: 'window' })
 
-        // initialization of go to
+
+        // INITIALIZATION OF GO TO
+        // =======================================================
         $('.js-go-to').each(function () {
           var goTo = new HSGoTo($(this)).init();
         });
 
-        // initialization of nav scroller
+
+        // INITIALIZATION OF NAV SCROLLER
+        // =======================================================
         $('.js-nav-scroller').each(function () {
           new HsNavScroller($(this), {
             delay: 400,
           }).init()
         });
 
-        // initialization of ListJs component
+
+        // INITIALIZATION OF LISTJS COMPONENT
+        // =======================================================
         var docsSearch = $.HSCore.components.HSList.init('#docsSearch');
 
-        // Get JSON file results
+
+        // GET JSON FILE RESULTS
+        // =======================================================
         $.getJSON('@@autopath/assets/json/docs-search.json', function(data) {
           docsSearch.add(data);
         });

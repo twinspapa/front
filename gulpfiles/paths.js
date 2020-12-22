@@ -100,5 +100,5 @@ module.exports = {
     vendor: {
       dir: config.directoryNames.build + "/" + config.directoryNames.vendor
     }
-  },
+  }
 }

@@ -212,6 +212,10 @@
       padding-left: ($navbar-vertical-menu-nav-link-padding-x - $navbar-vertical-menu-nav-link-border-width) + $nav-icon-flex + $nav-indicator-icon-flex;
     }
 
+    .nav .nav .nav .nav-link {
+      padding-left: ($navbar-vertical-menu-nav-link-padding-x - $navbar-vertical-menu-nav-link-border-width) + $nav-icon-flex + $nav-indicator-icon-flex + $nav-indicator-icon-flex;
+    }
+
     .nav-title,
     .nav-subtitle,
     .nav-subtitle-replacer {

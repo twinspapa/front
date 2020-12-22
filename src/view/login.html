@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title>Scrich 2.0 | Sing In</title>
+    <title>Scrich 2.0 | 로그인</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="@@autopath/favicon.ico">
@@ -161,9 +161,9 @@
 
     <!-- JS Plugins Init. -->
     <script>
-      $(document).on('ready', function () {
+      $(document).on('ready', function() {
         // initialization of Show Password
-        $('.js-toggle-password').each(function () {
+        $('.js-toggle-password').each(function() {
           new HSTogglePassword(this).init()
         });
 
@@ -173,51 +173,17 @@
         });
 
         // initialization of select2
-        $('.js-select2-custom').each(function () {
+        $('.js-select2-custom').each(function() {
           var select2 = $.HSCore.components.HSSelect2.init($(this));
         });
       });
+    </script>
 
-      function signInSubmit() {
-        let signIn = new SubmitForm($('#signForm')).signInChk();
-      }
-
-      class SubmitForm{
-        'use strict';
-
-        constructor(formId) {
-          this.el = formId;
-          this.validChk = this.el.valid('success');
-        }
-
-        signInChk(){
-          if (this.validChk == false) {
-            this.el.valid();
-          } else if (this.validChk == true) {
-            $.ajax({
-              type: this.el.attr('method'),
-              url: this.el.attr('action'),
-              dataType: 'json',
-              async: false,
-              data: this.el.serialize(),
-              success: function(data) {
-                if (data['result'] == 'fail') {
-                  $('#errMsg').removeClass('hide').text(data['errMsg']);
-                } else if (data['result'] == 'sucess'){
-                  location.href = 'PGID_A.html';
-                }
-              },
-              error: function(xhr, status, error) {
-                let error_confirm = confirm('데이터 전송 오류 입니다. 확인을 누르시면 페이지가 새로고침 됩니다.');
-                if (error_confirm == true) {
-                  location.href = 'PGID_A.html';
-                }
-              }
-            });
-            return false;
-          }
-        }
-      }
+    <!-- custom script -->
+    <script>
+    function signInSubmit() {
+      let signIn = new SubmitForm($('#signForm')).signInChk();
+    }
     </script>
 
     <!-- IE Support -->

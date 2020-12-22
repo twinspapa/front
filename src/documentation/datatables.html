@@ -87,7 +87,8 @@
               <code class="language-html" data-lang="html">
                 &lt;script&gt;
                   $(document).on('ready', function () {
-                    // initialization of datatables
+                    // INITIALIZATION OF DATATABLES
+                    // =======================================================
                     var datatable = $.HSCore.components.HSDatatables.init($('#datatable'));
                   });
                 &lt;/script&gt;
@@ -2845,7 +2846,8 @@
 
                       &lt;script&gt;
                         $(document).on('ready', function () {
-                          // initialization of select2
+                          // INITIALIZATION OF SELECT2
+                          // =======================================================
                           $('.js-select2-custom').each(function () {
                             var select2 = $.HSCore.components.HSSelect2.init($(this));
                           });
@@ -4140,7 +4142,7 @@
                           <div class="row align-items-center">
                             <div class="col-auto">
                               <!-- Select -->
-                              <select class="js-select2-custom js-datatable-filter"
+                              <select class="js-select2-custom js-datatable-filter custom-select" size="1" style="opacity: 0;"
                                       data-target-column-index="1"
                                       data-hs-select2-options='{
                                         "minimumResultsForSearch": "Infinity",
@@ -4767,7 +4769,7 @@
                               &lt;div class="row align-items-center"&gt;
                                 &lt;div class="col-auto"&gt;
                                   &lt;!-- Select --&gt;
-                                  &lt;select class="js-select2-custom js-datatable-filter"
+                                  &lt;select class="js-select2-custom js-datatable-filter custom-select" size="1" style="opacity: 0;"
                                           data-target-column-index="1"
                                           data-hs-select2-options='{
                                             "minimumResultsForSearch": "Infinity",
@@ -5393,7 +5395,8 @@
 
                       &lt;script&gt;
                         $(document).on('ready', function () {
-                          // initialization of select2
+                          // INITIALIZATION OF SELECT2
+                          // =======================================================
                           $('.js-select2-custom').each(function () {
                             var select2 = $.HSCore.components.HSSelect2.init($(this));
                           });
@@ -5859,7 +5862,8 @@
 
                       &lt;script&gt;
                         $(document).on('ready', function () {
-                          // initialization of datatables
+                          // INITIALIZATION OF DATATABLES
+                          // =======================================================
                           var datatable = $.HSCore.components.HSDatatables.init($('#datatableWithCheckboxSelect'), {
                             select: {
                               style: 'multi',
@@ -6227,7 +6231,8 @@
 
                       &lt;script&gt;
                         $(document).on('ready', function () {
-                          // initialization of datatables
+                          // INITIALIZATION OF DATATABLES
+                          // =======================================================
                           var datatable = $.HSCore.components.HSDatatables.init($('#columnSearchDatatable'));
 
                           $('#column1_search').on( 'keyup', function () {
@@ -6258,7 +6263,9 @@
                               .draw();
                           } );
 
-                          // initialization of select2
+
+                          // INITIALIZATION OF SELECT2
+                          // =======================================================
                           $('.js-select2-custom').each(function () {
                             var select2 = $.HSCore.components.HSSelect2.init($(this));
                           });
@@ -7379,16 +7386,21 @@
 
                       &lt;script&gt;
                         $(document).on('ready', function () {
-                          // initialization of daterangepicker
+                          // INITIALIZATION OF DATERANGEPICKER
+                          // =======================================================
                           var startDate = null,
                           endDate = null;
 
-                          // initialization of datatables
+
+                          // INITIALIZATION OF DATATABLES
+                          // =======================================================
                           var datatable = $.HSCore.components.HSDatatables.init($('#datatableDatepickerFilter'), {
                             "ordering": false
                           });
 
-                          // initialization of daterangepicker
+
+                          // INITIALIZATION OF DATERANGEPICKER
+                          // =======================================================
                           $('.js-daterangepicker').each(function () {
                             var d = $.HSCore.components.HSDaterangepicker.init($(this));
                           });
@@ -7861,7 +7873,8 @@
                     <code class="language-markup" data-lang="html">
                       &lt;script&gt;
                         $(document).on('ready', function () {
-                          // initialization of datatables
+                          // INITIALIZATION OF DATATABLES
+                          // =======================================================
                           var datatable = $.HSCore.components.HSDatatables.init($('#columnSorting'));
 
                           $('#toggleColumn_position').change(function (e) {
@@ -8253,17 +8266,20 @@
                   <pre>
                     <code class="language-markup" data-lang="html">
                       &lt;!-- JS Implementing Plugins --&gt;
-                      &lt;script src="@@autopath/node_modules/sortablejs/Sortable.min.js"&gt;&lt;/script&gt;
+                      &lt;script src="@@autopath/node_modules/sortablejs/dist/sortable.umd.js"&gt;&lt;/script&gt;
 
                       &lt;!-- JS Front --&gt;
                       &lt;script src="@@autopath/assets/js/hs.sortable.js"&gt;&lt;/script&gt;
 
                       &lt;script&gt;
                         $(document).on('ready', function () {
-                          // initialization of datatables
+                          // INITIALIZATION OF DATATABLES
+                          // =======================================================
                           var datatable = $.HSCore.components.HSDatatables.init($('#dragndropDatatables'));
 
-                          // initialization of sortable
+
+                          // INITIALIZATION OF SORTABLE
+                          // =======================================================
                           $('.js-sortable').each(function () {
                             var sortable = $.HSCore.components.HSSortable.init($(this));
                           });
@@ -8650,12 +8666,15 @@
 
                       &lt;script&gt;
                         $(document).on('ready', function () {
-                          // initialization of unfold
+                          // INITIALIZATION OF UNFOLD
+                          // =======================================================
                           $('.js-hs-unfold-invoker').each(function () {
                             var unfold = new HSUnfold($(this)).init();
                           });
 
-                          // initialization of datatables
+
+                          // INITIALIZATION OF DATATABLES
+                          // =======================================================
                           var datatable = $.HSCore.components.HSDatatables.init($('#exportOptionsDatatables'), {
                             dom: 'Bfrtip',
                             buttons: [
@@ -9136,7 +9155,8 @@
 
                       &lt;script&gt;
                         $(document).on('ready', function () {
-                          // initialization of datatables
+                          // INITIALIZATION OF DATATABLES
+                          // =======================================================
                           $.HSCore.components.HSDatatables.init($('#stickyColumnDatatables'));
                         });
                       &lt;/script&gt;
@@ -9689,7 +9709,8 @@
                     <code class="language-markup" data-lang="html">
                       &lt;script&gt;
                         $(document).on('ready', function () {
-                          // initialization of datatables
+                          // INITIALIZATION OF DATATABLES
+                          // =======================================================
                           $.HSCore.components.HSDatatables.init($('#datatableHeaderFixedWithHeight'));
                         });
                       &lt;/script&gt;
@@ -9848,7 +9869,8 @@
                         }
 
                         $(document).on('ready', function () {
-                          // initialization of datatables
+                          // INITIALIZATION OF DATATABLES
+                          // =======================================================
                           var datatableCollapasble = $.HSCore.components.HSDatatables.init($('#datatableChildRows'), {
                             "data": data,
                             "columns": [
@@ -9866,7 +9888,9 @@
                             order: []
                           });
 
-                          // Add event listener for opening and closing details
+
+                          // ADD EVENT LISTENER FOR OPENING AND CLOSING DETAILS
+                          // =======================================================
                           $('#datatableChildRows tbody').on('click', 'td.details-control', function () {
                             var tr = $(this).closest('tr');
                             var row = datatableCollapasble.row( tr );
@@ -10026,7 +10050,7 @@
     <script src="@@autopath/node_modules/select2/dist/js/select2.full.min.js"></script>
     <script src="@@autopath/node_modules/daterangepicker/moment.min.js"></script>
     <script src="@@autopath/node_modules/daterangepicker/daterangepicker.js"></script>
-    <script src="@@autopath/node_modules/sortablejs/Sortable.min.js"></script>
+    <script src="@@autopath/node_modules/sortablejs/dist/sortable.umd.js"></script>
     <script src="@@autopath/node_modules/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
     <script src="@@autopath/node_modules/datatables.net-buttons/js/buttons.flash.min.js"></script>
     <script src="@@autopath/assets/vendor/hs-unfold/dist/hs-unfold.min.js"></script>
@@ -10050,33 +10074,46 @@
     <!-- JS Plugins Init. -->
     <script>
       $(document).on('ready', function () {
-        // initialization of navbar vertical navigation
+        // INITIALIZATION OF NAVBAR VERTICAL NAVIGATION
+        // =======================================================
         var sidebar = $('.js-navbar-vertical-aside').hsSideNav();
 
-        // initialization of tooltip in navbar vertical menu
+
+        // INITIALIZATION OF TOOLTIP IN NAVBAR VERTICAL MENU
+        // =======================================================
         $('.js-nav-tooltip-link').tooltip({ boundary: 'window' })
 
-        // initialization of go to
+
+        // INITIALIZATION OF GO TO
+        // =======================================================
         $('.js-go-to').each(function () {
           var goTo = new HSGoTo($(this)).init();
         });
 
-        // initialization of nav scroller
+
+        // INITIALIZATION OF NAV SCROLLER
+        // =======================================================
         $('.js-nav-scroller').each(function () {
           new HsNavScroller($(this), {
             delay: 400,
           }).init()
         });
 
-        // initialization of ListJs component
+
+        // INITIALIZATION OF LISTJS COMPONENT
+        // =======================================================
         var docsSearch = $.HSCore.components.HSList.init('#docsSearch');
 
-        // Get JSON file results
+
+        // GET JSON FILE RESULTS
+        // =======================================================
         $.getJSON('@@autopath/assets/json/docs-search.json', function(data) {
           docsSearch.add(data);
         });
 
-        // initialization of datatables
+        
+        // INITIALIZATION OF DATATABLES
+        // =======================================================
         $.HSCore.components.HSDatatables.init($('#basicDatatable'));
 
         $.HSCore.components.HSDatatables.init($('#datatableWithPagination'));
@@ -10141,7 +10178,9 @@
           }, 1);
         });
 
-        // initialization of datatables
+        
+        // INITIALIZATION OF DATATABLES
+        // =======================================================
         var datatableWithCheckboxSelect = $.HSCore.components.HSDatatables.init($('#datatableWithCheckboxSelect'), {
           select: {
             style: 'multi',
@@ -10154,12 +10193,16 @@
           }
         });
 
-        // initialization of select2
+        
+        // INITIALIZATION OF SELECT2
+        // =======================================================
         $('.js-select2-custom').each(function () {
           var select2 = $.HSCore.components.HSSelect2.init($(this));
         });
 
-        // initialization of datatables
+        
+        // INITIALIZATION OF DATATABLES
+        // =======================================================
         var datatableColumnSearch = $.HSCore.components.HSDatatables.init($('#columnSearchDatatable'));
 
         $('#column1_search').on( 'keyup', function () {
@@ -10190,11 +10233,15 @@
             .draw();
         } );
 
-        // initialization of daterangepicker
+        
+        // INITIALIZATION OF DATERANGEPICKER
+        // =======================================================
         var startDate = null,
         endDate = null;
 
-        // initialization of datatables
+        
+        // INITIALIZATION OF DATATABLES
+        // =======================================================
         var datatableDatepickerFilter = $.HSCore.components.HSDatatables.init($('#datatableDatepickerFilter'), {
           "ordering": false,
           language: {
@@ -10205,7 +10252,9 @@
           }
         });
 
-        // initialization of daterangepicker
+        
+        // INITIALIZATION OF DATERANGEPICKER
+        // =======================================================
         $('.js-daterangepicker').each(function () {
           var d = $.HSCore.components.HSDaterangepicker.init($(this));
         });
@@ -10239,7 +10288,9 @@
           }
         );
 
-        // initialization of datatables
+        
+        // INITIALIZATION OF DATATABLES
+        // =======================================================
         var datatableSortingColumn = $.HSCore.components.HSDatatables.init($('#columnSorting'));
 
         $('#toggleColumn_position').change(function (e) {
@@ -10254,20 +10305,28 @@
           datatableSortingColumn.columns(3).visible(e.target.checked)
         })
 
-        // initialization of datatables
+        
+        // INITIALIZATION OF DATATABLES
+        // =======================================================
         $.HSCore.components.HSDatatables.init($('#dragndropDatatables'));
 
-        // initialization of sortable
+        
+        // INITIALIZATION OF SORTABLE
+        // =======================================================
         $('.js-sortable').each(function () {
           var sortable = $.HSCore.components.HSSortable.init($(this));
         });
 
-        // initialization of unfold
+        
+        // INITIALIZATION OF UNFOLD
+        // =======================================================
         $('.js-hs-unfold-invoker').each(function () {
           var unfold = new HSUnfold($(this)).init();
         });
 
-        // initialization of datatables
+        
+        // INITIALIZATION OF DATATABLES
+        // =======================================================
         var datatable = $.HSCore.components.HSDatatables.init($('#exportOptionsDatatables'), {
           dom: 'Bfrtip',
           buttons: [
@@ -10314,10 +10373,14 @@
           datatable.button('.buttons-print').trigger()
         });
 
-        // initialization of datatables
+        
+        // INITIALIZATION OF DATATABLES
+        // =======================================================
         $.HSCore.components.HSDatatables.init($('#stickyColumnDatatables'));
 
-        // initialization of datatables
+        
+        // INITIALIZATION OF DATATABLES
+        // =======================================================
         $.HSCore.components.HSDatatables.init($('#datatableHeaderFixedWithHeight'));
 
         // Data for collapsible rows table
@@ -10388,7 +10451,9 @@
             '</table>';
         }
 
-        // initialization of datatables
+        
+        // INITIALIZATION OF DATATABLES
+        // =======================================================
         var datatableCollapasble = $.HSCore.components.HSDatatables.init($('#datatableChildRows'), {
           "data": data,
           "columns": [
@@ -10406,7 +10471,9 @@
           order: []
         });
 
-        // Add event listener for opening and closing details
+
+        // ADD EVENT LISTENER FOR OPENING AND CLOSING DETAILS
+        // =======================================================
         $('#datatableChildRows tbody').on('click', 'td.details-control', function () {
           var tr = $(this).closest('tr');
           var row = datatableCollapasble.row( tr );

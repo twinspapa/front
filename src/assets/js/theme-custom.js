@@ -1,3 +1,102 @@
+// // // // // // // // // // // // // // // // // // // // //
+// form 전송
+class SubmitForm{
+  'use strict';
+
+  constructor(formId) {
+    this.el = formId;
+    this.validChk = this.el.valid('success');
+  }
+
+  signInChk(){
+    if (this.validChk == false) {
+      this.el.valid();
+    } else if (this.validChk == true) {
+      $.ajax({
+        type: this.el.attr('method'),
+        url: this.el.attr('action'),
+        dataType: 'json',
+        async: false,
+        data: this.el.serialize(),
+        success: function(data) {
+          if (data['result'] == 'fail') {
+            $('#errMsg').removeClass('hide').text(data['errMsg']);
+          } else if (data['result'] == 'sucess'){
+            location.href = 'PGID_A.html';
+          }
+        },
+        error: function(xhr, status, error) {
+          let error_confirm = confirm('데이터 전송 오류 입니다. 확인을 누르시면 페이지가 새로고침 됩니다.');
+          if (error_confirm == true) {
+            location.href = 'PGID_A.html';
+          }
+        }
+      });
+      return false;
+    }
+  }
+}
+// // // // // // // // // // // // // // // // // // // // //
+
+
+// // // // // // // // // // // // // // // // // // // // //
+// 그래프
+class Graph {
+  constructor(element) {
+    this.el = element;
+  }
+
+  // 그래프 데이터 업데이트
+  dataUpdate(...args) {
+    let res = [];
+
+    for (let i = 0; i < args.length; i++) {
+        const obj = {data : args[i]};
+        res.push(obj);
+    }
+
+    console.log(res);
+
+    $.HSCore.components.HSChartJS.init($(this.el), {
+      data: {
+        datasets: res
+      }
+    });
+  }
+}
+// // // // // // // // // // // // // // // // // // // // //
+// 페이지 이동
+class Go {
+  constructor(element) {
+    this.el = element;
+  }
+
+  link(...args) {
+    $(this.el).on('click', function() {
+      let $this = $(this),
+          pageUrl = $this.attr(args[0]),
+          parameter = [];
+
+      if(args.length < 2) {
+        location.href = pageUrl;
+      } else {
+        for (let i = 1; i < args.length; i++) {
+            const key = args[i],
+                  value = $this.attr(args[i]);
+
+            parameter.push("&" + key + "=" + value);
+        }
+        location.href =  pageUrl + "?" + parameter;
+      }
+    });
+  }
+}
+
+// // // // // // // // // // // // // // // // // // // // //
+
+// // // // // // // // // // // // // // // // // // // // //
+
+// // // // // // // // // // // // // // // // // // // // //
 // list filter : PGID_C1
 function filterList(inputEl,el) {
   // Declare variables
@@ -99,35 +198,4 @@ function get_query(){
         result[qs[i][0]] = decodeURIComponent(qs[i][1]);
     }
     return result;
-}
-
-
-// attr(링크) 추출 이동
-function goLink1(object, attribute) {
-    $(object).on("click", function() {
-      let url = $(this).attr(attribute);
-      console.log(url);
-
-      if (attribute !== undefined) {
-        console.log(url);
-        location.href=url;
-      } else {
-        return false;
-      }
-    });
-}
-
-// attr(파라미터) 추출 이동
-function goLink2(object, pageUrl, attribute) {
-  let url = pageUrl;
-  console.log(url);
-
-  $(object).on("click", function() {
-    let parameter = $(this).attr(attribute);
-
-    console.log(parameter);
-
-    console.log(url + "?" + attribute + "=" + parameter);
-    location.href=url + "?" + attribute + "=" + parameter;
-  });
 }

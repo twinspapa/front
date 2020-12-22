@@ -85,7 +85,8 @@
               <code class="language-html" data-lang="html">
                 &lt;script&gt;
                   $(document).on('ready', function () {
-                    // initialization of circles
+                    // INITIALIZATION OF CIRCLES
+                    // =======================================================
                     $('.js-circle').each(function () {
                       var circle = $.HSCore.components.HSCircles.init($(this));
                     });
@@ -200,12 +201,12 @@
                          "isViewportInit": true,
                          "fgStrokeLinecap": "round",
                          "fgStrokeMiterlimit": "10",
-                         "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                         "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                          "radius": 50,
                          "width": 6,
                          "additionalText": "",
                          "textClass": "circle-custom-text",
-                         "textColor": "#377dff",
+                         "textColor": "@@vars.style.color",
                          "textFontSize": 32,
                          "secondaryText": "some text",
                          "secondaryTextColor": "#77838f",
@@ -228,12 +229,12 @@
                              "isViewportInit": true,
                              "fgStrokeLinecap": "round",
                              "fgStrokeMiterlimit": "10",
-                             "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                             "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                              "radius": 50,
                              "width": 6,
                              "additionalText": "",
                              "textClass": "circle-custom-text",
-                             "textColor": "#377dff",
+                             "textColor": "@@vars.style.color",
                              "textFontSize": 32,
                              "secondaryText": "some text",
                              "secondaryTextColor": "#77838f",
@@ -256,7 +257,7 @@
             </h2>
             <!-- End Heading -->
 
-            <p>An array of colors. Add any color code <code>"colors": ["rgba(55, 125, 255, 0.1)", "#377dff"]</code> to change the appearance of a circle.</p>
+            <p>An array of colors. Add any color code <code>"colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"]</code> to change the appearance of a circle.</p>
 
             <!-- Card -->
             <div class="card">
@@ -286,12 +287,12 @@
                            "maxValue": 100,
                            "duration": 2000,
                            "isViewportInit": true,
-                           "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                           "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                            "radius": 50,
                            "width": 4,
                            "additionalText": "",
                            "textClass": "circle-custom-text",
-                           "textColor": "#377dff"
+                           "textColor": "@@vars.style.color"
                          }'></div>
                       <!-- End Circle -->
 
@@ -420,12 +421,12 @@
                              "maxValue": 100,
                              "duration": 2000,
                              "isViewportInit": true,
-                             "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                             "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                              "radius": 50,
                              "width": 4,
                              "additionalText": "",
                              "textClass": "circle-custom-text",
-                             "textColor": "#377dff"
+                             "textColor": "@@vars.style.color"
                            }'&gt;&lt;/div&gt;
                         &lt;!-- End Circle --&gt;
 
@@ -584,14 +585,14 @@
                            "maxValue": 100,
                            "duration": 2000,
                            "isViewportInit": true,
-                           "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                           "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                            "radius": 80,
                            "width": 4,
                            "textFontSize": 40,
                            "textFontWeight": 700,
                            "additionalText": "",
                            "textClass": "circle-custom-text",
-                           "textColor": "#377dff"
+                           "textColor": "@@vars.style.color"
                          }'></div>
                     <!-- End Circle -->
 
@@ -602,13 +603,13 @@
                            "maxValue": 100,
                            "duration": 2000,
                            "isViewportInit": true,
-                           "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                           "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                            "radius": 60,
                            "width": 4,
                            "textFontSize": 28,
                            "additionalText": "",
                            "textClass": "circle-custom-text",
-                           "textColor": "#377dff"
+                           "textColor": "@@vars.style.color"
                          }'></div>
                     <!-- End Circle -->
 
@@ -619,13 +620,13 @@
                            "maxValue": 100,
                            "duration": 2000,
                            "isViewportInit": true,
-                           "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                           "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                            "radius": 40,
                            "width": 4,
                            "textFontSize": 22,
                            "additionalText": "",
                            "textClass": "circle-custom-text",
-                           "textColor": "#377dff"
+                           "textColor": "@@vars.style.color"
                          }'></div>
                     <!-- End Circle -->
 
@@ -636,13 +637,13 @@
                            "maxValue": 100,
                            "duration": 2000,
                            "isViewportInit": true,
-                           "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                           "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                            "radius": 30,
                            "width": 4,
                            "textFontSize": 16,
                            "additionalText": "",
                            "textClass": "circle-custom-text",
-                           "textColor": "#377dff"
+                           "textColor": "@@vars.style.color"
                          }'></div>
                     <!-- End Circle -->
                   </div>
@@ -659,14 +660,14 @@
                              "maxValue": 100,
                              "duration": 2000,
                              "isViewportInit": true,
-                             "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                             "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                              "radius": 80,
                              "width": 4,
                              "textFontSize": 40,
                              "textFontWeight": 700,
                              "additionalText": "",
                              "textClass": "circle-custom-text",
-                             "textColor": "#377dff"
+                             "textColor": "@@vars.style.color"
                            }'&gt;&lt;/div&gt;
                       &lt;!-- End Circle --&gt;
 
@@ -677,13 +678,13 @@
                              "maxValue": 100,
                              "duration": 2000,
                              "isViewportInit": true,
-                             "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                             "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                              "radius": 60,
                              "width": 4,
                              "textFontSize": 28,
                              "additionalText": "",
                              "textClass": "circle-custom-text",
-                             "textColor": "#377dff"
+                             "textColor": "@@vars.style.color"
                            }'&gt;&lt;/div&gt;
                       &lt;!-- End Circle --&gt;
 
@@ -694,13 +695,13 @@
                              "maxValue": 100,
                              "duration": 2000,
                              "isViewportInit": true,
-                             "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                             "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                              "radius": 40,
                              "width": 4,
                              "textFontSize": 22,
                              "additionalText": "",
                              "textClass": "circle-custom-text",
-                             "textColor": "#377dff"
+                             "textColor": "@@vars.style.color"
                            }'&gt;&lt;/div&gt;
                       &lt;!-- End Circle --&gt;
 
@@ -711,13 +712,13 @@
                              "maxValue": 100,
                              "duration": 2000,
                              "isViewportInit": true,
-                             "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                             "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                              "radius": 30,
                              "width": 4,
                              "textFontSize": 16,
                              "additionalText": "",
                              "textClass": "circle-custom-text",
-                             "textColor": "#377dff"
+                             "textColor": "@@vars.style.color"
                            }'&gt;&lt;/div&gt;
                       &lt;!-- End Circle --&gt;
                     </code>
@@ -764,13 +765,13 @@
                            "maxValue": 100,
                            "duration": 2000,
                            "isViewportInit": true,
-                           "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                           "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                            "radius": 50,
                            "width": 1,
                            "textFontSize": 22,
                            "additionalText": "",
                            "textClass": "circle-custom-text",
-                           "textColor": "#377dff"
+                           "textColor": "@@vars.style.color"
                          }'></div>
                       <!-- End Circle -->
 
@@ -781,13 +782,13 @@
                            "maxValue": 100,
                            "duration": 2000,
                            "isViewportInit": true,
-                           "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                           "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                            "radius": 50,
                            "width": 3,
                            "textFontSize": 22,
                            "additionalText": "",
                            "textClass": "circle-custom-text",
-                           "textColor": "#377dff"
+                           "textColor": "@@vars.style.color"
                          }'></div>
                       <!-- End Circle -->
 
@@ -798,13 +799,13 @@
                            "maxValue": 100,
                            "duration": 2000,
                            "isViewportInit": true,
-                           "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                           "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                            "radius": 50,
                            "width": 6,
                            "textFontSize": 22,
                            "additionalText": "",
                            "textClass": "circle-custom-text",
-                           "textColor": "#377dff"
+                           "textColor": "@@vars.style.color"
                          }'></div>
                       <!-- End Circle -->
 
@@ -815,13 +816,13 @@
                            "maxValue": 100,
                            "duration": 2000,
                            "isViewportInit": true,
-                           "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                           "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                            "radius": 50,
                            "width": 10,
                            "textFontSize": 22,
                            "additionalText": "",
                            "textClass": "circle-custom-text",
-                           "textColor": "#377dff"
+                           "textColor": "@@vars.style.color"
                          }'></div>
                       <!-- End Circle -->
 
@@ -832,13 +833,13 @@
                            "maxValue": 100,
                            "duration": 2000,
                            "isViewportInit": true,
-                           "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                           "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                            "radius": 50,
                            "width": 16,
                            "textFontSize": 22,
                            "additionalText": "",
                            "textClass": "circle-custom-text",
-                           "textColor": "#377dff"
+                           "textColor": "@@vars.style.color"
                          }'></div>
                       <!-- End Circle -->
                   </div>
@@ -855,13 +856,13 @@
                              "maxValue": 100,
                              "duration": 2000,
                              "isViewportInit": true,
-                             "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                             "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                              "radius": 50,
                              "width": 1,
                              "textFontSize": 22,
                              "additionalText": "",
                              "textClass": "circle-custom-text",
-                             "textColor": "#377dff"
+                             "textColor": "@@vars.style.color"
                            }'&gt;&lt;/div&gt;
                         &lt;!-- End Circle --&gt;
 
@@ -872,13 +873,13 @@
                              "maxValue": 100,
                              "duration": 2000,
                              "isViewportInit": true,
-                             "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                             "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                              "radius": 50,
                              "width": 3,
                              "textFontSize": 22,
                              "additionalText": "",
                              "textClass": "circle-custom-text",
-                             "textColor": "#377dff"
+                             "textColor": "@@vars.style.color"
                            }'&gt;&lt;/div&gt;
                         &lt;!-- End Circle --&gt;
 
@@ -889,13 +890,13 @@
                              "maxValue": 100,
                              "duration": 2000,
                              "isViewportInit": true,
-                             "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                             "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                              "radius": 50,
                              "width": 6,
                              "textFontSize": 22,
                              "additionalText": "",
                              "textClass": "circle-custom-text",
-                             "textColor": "#377dff"
+                             "textColor": "@@vars.style.color"
                            }'&gt;&lt;/div&gt;
                         &lt;!-- End Circle --&gt;
 
@@ -906,13 +907,13 @@
                              "maxValue": 100,
                              "duration": 2000,
                              "isViewportInit": true,
-                             "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                             "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                              "radius": 50,
                              "width": 10,
                              "textFontSize": 22,
                              "additionalText": "",
                              "textClass": "circle-custom-text",
-                             "textColor": "#377dff"
+                             "textColor": "@@vars.style.color"
                            }'&gt;&lt;/div&gt;
                         &lt;!-- End Circle --&gt;
 
@@ -923,13 +924,13 @@
                              "maxValue": 100,
                              "duration": 2000,
                              "isViewportInit": true,
-                             "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                             "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                              "radius": 50,
                              "width": 16,
                              "textFontSize": 22,
                              "additionalText": "",
                              "textClass": "circle-custom-text",
-                             "textColor": "#377dff"
+                             "textColor": "@@vars.style.color"
                            }'&gt;&lt;/div&gt;
                         &lt;!-- End Circle --&gt;
                     </code>
@@ -976,14 +977,14 @@
                            "maxValue": 100,
                            "duration": 2000,
                            "isViewportInit": true,
-                           "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                           "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                            "radius": 60,
                            "width": 6,
                            "textFontSize": 22,
                            "fgStrokeLinecap": "square",
                            "additionalText": "",
                            "textClass": "circle-custom-text",
-                           "textColor": "#377dff"
+                           "textColor": "@@vars.style.color"
                          }'></div>
                       <!-- End Circle -->
 
@@ -994,14 +995,14 @@
                            "maxValue": 100,
                            "duration": 2000,
                            "isViewportInit": true,
-                           "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                           "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                            "radius": 60,
                            "width": 6,
                            "textFontSize": 22,
                            "fgStrokeLinecap": "round",
                            "additionalText": "",
                            "textClass": "circle-custom-text",
-                           "textColor": "#377dff"
+                           "textColor": "@@vars.style.color"
                          }'></div>
                       <!-- End Circle -->
                   </div>
@@ -1018,14 +1019,14 @@
                              "maxValue": 100,
                              "duration": 2000,
                              "isViewportInit": true,
-                             "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                             "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                              "radius": 60,
                              "width": 6,
                              "textFontSize": 22,
                              "fgStrokeLinecap": "square",
                              "additionalText": "",
                              "textClass": "circle-custom-text",
-                             "textColor": "#377dff"
+                             "textColor": "@@vars.style.color"
                            }'&gt;&lt;/div&gt;
                         &lt;!-- End Circle --&gt;
 
@@ -1036,14 +1037,14 @@
                              "maxValue": 100,
                              "duration": 2000,
                              "isViewportInit": true,
-                             "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                             "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                              "radius": 60,
                              "width": 6,
                              "textFontSize": 22,
                              "fgStrokeLinecap": "round",
                              "additionalText": "",
                              "textClass": "circle-custom-text",
-                             "textColor": "#377dff"
+                             "textColor": "@@vars.style.color"
                            }'&gt;&lt;/div&gt;
                         &lt;!-- End Circle --&gt;
                     </code>
@@ -1090,13 +1091,13 @@
                            "maxValue": 25,
                            "duration": 2000,
                            "isViewportInit": true,
-                           "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                           "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                            "radius": 60,
                            "width": 6,
                            "textFontSize": 22,
                            "additionalText": "",
                            "textClass": "circle-custom-text",
-                           "textColor": "#377dff"
+                           "textColor": "@@vars.style.color"
                          }'></div>
                       <!-- End Circle -->
 
@@ -1107,13 +1108,13 @@
                            "maxValue": 50,
                            "duration": 2000,
                            "isViewportInit": true,
-                           "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                           "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                            "radius": 60,
                            "width": 6,
                            "textFontSize": 22,
                            "additionalText": "",
                            "textClass": "circle-custom-text",
-                           "textColor": "#377dff"
+                           "textColor": "@@vars.style.color"
                          }'></div>
                       <!-- End Circle -->
                   </div>
@@ -1130,13 +1131,13 @@
                              "maxValue": 25,
                              "duration": 2000,
                              "isViewportInit": true,
-                             "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                             "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                              "radius": 60,
                              "width": 6,
                              "textFontSize": 22,
                              "additionalText": "",
                              "textClass": "circle-custom-text",
-                             "textColor": "#377dff"
+                             "textColor": "@@vars.style.color"
                            }'&gt;&lt;/div&gt;
                         &lt;!-- End Circle --&gt;
 
@@ -1147,13 +1148,13 @@
                              "maxValue": 50,
                              "duration": 2000,
                              "isViewportInit": true,
-                             "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                             "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                              "radius": 60,
                              "width": 6,
                              "textFontSize": 22,
                              "additionalText": "",
                              "textClass": "circle-custom-text",
-                             "textColor": "#377dff"
+                             "textColor": "@@vars.style.color"
                            }'&gt;&lt;/div&gt;
                         &lt;!-- End Circle --&gt;
                     </code>
@@ -1200,14 +1201,14 @@
                            "maxValue": 100,
                            "duration": 2000,
                            "isViewportInit": true,
-                           "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                           "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                            "radius": 60,
                            "width": 6,
                            "textFontSize": 22,
                            "type": "iconic",
                            "icon": "<i class=\"tio-notifications-on-outlined\"></i>",
                            "textClass": "circle-custom-text",
-                           "textColor": "#377dff"
+                           "textColor": "@@vars.style.color"
                          }'></div>
                       <!-- End Circle -->
 
@@ -1218,13 +1219,13 @@
                            "maxValue": 100,
                            "duration": 2000,
                            "isViewportInit": true,
-                           "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                           "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                            "radius": 60,
                            "width": 6,
                            "textFontSize": 22,
                            "additionalText": "%",
                            "textClass": "circle-custom-text",
-                           "textColor": "#377dff"
+                           "textColor": "@@vars.style.color"
                          }'></div>
                       <!-- End Circle -->
 
@@ -1235,13 +1236,13 @@
                            "maxValue": 100,
                            "duration": 2000,
                            "isViewportInit": true,
-                           "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                           "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                            "radius": 60,
                            "width": 6,
                            "textFontSize": 22,
                            "additionalText": "k",
                            "textClass": "circle-custom-text",
-                           "textColor": "#377dff"
+                           "textColor": "@@vars.style.color"
                          }'></div>
                       <!-- End Circle -->
                   </div>
@@ -1258,14 +1259,14 @@
                              "maxValue": 100,
                              "duration": 2000,
                              "isViewportInit": true,
-                             "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                             "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                              "radius": 60,
                              "width": 6,
                              "textFontSize": 22,
                              "type": "iconic",
                              "icon": "&lt;i class=\"tio-notifications-on-outlined\"&gt;&lt;/i&gt;",
                              "textClass": "circle-custom-text",
-                             "textColor": "#377dff"
+                             "textColor": "@@vars.style.color"
                            }'&gt;&lt;/div&gt;
                         &lt;!-- End Circle --&gt;
 
@@ -1276,13 +1277,13 @@
                              "maxValue": 100,
                              "duration": 2000,
                              "isViewportInit": true,
-                             "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                             "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                              "radius": 60,
                              "width": 6,
                              "textFontSize": 22,
                              "additionalText": "%",
                              "textClass": "circle-custom-text",
-                             "textColor": "#377dff"
+                             "textColor": "@@vars.style.color"
                            }'&gt;&lt;/div&gt;
                         &lt;!-- End Circle --&gt;
 
@@ -1293,13 +1294,13 @@
                              "maxValue": 100,
                              "duration": 2000,
                              "isViewportInit": true,
-                             "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                             "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                              "radius": 60,
                              "width": 6,
                              "textFontSize": 22,
                              "additionalText": "k",
                              "textClass": "circle-custom-text",
-                             "textColor": "#377dff"
+                             "textColor": "@@vars.style.color"
                            }'&gt;&lt;/div&gt;
                         &lt;!-- End Circle --&gt;
                     </code>
@@ -1346,13 +1347,13 @@
                            "maxValue": 100,
                            "duration": 500,
                            "isViewportInit": true,
-                           "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                           "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                            "radius": 60,
                            "width": 6,
                            "textFontSize": 22,
                            "additionalText": "",
                            "textClass": "circle-custom-text",
-                           "textColor": "#377dff"
+                           "textColor": "@@vars.style.color"
                          }'></div>
                       <!-- End Circle -->
 
@@ -1363,13 +1364,13 @@
                            "maxValue": 100,
                            "duration": 2000,
                            "isViewportInit": true,
-                           "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                           "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                            "radius": 60,
                            "width": 6,
                            "textFontSize": 22,
                            "additionalText": "",
                            "textClass": "circle-custom-text",
-                           "textColor": "#377dff"
+                           "textColor": "@@vars.style.color"
                          }'></div>
                       <!-- End Circle -->
 
@@ -1380,13 +1381,13 @@
                            "maxValue": 100,
                            "duration": 5000,
                            "isViewportInit": true,
-                           "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                           "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                            "radius": 60,
                            "width": 6,
                            "textFontSize": 22,
                            "additionalText": "",
                            "textClass": "circle-custom-text",
-                           "textColor": "#377dff"
+                           "textColor": "@@vars.style.color"
                          }'></div>
                       <!-- End Circle -->
                   </div>
@@ -1403,13 +1404,13 @@
                              "maxValue": 100,
                              "duration": 500,
                              "isViewportInit": true,
-                             "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                             "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                              "radius": 60,
                              "width": 6,
                              "textFontSize": 22,
                              "additionalText": "",
                              "textClass": "circle-custom-text",
-                             "textColor": "#377dff"
+                             "textColor": "@@vars.style.color"
                            }'&gt;&lt;/div&gt;
                         &lt;!-- End Circle --&gt;
 
@@ -1420,13 +1421,13 @@
                              "maxValue": 100,
                              "duration": 2000,
                              "isViewportInit": true,
-                             "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                             "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                              "radius": 60,
                              "width": 6,
                              "textFontSize": 22,
                              "additionalText": "",
                              "textClass": "circle-custom-text",
-                             "textColor": "#377dff"
+                             "textColor": "@@vars.style.color"
                            }'&gt;&lt;/div&gt;
                         &lt;!-- End Circle --&gt;
 
@@ -1437,13 +1438,13 @@
                              "maxValue": 100,
                              "duration": 5000,
                              "isViewportInit": true,
-                             "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                             "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                              "radius": 60,
                              "width": 6,
                              "textFontSize": 22,
                              "additionalText": "",
                              "textClass": "circle-custom-text",
-                             "textColor": "#377dff"
+                             "textColor": "@@vars.style.color"
                            }'&gt;&lt;/div&gt;
                         &lt;!-- End Circle --&gt;
                     </code>
@@ -1489,14 +1490,14 @@
                          "maxValue": 100,
                          "duration": 2000,
                          "isViewportInit": true,
-                         "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                         "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                          "radius": 80,
                          "width": 6,
                          "fgStrokeLinecap": "round",
                          "additionalText": " Top",
                          "textFontSize": 24,
                          "textClass": "circle-custom-text",
-                         "textColor": "#377dff"
+                         "textColor": "@@vars.style.color"
                        }'></div>
                   <!-- End Circle -->
                 </div>
@@ -1511,14 +1512,14 @@
                              "maxValue": 100,
                              "duration": 2000,
                              "isViewportInit": true,
-                             "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                             "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                              "radius": 80,
                              "width": 6,
                              "fgStrokeLinecap": "round",
                              "additionalText": " Top",
                              "textFontSize": 24,
                              "textClass": "circle-custom-text",
-                             "textColor": "#377dff"
+                             "textColor": "@@vars.style.color"
                            }'&gt;&lt;/div&gt;
                         &lt;!-- End Circle --&gt;
                     </code>
@@ -1558,7 +1559,7 @@
                          "maxValue": 100,
                          "duration": 2000,
                          "isViewportInit": true,
-                         "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                         "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                          "radius": 80,
                          "width": 6,
                          "fgStrokeLinecap": "round",
@@ -1566,7 +1567,7 @@
                          "additionalTextType": "prefix",
                          "textFontSize": 24,
                          "textClass": "circle-custom-text",
-                         "textColor": "#377dff"
+                         "textColor": "@@vars.style.color"
                        }'></div>
                   <!-- End Circle -->
                 </div>
@@ -1581,7 +1582,7 @@
                              "maxValue": 100,
                              "duration": 2000,
                              "isViewportInit": true,
-                             "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                             "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                              "radius": 80,
                              "width": 6,
                              "fgStrokeLinecap": "round",
@@ -1589,7 +1590,7 @@
                              "additionalTextType": "prefix",
                              "textFontSize": 24,
                              "textClass": "circle-custom-text",
-                             "textColor": "#377dff"
+                             "textColor": "@@vars.style.color"
                            }'&gt;&lt;/div&gt;
                         &lt;!-- End Circle --&gt;
                     </code>
@@ -1630,7 +1631,7 @@
                            "maxValue": 100,
                            "duration": 2000,
                            "isViewportInit": true,
-                           "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                           "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                            "radius": 80,
                            "width": 6,
                            "fgStrokeLinecap": "round",
@@ -1638,7 +1639,7 @@
                            "additionalTextType": "prefix",
                            "textFontSize": 10,
                            "textClass": "circle-custom-text",
-                           "textColor": "#377dff"
+                           "textColor": "@@vars.style.color"
                          }'></div>
                       <!-- End Circle -->
 
@@ -1649,7 +1650,7 @@
                            "maxValue": 100,
                            "duration": 2000,
                            "isViewportInit": true,
-                           "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                           "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                            "radius": 80,
                            "width": 6,
                            "fgStrokeLinecap": "round",
@@ -1657,7 +1658,7 @@
                            "additionalTextType": "prefix",
                            "textFontSize": 16,
                            "textClass": "circle-custom-text",
-                           "textColor": "#377dff"
+                           "textColor": "@@vars.style.color"
                          }'></div>
                       <!-- End Circle -->
 
@@ -1668,7 +1669,7 @@
                            "maxValue": 100,
                            "duration": 2000,
                            "isViewportInit": true,
-                           "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                           "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                            "radius": 80,
                            "width": 6,
                            "fgStrokeLinecap": "round",
@@ -1676,7 +1677,7 @@
                            "additionalTextType": "prefix",
                            "textFontSize": 22,
                            "textClass": "circle-custom-text",
-                           "textColor": "#377dff"
+                           "textColor": "@@vars.style.color"
                          }'></div>
                       <!-- End Circle -->
 
@@ -1687,7 +1688,7 @@
                            "maxValue": 100,
                            "duration": 2000,
                            "isViewportInit": true,
-                           "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                           "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                            "radius": 80,
                            "width": 6,
                            "fgStrokeLinecap": "round",
@@ -1695,7 +1696,7 @@
                            "additionalTextType": "prefix",
                            "textFontSize": 32,
                            "textClass": "circle-custom-text",
-                           "textColor": "#377dff"
+                           "textColor": "@@vars.style.color"
                          }'></div>
                       <!-- End Circle -->
                   </div>
@@ -1712,7 +1713,7 @@
                              "maxValue": 100,
                              "duration": 2000,
                              "isViewportInit": true,
-                             "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                             "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                              "radius": 80,
                              "width": 6,
                              "fgStrokeLinecap": "round",
@@ -1720,7 +1721,7 @@
                              "additionalTextType": "prefix",
                              "textFontSize": 10,
                              "textClass": "circle-custom-text",
-                             "textColor": "#377dff"
+                             "textColor": "@@vars.style.color"
                            }'&gt;&lt;/div&gt;
                         &lt;!-- End Circle --&gt;
 
@@ -1731,7 +1732,7 @@
                              "maxValue": 100,
                              "duration": 2000,
                              "isViewportInit": true,
-                             "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                             "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                              "radius": 80,
                              "width": 6,
                              "fgStrokeLinecap": "round",
@@ -1739,7 +1740,7 @@
                              "additionalTextType": "prefix",
                              "textFontSize": 16,
                              "textClass": "circle-custom-text",
-                             "textColor": "#377dff"
+                             "textColor": "@@vars.style.color"
                            }'&gt;&lt;/div&gt;
                         &lt;!-- End Circle --&gt;
 
@@ -1750,7 +1751,7 @@
                              "maxValue": 100,
                              "duration": 2000,
                              "isViewportInit": true,
-                             "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                             "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                              "radius": 80,
                              "width": 6,
                              "fgStrokeLinecap": "round",
@@ -1758,7 +1759,7 @@
                              "additionalTextType": "prefix",
                              "textFontSize": 22,
                              "textClass": "circle-custom-text",
-                             "textColor": "#377dff"
+                             "textColor": "@@vars.style.color"
                            }'&gt;&lt;/div&gt;
                         &lt;!-- End Circle --&gt;
 
@@ -1769,7 +1770,7 @@
                              "maxValue": 100,
                              "duration": 2000,
                              "isViewportInit": true,
-                             "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                             "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                              "radius": 80,
                              "width": 6,
                              "fgStrokeLinecap": "round",
@@ -1777,7 +1778,7 @@
                              "additionalTextType": "prefix",
                              "textFontSize": 32,
                              "textClass": "circle-custom-text",
-                             "textColor": "#377dff"
+                             "textColor": "@@vars.style.color"
                            }'&gt;&lt;/div&gt;
                         &lt;!-- End Circle --&gt;
                     </code>
@@ -1818,7 +1819,7 @@
                            "maxValue": 100,
                            "duration": 2000,
                            "isViewportInit": true,
-                           "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                           "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                            "radius": 80,
                            "width": 6,
                            "fgStrokeLinecap": "round",
@@ -1827,7 +1828,7 @@
                            "textFontSize": 32,
                            "textFontWeight": 400,
                            "textClass": "circle-custom-text",
-                           "textColor": "#377dff"
+                           "textColor": "@@vars.style.color"
                          }'></div>
                       <!-- End Circle -->
 
@@ -1838,7 +1839,7 @@
                            "maxValue": 100,
                            "duration": 2000,
                            "isViewportInit": true,
-                           "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                           "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                            "radius": 80,
                            "width": 6,
                            "fgStrokeLinecap": "round",
@@ -1847,7 +1848,7 @@
                            "textFontSize": 32,
                            "textFontWeight": 600,
                            "textClass": "circle-custom-text",
-                           "textColor": "#377dff"
+                           "textColor": "@@vars.style.color"
                          }'></div>
                       <!-- End Circle -->
                   </div>
@@ -1864,7 +1865,7 @@
                              "maxValue": 100,
                              "duration": 2000,
                              "isViewportInit": true,
-                             "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                             "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                              "radius": 80,
                              "width": 6,
                              "fgStrokeLinecap": "round",
@@ -1873,7 +1874,7 @@
                              "textFontSize": 32,
                              "textFontWeight": 400,
                              "textClass": "circle-custom-text",
-                             "textColor": "#377dff"
+                             "textColor": "@@vars.style.color"
                            }'&gt;&lt;/div&gt;
                         &lt;!-- End Circle --&gt;
 
@@ -1884,7 +1885,7 @@
                              "maxValue": 100,
                              "duration": 2000,
                              "isViewportInit": true,
-                             "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                             "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                              "radius": 80,
                              "width": 6,
                              "fgStrokeLinecap": "round",
@@ -1893,7 +1894,7 @@
                              "textFontSize": 32,
                              "textFontWeight": 600,
                              "textClass": "circle-custom-text",
-                             "textColor": "#377dff"
+                             "textColor": "@@vars.style.color"
                            }'&gt;&lt;/div&gt;
                         &lt;!-- End Circle --&gt;
                     </code>
@@ -1939,7 +1940,7 @@
                          "maxValue": 100,
                          "duration": 2000,
                          "isViewportInit": true,
-                         "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                         "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                          "radius": 80,
                          "width": 6,
                          "fgStrokeLinecap": "round",
@@ -1949,7 +1950,7 @@
                          "textFontSize": 22,
                          "textFontWeight": 300,
                          "textClass": "circle-custom-text",
-                         "textColor": "#377dff"
+                         "textColor": "@@vars.style.color"
                        }'></div>
                     <!-- End Circle -->
                 </div>
@@ -1964,7 +1965,7 @@
                              "maxValue": 100,
                              "duration": 2000,
                              "isViewportInit": true,
-                             "colors": ["rgba(55, 125, 255, 0.1)", "#377dff"],
+                             "colors": ["rgba(55, 125, 255, 0.1)", "@@vars.style.color"],
                              "radius": 80,
                              "width": 6,
                              "fgStrokeLinecap": "round",
@@ -1974,7 +1975,7 @@
                              "textFontSize": 22,
                              "textFontWeight": 300,
                              "textClass": "circle-custom-text",
-                             "textColor": "#377dff"
+                             "textColor": "@@vars.style.color"
                            }'&gt;&lt;/div&gt;
                         &lt;!-- End Circle --&gt;
                     </code>
@@ -2034,7 +2035,7 @@
                         <p><code>colors</code></p>
                       </td>
                       <td>An array of colors, with the first item coloring the full circle (optional, it will be ['#EEE', '#F00'] if not specified).</td>
-                      <td><code>["#377dff", "#e7eaf3"]</code></td>
+                      <td><code>["@@vars.style.color", "#e7eaf3"]</code></td>
                     </tr>
 
                     <tr>
@@ -2191,33 +2192,46 @@
     <!-- JS Plugins Init. -->
     <script>
       $(document).on('ready', function () {
-        // initialization of navbar vertical navigation
+        // INITIALIZATION OF NAVBAR VERTICAL NAVIGATION
+        // =======================================================
         var sidebar = $('.js-navbar-vertical-aside').hsSideNav();
 
-        // initialization of tooltip in navbar vertical menu
+
+        // INITIALIZATION OF TOOLTIP IN NAVBAR VERTICAL MENU
+        // =======================================================
         $('.js-nav-tooltip-link').tooltip({ boundary: 'window' })
 
-        // initialization of go to
+
+        // INITIALIZATION OF GO TO
+        // =======================================================
         $('.js-go-to').each(function () {
           var goTo = new HSGoTo($(this)).init();
         });
 
-        // initialization of nav scroller
+
+        // INITIALIZATION OF NAV SCROLLER
+        // =======================================================
         $('.js-nav-scroller').each(function () {
           new HsNavScroller($(this), {
             delay: 400,
           }).init()
         });
 
-        // initialization of ListJs component
+
+        // INITIALIZATION OF LISTJS COMPONENT
+        // =======================================================
         var docsSearch = $.HSCore.components.HSList.init('#docsSearch');
 
-        // Get JSON file results
+
+        // GET JSON FILE RESULTS
+        // =======================================================
         $.getJSON('@@autopath/assets/json/docs-search.json', function(data) {
           docsSearch.add(data);
         });
 
-        // initialization of circles
+        
+        // INITIALIZATION OF CIRCLES
+        // =======================================================
         $('.js-circle').each(function () {
           var circle = $.HSCore.components.HSCircles.init($(this));
         });

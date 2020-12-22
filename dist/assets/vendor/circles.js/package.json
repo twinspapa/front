@@ -1,10 +1,4 @@
 {
-  "_args": [
-    [
-      "circles.js@0.0.6",
-      "C:\\Users\\ACE\\Desktop\\local\\front-dashboard"
-    ]
-  ],
   "_from": "circles.js@0.0.6",
   "_id": "circles.js@0.0.6",
   "_inBundle": false,
@@ -25,14 +19,17 @@
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/circles.js/-/circles.js-0.0.6.tgz",
-  "_spec": "0.0.6",
-  "_where": "C:\\Users\\ACE\\Desktop\\local\\front-dashboard",
+  "_shasum": "a1125e0552872b557e448a5a4280f1b9f9101f14",
+  "_spec": "circles.js@0.0.6",
+  "_where": "/Applications/MAMP/htdocs/front/front-dashboard",
   "author": {
     "name": "lugolabs"
   },
   "bugs": {
     "url": "https://github.com/lugolabs/circles/issues"
   },
+  "bundleDependencies": false,
+  "deprecated": false,
   "description": "Lightweight JavaScript library that generates circular graphs in SVG. Now with animation.",
   "devDependencies": {
     "grunt": "~0.4.5",

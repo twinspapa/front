@@ -15,9 +15,11 @@ export default class HSFileAttach {
 			textTarget: null,
 			maxFileSize: 1024, // Infinity - off file size detection
 			errorMessage: 'File is too big!',
+      typeErrorMessage: 'Unsupported file type',
 			mode: 'simple',
 			targetAttr: null,
-      resetTarget: null
+      resetTarget: null,
+      allowTypes: []
 		};
 		this.settings = settings;
 	}
@@ -29,6 +31,10 @@ export default class HSFileAttach {
 			options = Object.assign({}, context.defaults, dataSettings, context.settings);
 		
 		let $target = $(options.textTarget);
+
+    function getFileExtension(filename) {
+      return (/[.]/.exec(filename)) ? /[^.]+$/.exec(filename)[0] : null;
+    }
 		
 		$el.on('change', function () {
 			if ($el.val() === '') {
@@ -37,9 +43,19 @@ export default class HSFileAttach {
 			
 			if (this.files[0].size > (options.maxFileSize * 1024)) {
 				alert(options.errorMessage);
-				
+
 				return;
 			}
+
+      if (options.allowTypes.length > 0) {
+        const type = '.' + getFileExtension(this.files[0].name)
+
+        if (!type || !options.allowTypes.includes(type.toLowerCase())) {
+          alert(options.typeErrorMessage);
+
+          return;
+        }
+      }
 
 			if (options.mode === 'image') {
 				context._image($el, $target, options);

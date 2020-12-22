@@ -7,7 +7,7 @@
 */
 const del                             = require('del');
 
-const {config, context, pathLevel, shieldingVariables, additionNames}   = require('./core');
+const {config, context, pathLevel, shieldingVariables, shieldingFunctions, additionNames, gulpLighten, gulpDarken, gulpRGBA}   = require('./core');
 const paths                                                             = require('./paths');
 const {svgCompiler}                                                     = require('./svg-compiler')
 
@@ -67,6 +67,15 @@ function fileInclude() {
 
       return match.replace('node_modules', paths.dist.vendor.dir.replace(paths.dist.base.dir + '/', ''))
     }))
+    .pipe(replace(/gulpLighten\[(.*?)\]/g, function (math, p1) {
+      return gulpLighten(p1)
+    }))
+    .pipe(replace(/gulpDarken\[(.*?)\]/g, function (math, p1) {
+      return gulpDarken(p1)
+    }))
+    .pipe(replace(/gulpRGBA\[(.*?)\]/g, function (math, p1) {
+      return gulpRGBA(p1)
+    }))
     .pipe(deleteLines({
       'filters': [
         new RegExp(config.deleteLine, 'i')
@@ -98,6 +107,9 @@ function fileInclude() {
     }))
     .pipe(replace(/(\[\@\@\]).*?/g, function (match, p1) {
       return shieldingVariables(match, p1);
+    }))
+    .pipe(replace(/(\[@\@F\]).*?/g, function (match, p1) {
+      return shieldingFunctions(match, p1);
     }))
     .pipe(gulp.dest(paths.dist.base.dir))
 };

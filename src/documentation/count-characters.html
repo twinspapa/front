@@ -75,7 +75,8 @@
               <code class="language-html" data-lang="html">
                 &lt;script&gt;
                   $(document).on('ready', function () {
-                    // initialization of Count Characters
+                    // INITIALIZATION OF COUNT CHARACTERS
+                    // =======================================================
                     $('.js-count-characters').each(function () {
                       new HSCountCharacters($(this)).init()
                     });
@@ -117,7 +118,7 @@
 
                       <span id="basicCountCharacters" class="text-muted"></span>
                     </div>
-                    <textarea class="form-control js-count-characters" id="reviewLabel" placeholder="Textarea field" rows="4"
+                    <textarea class="js-count-characters form-control" id="reviewLabel" placeholder="Textarea field" rows="4"
                               data-hs-count-characters-options='{
                                 "output": "#basicCountCharacters"
                               }'>As always, all Htmlstream products are excellent with a very good personalization.</textarea>
@@ -135,7 +136,7 @@
 
                           &lt;span id="basicCountCharacters" class="text-muted"&gt;&lt;/span&gt;
                         &lt;/div&gt;
-                        &lt;textarea class="form-control js-count-characters" id="reviewLabel" placeholder="Textarea field" rows="4"
+                        &lt;textarea class="js-count-characters form-control" id="reviewLabel" placeholder="Textarea field" rows="4"
                                   data-hs-count-characters-options='{
                                     "output": "#basicCountCharacters"
                                   }'&gt;As always, all Htmlstream products are excellent with a very good personalization.&lt;/textarea&gt;
@@ -184,7 +185,7 @@
 
                       <span id="maxLengthCountCharacters" class="text-muted"></span>
                     </div>
-                    <textarea class="form-control js-count-characters" id="reviewLabelModalEg" placeholder="Textarea field" rows="4" maxlength="100"
+                    <textarea class="js-count-characters form-control" id="reviewLabelModalEg" placeholder="Textarea field" rows="4" maxlength="100"
                               data-hs-count-characters-options='{
                                 "output": "#maxLengthCountCharacters"
                               }'>As always, all Htmlstream products are excellent with a very good personalization.</textarea>
@@ -202,7 +203,7 @@
 
                           &lt;span id="maxLengthCountCharacters" class="text-muted"&gt;&lt;/span&gt;
                         &lt;/div&gt;
-                        &lt;textarea class="form-control js-count-characters" id="reviewLabelModalEg" placeholder="Textarea field" rows="4" maxlength="100"
+                        &lt;textarea class="js-count-characters form-control" id="reviewLabelModalEg" placeholder="Textarea field" rows="4" maxlength="100"
                                   data-hs-count-characters-options='{
                                     "output": "#maxLengthCountCharacters"
                                   }'&gt;As always, all Htmlstream products are excellent with a very good personalization.&lt;/textarea&gt;
@@ -270,7 +271,7 @@
 
                               <span id="basicCountCharactersModalEg" class="text-muted"></span>
                             </div>
-                            <textarea class="form-control js-count-characters" id="reviewModalEgLabel" placeholder="Textarea field" rows="4"
+                            <textarea class="js-count-characters form-control" id="reviewModalEgLabel" placeholder="Textarea field" rows="4"
                                       data-hs-count-characters-options='{
                                         "output": "#basicCountCharactersModalEg"
                                       }'>As always, all Htmlstream products are excellent with a very good personalization.</textarea>
@@ -322,7 +323,7 @@
 
                                   &lt;span id="basicCountCharactersModalEg" class="text-muted"&gt;&lt;/span&gt;
                                 &lt;/div&gt;
-                                &lt;textarea class="form-control js-count-characters" id="reviewModalEgLabel" placeholder="Textarea field" rows="4"
+                                &lt;textarea class="js-count-characters form-control" id="reviewModalEgLabel" placeholder="Textarea field" rows="4"
                                           data-hs-count-characters-options='{
                                             "output": "#basicCountCharactersModalEg"
                                           }'&gt;As always, all Htmlstream products are excellent with a very good personalization.&lt;/textarea&gt;
@@ -418,33 +419,46 @@
     <!-- JS Plugins Init. -->
     <script>
       $(document).on('ready', function () {
-        // initialization of navbar vertical navigation
+        // INITIALIZATION OF NAVBAR VERTICAL NAVIGATION
+        // =======================================================
         var sidebar = $('.js-navbar-vertical-aside').hsSideNav();
 
-        // initialization of tooltip in navbar vertical menu
+
+        // INITIALIZATION OF TOOLTIP IN NAVBAR VERTICAL MENU
+        // =======================================================
         $('.js-nav-tooltip-link').tooltip({ boundary: 'window' })
 
-        // initialization of go to
+
+        // INITIALIZATION OF GO TO
+        // =======================================================
         $('.js-go-to').each(function () {
           var goTo = new HSGoTo($(this)).init();
         });
 
-        // initialization of nav scroller
+
+        // INITIALIZATION OF NAV SCROLLER
+        // =======================================================
         $('.js-nav-scroller').each(function () {
           new HsNavScroller($(this), {
             delay: 400,
           }).init()
         });
 
-        // initialization of ListJs component
+
+        // INITIALIZATION OF LISTJS COMPONENT
+        // =======================================================
         var docsSearch = $.HSCore.components.HSList.init('#docsSearch');
 
-        // Get JSON file results
+
+        // GET JSON FILE RESULTS
+        // =======================================================
         $.getJSON('@@autopath/assets/json/docs-search.json', function(data) {
           docsSearch.add(data);
         });
 
-        // initialization of Count Characters
+        
+        // INITIALIZATION OF COUNT CHARACTERS
+        // =======================================================
         $('.js-count-characters').each(function () {
           new HSCountCharacters($(this)).init()
         });
