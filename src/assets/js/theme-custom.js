@@ -199,3 +199,32 @@ function get_query(){
     }
     return result;
 }
+
+
+// class Table {
+//   constructor(printElement) {
+//     this.printEl = printElement
+//   }
+//
+//   print(array) {
+//
+//     for (let i = 0; i < array.length; i++) {
+//       let html = `
+//       <tr>
+//         <td>
+//           <span class="legend-indicator bg-success"></span>${array[i].status}
+//         </td>
+//         <td class="" href-url="PGID_B1.html" user-id=${array[i].id}><a  class="">${array[i].id}</a></td>
+//         <td>${array[i].nickName}</td>
+//         <td>${array[i].gender}</td>
+//         <td>${array[i].location}</td>
+//         <td>${array[i].phone}</td>
+//         <td>${array[i].joinDate}</td>
+//       </tr>
+//       `
+//
+//       console.log(html);
+//       $(this.printEl).append(html);
+//     }
+//   }
+// }

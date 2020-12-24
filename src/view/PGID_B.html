@@ -214,6 +214,8 @@
         </div>
         <!-- End Header -->
 
+
+        <table id="example" class="display" width="100%"></table>
         <!-- Table -->
         <div class="table-responsive datatable-custom">
           <table id="datatable" class="table table-lg table-borderless table-thead-bordered table-nowrap table-align-middle card-table table-hover"
@@ -244,7 +246,6 @@
                 <th>가입일</th>
               </tr>
             </thead>
-            <tbody></tbody>
           </table>
         </div>
         <!-- End Table -->
@@ -324,44 +325,31 @@
   <script src="@@autopath/assets/js/hs.datatables.js"></script>
 
   <script>
-    let dataTableInfo = [
-      {
-        'status' : '정상',
-        'id' : 'scrich@scrich.com',
-        'nickName' : 'Scrich',
-        'gender' : '남',
-        'location' : '서울',
-        'phone' : '01037626202',
-        'joinDate' : '2020/11/02'
-      }
-    ],
-    let template = `
-    <tr>
-      <td>
-        <span class="legend-indicator bg-success"></span>${status}
-      </td>
-      <td class="user_id" href-url="PGID_B1.html" user-id=${id}><a href="#none" class="text-primary">${id}</a></td>
-      <td>${nickName}</td>
-      <td>${gender}</td>
-      <td>${location}</td>
-      <td>${phone}</td>
-      <td>${joinDate}</td>
-    </tr>`
     let link_1 = new Go('.user_id');
-
-class Datalist {
-  constructor(element) {
-    this.el = element;
-  }
-
-  print(template, ){
-
-  }
-}
 
     $(document).on('ready', function () {
       // initialization of datatables
       var datatable = $.HSCore.components.HSDatatables.init($('#datatable'), {
+        ajax: "../data/userList.txt",
+        column: [
+          { data: 'status' },
+          {
+            data: 'id',
+            render: function(data) {
+              return '<a class="user_id text-primary" href-url="PGID_B1.html" user-id=' + data + '>' + data + '<a>';
+            }
+          },
+          { data: 'nickName',
+            render: function(data) {
+              return '<span class="legend-indicator bg-success"></span>' + data;
+            }
+          },
+          { data: 'gender' },
+          { data: 'location' },
+          { data: 'phone' },
+          { data: 'joinDate' },
+          { data: 'status' }
+        ],
         dom: 'Bfrtip',
         buttons: [
           {

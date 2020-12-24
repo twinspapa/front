@@ -1,0 +1,22 @@
+{
+  data : [
+    {
+      status : '정상',
+      id : 'scrich@scrich.com',
+      nickName : 'Scrich',
+      gender : '남',
+      location : '서울',
+      phone : '01037626202',
+      joinDate : '2020/11/02'
+    },
+    {
+      status : '정상',
+      id : 'scrich@scrich.com',
+      nickName : 'Scrich',
+      gender : '남',
+      location : '서울',
+      phone : '01037626202',
+      joinDate : '2020/11/02'
+    }
+  ]
+}
