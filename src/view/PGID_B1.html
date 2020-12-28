@@ -53,7 +53,7 @@
             <h1 class="page-title">Profile</h1>
             <!-- Avatar -->
             <label class="avatar avatar-lg avatar-circle avatar-border-lg avatar-uploader" for="avatarUploader">
-              <img id="avatarImg" class="avatar-img" src="@@autopath/assets/img/160x160/img6.jpg" alt="Image Description">
+              <img id="avatarImg" class="avatar-img" src="" alt="Image Description">
 
               <input type="file" class="js-file-attach avatar-uploader-input" id="avatarUploader"
               data-hs-file-attach-options='{
@@ -85,11 +85,11 @@
                 <i class="tio-folder-shared tio-xl text-body mr-2"></i>
                 <div class="">
                   <h5 class="card-title text-truncate mr-2">포인트</h5>
-                  <p class="card-title text-truncate mr-2"><span>50,000</span>/<span>78,000</span></p>
+                  <p class="card-title text-truncate mr-2"><span id="point1"></span>/<span id="point2"></span></p>
                 </div>
               </div>
             </div>
-            <a class="stretched-link" href="#" href-data="PGID_B1A.html"></a>
+            <a class="stretched-link" href="#" href-url="PGID_B1A.html"></a>
           </div>
           <!-- End Card -->
         </div>
@@ -104,11 +104,11 @@
                 <i class="tio-folder-shared tio-xl text-body mr-2"></i>
                 <div class="">
                   <h5 class="card-title text-truncate mr-2">리치쇼핑</h5>
-                  <p class="card-title text-truncate mr-2"><span>50,000</span>/<span>78,000</span></p>
+                  <p class="card-title text-truncate mr-2"><span id="shopping1"></span>/<span id="shopping2"></span></p>
                 </div>
               </div>
             </div>
-            <a class="stretched-link" href="#" href-data="PGID_B1B.html"></a>
+            <a class="stretched-link" href="#" href-url="PGID_B1B.html"></a>
           </div>
           <!-- End Card -->
         </div>
@@ -123,11 +123,11 @@
                 <i class="tio-folder-shared tio-xl text-body mr-2"></i>
                 <div class="">
                   <h5 class="card-title text-truncate mr-2">캠페인</h5>
-                  <p class="card-title text-truncate mr-2"><span>50,000</span>/<span>78,000</span></p>
+                  <p class="card-title text-truncate mr-2"><span id="campaign1"></span>/<span id="campaign2"></span></p>
                 </div>
               </div>
             </div>
-            <a class="stretched-link" href="#" href-data="PGID_B1C.html"></a>
+            <a class="stretched-link" href="#" href-url="PGID_B1C.html"></a>
           </div>
           <!-- End Card -->
         </div>
@@ -142,11 +142,11 @@
                 <i class="tio-folder-shared tio-xl text-body mr-2"></i>
                 <div class="">
                   <h5 class="card-title text-truncate mr-2">보유상품</h5>
-                  <p class="card-title text-truncate mr-2"><span>50,000</span>/<span>78,000</span></p>
+                  <p class="card-title text-truncate mr-2"><span id="product1"></span>/<span id="product2"></span></p>
                 </div>
               </div>
             </div>
-            <a class="stretched-link" href="#" href-data="PGID_B1D.html"></a>
+            <a class="stretched-link" href="#" href-url="PGID_B1D.html"></a>
           </div>
           <!-- End Card -->
         </div>
@@ -161,11 +161,11 @@
                 <i class="tio-folder-shared tio-xl text-body mr-2"></i>
                 <div class="">
                   <h5 class="card-title text-truncate mr-2">신고</h5>
-                  <p class="card-title text-truncate mr-2"><span>50,000</span>/<span>78,000</span></p>
+                  <p class="card-title text-truncate mr-2"><span id="report1"></span>/<span id="report2"></span></p>
                 </div>
               </div>
             </div>
-            <a class="stretched-link" href="#" href-data="PGID_B1E.html"></a>
+            <a class="stretched-link" href="#" href-url="PGID_B1E.html"></a>
           </div>
           <!-- End Card -->
         </div>
@@ -181,21 +181,22 @@
             <div class="card-header">
               <h2 class="card-title h4" style="line-height:35px;">Basic information</h2>
               <div class="btn-wrap">
+                <button class="basicInfoCancle btn btn-sm btn-secondary">cancle</button>
                 <button class="basicInfoEdit btn btn-sm btn-white">Edit</button>
-                <button type="submit" form="userInfo" class="basicInfoSave btn btn-sm btn-white d-none">Save</button>
+                <button class="basicInfoSave btn btn-sm btn-white d-none">Save</button>
               </div>
             </div>
 
             <!-- Body -->
             <div class="card-body">
               <!-- Form -->
-              <form id="userInfo" action="userInfo.php" method="post" onsubmit="return userInfoSubmit(this);">
+              <form id="userInfo" action="" method="post">
                 <!-- Form Group -->
                 <div class="row form-group">
-                  <label for="organizationLabel" class="col-sm-3 col-form-label input-label">아이디</label>
+                  <label for="userId" class="col-sm-3 col-form-label input-label">아이디</label>
 
                   <div class="col-sm-9">
-                    <input type="text" class="form-control" name="organization" id="organizationLabel" placeholder="Your organization" aria-label="Your organization" value="Htmlstream" disabled>
+                    <input type="text" class="form-control" name="organization" id="userId" placeholder="Your organization" aria-label="Your organization" value="" disabled>
                   </div>
                 </div>
                 <!-- End Form Group -->
@@ -210,10 +211,11 @@
                     data-hs-select2-options='{
                       "minimumResultsForSearch": "Infinity"
                     }'>
-                      <option value="">정상</option>
-                      <option value="">정지</option>
-                      <option value="">탈퇴</option>
-                      <option value="">휴면</option>
+                      <option value=""></option>
+                      <option value="정상">정상</option>
+                      <option value="정지">정지</option>
+                      <option value="탈퇴">탈퇴</option>
+                      <option value="휴면">휴면</option>
                     </select>
                     <!-- End Select -->
                   </div>
@@ -222,21 +224,21 @@
 
                 <!-- Form Group -->
                 <div class="row form-group">
-                  <label for="organizationLabel" class="col-sm-3 col-form-label input-label">닉네임</label>
+                  <label for="userNickName" class="col-sm-3 col-form-label input-label">닉네임</label>
 
                   <div class="col-sm-9">
-                    <input type="text" class="form-control editInput" name="organization" id="organizationLabel" placeholder="Your organization" aria-label="Your organization" value="Htmlstream" minlength="2" maxlength="11" disabled>
+                    <input type="text" class="form-control editInput" name="userNickName" id="userNickName" placeholder="Your nickName" aria-label="Your nickName" value="" minlength="2" maxlength="11" disabled>
                   </div>
                 </div>
                 <!-- End Form Group -->
 
                 <!-- Form Group -->
                 <div class="row form-group">
-                  <label for="locationLabel" class="col-sm-3 col-form-label input-label">지역</label>
+                  <label for="userLocation" class="col-sm-3 col-form-label input-label">지역</label>
 
                   <div class="col-sm-9">
                     <!-- Select -->
-                    <select class="js-select2-custom" id="locationLabel" disabled
+                    <select class="js-select2-custom" id="userLocation" disabled
                             data-hs-select2-options='{
                               "minimumResultsForSearch": "Infinity"
                             }'>
@@ -266,10 +268,10 @@
 
                 <!-- Form Group -->
                 <div class="row form-group">
-                  <label for="phoneLabel" class="col-sm-3 col-form-label input-label">연락처</label>
+                  <label for="userPhone" class="col-sm-3 col-form-label input-label">연락처</label>
 
                   <div class="col-sm-9">
-                    <input type="text" class="js-masked-input form-control editInput" name="phone" id="phoneLabel" placeholder="xxx-xxxx-xxxx" aria-label="xxx-xxxx-xxxx" disabled value="010-3762-6202"
+                    <input type="text" class="js-masked-input form-control editInput" name="userPhone" id="userPhone" placeholder="xxx-xxxx-xxxx" aria-label="xxx-xxxx-xxxx" disabled value=""
                     data-hs-mask-options='{
                       "template": "010-0000-0000"
                     }'>
@@ -279,10 +281,10 @@
 
                 <!-- Form Group -->
                 <div class="row form-group">
-                  <label for="DateLabel" class="col-sm-3 col-form-label input-label">생년월일</span></label>
+                  <label for="userBirth" class="col-sm-3 col-form-label input-label">생년월일</span></label>
 
                   <div class="col-sm-9">
-                    <input type="text" class="js-masked-input form-control editInput" name="phone" id="DateLabel" placeholder="xxxx/xx/xx" aria-label="xxxx/xx/xx" value="2020/11/12" disabled
+                    <input type="text" class="js-masked-input form-control editInput" name="userBirth" id="userBirth" placeholder="xxxx/xx/xx" aria-label="xxxx/xx/xx" value="" disabled
                     data-hs-mask-options='{
                       "template": "0000/00/00"
                     }'>
@@ -300,8 +302,9 @@
                     data-hs-select2-options='{
                       "minimumResultsForSearch": "Infinity"
                     }'>
-                      <option value="">남성</option>
-                      <option value="">여성</option>
+                      <option value=""></option>
+                      <option value="남성">남성</option>
+                      <option value="여성">여성</option>
                     </select>
                     <!-- End Select -->
                   </div>
@@ -310,10 +313,10 @@
 
                 <!-- Form Group -->
                 <div class="row form-group">
-                  <label for="DateLabel" class="col-sm-3 col-form-label input-label">가입일</span></label>
+                  <label for="userSignUpDate" class="col-sm-3 col-form-label input-label">가입일</span></label>
 
                   <div class="col-sm-9">
-                    <input type="text" class="js-masked-input form-control" name="phone" id="DateLabel" placeholder="xxxx/xx/xx xx:xx:xx" aria-label="xxxx/xx/xx xx:xx:xx" value="2020/11/12 23:59:59" disabled
+                    <input type="text" class="js-masked-input form-control" name="userSignUpDate" id="userSignUpDate" placeholder="xxxx/xx/xx xx:xx:xx" aria-label="xxxx/xx/xx xx:xx:xx" value="" disabled
                     data-hs-mask-options='{
                       "template": "0000/00/00 00:00:00"
                     }'>
@@ -323,10 +326,10 @@
 
                 <!-- Form Group -->
                 <div class="row form-group">
-                  <label for="DateLabel" class="col-sm-3 col-form-label input-label">탈퇴일</span></label>
+                  <label for="userSignOutDate" class="col-sm-3 col-form-label input-label">탈퇴일</span></label>
 
                   <div class="col-sm-9">
-                    <input type="text" class="js-masked-input form-control" name="phone" id="DateLabel" placeholder="xxxx/xx/xx xx:xx:xx" aria-label="xxxx/xx/xx xx:xx:xx" value="2020/11/12 23:59:59" disabled
+                    <input type="text" class="js-masked-input form-control" name="userSignOutDate" id="userSignOutDate" placeholder="xxxx/xx/xx xx:xx:xx" aria-label="xxxx/xx/xx xx:xx:xx" value="" disabled
                     data-hs-mask-options='{
                       "template": "0000/00/00 00:00:00"
                     }'>
@@ -336,17 +339,13 @@
 
                 <!-- Form Group -->
                 <div class="row form-group">
-                  <label for="DateLabel" class="col-sm-3 col-form-label input-label">OS</span></label>
+                  <label for="userOS" class="col-sm-3 col-form-label input-label">OS</span></label>
 
                   <div class="col-sm-9">
-                    <input type="text" class="js-masked-input form-control" name="phone" id="DateLabel" value="ios 1.10.1" disabled>
+                    <input type="text" class="js-masked-input form-control" name="userOS" id="userOS" value="" disabled>
                   </div>
                 </div>
                 <!-- End Form Group -->
-
-                <div class="d-flex justify-content-end">
-                  <button type="submit" class="btn btn-primary d-none">Save changes</button>
-                </div>
               </form>
               <!-- End Form -->
             </div>
@@ -392,9 +391,50 @@
 
   <script>
     let userId = getParameterByName('user-id'),
-        parameter = {
-          'user_id' : userId,
-        };
+        userInfo = {
+          'id': userId,
+          'status': '정상',
+          'nickName': '스크리치',
+          'location': 11,
+          'phone': '01037626202',
+          'birth': '2020/11/12',
+          'gender': '남성',
+          'signUpDate': '2020/11/12 23:59:59',
+          'signOutDate': '2020/11/12 23:59:59',
+          'os': 'aos 1.10.1',
+          'point': [50000, 78000],
+          'shopping': [50000, 78000],
+          'campaign': [50000, 78000],
+          'product': [50000, 78000],
+          'report': [50000, 78000],
+          'imgSrc': '@@autopath/assets/img/160x160/img6.jpg'
+        },
+        link_1 = new Go('.stretched-link');
+        // submit = new SubmitForm('#userInfo');
+
+    function userInfoLoad() {
+      $('#userId').val(userInfo.id);
+      $('#userStatus').val(userInfo.status);
+      $('#userNickName').val(userInfo.nickName);
+      $('#userLocation').val(userInfo.location);
+      $('#userPhone').val(userInfo.phone);
+      $('#userBirth').val(userInfo.birth);
+      $('#userGender').val(userInfo.gender);
+      $('#userSignUpDate').val(userInfo.signUpDate);
+      $('#userSignOutDate').val(userInfo.signOutDate);
+      $('#userOS').val(userInfo.os);
+      $('#point1').text(dataWithComma(userInfo.point[0]));
+      $('#point2').text(dataWithComma(userInfo.point[1]));
+      $('#shopping1').text(dataWithComma(userInfo.shopping[0]));
+      $('#shopping2').text(dataWithComma(userInfo.shopping[1]));
+      $('#campaign1').text(dataWithComma(userInfo.campaign[0]));
+      $('#campaign2').text(dataWithComma(userInfo.campaign[1]));
+      $('#product1').text(dataWithComma(userInfo.product[0]));
+      $('#product2').text(dataWithComma(userInfo.product[1]));
+      $('#report1').text(dataWithComma(userInfo.report[0]));
+      $('#report2').text(dataWithComma(userInfo.report[1]));
+      $('#avatarImg').attr('src', userInfo.imgSrc);
+    }
 
     $(document).on('ready', function () {
       // initialization of Input Masks
@@ -407,47 +447,26 @@
         $(this).addClass('d-none');
         $('.editInput').removeAttr('disabled');
         $('.basicInfoSave').removeClass('d-none');
+        $('.basicInfoCancle').removeClass('d-none');
       });
 
-      function userInfoSubmit() {
-        let submit = new SubmitForm($('#userInfo')).userInfoChange();
-      }
+      // 회원정보 edit 모드 종료
+      $('.basicInfoSave', '.basicInfoCancle').on('click', function() {
+        $('.editInput').attr('disabled');
+        $('.basicInfoEdit').removeClass('d-none');
+        $('.basicInfoSave').addClass('d-none');
+        $('.basicInfoCancle').addClass('d-none');
 
-      class SubmitForm{
-        'use strict';
-
-        constructor(formId) {
-          this.el = formId;
+        if($(this).hasClass('basicInfoSave') === true){
+          alert('회원정보가 변경되었습니다.');
+          
         }
+      });
 
-        userInfoChange(){
-          $.ajax({
-            type: this.el.attr('method'),
-            url: this.el.attr('action'),
-            dataType: 'json',
-            async: false,
-            data: this.el.serialize(),
-            success: function(data) {
-              if (data['result'] == 'fail') {
-                alert('회원정보 변경에 실패하였습니다. 관리자에게 문의하세요.');
-              } else if (data['result'] == 'sucess'){
-                alert('회원정보가 변경 되었습니다.')
-                $(this).addClass('d-none');
-                $('.editInput').attr('disabled');
-                $('.basicInfoSave').removeClass('d-none');
-              }
-            },
-            error: function(xhr, status, error) {
-              let error_confirm = confirm('데이터 전송 오류 입니다. 확인을 누르시면 페이지가 새로고침 됩니다.');
-              if (error_confirm == true) {
-                window.location.reload();
-              }
-            }
-          });
-        }
-      }
+      userInfoLoad();
 
-      goLink1('.stretched-link', 'href-data');
+      $('.stretched-link').attr('user-id', userId);
+      link_1.link('href-url','user-id');
     });
   </script>
 </body>

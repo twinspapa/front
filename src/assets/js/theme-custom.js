@@ -1,17 +1,54 @@
 // // // // // // // // // // // // // // // // // // // // //
+// class Ajax {
+//   'use strict';
+//
+//   constructor(name){
+//     this.name = name;
+//   }
+//
+//   send(type, url, dataType, sendData, successMsg){
+//     $.ajax({
+//       type: type,
+//       url: url,
+//       dataType: dataType,
+//       async: false,
+//       data: sendData,
+//       success: function(data) {
+//         console.log('success');
+//
+//         return data;
+//       },
+//       error: function(request, status, error) {
+//         alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+//         console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+//       }
+//     });
+//   }
+// }
+
+
 // form 전송
 class SubmitForm{
   'use strict';
 
   constructor(formId) {
-    this.el = formId;
-    this.validChk = this.el.valid('success');
+    this.el = $(formId);
   }
 
-  signInChk(){
-    if (this.validChk == false) {
+  validChk(){
+    const chkEl = this.el.valid('success');
+
+    if (chkEl === false) {
       this.el.valid();
-    } else if (this.validChk == true) {
+    }
+
+    return chkEl;
+  }
+
+  signIn(){
+    this.validChk();
+
+    if (validChk() === true) {
       $.ajax({
         type: this.el.attr('method'),
         url: this.el.attr('action'),
@@ -93,10 +130,35 @@ class Go {
 }
 
 // // // // // // // // // // // // // // // // // // // // //
-
+// class Insert {
+//   constructor(name) {
+//     this.name = name;
+//   }
+//
+//   value(el, data){
+//     $(el).val(data);
+//   }
+//
+//   text(el, data){
+//     $(el).text(dataWithComma(data));
+//   }
+//
+//   attr(el, data){
+//     $(el).attr()
+//   }
+// }
 // // // // // // // // // // // // // // // // // // // // //
 
-// // // // // // // // // // // // // // // // // // // // //
+
+function dataWithComma(data) {
+  if(isNaN(data) === false){
+    return data.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  } else {
+    return data;
+  }
+}
+
+
 // list filter : PGID_C1
 function filterList(inputEl,el) {
   // Declare variables
@@ -173,13 +235,6 @@ function commonVendorInit() {
   });
 }
 
-// all page document ready script
-$(document).ready(function() {
-  urlCompareAddClass($('.navbar-vertical-content .nav-item a'), 'active');
-  commonVendorInit();
-});
-
-
 // 파라미터 값 가져오기
 function getParameterByName(name) {
         name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
@@ -200,31 +255,8 @@ function get_query(){
     return result;
 }
 
-
-// class Table {
-//   constructor(printElement) {
-//     this.printEl = printElement
-//   }
-//
-//   print(array) {
-//
-//     for (let i = 0; i < array.length; i++) {
-//       let html = `
-//       <tr>
-//         <td>
-//           <span class="legend-indicator bg-success"></span>${array[i].status}
-//         </td>
-//         <td class="" href-url="PGID_B1.html" user-id=${array[i].id}><a  class="">${array[i].id}</a></td>
-//         <td>${array[i].nickName}</td>
-//         <td>${array[i].gender}</td>
-//         <td>${array[i].location}</td>
-//         <td>${array[i].phone}</td>
-//         <td>${array[i].joinDate}</td>
-//       </tr>
-//       `
-//
-//       console.log(html);
-//       $(this.printEl).append(html);
-//     }
-//   }
-// }
+// all page document ready script
+$(document).ready(function() {
+  urlCompareAddClass($('.navbar-vertical-content .nav-item a'), 'active');
+  commonVendorInit();
+});

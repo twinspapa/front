@@ -154,15 +154,15 @@
 
                               <!-- Select -->
                               <select class="js-select2-custom js-datatable-filter"
-                                      data-target-column-index="0"
+                                      data-target-column-index="1"
                                       data-hs-select2-options='{
                                         "minimumResultsForSearch": "Infinity"
                                       }'>
                                 <option value="">Any status</option>
-                                <option value="Active" data-option-template='<span class="legend-indicator bg-success"></span>정상'>정상</option>
-                                <option value="Stop" data-option-template='<span class="legend-indicator bg-warning"></span>정지'>정지</option>
-                                <option value="Secession" data-option-template='<span class="legend-indicator bg-danger"></span>탈퇴'>탈퇴</option>
-                                <option value="Dormancy" data-option-template='<span class="legend-indicator bg-danger"></span>휴면'>휴면</option>
+                                <option value="정상" data-option-template='<span class="legend-indicator bg-success"></span>정상'>정상</option>
+                                <option value="정지" data-option-template='<span class="legend-indicator bg-warning"></span>정지'>정지</option>
+                                <option value="탈퇴" data-option-template='<span class="legend-indicator bg-danger"></span>탈퇴'>탈퇴</option>
+                                <option value="휴면" data-option-template='<span class="legend-indicator bg-danger"></span>휴면'>휴면</option>
                               </select>
                               <!-- End Select -->
                             </div>
@@ -214,17 +214,16 @@
         </div>
         <!-- End Header -->
 
-
-        <table id="example" class="display" width="100%"></table>
         <!-- Table -->
         <div class="table-responsive datatable-custom">
           <table id="datatable" class="table table-lg table-borderless table-thead-bordered table-nowrap table-align-middle card-table table-hover"
                  data-hs-datatables-options='{
                    "columnDefs": [{
-                      "targets": [0, 6],
-                      "orderable": true
+                      "targets": 0,
+                      "searchable": false,
+                      "orderable": false
                     }],
-                   "order": [],
+                   "order": [1],
                    "info": {
                      "totalQty": "#datatableWithPaginationInfoTotalQty"
                    },
@@ -237,6 +236,7 @@
                  }'>
             <thead class="thead-light">
               <tr>
+                <th>#</th>
                 <th>상태</th>
                 <th>아이디</th>
                 <th>닉네임</th>
@@ -327,52 +327,95 @@
   <script>
     let link_1 = new Go('.user_id');
 
+    let userList = [
+      {
+        "no" : "",
+        "status" : "정상",
+        "id" : "scrich@scrich.com",
+        "nickName" : "Scrich",
+        "gender" : "남",
+        "location" : "서울",
+        "phone" : "01037626202",
+        "joinDate" : "2020/11/02"
+      },
+      {
+        "no" : "",
+        "status" : "정지",
+        "id" : "scrich@scrich.com",
+        "nickName" : "Scrich",
+        "gender" : "남",
+        "location" : "서울",
+        "phone" : "01037626202",
+        "joinDate" : "2020/11/02"
+      },
+      {
+        "no" : "",
+        "status" : "휴면",
+        "id" : "scrich@scrich.com",
+        "nickName" : "Scrich",
+        "gender" : "남",
+        "location" : "서울",
+        "phone" : "01037626202",
+        "joinDate" : "2020/11/02"
+      },
+      {
+        "no" : "",
+        "status" : "탈퇴",
+        "id" : "scrich@scrich.com",
+        "nickName" : "Scrich",
+        "gender" : "남",
+        "location" : "서울",
+        "phone" : "01037626202",
+        "joinDate" : "2020/11/02"
+      }
+    ];
+
     $(document).on('ready', function () {
-      // initialization of datatables
-      var datatable = $.HSCore.components.HSDatatables.init($('#datatable'), {
-        ajax: "../data/userList.txt",
-        column: [
-          { data: 'status' },
-          {
-            data: 'id',
-            render: function(data) {
-              return '<a class="user_id text-primary" href-url="PGID_B1.html" user-id=' + data + '>' + data + '<a>';
-            }
-          },
-          { data: 'nickName',
-            render: function(data) {
-              return '<span class="legend-indicator bg-success"></span>' + data;
-            }
-          },
-          { data: 'gender' },
-          { data: 'location' },
-          { data: 'phone' },
-          { data: 'joinDate' },
-          { data: 'status' }
-        ],
-        dom: 'Bfrtip',
-        buttons: [
-          {
-            extend: 'copy',
-            className: 'd-none'
-          },
-          {
-            extend: 'excel',
-            className: 'd-none'
-          },
-          {
-            extend: 'csv',
-            className: 'd-none'
-          },
-          {
-            extend: 'pdf',
-            className: 'd-none'
-          },
-          {
-            extend: 'print',
-            className: 'd-none'
-          },
-        ]
+      // user list table
+      let datatable = $.HSCore.components.HSDatatables.init($('#datatable'), {
+          // ajax: url input,
+          data: userList,
+          columns: [
+            { data: 'no' },
+            { data: 'status',
+              render: function(data) {
+                return '<span class="legend-indicator bg-success"></span>' + data;
+              }
+            },
+            { data: 'id',
+              render: function(data) {
+                return '<a class="user_id text-primary" href="#none" href-url="PGID_B1.html" user-id=' + data + '>' + data;
+              }
+            },
+            { data: 'nickName' },
+            { data: 'gender' },
+            { data: 'location' },
+            { data: 'phone' },
+            { data: 'joinDate' }
+          ],
+          dom: 'Bfrtip',
+          buttons: [
+            {
+              extend: 'copy',
+              className: 'd-none'
+            },
+            {
+              extend: 'excel',
+              className: 'd-none'
+            },
+            {
+              extend: 'csv',
+              className: 'd-none'
+            },
+            {
+              extend: 'pdf',
+              className: 'd-none'
+            },
+            {
+              extend: 'print',
+              className: 'd-none'
+            },
+          ]
       });
 
       $('#export-copy').click(function() {
@@ -450,11 +493,17 @@
 
           if (!startDate || !endDate) return true;
 
-          let compareDate = moment(moment(data[6]).format('YYYY/MM/DD'));
+          let compareDate = moment(moment(data[7]).format('YYYY/MM/DD'));
 
           return compareDate.isBetween(startDate -1 , endDate + 1 );
         }
       );
+
+      datatable.on( 'order.dt search.dt', function () {
+        datatable.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+            cell.innerHTML = i+1;
+        });
+      }).draw();
 
       link_1.link('href-url','user-id');
     });
