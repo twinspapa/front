@@ -78,29 +78,29 @@ class SubmitForm{
 
 // // // // // // // // // // // // // // // // // // // // //
 // 그래프
-class Graph {
-  constructor(element) {
-    this.el = element;
-  }
-
-  // 그래프 데이터 업데이트
-  dataUpdate(...args) {
-    let res = [];
-
-    for (let i = 0; i < args.length; i++) {
-        const obj = {data : args[i]};
-        res.push(obj);
-    }
-
-    console.log(res);
-
-    $.HSCore.components.HSChartJS.init($(this.el), {
-      data: {
-        datasets: res
-      }
-    });
-  }
-}
+// class Graph {
+//   constructor(element) {
+//     this.el = element;
+//   }
+//
+//   // 그래프 데이터 업데이트
+//   dataUpdate(...args) {
+//     let res = [];
+//
+//     for (let i = 0; i < args.length; i++) {
+//         const obj = {data : args[i]};
+//         res.push(obj);
+//     }
+//
+//     console.log(res);
+//
+//     $.HSCore.components.HSChartJS.init($(this.el), {
+//       data: {
+//         datasets: res
+//       }
+//     });
+//   }
+// }
 // // // // // // // // // // // // // // // // // // // // //
 // 페이지 이동
 class Go {
@@ -238,7 +238,7 @@ function commonVendorInit() {
 // 파라미터 값 가져오기
 function getParameterByName(name) {
         name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        let regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
                 results = regex.exec(location.search);
         return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
     }
@@ -246,9 +246,9 @@ function getParameterByName(name) {
 
 // 파라미터 객체 형식으로 가져오기
 function get_query(){
-    var url = document.location.href;
-    var qs = url.substring(url.indexOf('?') + 1).split('&');
-    for(var i = 0, result = {}; i < qs.length; i++){
+    let url = document.location.href;
+    let qs = url.substring(url.indexOf('?') + 1).split('&');
+    for(let i = 0, result = {}; i < qs.length; i++){
         qs[i] = qs[i].split('=');
         result[qs[i][0]] = decodeURIComponent(qs[i][1]);
     }

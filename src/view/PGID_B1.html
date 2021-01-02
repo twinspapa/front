@@ -74,7 +74,7 @@
       <!-- End Page Header -->
 
       <!-- Card Section -->
-      <div class="row gx-2 gx-lg-3">
+      <div id="cardSection" class="row gx-2 gx-lg-3">
 
         <!-- Card: Burnout Point -->
         <div class="col-sm-6 col-lg-4 col-xl-20 mb-3 mb-lg-5">
@@ -181,7 +181,7 @@
             <div class="card-header">
               <h2 class="card-title h4" style="line-height:35px;">Basic information</h2>
               <div class="btn-wrap">
-                <button class="basicInfoCancle btn btn-sm btn-secondary">cancle</button>
+                <button class="basicInfoCancle btn btn-sm btn-secondary d-none">cancle</button>
                 <button class="basicInfoEdit btn btn-sm btn-white">Edit</button>
                 <button class="basicInfoSave btn btn-sm btn-white d-none">Save</button>
               </div>
@@ -192,22 +192,22 @@
               <!-- Form -->
               <form id="userInfo" action="" method="post">
                 <!-- Form Group -->
-                <div class="row form-group">
+                <div id="userId" class="row form-group">
                   <label for="userId" class="col-sm-3 col-form-label input-label">아이디</label>
 
                   <div class="col-sm-9">
-                    <input type="text" class="form-control" name="organization" id="userId" placeholder="Your organization" aria-label="Your organization" value="" disabled>
+                    <input type="text" class="form-control" name="organization" placeholder="Your organization" aria-label="Your organization" value="" disabled>
                   </div>
                 </div>
                 <!-- End Form Group -->
 
                 <!-- Form Group -->
-                <div class="row form-group">
+                <div id="userStatus" class="row form-group">
                   <label for="userStatus" class="col-sm-3 col-form-label input-label">회원상태</label>
 
                   <div class="col-sm-9">
                     <!-- Select -->
-                    <select class="js-select2-custom editInput" id="userStatus" disabled
+                    <select class="js-select2-custom editInput" disabled
                     data-hs-select2-options='{
                       "minimumResultsForSearch": "Infinity"
                     }'>
@@ -223,22 +223,22 @@
                 <!-- End Form Group -->
 
                 <!-- Form Group -->
-                <div class="row form-group">
+                <div id="userNickName" class="row form-group">
                   <label for="userNickName" class="col-sm-3 col-form-label input-label">닉네임</label>
 
                   <div class="col-sm-9">
-                    <input type="text" class="form-control editInput" name="userNickName" id="userNickName" placeholder="Your nickName" aria-label="Your nickName" value="" minlength="2" maxlength="11" disabled>
+                    <input type="text" class="form-control editInput" name="userNickName" placeholder="Your nickName" aria-label="Your nickName" value="" minlength="2" maxlength="11" disabled>
                   </div>
                 </div>
                 <!-- End Form Group -->
 
                 <!-- Form Group -->
-                <div class="row form-group">
+                <div id="userLocation" class="row form-group">
                   <label for="userLocation" class="col-sm-3 col-form-label input-label">지역</label>
 
                   <div class="col-sm-9">
                     <!-- Select -->
-                    <select class="js-select2-custom" id="userLocation" disabled
+                    <select class="js-select2-custom editInput" disabled
                             data-hs-select2-options='{
                               "minimumResultsForSearch": "Infinity"
                             }'>
@@ -267,11 +267,11 @@
                 <!-- End Form Group -->
 
                 <!-- Form Group -->
-                <div class="row form-group">
+                <div id="userPhone" class="row form-group">
                   <label for="userPhone" class="col-sm-3 col-form-label input-label">연락처</label>
 
                   <div class="col-sm-9">
-                    <input type="text" class="js-masked-input form-control editInput" name="userPhone" id="userPhone" placeholder="xxx-xxxx-xxxx" aria-label="xxx-xxxx-xxxx" disabled value=""
+                    <input type="text" class="js-masked-input form-control editInput" name="userPhone" placeholder="xxx-xxxx-xxxx" aria-label="xxx-xxxx-xxxx" disabled value=""
                     data-hs-mask-options='{
                       "template": "010-0000-0000"
                     }'>
@@ -280,11 +280,11 @@
                 <!-- End Form Group -->
 
                 <!-- Form Group -->
-                <div class="row form-group">
+                <div id="userBirth" class="row form-group">
                   <label for="userBirth" class="col-sm-3 col-form-label input-label">생년월일</span></label>
 
                   <div class="col-sm-9">
-                    <input type="text" class="js-masked-input form-control editInput" name="userBirth" id="userBirth" placeholder="xxxx/xx/xx" aria-label="xxxx/xx/xx" value="" disabled
+                    <input type="text" class="js-masked-input form-control editInput" name="userBirth" placeholder="xxxx/xx/xx" aria-label="xxxx/xx/xx" value="" disabled
                     data-hs-mask-options='{
                       "template": "0000/00/00"
                     }'>
@@ -293,12 +293,12 @@
                 <!-- End Form Group -->
 
                 <!-- Form Group -->
-                <div class="row form-group">
+                <div id="userGender" class="row form-group">
                   <label for="userGender" class="col-sm-3 col-form-label input-label">성별</label>
 
                   <div class="col-sm-9">
                     <!-- Select -->
-                    <select class="js-select2-custom editInput" id="userGender" disabled
+                    <select class="js-select2-custom editInput" disabled
                     data-hs-select2-options='{
                       "minimumResultsForSearch": "Infinity"
                     }'>
@@ -312,11 +312,11 @@
                 <!-- End Form Group -->
 
                 <!-- Form Group -->
-                <div class="row form-group">
+                <div id="userSignUpDate" class="row form-group">
                   <label for="userSignUpDate" class="col-sm-3 col-form-label input-label">가입일</span></label>
 
                   <div class="col-sm-9">
-                    <input type="text" class="js-masked-input form-control" name="userSignUpDate" id="userSignUpDate" placeholder="xxxx/xx/xx xx:xx:xx" aria-label="xxxx/xx/xx xx:xx:xx" value="" disabled
+                    <input type="text" class="js-masked-input form-control" name="userSignUpDate" placeholder="xxxx/xx/xx xx:xx:xx" aria-label="xxxx/xx/xx xx:xx:xx" value="" disabled
                     data-hs-mask-options='{
                       "template": "0000/00/00 00:00:00"
                     }'>
@@ -325,11 +325,11 @@
                 <!-- End Form Group -->
 
                 <!-- Form Group -->
-                <div class="row form-group">
+                <div id="userSignOutDate" class="row form-group">
                   <label for="userSignOutDate" class="col-sm-3 col-form-label input-label">탈퇴일</span></label>
 
                   <div class="col-sm-9">
-                    <input type="text" class="js-masked-input form-control" name="userSignOutDate" id="userSignOutDate" placeholder="xxxx/xx/xx xx:xx:xx" aria-label="xxxx/xx/xx xx:xx:xx" value="" disabled
+                    <input type="text" class="js-masked-input form-control" name="userSignOutDate" placeholder="xxxx/xx/xx xx:xx:xx" aria-label="xxxx/xx/xx xx:xx:xx" value="" disabled
                     data-hs-mask-options='{
                       "template": "0000/00/00 00:00:00"
                     }'>
@@ -338,11 +338,11 @@
                 <!-- End Form Group -->
 
                 <!-- Form Group -->
-                <div class="row form-group">
+                <div id="userOS" class="row form-group">
                   <label for="userOS" class="col-sm-3 col-form-label input-label">OS</span></label>
 
                   <div class="col-sm-9">
-                    <input type="text" class="js-masked-input form-control" name="userOS" id="userOS" value="" disabled>
+                    <input type="text" class="js-masked-input form-control" name="userOS" value="" disabled>
                   </div>
                 </div>
                 <!-- End Form Group -->
@@ -393,7 +393,7 @@
     let userId = getParameterByName('user-id'),
         userInfo = {
           'id': userId,
-          'status': '정상',
+          'status': '휴면',
           'nickName': '스크리치',
           'location': 11,
           'phone': '01037626202',
@@ -410,19 +410,18 @@
           'imgSrc': '@@autopath/assets/img/160x160/img6.jpg'
         },
         link_1 = new Go('.stretched-link');
-        // submit = new SubmitForm('#userInfo');
 
     function userInfoLoad() {
-      $('#userId').val(userInfo.id);
-      $('#userStatus').val(userInfo.status);
-      $('#userNickName').val(userInfo.nickName);
-      $('#userLocation').val(userInfo.location);
-      $('#userPhone').val(userInfo.phone);
-      $('#userBirth').val(userInfo.birth);
-      $('#userGender').val(userInfo.gender);
-      $('#userSignUpDate').val(userInfo.signUpDate);
-      $('#userSignOutDate').val(userInfo.signOutDate);
-      $('#userOS').val(userInfo.os);
+      $('#userId input').val(userInfo.id);
+      $('#userStatus select').val(userInfo.status).trigger('change');
+      $('#userNickName input').val(userInfo.nickName);
+      $('#userLocation select').val(userInfo.location).trigger('change');
+      $('#userPhone input').val(userInfo.phone);
+      $('#userBirth input').val(userInfo.birth);
+      $('#userGender select').val(userInfo.gender).trigger('change');
+      $('#userSignUpDate input').val(userInfo.signUpDate);
+      $('#userSignOutDate input').val(userInfo.signOutDate);
+      $('#userOS input').val(userInfo.os);
       $('#point1').text(dataWithComma(userInfo.point[0]));
       $('#point2').text(dataWithComma(userInfo.point[1]));
       $('#shopping1').text(dataWithComma(userInfo.shopping[0]));
@@ -444,22 +443,24 @@
 
       // 회원정보 edit 모드 진입
       $('.basicInfoEdit').click(function() {
-        $(this).addClass('d-none');
         $('.editInput').removeAttr('disabled');
+        $('.basicInfoEdit').addClass('d-none');
         $('.basicInfoSave').removeClass('d-none');
         $('.basicInfoCancle').removeClass('d-none');
       });
 
       // 회원정보 edit 모드 종료
-      $('.basicInfoSave', '.basicInfoCancle').on('click', function() {
-        $('.editInput').attr('disabled');
+      $('.basicInfoSave, .basicInfoCancle').on('click', function() {
+        $('.editInput').prop('disabled', 'ture');
         $('.basicInfoEdit').removeClass('d-none');
         $('.basicInfoSave').addClass('d-none');
         $('.basicInfoCancle').addClass('d-none');
 
         if($(this).hasClass('basicInfoSave') === true){
           alert('회원정보가 변경되었습니다.');
-          
+          // 유저 정보 수정 ajax 구현
+        } else {
+          userInfoLoad();
         }
       });
 

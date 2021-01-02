@@ -379,7 +379,15 @@
             { data: 'no' },
             { data: 'status',
               render: function(data) {
-                return '<span class="legend-indicator bg-success"></span>' + data;
+                if (data == '정상') {
+                  return '<span class="legend-indicator bg-success"></span>' + data;
+                } else if (data == '정지') {
+                  return '<span class="legend-indicator bg-secondary"></span>' + data;
+                } else if (data == '휴면') {
+                  return '<span class="legend-indicator bg-warning"></span>' + data;
+                } else if (data == '탈퇴') {
+                  return '<span class="legend-indicator bg-danger"></span>' + data;
+                }
               }
             },
             { data: 'id',
