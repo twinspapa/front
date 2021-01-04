@@ -1,0 +1,69 @@
+<div class="modal fade" id="managerNote" tabindex="-1" role="dialog" aria-labelledby="managerNoteTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <form id="FormManagerNote" class="modal-content">
+      <!-- Header -->
+      <div class="modal-header">
+        <h4 id="managerNoteTitle" class="modal-title">Manager Note</h4>
+
+        <button type="button" class="btn btn-icon btn-sm btn-ghost-secondary" data-dismiss="modal" aria-label="Close">
+          <i class="tio-clear tio-lg"></i>
+        </button>
+      </div>
+      <!-- End Header -->
+
+      <!-- Body -->
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-sm-6 form-group">
+            <label class="input-label" for="adminName">관리자</label>
+            <input type="text" id="adminName" class="form-control" placeholder="John Doe" disabled>
+          </div>
+          <div class="col-sm-6 form-group">
+            <label class="input-label" for="addDate">작성일</label>
+            <input type="text" id="addDate" class="form-control" placeholder="2021/01/01" disabled>
+          </div>
+        </div>
+        <div class="form-group">
+          <textarea id="managerNoteTextarea" class="form-control" placeholder="메모를 입력하세." rows="4"></textarea>
+        </div>
+      </div>
+      <!-- End Body -->
+
+      <!-- Footer -->
+      <div class="modal-footer justify-content-start">
+        <div class="row align-items-center flex-grow-1 mx-n2">
+          <div class="col-sm-3 mb-2 mb-sm-0">
+            <a id="managerNoteDelete" class="btn btn-sm btn-danger text-nowrap" href="javascript:;" data-dismiss="modal" aria-label="Close">삭제</a>
+          </div>
+
+          <div class="col-sm-9 text-sm-right">
+            <a id="managerNoteAdd" class="btn btn-sm btn-primary text-nowrap mr-2" href="javascript:;" data-dismiss="modal" aria-label="Close">등록</a>
+            <a id="managerNoteModify" class="btn btn-sm btn-primary text-nowrap mr-2" href="javascript:;" data-dismiss="modal" aria-label="Close">수정</a>
+            <a class="btn btn-sm btn-secondary text-nowrap btn-cancel" href="javascript:;">초기화</a>
+          </div>
+        </div>
+      </div>
+      <!-- End Footer -->
+    </form>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $('#managerNoteAdd').on('click', function() {
+      alert('등록이 완료되었습니다.');
+    });
+
+    $('#managerNoteModify').on('click', function() {
+      alert('수정이 완료되었습니다.');
+    });
+
+    $('#managerNoteDelete').on('click', function() {
+      alert('삭제가 완료되었습니다.');
+    });
+
+    $('.btn-cancel').on('click', function() {
+      $('#managerNoteTextarea').val('');
+    });
+  });
+</script>
