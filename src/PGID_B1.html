@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="ko">
+@@include("@@autopath/inculde/header-1.html")
+  <title>Scrich 2.0 | Page Title</title>
+@@include("@@autopath/inculde/header-2.html")
+
+  <!-- ========== CONTENTS ========== -->
+  <main id="content" role="main" class="main">
+
+    <!-- Content -->
+    <div class="content container-fluid">
+      <!-- Page Header -->
+      <div class="page-header">
+        <div class="row align-items-end">
+          <div class="col-sm mb-2 mb-sm-0" style="position:relative;">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb breadcrumb-no-gutter">
+                <li class="breadcrumb-item">Users</li>
+                <li class="breadcrumb-item active" aria-current="page">Profile</li>
+              </ol>
+            </nav>
+            <h1 class="page-title">Profile</h1>
+            <!-- Avatar -->
+            <label class="avatar avatar-lg avatar-circle avatar-border-lg avatar-uploader" for="avatarUploader">
+              <img id="avatarImg" class="avatar-img" src="" alt="Image Description">
+
+              <input type="file" class="js-file-attach avatar-uploader-input" id="avatarUploader"
+              data-hs-file-attach-options='{
+                "textTarget": "#avatarImg",
+                "mode": "image",
+                "targetAttr": "src"
+              }'>
+
+              <span class="avatar-uploader-trigger">
+                <i class="tio-edit avatar-uploader-icon shadow-soft"></i>
+              </span>
+            </label>
+            <!-- End Avatar -->
+          </div>
+        </div>
+        <!-- End Row -->
+      </div>
+      <!-- End Page Header -->
+
+      <!-- Card Section -->
+      <div id="cardSection" class="row gx-2 gx-lg-3">
+
+        <!-- Card: Burnout Point -->
+        <div class="col-sm-6 col-lg-4 col-xl-20 mb-3 mb-lg-5">
+          <!-- Card -->
+          <div class="card card-sm card-hover-shadow h-100">
+            <div class="card-body">
+              <div class="d-flex align-items-center">
+                <i class="tio-folder-shared tio-xl text-body mr-2"></i>
+                <div class="">
+                  <h5 class="card-title text-truncate mr-2">포인트</h5>
+                  <p class="card-title text-truncate mr-2"><span id="point1"></span>/<span id="point2"></span></p>
+                </div>
+              </div>
+            </div>
+            <a class="stretched-link" href="#" href-url="PGID_B1A.html"></a>
+          </div>
+          <!-- End Card -->
+        </div>
+        <!-- End Card: Burnout Point -->
+
+        <!-- Card: Burnout Point -->
+        <div class="col-sm-6 col-lg-4 col-xl-20 mb-3 mb-lg-5">
+          <!-- Card -->
+          <div class="card card-sm card-hover-shadow h-100">
+            <div class="card-body">
+              <div class="d-flex align-items-center">
+                <i class="tio-folder-shared tio-xl text-body mr-2"></i>
+                <div class="">
+                  <h5 class="card-title text-truncate mr-2">리치쇼핑</h5>
+                  <p class="card-title text-truncate mr-2"><span id="shopping1"></span>/<span id="shopping2"></span></p>
+                </div>
+              </div>
+            </div>
+            <a class="stretched-link" href="#" href-url="PGID_B1B.html"></a>
+          </div>
+          <!-- End Card -->
+        </div>
+        <!-- End Card: Burnout Point -->
+
+        <!-- Card: Burnout Point -->
+        <div class="col-sm-6 col-lg-4 col-xl-20 mb-3 mb-lg-5">
+          <!-- Card -->
+          <div class="card card-sm card-hover-shadow h-100">
+            <div class="card-body">
+              <div class="d-flex align-items-center">
+                <i class="tio-folder-shared tio-xl text-body mr-2"></i>
+                <div class="">
+                  <h5 class="card-title text-truncate mr-2">캠페인</h5>
+                  <p class="card-title text-truncate mr-2"><span id="campaign1"></span>/<span id="campaign2"></span></p>
+                </div>
+              </div>
+            </div>
+            <a class="stretched-link" href="#" href-url="PGID_B1C.html"></a>
+          </div>
+          <!-- End Card -->
+        </div>
+        <!-- End Card: Burnout Point -->
+
+        <!-- Card: Burnout Point -->
+        <div class="col-sm-6 col-lg-4 col-xl-20 mb-3 mb-lg-5">
+          <!-- Card -->
+          <div class="card card-sm card-hover-shadow h-100">
+            <div class="card-body">
+              <div class="d-flex align-items-center">
+                <i class="tio-folder-shared tio-xl text-body mr-2"></i>
+                <div class="">
+                  <h5 class="card-title text-truncate mr-2">보유상품</h5>
+                  <p class="card-title text-truncate mr-2"><span id="product1"></span>/<span id="product2"></span></p>
+                </div>
+              </div>
+            </div>
+            <a class="stretched-link" href="#" href-url="PGID_B1D.html"></a>
+          </div>
+          <!-- End Card -->
+        </div>
+        <!-- End Card: Burnout Point -->
+
+        <!-- Card: Burnout Point -->
+        <div class="col-sm-6 col-lg-4 col-xl-20 mb-3 mb-lg-5">
+          <!-- Card -->
+          <div class="card card-sm card-hover-shadow h-100">
+            <div class="card-body">
+              <div class="d-flex align-items-center">
+                <i class="tio-folder-shared tio-xl text-body mr-2"></i>
+                <div class="">
+                  <h5 class="card-title text-truncate mr-2">신고</h5>
+                  <p class="card-title text-truncate mr-2"><span id="report1"></span>/<span id="report2"></span></p>
+                </div>
+              </div>
+            </div>
+            <a class="stretched-link" href="#" href-url="PGID_B1E.html"></a>
+          </div>
+          <!-- End Card -->
+        </div>
+        <!-- End Card: Burnout Point -->
+
+      </div>
+      <!-- End Card Section -->
+
+      <div class="row gx2 gx-lg-3">
+        <div class="col-lg-6">
+          <!-- Card -->
+          <div class="card mb-3 mb-lg-5">
+            <div class="card-header">
+              <h2 class="card-title h4" style="line-height:35px;">Basic information</h2>
+              <div class="btn-wrap">
+                <button class="basicInfoCancle btn btn-sm btn-secondary d-none">cancle</button>
+                <button class="basicInfoEdit btn btn-sm btn-white">Edit</button>
+                <button class="basicInfoSave btn btn-sm btn-white d-none">Save</button>
+              </div>
+            </div>
+
+            <!-- Body -->
+            <div class="card-body">
+              <!-- Form -->
+              <form id="userInfo" action="" method="post">
+                <!-- Form Group -->
+                <div id="userId" class="row form-group">
+                  <label for="userId" class="col-sm-3 col-form-label input-label">아이디</label>
+
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control" name="organization" placeholder="Your organization" aria-label="Your organization" value="" disabled>
+                  </div>
+                </div>
+                <!-- End Form Group -->
+
+                <!-- Form Group -->
+                <div id="userStatus" class="row form-group">
+                  <label for="userStatus" class="col-sm-3 col-form-label input-label">회원상태</label>
+
+                  <div class="col-sm-9">
+                    <!-- Select -->
+                    <select class="js-select2-custom editInput" disabled
+                    data-hs-select2-options='{
+                      "minimumResultsForSearch": "Infinity"
+                    }'>
+                      <option value=""></option>
+                      <option value="정상">정상</option>
+                      <option value="정지">정지</option>
+                      <option value="탈퇴">탈퇴</option>
+                      <option value="휴면">휴면</option>
+                    </select>
+                    <!-- End Select -->
+                  </div>
+                </div>
+                <!-- End Form Group -->
+
+                <!-- Form Group -->
+                <div id="userNickName" class="row form-group">
+                  <label for="userNickName" class="col-sm-3 col-form-label input-label">닉네임</label>
+
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control editInput" name="userNickName" placeholder="Your nickName" aria-label="Your nickName" value="" minlength="2" maxlength="11" disabled>
+                  </div>
+                </div>
+                <!-- End Form Group -->
+
+                <!-- Form Group -->
+                <div id="userLocation" class="row form-group">
+                  <label for="userLocation" class="col-sm-3 col-form-label input-label">지역</label>
+
+                  <div class="col-sm-9">
+                    <!-- Select -->
+                    <select class="js-select2-custom editInput" disabled
+                            data-hs-select2-options='{
+                              "minimumResultsForSearch": "Infinity"
+                            }'>
+                      <option value="*">시/도</option>
+                      <option value="36">세종특별자치시</option>
+                      <option value="50">제주특별자치도</option>
+                      <option value="48">경상남도</option>
+                      <option value="47">경상북도</option>
+                      <option value="46">전라남도</option>
+                      <option value="45">전라북도</option>
+                      <option value="44">충청남도</option>
+                      <option value="43">충청북도</option>
+                      <option value="42">강원도</option>
+                      <option value="41">경기도</option>
+                      <option value="31">울산광역시</option>
+                      <option value="30">대전광역시</option>
+                      <option value="29">광주광역시</option>
+                      <option value="28">인천광역시</option>
+                      <option value="27">대구광역시</option>
+                      <option value="26">부산광역시</option>
+                      <option value="11">서울특별시</option>
+                    </select>
+                    <!-- End Select -->
+                  </div>
+                </div>
+                <!-- End Form Group -->
+
+                <!-- Form Group -->
+                <div id="userPhone" class="row form-group">
+                  <label for="userPhone" class="col-sm-3 col-form-label input-label">연락처</label>
+
+                  <div class="col-sm-9">
+                    <input type="text" class="js-masked-input form-control editInput" name="userPhone" placeholder="xxx-xxxx-xxxx" aria-label="xxx-xxxx-xxxx" disabled value=""
+                    data-hs-mask-options='{
+                      "template": "010-0000-0000"
+                    }'>
+                  </div>
+                </div>
+                <!-- End Form Group -->
+
+                <!-- Form Group -->
+                <div id="userBirth" class="row form-group">
+                  <label for="userBirth" class="col-sm-3 col-form-label input-label">생년월일</span></label>
+
+                  <div class="col-sm-9">
+                    <input type="text" class="js-masked-input form-control editInput" name="userBirth" placeholder="xxxx/xx/xx" aria-label="xxxx/xx/xx" value="" disabled
+                    data-hs-mask-options='{
+                      "template": "0000/00/00"
+                    }'>
+                  </div>
+                </div>
+                <!-- End Form Group -->
+
+                <!-- Form Group -->
+                <div id="userGender" class="row form-group">
+                  <label for="userGender" class="col-sm-3 col-form-label input-label">성별</label>
+
+                  <div class="col-sm-9">
+                    <!-- Select -->
+                    <select class="js-select2-custom editInput" disabled
+                    data-hs-select2-options='{
+                      "minimumResultsForSearch": "Infinity"
+                    }'>
+                      <option value=""></option>
+                      <option value="남성">남성</option>
+                      <option value="여성">여성</option>
+                    </select>
+                    <!-- End Select -->
+                  </div>
+                </div>
+                <!-- End Form Group -->
+
+                <!-- Form Group -->
+                <div id="userSignUpDate" class="row form-group">
+                  <label for="userSignUpDate" class="col-sm-3 col-form-label input-label">가입일</span></label>
+
+                  <div class="col-sm-9">
+                    <input type="text" class="js-masked-input form-control" name="userSignUpDate" placeholder="xxxx/xx/xx xx:xx:xx" aria-label="xxxx/xx/xx xx:xx:xx" value="" disabled
+                    data-hs-mask-options='{
+                      "template": "0000/00/00 00:00:00"
+                    }'>
+                  </div>
+                </div>
+                <!-- End Form Group -->
+
+                <!-- Form Group -->
+                <div id="userSignOutDate" class="row form-group">
+                  <label for="userSignOutDate" class="col-sm-3 col-form-label input-label">탈퇴일</span></label>
+
+                  <div class="col-sm-9">
+                    <input type="text" class="js-masked-input form-control" name="userSignOutDate" placeholder="xxxx/xx/xx xx:xx:xx" aria-label="xxxx/xx/xx xx:xx:xx" value="" disabled
+                    data-hs-mask-options='{
+                      "template": "0000/00/00 00:00:00"
+                    }'>
+                  </div>
+                </div>
+                <!-- End Form Group -->
+
+                <!-- Form Group -->
+                <div id="userOS" class="row form-group">
+                  <label for="userOS" class="col-sm-3 col-form-label input-label">OS</span></label>
+
+                  <div class="col-sm-9">
+                    <input type="text" class="js-masked-input form-control" name="userOS" value="" disabled>
+                  </div>
+                </div>
+                <!-- End Form Group -->
+              </form>
+              <!-- End Form -->
+            </div>
+            <!-- End Body -->
+          </div>
+          <!-- End Card -->
+        </div>
+        <div class="col-lg-6">
+          <!-- Card -->
+          <div class="card mb-3 mb-lg-5">
+            <!-- Header -->
+            <div class="card-header">
+              <div class="row justify-content-between align-items-center flex-grow-1">
+                <div class="col-sm-3 mb-3 mb-sm-0">
+                  <h2 class="card-title h4" style="line-height:35px;">Manager note</h2>
+                </div>
+
+                <div class="col-sm-9">
+                  <div class="d-sm-flex justify-content-sm-end align-items-sm-center">
+                    <div class="mr-2">
+                      <form>
+                        <!-- Search -->
+                        <div class="input-group input-group-merge input-group-flush">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <i class="tio-search"></i>
+                            </div>
+                          </div>
+                          <input id="datatableSearch" type="search" class="form-control" placeholder="Search text" aria-label="Search text">
+                        </div>
+                        <!-- End Search -->
+                      </form>
+                    </div>
+
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#managerNote">
+                      메모작성
+                    </button>
+                    <!-- End Button trigger modal -->
+                  </div>
+                </div>
+              </div>
+              <!-- End Row -->
+            </div>
+            <!-- End Header -->
+
+            <!-- Table -->
+            <div class="table-responsive datatable-custom">
+              <table id="datatable" class="table table-lg table-borderless table-thead-bordered table-nowrap table-align-middle card-table table-hover"
+                     data-hs-datatables-options='{
+                       "columnDefs": [{
+                          "targets": 0,
+                          "searchable": false,
+                          "orderable": false
+                        }],
+                       "order": [1],
+                       "info": {
+                         "totalQty": "#datatableWithPaginationInfoTotalQty"
+                       },
+                       "search": "#datatableSearch",
+                       "entries": "#datatableEntries",
+                       "pageLength": 15,
+                       "isResponsive": false,
+                       "isShowPaging": false,
+                       "pagination": "datatablePagination"
+                     }'>
+                <thead class="thead-light">
+                  <tr>
+                    <th>#</th>
+                    <th>내용</th>
+                    <th>관리자</th>
+                    <th>작성일</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+            <!-- End Table -->
+
+            <!-- Footer -->
+            <div class="card-footer">
+              <!-- Pagination -->
+              <div class="row justify-content-center justify-content-sm-between align-items-sm-center">
+                <div class="col-sm mb-2 mb-sm-0">
+                  <div class="d-flex justify-content-center justify-content-sm-start align-items-center">
+                    <span class="mr-2">Showing:</span>
+
+                    <!-- Select -->
+                    <select id="datatableEntries" class="js-select2-custom"
+                            data-hs-select2-options='{
+                                "minimumResultsForSearch": "Infinity",
+                                "customClass": "custom-select custom-select-sm custom-select-borderless",
+                                "dropdownAutoWidth": true,
+                                "width": true
+                            }'>
+                      <option value="10">10</option>
+                      <option value="15" selected>15</option>
+                      <option value="20">20</option>
+                    </select>
+                    <!-- End Select -->
+
+                    <span class="text-secondary mr-2">of</span>
+
+                    <!-- Pagination Quantity -->
+                    <span id="datatableWithPaginationInfoTotalQty"></span>
+                  </div>
+                </div>
+
+                <div class="col-sm-auto">
+                  <div class="d-flex justify-content-center justify-content-sm-end">
+                    <!-- Pagination -->
+                    <nav id="datatablePagination" aria-label="Activity pagination"></nav>
+                  </div>
+                </div>
+              </div>
+              <!-- End Pagination -->
+            </div>
+            <!-- End Footer -->
+          </div>
+          <!-- End Card -->
+        </div>
+      </div>
+
+    </div>
+    <!-- End Content -->
+  </main>
+  <!-- ========== END CONTENTS ========== -->
+
+  @@include("@@autopath/inculde/global.html")
+  @@include("@@autopath/inculde/vendor.html")
+  @@include("@@autopath/inculde/theme.html")
+  @@include("@@autopath/inculde/common-plugin-script.html"
+
+  <script>
+    let userId = getParameterByName('user-id'),
+        userInfo = {
+          'id': userId,
+          'status': '휴면',
+          'nickName': '스크리치',
+          'location': 11,
+          'phone': '01037626202',
+          'birth': '2020/11/12',
+          'gender': '남성',
+          'signUpDate': '2020/11/12 23:59:59',
+          'signOutDate': '2020/11/12 23:59:59',
+          'os': 'aos 1.10.1',
+          'point': [50000, 78000],
+          'shopping': [50000, 78000],
+          'campaign': [50000, 78000],
+          'product': [50000, 78000],
+          'report': [50000, 78000],
+          'imgSrc': '@@autopath/assets/img/160x160/img6.jpg'
+        },
+        link_1 = new Go('.stretched-link');
+
+    function userInfoLoad() {
+      $('#userId input').val(userInfo.id);
+      $('#userStatus select').val(userInfo.status).trigger('change');
+      $('#userNickName input').val(userInfo.nickName);
+      $('#userLocation select').val(userInfo.location).trigger('change');
+      $('#userPhone input').val(userInfo.phone);
+      $('#userBirth input').val(userInfo.birth);
+      $('#userGender select').val(userInfo.gender).trigger('change');
+      $('#userSignUpDate input').val(userInfo.signUpDate);
+      $('#userSignOutDate input').val(userInfo.signOutDate);
+      $('#userOS input').val(userInfo.os);
+      $('#point1').text(dataWithComma(userInfo.point[0]));
+      $('#point2').text(dataWithComma(userInfo.point[1]));
+      $('#shopping1').text(dataWithComma(userInfo.shopping[0]));
+      $('#shopping2').text(dataWithComma(userInfo.shopping[1]));
+      $('#campaign1').text(dataWithComma(userInfo.campaign[0]));
+      $('#campaign2').text(dataWithComma(userInfo.campaign[1]));
+      $('#product1').text(dataWithComma(userInfo.product[0]));
+      $('#product2').text(dataWithComma(userInfo.product[1]));
+      $('#report1').text(dataWithComma(userInfo.report[0]));
+      $('#report2').text(dataWithComma(userInfo.report[1]));
+      $('#avatarImg').attr('src', userInfo.imgSrc);
+    }
+
+
+    let managerNoteList = [
+      {
+        "no" : "",
+        "contents" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "adminName" : "김진혁",
+        "addDate" : "2020/11/02"
+      },
+      {
+        "no" : "",
+        "contents" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "adminName" : "김진혁",
+        "addDate" : "2020/11/02"
+      },
+      {
+        "no" : "",
+        "contents" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "adminName" : "김진혁",
+        "addDate" : "2020/11/02"
+      },
+      {
+        "no" : "",
+        "contents" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "adminName" : "김진혁",
+        "addDate" : "2020/11/02"
+      },
+      {
+        "no" : "",
+        "contents" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "adminName" : "김진혁",
+        "addDate" : "2020/11/02"
+      }
+    ];
+
+    $(document).on('ready', function () {
+      // user list table
+      let datatable = $.HSCore.components.HSDatatables.init($('#datatable'), {
+          // ajax: url input,
+          data: managerNoteList,
+          columns: [
+            { data: 'no' },
+            { data: 'contents',
+              render: function(data) {
+                return '<a class="text-primary" href="javascript:;" data-toggle="modal" data-target="#managerNote">' + data;
+              }
+            },
+            { data: 'adminName' },
+            { data: 'addDate' }
+          ]
+      });
+
+      // initialization of Input Masks
+      $('.js-masked-input').each(function () {
+        $.HSCore.components.HSMask.init($(this));
+      });
+
+      // 회원정보 edit 모드 진입
+      $('.basicInfoEdit').click(function() {
+        $('.editInput').removeAttr('disabled');
+        $('.basicInfoEdit').addClass('d-none');
+        $('.basicInfoSave').removeClass('d-none');
+        $('.basicInfoCancle').removeClass('d-none');
+      });
+
+      // 회원정보 edit 모드 종료
+      $('.basicInfoSave, .basicInfoCancle').on('click', function() {
+        $('.editInput').prop('disabled', 'ture');
+        $('.basicInfoEdit').removeClass('d-none');
+        $('.basicInfoSave').addClass('d-none');
+        $('.basicInfoCancle').addClass('d-none');
+
+        if($(this).hasClass('basicInfoSave') === true){
+          alert('회원정보가 변경되었습니다.');
+          // 유저 정보 수정 ajax 구현
+        } else {
+          userInfoLoad();
+        }
+      });
+
+      userInfoLoad();
+
+      $('.stretched-link').attr('user-id', userId);
+      link_1.link('href-url','user-id');
+    });
+  </script>
+
+  <!-- ========== SCRIPT ========== -->
+  <script type="text/javascript">
+    // input script
+  </script>
+  <!-- ========== END SCRIPT ========== -->
+
+  <!-- ========== MODAL ========== -->
+  @@include("@@autopath/modal/manager-note.html")
+  <!-- ========== END MODAL ========== -->
+
+@@include("@@autopath/inculde/footer.html")
+</html>

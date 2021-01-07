@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Title -->
+  <title>Scrich 2.0 | 메인배너</title>
+
+
+
+
+  
+
+
+  @@include("@@autopath/inculde/head2.html")
+  
+  
+  
+  
+
+
+
+
+</head>
+
+<body class="has-navbar-vertical-aside navbar-vertical-aside-show-xl">
+  <!-- ========== HEADER ========== -->
+  @@include("@@autopath/inculde/header.html")
+  <!-- ========== END HEADER ========== -->
+
+  <!-- ========== ASIDE : NAVBAR ========== -->
+  @@include("@@autopath/inculde/navbar.html")
+  <!-- ========== END ASIDE : NAVBAR ========== -->
+
+  <!-- ========== CONTENTS ========== -->
+  <main id="content" role="main" class="main">
+    <!-- Content -->
+    <div class="content @@layoutBuilder.header.containerMode">
+
+      <!-- Page Header -->
+      <div class="page-header">
+        <div class="row align-items-end">
+          <div class="col-sm mb-2 mb-sm-0">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb breadcrumb-no-gutter">
+                <li class="breadcrumb-item">콘텐츠</li>
+                <li class="breadcrumb-item active" aria-current="page">메인배너</li>
+              </ol>
+            </nav>
+            <h1 class="page-title">메인배너</h1>
+          </div>
+        </div>
+        <!-- End Row -->
+
+        <!-- Nav -->
+        @@include("@@autopath/inculde/nav-menu-J-contents.html")
+        <!-- End Nav -->
+      </div>
+      <!-- End Page Header -->
+
+      <!-- Card -->
+
+      <!-- End Card -->
+    </div>
+    <!-- End Content -->
+  </main>
+  <!-- ========== END CONTENTS ========== -->
+
+  @@include("@@autopath/inculde/global.html")
+
+
+  
+
+  <!-- JS Implementing Plugins -->
+  <!-- bundlejs:vendor [@@autopath] -->
+  @@include("@@autopath/inculde/vendor.html")
+  <script src="@@autopath/node_modules/daterangepicker/moment.min.js"></script>
+  <script src="@@autopath/node_modules/daterangepicker/daterangepicker.js"></script>
+
+
+  <!-- JS Front -->
+  <!-- bundlejs:theme [@@autopath] -->
+  @@include("@@autopath/inculde/theme.html")
+  <script src="@@autopath/assets/js/hs.daterangepicker.js"></script>
+
+
+  <script>
+  $(document).on('ready', function () {
+    // initialization of daterangepicker
+    var startDate = null,
+        endDate = null;
+
+    $('.js-daterangepicker').each(function () {
+      var d = $.HSCore.components.HSDaterangepicker.init($(this));
+    });
+
+    $('.js-daterangepicker').on('apply.daterangepicker', function(ev, picker) {
+      $(this).val(picker.startDate.format('YYYY/MM/DD') + ' - ' + picker.endDate.format('YYYY/MM/DD'));
+
+      startDate = moment(picker.startDate.format('YYYY/MM/DD'));
+      endDate = moment(picker.endDate.format('YYYY/MM/DD'));
+
+      datatable.draw();
+    });
+
+    $('.js-daterangepicker').on('cancel.daterangepicker', function(ev, picker) {
+      $(this).val('');
+
+      startDate = null;
+      endDate = null;
+
+      datatable.draw();
+    });
+
+    urlCompareAddClass($('.page-header-tabs .nav-link'), 'active');
+  });
+  </script>
+</body>
+
+</html>

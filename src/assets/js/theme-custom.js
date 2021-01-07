@@ -59,13 +59,13 @@ class SubmitForm{
           if (data['result'] == 'fail') {
             $('#errMsg').removeClass('hide').text(data['errMsg']);
           } else if (data['result'] == 'sucess'){
-            location.href = 'PGID_A.html';
+            location.href = 'index.html';
           }
         },
         error: function(xhr, status, error) {
           let error_confirm = confirm('데이터 전송 오류 입니다. 확인을 누르시면 페이지가 새로고침 됩니다.');
           if (error_confirm == true) {
-            location.href = 'PGID_A.html';
+            location.href = 'index.html';
           }
         }
       });
@@ -260,3 +260,26 @@ $(document).ready(function() {
   urlCompareAddClass($('.navbar-vertical-content .nav-item a'), 'active');
   commonVendorInit();
 });
+
+
+function downloadTable() {
+  $('#export-copy').click(function() {
+    datatable.button('.buttons-copy').trigger()
+  });
+
+  $('#export-excel').click(function() {
+    datatable.button('.buttons-excel').trigger()
+  });
+
+  $('#export-csv').click(function() {
+    datatable.button('.buttons-csv').trigger()
+  });
+
+  $('#export-pdf').click(function() {
+    datatable.button('.buttons-pdf').trigger()
+  });
+
+  $('#export-print').click(function() {
+    datatable.button('.buttons-print').trigger()
+  });
+}

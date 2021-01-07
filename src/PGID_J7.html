@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Title -->
+  <title>Scrich 2.0 | 리치박스C</title>
+
+
+
+
+  
+
+
+  @@include("@@autopath/inculde/head2.html")
+  
+  
+  
+  
+
+
+
+
+</head>
+
+<body class="has-navbar-vertical-aside navbar-vertical-aside-show-xl">
+  <!-- ========== HEADER ========== -->
+  @@include("@@autopath/inculde/header.html")
+  <!-- ========== END HEADER ========== -->
+
+  <!-- ========== ASIDE : NAVBAR ========== -->
+  @@include("@@autopath/inculde/navbar.html")
+  <!-- ========== END ASIDE : NAVBAR ========== -->
+
+  <!-- ========== CONTENTS ========== -->
+  <main id="content" role="main" class="main">
+    <!-- Content -->
+    <div class="content @@layoutBuilder.header.containerMode">
+
+      <!-- Page Header -->
+      <div class="page-header">
+        <div class="row align-items-end">
+          <div class="col-sm mb-2 mb-sm-0">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb breadcrumb-no-gutter">
+                <li class="breadcrumb-item">콘텐츠</li>
+                <li class="breadcrumb-item active" aria-current="page">리치박스C</li>
+              </ol>
+            </nav>
+            <h1 class="page-title">리치박스C</h1>
+          </div>
+        </div>
+        <!-- End Row -->
+
+        <!-- Nav -->
+        @@include("@@autopath/inculde/nav-menu-J-contents.html")
+        <!-- End Nav -->
+      </div>
+      <!-- End Page Header -->
+
+      <!-- Card -->
+      <div class="card">
+        <!-- Header -->
+        <div class="card-header">
+          <div class="row justify-content-between align-items-center flex-grow-1">
+            <div class="col-sm-3 mb-3 mb-sm-0">
+              <form>
+                <!-- Search -->
+                <div class="input-group input-group-merge input-group-flush">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <i class="tio-search"></i>
+                    </div>
+                  </div>
+                  <input id="datatableSearch" type="search" class="form-control" placeholder="Search users" aria-label="Search users">
+                </div>
+                <!-- End Search -->
+              </form>
+            </div>
+
+            <div class="col-sm-6">
+              <div class="d-sm-flex justify-content-sm-end align-items-sm-center">
+                <!-- Unfold -->
+                <div class="hs-unfold mr-2">
+                  <a class="js-hs-unfold-invoker btn btn-sm btn-white dropdown-toggle" href="javascript:;"
+                     data-hs-unfold-options='{
+                       "target": "#usersExportDropdown",
+                       "type": "css-animation"
+                     }'>
+                    <i class="tio-download-to mr-1"></i> Export
+                  </a>
+
+                  <div id="usersExportDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-sm-right">
+                    <span class="dropdown-header">Options</span>
+                    <a id="export-copy" class="dropdown-item" href="javascript:;">
+                      <img class="avatar avatar-xss avatar-4by3 mr-2" src="@@autopath/assets/svg/illustrations/copy.svg" alt="Image Description">
+                      Copy
+                    </a>
+                    <a id="export-print" class="dropdown-item" href="javascript:;">
+                      <img class="avatar avatar-xss avatar-4by3 mr-2" src="@@autopath/assets/svg/illustrations/print.svg" alt="Image Description">
+                      Print
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <span class="dropdown-header">Download options</span>
+                    <a id="export-excel" class="dropdown-item" href="javascript:;">
+                      <img class="avatar avatar-xss avatar-4by3 mr-2" src="@@autopath/assets/svg/brands/excel.svg" alt="Image Description">
+                      Excel
+                    </a>
+                    <a id="export-csv" class="dropdown-item" href="javascript:;">
+                      <img class="avatar avatar-xss avatar-4by3 mr-2" src="@@autopath/assets/svg/components/placeholder-csv-format.svg" alt="Image Description">
+                      .CSV
+                    </a>
+                    <a id="export-pdf" class="dropdown-item" href="javascript:;">
+                      <img class="avatar avatar-xss avatar-4by3 mr-2" src="@@autopath/assets/svg/brands/pdf.svg" alt="Image Description">
+                      PDF
+                    </a>
+                  </div>
+                </div>
+                <!-- End Unfold -->
+
+                <!-- Unfold -->
+                <div class="hs-unfold">
+                  <a class="js-hs-unfold-invoker btn btn-sm btn-white" href="javascript:;"
+                     data-hs-unfold-options='{
+                       "target": "#usersFilterDropdown",
+                       "type": "css-animation",
+                       "smartPositionOff": true
+                     }'>
+                    <i class="tio-filter-list mr-1"></i> Filter <span class="badge badge-soft-dark rounded-circle ml-1">2</span>
+                  </a>
+
+                  <div id="usersFilterDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-sm-right dropdown-card card-dropdown-filter-centered" style="min-width: 22rem;">
+                    <!-- Card -->
+                    <div class="card">
+                      <div class="card-header">
+                        <h5 class="card-header-title">Filter users</h5>
+
+                        <!-- Toggle Button -->
+                        <a class="js-hs-unfold-invoker btn btn-icon btn-xs btn-ghost-secondary ml-2" href="javascript:;"
+                           data-hs-unfold-options='{
+                            "target": "#usersFilterDropdown",
+                            "type": "css-animation",
+                            "smartPositionOff": true
+                           }'>
+                          <i class="tio-clear tio-lg"></i>
+                        </a>
+                        <!-- End Toggle Button -->
+                      </div>
+
+                      <div class="card-body">
+                        <form>
+                          <div class="form-row">
+                            <div class="col-sm form-group">
+                              <small class="text-cap mb-2">Status</small>
+
+                              <!-- Select -->
+                              <select class="js-select2-custom js-datatable-filter"
+                                      data-target-column-index="0"
+                                      data-hs-select2-options='{
+                                        "minimumResultsForSearch": "Infinity"
+                                      }'>
+                                <option value="">Any status</option>
+                                <option value="Active" data-option-template='<span class="legend-indicator bg-success"></span>정상'>정상</option>
+                                <option value="Stop" data-option-template='<span class="legend-indicator bg-warning"></span>정지'>정지</option>
+                                <option value="Secession" data-option-template='<span class="legend-indicator bg-danger"></span>탈퇴'>탈퇴</option>
+                                <option value="Dormancy" data-option-template='<span class="legend-indicator bg-danger"></span>휴면'>휴면</option>
+                              </select>
+                              <!-- End Select -->
+                            </div>
+                          </div>
+                          <!-- End Row -->
+
+                          <div class="form-row">
+                              <div class="col-sm form-group">
+                                  <small class="text-cap mb-2">Join Date</small>
+
+                                  <!-- Daterangepicker -->
+                                  <div class="input-group input-group-merge">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text">
+                                        <i class="tio-date-range"></i>
+                                      </span>
+                                    </div>
+                                    <input type="text" class="js-daterangepicker js-datatable-filter form-control daterangepicker-custom-input"
+                                        placeholder="Select dates"
+                                       data-hs-daterangepicker-options='{
+                                         "autoUpdateInput": false,
+                                         "locale": {
+                                           "cancelLabel": "Clear"
+                                         }
+                                       }'
+                                     >
+                                  </div>
+                                  <!-- End Daterangepicker -->
+                              </div>
+                          </div>
+
+                          <a class="js-hs-unfold-invoker btn btn-block btn-primary" href="javascript:;"
+                             data-hs-unfold-options='{
+                              "target": "#usersFilterDropdown",
+                              "type": "css-animation",
+                              "smartPositionOff": true
+                             }'>Apply</a>
+                        </form>
+                      </div>
+                    </div>
+                    <!-- End Card -->
+                  </div>
+                </div>
+                <!-- End Unfold -->
+              </div>
+            </div>
+          </div>
+          <!-- End Row -->
+        </div>
+        <!-- End Header -->
+
+        <!-- Table -->
+        <div class="table-responsive datatable-custom">
+          <table id="datatable" class="table table-lg table-borderless table-thead-bordered table-nowrap table-align-middle card-table table-hover"
+                 data-hs-datatables-options='{
+                   "columnDefs": [{
+                      "targets": [0, 6],
+                      "orderable": false
+                    }],
+                   "order": [],
+                   "info": {
+                     "totalQty": "#datatableWithPaginationInfoTotalQty"
+                   },
+                   "search": "#datatableSearch",
+                   "entries": "#datatableEntries",
+                   "pageLength": 15,
+                   "isResponsive": false,
+                   "isShowPaging": false,
+                   "pagination": "datatablePagination"
+                 }'>
+            <thead class="thead-light">
+              <tr>
+                <th>Status</th>
+                <th>User ID</th>
+                <th>Nick Name</th>
+                <th>Gender</th>
+                <th>Location</th>
+                <th>Phone</th>
+                <th>Join Date</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  <span class="legend-indicator bg-success"></span>Active
+                </td>
+                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td>Scrich</td>
+                <td>남</td>
+                <td>서울</td>
+                <td>010-3762-6202</td>
+                <td>2020/11/02</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="legend-indicator bg-success"></span>Active
+                </td>
+                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td>Scrich</td>
+                <td>남</td>
+                <td>서울</td>
+                <td>010-3762-6202</td>
+                <td>2020/11/02</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="legend-indicator bg-success"></span>Active
+                </td>
+                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td>Scrich</td>
+                <td>남</td>
+                <td>서울</td>
+                <td>010-3762-6202</td>
+                <td>2020/11/02</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="legend-indicator bg-success"></span>Active
+                </td>
+                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td>Scrich</td>
+                <td>남</td>
+                <td>서울</td>
+                <td>010-3762-6202</td>
+                <td>2020/11/02</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="legend-indicator bg-success"></span>Active
+                </td>
+                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td>Scrich</td>
+                <td>남</td>
+                <td>서울</td>
+                <td>010-3762-6202</td>
+                <td>2020/11/02</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="legend-indicator bg-success"></span>Active
+                </td>
+                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td>Scrich</td>
+                <td>남</td>
+                <td>서울</td>
+                <td>010-3762-6202</td>
+                <td>2020/11/02</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="legend-indicator bg-success"></span>Active
+                </td>
+                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td>Scrich</td>
+                <td>남</td>
+                <td>서울</td>
+                <td>010-3762-6202</td>
+                <td>2020/11/02</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="legend-indicator bg-success"></span>Active
+                </td>
+                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td>Scrich</td>
+                <td>남</td>
+                <td>서울</td>
+                <td>010-3762-6202</td>
+                <td>2020/11/02</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="legend-indicator bg-success"></span>Active
+                </td>
+                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td>Scrich</td>
+                <td>남</td>
+                <td>서울</td>
+                <td>010-3762-6202</td>
+                <td>2020/11/02</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="legend-indicator bg-success"></span>Active
+                </td>
+                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td>Scrich</td>
+                <td>남</td>
+                <td>서울</td>
+                <td>010-3762-6202</td>
+                <td>2020/11/02</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="legend-indicator bg-success"></span>Active
+                </td>
+                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td>Scrich</td>
+                <td>남</td>
+                <td>서울</td>
+                <td>010-3762-6202</td>
+                <td>2020/11/02</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="legend-indicator bg-success"></span>Active
+                </td>
+                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td>Scrich</td>
+                <td>남</td>
+                <td>서울</td>
+                <td>010-3762-6202</td>
+                <td>2020/11/02</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="legend-indicator bg-success"></span>Active
+                </td>
+                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td>Scrich</td>
+                <td>남</td>
+                <td>서울</td>
+                <td>010-3762-6202</td>
+                <td>2020/11/02</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="legend-indicator bg-success"></span>Active
+                </td>
+                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td>Scrich</td>
+                <td>남</td>
+                <td>서울</td>
+                <td>010-3762-6202</td>
+                <td>2020/11/02</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="legend-indicator bg-success"></span>Active
+                </td>
+                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td>Scrich</td>
+                <td>남</td>
+                <td>서울</td>
+                <td>010-3762-6202</td>
+                <td>2020/11/02</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="legend-indicator bg-success"></span>Active
+                </td>
+                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td>Scrich</td>
+                <td>남</td>
+                <td>서울</td>
+                <td>010-3762-6202</td>
+                <td>2020/11/02</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="legend-indicator bg-success"></span>Active
+                </td>
+                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td>Scrich</td>
+                <td>남</td>
+                <td>서울</td>
+                <td>010-3762-6202</td>
+                <td>2020/11/02</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="legend-indicator bg-success"></span>Active
+                </td>
+                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td>Scrich</td>
+                <td>남</td>
+                <td>서울</td>
+                <td>010-3762-6202</td>
+                <td>2020/11/02</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="legend-indicator bg-success"></span>Active
+                </td>
+                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td>Scrich</td>
+                <td>남</td>
+                <td>서울</td>
+                <td>010-3762-6202</td>
+                <td>2020/11/02</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="legend-indicator bg-success"></span>Active
+                </td>
+                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td>Scrich</td>
+                <td>남</td>
+                <td>서울</td>
+                <td>010-3762-6202</td>
+                <td>2020/11/02</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="legend-indicator bg-success"></span>Active
+                </td>
+                <td class="user_id" user-id="scrich@scrich.com"><a href="#none" class="text-primary">scrich@scrich.com</a></td>
+                <td>Scrich</td>
+                <td>남</td>
+                <td>서울</td>
+                <td>010-3762-6202</td>
+                <td>2020/11/02</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- End Table -->
+
+        <!-- Footer -->
+        <div class="card-footer">
+          <!-- Pagination -->
+          <div class="row justify-content-center justify-content-sm-between align-items-sm-center">
+            <div class="col-sm mb-2 mb-sm-0">
+              <div class="d-flex justify-content-center justify-content-sm-start align-items-center">
+                <span class="mr-2">Showing:</span>
+
+                <!-- Select -->
+                <select id="datatableEntries" class="js-select2-custom"
+                        data-hs-select2-options='{
+                            "minimumResultsForSearch": "Infinity",
+                            "customClass": "custom-select custom-select-sm custom-select-borderless",
+                            "dropdownAutoWidth": true,
+                            "width": true
+                        }'>
+                  <option value="10">10</option>
+                  <option value="15" selected>15</option>
+                  <option value="20">20</option>
+                </select>
+                <!-- End Select -->
+
+                <span class="text-secondary mr-2">of</span>
+
+                <!-- Pagination Quantity -->
+                <span id="datatableWithPaginationInfoTotalQty"></span>
+              </div>
+            </div>
+
+            <div class="col-sm-auto">
+              <div class="d-flex justify-content-center justify-content-sm-end">
+                <!-- Pagination -->
+                <nav id="datatablePagination" aria-label="Activity pagination"></nav>
+              </div>
+            </div>
+          </div>
+          <!-- End Pagination -->
+        </div>
+        <!-- End Footer -->
+      </div>
+      <!-- End Card -->
+    </div>
+    <!-- End Content -->
+  </main>
+  <!-- ========== END CONTENTS ========== -->
+
+  @@include("@@autopath/inculde/global.html")
+
+
+  
+
+  <!-- JS Implementing Plugins -->
+  <!-- bundlejs:vendor [@@autopath] -->
+  @@include("@@autopath/inculde/vendor.html")
+  <script src="@@autopath/node_modules/daterangepicker/moment.min.js"></script>
+  <script src="@@autopath/node_modules/daterangepicker/daterangepicker.js"></script>
+  <script src="@@autopath/node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
+  <script src="@@autopath/assets/vendor/datatables.net.extensions/select/select.min.js"></script>
+  <script src="@@autopath/node_modules/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+  <script src="@@autopath/node_modules/datatables.net-buttons/js/buttons.flash.min.js"></script>
+  <script src="@@autopath/node_modules/jszip/dist/jszip.min.js"></script>
+  <script src="@@autopath/node_modules/pdfmake/build/pdfmake.min.js"></script>
+  <script src="@@autopath/node_modules/pdfmake/build/vfs_fonts.js"></script>
+  <script src="@@autopath/node_modules/datatables.net-buttons/js/buttons.html5.min.js"></script>
+  <script src="@@autopath/node_modules/datatables.net-buttons/js/buttons.print.min.js"></script>
+  <script src="@@autopath/node_modules/datatables.net-buttons/js/buttons.colVis.min.js"></script>
+
+
+  <!-- JS Front -->
+  <!-- bundlejs:theme [@@autopath] -->
+  @@include("@@autopath/inculde/theme.html")
+  <script src="@@autopath/assets/js/hs.daterangepicker.js"></script>
+  <script src="@@autopath/assets/js/hs.datatables.js"></script>
+
+
+  <script>
+  $(document).on('ready', function () {
+    // initialization of datatables
+    var datatable = $.HSCore.components.HSDatatables.init($('#datatable'), {
+      dom: 'Bfrtip',
+      buttons: [
+        {
+          extend: 'copy',
+          className: 'd-none'
+        },
+        {
+          extend: 'excel',
+          className: 'd-none'
+        },
+        {
+          extend: 'csv',
+          className: 'd-none'
+        },
+        {
+          extend: 'pdf',
+          className: 'd-none'
+        },
+        {
+          extend: 'print',
+          className: 'd-none'
+        },
+      ]
+    });
+
+    $('#export-copy').click(function() {
+      datatable.button('.buttons-copy').trigger()
+    });
+
+    $('#export-excel').click(function() {
+      datatable.button('.buttons-excel').trigger()
+    });
+
+    $('#export-csv').click(function() {
+      datatable.button('.buttons-csv').trigger()
+    });
+
+    $('#export-pdf').click(function() {
+      datatable.button('.buttons-pdf').trigger()
+    });
+
+    $('#export-print').click(function() {
+      datatable.button('.buttons-print').trigger()
+    });
+
+    $('.js-datatable-filter').on('change', function() {
+      var $this = $(this),
+        elVal = $this.val(),
+        targetColumnIndex = $this.data('target-column-index');
+
+      datatable.column(targetColumnIndex).search(elVal).draw();
+    });
+
+    $('#datatableSearch').on('mouseup', function (e) {
+      var $input = $(this),
+        oldValue = $input.val();
+
+      if (oldValue == "") return;
+
+      setTimeout(function(){
+        var newValue = $input.val();
+
+        if (newValue == ""){
+          // Gotcha
+          datatable.search('').draw();
+        }
+      }, 1);
+    });
+
+    // initialization of daterangepicker
+    var startDate = null,
+        endDate = null;
+
+    $('.js-daterangepicker').each(function () {
+      var d = $.HSCore.components.HSDaterangepicker.init($(this));
+    });
+
+    $('.js-daterangepicker').on('apply.daterangepicker', function(ev, picker) {
+      $(this).val(picker.startDate.format('YYYY/MM/DD') + ' - ' + picker.endDate.format('YYYY/MM/DD'));
+
+      startDate = moment(picker.startDate.format('YYYY/MM/DD'));
+      endDate = moment(picker.endDate.format('YYYY/MM/DD'));
+
+      datatable.draw();
+    });
+
+    $('.js-daterangepicker').on('cancel.daterangepicker', function(ev, picker) {
+      $(this).val('');
+
+      startDate = null;
+      endDate = null;
+
+      datatable.draw();
+    });
+
+    $.fn.dataTable.ext.search.push(
+      function (settings, data, dataIndex) {
+
+        if (!startDate || !endDate) return true;
+
+        let compareDate = moment(moment(data[6]).format('YYYY/MM/DD'));
+
+        return compareDate.isBetween(startDate -1 , endDate + 1 );
+      }
+    );
+
+    urlCompareAddClass($('.page-header-tabs .nav-link'), 'active');
+  });
+  </script>
+</body>
+
+</html>
