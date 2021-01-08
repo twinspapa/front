@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 @@include("@@autopath/inculde/header-1.html")
-  <title>Scrich 2.0 | Page Title</title>
+  <title>Scrich 2.0 | 회원정보</title>
 @@include("@@autopath/inculde/header-2.html")
 
   <!-- ========== CONTENTS ========== -->
@@ -13,29 +13,7 @@
       <div class="page-header">
         <div class="row align-items-end">
           <div class="col-sm mb-2 mb-sm-0" style="position:relative;">
-            <nav aria-label="breadcrumb">
-              <ol class="breadcrumb breadcrumb-no-gutter">
-                <li class="breadcrumb-item">Users</li>
-                <li class="breadcrumb-item active" aria-current="page">Profile</li>
-              </ol>
-            </nav>
-            <h1 class="page-title">Profile</h1>
-            <!-- Avatar -->
-            <label class="avatar avatar-lg avatar-circle avatar-border-lg avatar-uploader" for="avatarUploader">
-              <img id="avatarImg" class="avatar-img" src="" alt="Image Description">
-
-              <input type="file" class="js-file-attach avatar-uploader-input" id="avatarUploader"
-              data-hs-file-attach-options='{
-                "textTarget": "#avatarImg",
-                "mode": "image",
-                "targetAttr": "src"
-              }'>
-
-              <span class="avatar-uploader-trigger">
-                <i class="tio-edit avatar-uploader-icon shadow-soft"></i>
-              </span>
-            </label>
-            <!-- End Avatar -->
+            <h1 class="page-title"></h1>
           </div>
         </div>
         <!-- End Row -->
@@ -160,6 +138,34 @@
             <div class="card-body">
               <!-- Form -->
               <form id="userInfo" action="" method="post">
+
+                <!-- Form Group -->
+                <div id="userAvatar" class="row form-group">
+                  <span class="col-sm-3 col-form-label input-label">아바타</span>
+                  <div class="col-sm-9">
+                    <!-- Avatar -->
+                    <label class="avatar avatar-lg avatar-circle avatar-border-lg" for="avatarUploader">
+                      <img id="avatarImg" class="avatar-img" src="" alt="Image Description">
+
+                      <input type="file" class="js-file-attach avatar-uploader-input editInput" disabled id="avatarUploader"
+                      data-hs-file-attach-options='{
+                        "textTarget": "#avatarImg",
+                        "mode": "image",
+                        "targetAttr": "src",
+                        "resetTarget": ".js-file-attach-reset-img",
+                        "resetImg": "@@autopath/assets/img/160x160/img1.jpg",
+                        "allowTypes": [".png", ".jpeg", ".jpg"]
+                      }'>
+
+                      <span class="avatar-uploader-trigger">
+                        <i class="tio-edit avatar-uploader-icon shadow-soft"></i>
+                      </span>
+                    </label>
+                    <!-- End Avatar -->
+                  </div>
+                </div>
+                <!-- End Form Group -->
+
                 <!-- Form Group -->
                 <div id="userId" class="row form-group">
                   <label for="userId" class="col-sm-3 col-form-label input-label">아이디</label>
@@ -573,7 +579,7 @@
       });
 
       userInfoLoad();
-
+      $('.page-title').text(userId  + ' 님의 회원정보');
       $('.stretched-link').attr('user-id', userId);
       link_1.link('href-url','user-id');
     });

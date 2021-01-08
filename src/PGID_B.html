@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 @@include("@@autopath/inculde/header-1.html")
-  <title>Scrich 2.0 | Page Title</title>
+  <title>Scrich 2.0 | 회원</title>
 @@include("@@autopath/inculde/header-2.html")
 
   <!-- ========== CONTENTS ========== -->
@@ -13,12 +13,6 @@
       <div class="page-header">
         <div class="row align-items-end">
           <div class="col-sm mb-2 mb-sm-0">
-            <nav aria-label="breadcrumb">
-              <ol class="breadcrumb breadcrumb-no-gutter">
-                <li class="breadcrumb-item" aria-current="page">회원</li>
-                <li class="breadcrumb-item active" aria-current="page">회원</li>
-              </ol>
-            </nav>
             <h1 class="page-title">회원</h1>
           </div>
         </div>
@@ -271,9 +265,8 @@
   @@include("@@autopath/inculde/common-plugin-script.html")
 
   <script>
-    let link_1 = new Go('.user_id');
-
-    let userList = [
+    let link_1 = new Go('.user_id'),
+        userList = [
       {
         "no" : "",
         "status" : "정상",
