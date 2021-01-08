@@ -319,16 +319,7 @@
     $(document).on('ready', function () {
       // user list table
       let datatable = $.HSCore.components.HSDatatables.init($('#datatable'), {
-          // processing: true,
-          // serverSide: true,
-          // ajax: {
-          //   url: 'url',
-          //   type: 'POST',
-          //   data: function (d) {
-          //     d.mykey = 'myValue';
-          //     d.custom = $('#myInput').val();
-          //   }
-          // },
+          // ajax: url input,
           data: userList,
           columns: [
             { data: 'no' },
