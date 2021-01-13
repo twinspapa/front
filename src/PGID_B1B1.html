@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ko">
+@@include("@@autopath/inculde/header-1.html")
+  <title>Scrich 2.0 | 주문내역</title>
+@@include("@@autopath/inculde/header-2.html")
+
+  <!-- ========== CONTENTS ========== -->
+  <main id="content" role="main" class="main">
+
+    <!-- Content -->
+    <div class="content container-fluid">
+      <!-- Page Header -->
+      <div class="page-header">
+        <div class="row align-items-end">
+          <div class="col-sm mb-2 mb-sm-0">
+            <h1 class="page-title"></h1>
+          </div>
+        </div>
+        <!-- End Row -->
+      </div>
+      <!-- End Page Header -->
+
+      <div class="row gx2 gx-lg-3">
+        <div class="col-lg-8">
+          <!-- Card -->
+          <div class="card mb-3 mb-lg-5">
+            <div class="card-header">
+              <h2 class="card-title h4">기본정보</h2>
+              <div class="btn-wrap">
+                <button class="basicInfoCancle btn btn-sm btn-secondary d-none">cancle</button>
+                <button class="basicInfoEdit btn btn-sm btn-white">Edit</button>
+                <button class="basicInfoSave btn btn-sm btn-white d-none">Save</button>
+              </div>
+            </div>
+
+            <!-- Body -->
+            <div class="card-body">
+              <!-- Form -->
+              <form id="orderInfo" action="" method="post">
+                <div class="row">
+                  <div class="col-xl-6">
+                    <!-- Form Group -->
+                    <div id="recipient" class="row form-group">
+                      <label for="recipient" class="col-sm-3 col-form-label input-label pr-0">수령인</label>
+
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control editInput" name="recipient" placeholder="수령인 성함을 입력하세요" aria-label="recipient" value="" maxlength="12" disabled>
+                      </div>
+                    </div>
+                    <!-- End Form Group -->
+
+                    <!-- Form Group -->
+                    <div id="address" class="row form-group">
+                      <label for="address" class="col-sm-3 col-form-label input-label pr-0">주소</label>
+
+                      <div class="input-group input-group-down-break col-sm-9">
+                        <input type="text" class="form-control editInput" name="address1" placeholder="배송주소를 입력하세요" aria-label="address1" value="" disabled>
+                        <input type="text" class="form-control editInput" name="address2" placeholder="상세주소를 입력하세요" aria-label="address2" value="" disabled>
+                      </div>
+                    </div>
+                    <!-- End Form Group -->
+
+                    <!-- Form Group -->
+                    <div id="zipCode" class="row form-group">
+                      <label for="zipCode" class="col-sm-3 col-form-label input-label pr-0">우편번호</label>
+
+                      <div class="col-sm-9">
+                        <input type="number" class="form-control editInput" name="zipCode" placeholder="우편번호를 입력하세요" aria-label="zipCode" value="" maxlength="5" disabled>
+                      </div>
+                    </div>
+                    <!-- End Form Group -->
+
+                    <!-- Form Group -->
+                    <div id="recipientPhoneNumber" class="row form-group">
+                      <label for="recipientPhoneNumber" class="col-sm-3 col-form-label input-label pr-0">배송 연락처</label>
+
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control editInput" name="recipientPhoneNumber" placeholder="수령인 연락처를 입력하세요" aria-label="recipientPhoneNumber" value="" disabled minlength="7" maxlength="12">
+                      </div>
+                    </div>
+                    <!-- End Form Group -->
+
+                    <!-- Form Group -->
+                    <div id="orderDate" class="row form-group">
+                      <label for="orderDate" class="col-sm-3 col-form-label input-label pr-0">주문일</label>
+
+                      <div class="col-sm-9">
+                        <input type="text" class="js-masked-input form-control editInput" name="orderDate" placeholder="xxxx/xx/xx xx:xx:xx" aria-label="xxxx/xx/xx xx:xx" value="" disabled
+                        data-hs-mask-options='{
+                          "template": "0000-00-00 00:00"
+                        }'>
+                      </div>
+                    </div>
+                    <!-- End Form Group -->
+                  </div>
+                  <div class="col-xl-6">
+                    <!-- Form Group -->
+                    <div id="userNickName" class="row form-group">
+                      <label for="userNickName" class="col-sm-3 col-form-label input-label pr-0">닉네임</label>
+
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" name="userNickName" placeholder="회원 닉네임을 입력하세요" aria-label="userNickName" value="" disabled>
+                      </div>
+                    </div>
+                    <!-- End Form Group -->
+
+
+                    <!-- Form Group -->
+                    <div id="deliveryStatus" class="row form-group">
+                      <label for="deliveryStatus" class="col-sm-3 col-form-label input-label pr-0">배송상태</label>
+
+                      <div class="col-sm-9">
+                        <!-- Select -->
+                        <select class="js-select2-custom editInput" disabled
+                        data-hs-select2-options='{
+                          "minimumResultsForSearch": "Infinity"
+                        }'>
+                          <option value=""></option>
+                          <option value="입금대기">입금대기</option>
+                          <option value="주문완료">주문완료</option>
+                          <option value="배송중비중">배송중비중</option>
+                          <option value="배송중">배송중</option>
+                          <option value="배송완료">배송완료</option>
+                          <option value="구매확정">구매확정</option>
+                          <option value="취소완료">취소완료</option>
+                          <option value="교환처리중">교환처리중</option>
+                          <option value="반품처리중">반품처리중</option>
+                          <option value="교환완료">교환완료</option>
+                          <option value="반품완료">반품완료</option>
+                          <option value="삭제">삭제</option>
+                        </select>
+                        <!-- End Select -->
+                      </div>
+                    </div>
+                    <!-- End Form Group -->
+
+                    <!-- Form Group -->
+                    <div id="courierCompany" class="row form-group">
+                      <label for="courierCompany" class="col-sm-3 col-form-label input-label pr-0">배송사</label>
+
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control editInput" name="courierCompany" placeholder="배송회사명을 입력하세요" aria-label="courierCompany" value="" minlength="2" maxlength="11" disabled>
+                      </div>
+                    </div>
+                    <!-- End Form Group -->
+
+                    <!-- Form Group -->
+                    <div id="invoiceNumber" class="row form-group">
+                      <label for="invoiceNumber" class="col-sm-3 col-form-label input-label pr-0">송장번호</label>
+
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control editInput" name="invoiceNumber" placeholder="송장번호를 입력하세요" aria-label="invoiceNumber" value="" minlength="2" maxlength="11" disabled>
+                      </div>
+                    </div>
+                    <!-- End Form Group -->
+
+                    <!-- Form Group -->
+                    <div id="deliveryMemo" class="row form-group">
+                      <label for="deliveryMemo" class="col-sm-3 col-form-label input-label pr-0">배송메모</label>
+
+                      <div class="col-sm-9">
+                        <textarea class="form-control editInput" name="deliveryMemo" placeholder="배송메모를 입력하세요" aria-label="deliveryMemo" value="" rows="4" disabled></textarea>
+                      </div>
+                    </div>
+                    <!-- End Form Group -->
+                  </div>
+                </div>
+              </form>
+              <!-- End Form -->
+            </div>
+            <!-- End Body -->
+          </div>
+          <!-- End Card -->
+
+          <!-- Card -->
+          <div class="card mb-3 mb-lg-5">
+            <!-- Header -->
+            <div class="card-header">
+              <div class="row justify-content-between align-items-center flex-grow-1">
+                <div class="col-sm-3 mb-3 mb-sm-0">
+                  <h2 class="card-title h4" style="line-height:35px;">교환/반품</h2>
+                </div>
+
+                <div class="col-sm-9">
+                  <div class="d-sm-flex justify-content-sm-end align-items-sm-center">
+                    <div class="mr-3">
+                      <form>
+                        <!-- Search -->
+                        <div class="input-group input-group-merge input-group-flush">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <i class="tio-search"></i>
+                            </div>
+                          </div>
+                          <input id="datatableSearch" type="search" class="form-control" placeholder="Search text" aria-label="Search text">
+                        </div>
+                        <!-- End Search -->
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Row -->
+            </div>
+            <!-- End Header -->
+
+            <!-- Table -->
+            <div class="table-responsive datatable-custom">
+              <table id="datatable" style="table-layout: fixed;" class="table table-lg table-borderless table-thead-bordered table-align-middle card-table table-hover"
+                     data-hs-datatables-options='{
+                       "autoWidth": false,
+                       "columnDefs": [
+                         {"targets": 0, "searchable": false, "orderable": false},
+                         {"width": "240px", "className": "td-cut-1", "targets": 2 },
+                         {"width": "80px", "targets": 0},
+                         {"width": "120px", "targets": [1,3,4,5]}
+                       ],
+                       "order": [],
+                       "info": {
+                         "totalQty": "#datatableWithPaginationInfoTotalQty"
+                       },
+                       "search": "#datatableSearch",
+                       "entries": "#datatableEntries",
+                       "pageLength": 15,
+                       "isResponsive": false,
+                       "isShowPaging": false,
+                       "pagination": "datatablePagination"
+                     }'>
+                <thead class="thead-light">
+                  <tr>
+                    <th>#</th>
+                    <th>교환/반품</th>
+                    <th>교환/반품 내용</th>
+                    <th>답변</th>
+                    <th>답변일</th>
+                    <th>작성</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+            <!-- End Table -->
+
+            <!-- Footer -->
+            <div class="card-footer">
+              <!-- Pagination -->
+              <div class="row justify-content-center justify-content-sm-between align-items-sm-center">
+                <div class="col-sm mb-2 mb-sm-0">
+                  <div class="d-flex justify-content-center justify-content-sm-start align-items-center">
+                    <span class="mr-2">Showing:</span>
+
+                    <!-- Select -->
+                    <select id="datatableEntries" class="js-select2-custom"
+                            data-hs-select2-options='{
+                                "minimumResultsForSearch": "Infinity",
+                                "customClass": "custom-select custom-select-sm custom-select-borderless",
+                                "dropdownAutoWidth": true,
+                                "width": true
+                            }'>
+                      <option value="10">10</option>
+                      <option value="15" selected>15</option>
+                      <option value="20">20</option>
+                    </select>
+                    <!-- End Select -->
+
+                    <span class="text-secondary mr-2">of</span>
+
+                    <!-- Pagination Quantity -->
+                    <span id="datatableWithPaginationInfoTotalQty"></span>
+                  </div>
+                </div>
+
+                <div class="col-sm-auto">
+                  <div class="d-flex justify-content-center justify-content-sm-end">
+                    <!-- Pagination -->
+                    <nav id="datatablePagination" aria-label="Activity pagination"></nav>
+                  </div>
+                </div>
+              </div>
+              <!-- End Pagination -->
+            </div>
+            <!-- End Footer -->
+          </div>
+          <!-- End Card -->
+        </div>
+        <div class="col-lg-4">
+          <!-- Card -->
+          <div class="card mb-3 mb-lg-5">
+            <!-- Header -->
+            <div class="card-header">
+              <div class="row justify-content-between align-items-center flex-grow-1">
+                <div class="col-sm-12 mb-3 mb-sm-0">
+                  <h2 class="card-title h4" style="line-height:35px;">주문상품</h2>
+                </div>
+              </div>
+              <!-- End Row -->
+            </div>
+            <!-- End Header -->
+
+            <!-- Table -->
+            <div class="table-responsive datatable-custom">
+              <table id="datatable" style="table-layout: fixed;" class="table table-sm table-borderless table-thead-bordered table-align-middle card-table table-hover"
+                     data-hs-datatables-options='{
+                       "autoWidth": false,
+                       "columnDefs": [
+                         {"targets": 0, "searchable": false, "orderable": false},
+                         {"width": "240px", "className": "td-cut-1", "targets": 2 },
+                         {"width": "80px", "targets": 0},
+                         {"width": "120px", "targets": [1,3,4,5]}
+                       ],
+                       "order": [],
+                       "info": {
+                         "totalQty": "#datatableWithPaginationInfoTotalQty"
+                       },
+                       "search": "#datatableSearch",
+                       "entries": "#datatableEntries",
+                       "pageLength": 15,
+                       "isResponsive": false,
+                       "isShowPaging": false,
+                       "pagination": "datatablePagination"
+                     }'>
+                <thead class="thead-light">
+                  <tr>
+                    <th>#</th>
+                    <th>교환/반품</th>
+                    <th>교환/반품 내용</th>
+                    <th>답변</th>
+                    <th>답변일</th>
+                    <th>작성</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+            <!-- End Table -->
+
+            <!-- Footer -->
+            <div class="card-footer">
+              <!-- Pagination -->
+              <div class="row justify-content-center justify-content-sm-between align-items-sm-center">
+                <div class="col-sm mb-2 mb-sm-0">
+                  <div class="d-flex justify-content-center justify-content-sm-start align-items-center">
+                    <span class="mr-2">Showing:</span>
+
+                    <!-- Select -->
+                    <select id="datatableEntries" class="js-select2-custom"
+                            data-hs-select2-options='{
+                                "minimumResultsForSearch": "Infinity",
+                                "customClass": "custom-select custom-select-sm custom-select-borderless",
+                                "dropdownAutoWidth": true,
+                                "width": true
+                            }'>
+                      <option value="10">10</option>
+                      <option value="15" selected>15</option>
+                      <option value="20">20</option>
+                    </select>
+                    <!-- End Select -->
+
+                    <span class="text-secondary mr-2">of</span>
+
+                    <!-- Pagination Quantity -->
+                    <span id="datatableWithPaginationInfoTotalQty"></span>
+                  </div>
+                </div>
+
+                <div class="col-sm-auto">
+                  <div class="d-flex justify-content-center justify-content-sm-end">
+                    <!-- Pagination -->
+                    <nav id="datatablePagination" aria-label="Activity pagination"></nav>
+                  </div>
+                </div>
+              </div>
+              <!-- End Pagination -->
+            </div>
+            <!-- End Footer -->
+          </div>
+          <!-- End Card -->
+        </div>
+      </div>
+    </div>
+    <!-- End Content -->
+  </main>
+  <!-- ========== END CONTENTS ========== -->
+
+  @@include("@@autopath/inculde/global.html")
+  @@include("@@autopath/inculde/vendor.html")
+  @@include("@@autopath/inculde/theme.html")
+  @@include("@@autopath/inculde/common-plugin-script.html")
+
+  <script>
+    let managerId = 'scrich',
+        orderNumber = getParameterByName('order_number'),
+        orderInfo = {
+          'userNickName': '회원닉네임',
+          'zipCode': '60960',
+          'address': ['서울시 강남구 테헤란로 507', '위워크빌딩 9-123'],
+          'recipient': '김진혁',
+          'recipientPhoneNumber': '01062662163',
+          'orderDate': '2020/11/12 23:59',
+          'deliveryStatus': '배송중',
+          'courierCompany': '대한통운',
+          'invoiceNumber': '610914023775',
+          'deliveryMemo': '부재시 경비실에<br>맞겨주세요',
+        };
+
+    function orderInfoLoad() {
+      $('#userNickName input').val(orderInfo.userNickName);
+      $('#zipCode input').val(orderInfo.zipCode);
+      $('#address input:eq(0)').val(orderInfo.address[0]);
+      $('#address input:eq(1)').val(orderInfo.address[1]);
+      $('#recipient input').val(orderInfo.recipient);
+      $('#recipientPhoneNumber input').val(orderInfo.recipientPhoneNumber);
+      $('#orderDate input').val(orderInfo.orderDate);
+      $('#deliveryStatus select').val(orderInfo.deliveryStatus).trigger('change');
+      $('#courierCompany input').val(orderInfo.courierCompany);
+      $('#invoiceNumber input').val(orderInfo.invoiceNumber);
+      $('#deliveryMemo textarea').val(orderInfo.deliveryMemo);
+    }
+
+
+    let tableData = [
+      {
+        "contentId" : "",
+        "no" : "",
+        "division" : "상품문의",
+        "contents" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "replyStatus" : "김진혁",
+        "replyDate" : "2021-01-10 23:59",
+        "createdDate" : "2021-01-10 23:59"
+      }
+    ];
+
+    $(document).on('ready', function () {
+      // user list table
+      let datatable = $.HSCore.components.HSDatatables.init($('#datatable'), {
+          // ajax: url input,
+          data: tableData,
+          columns: [
+            { data: 'no' },
+            { data: 'division' },
+            { data: 'contents',
+              render: function(data, type, row) {
+                return '<a class="text-primary" href="javascript:;" data-toggle="modal" data-target="#managerNote" data-contentId="'+row.contentId+'">' + data + '</a>'
+              }
+            },
+            { data: 'replyStatus' },
+            { data: 'replyDate' },
+            { data: 'createdDate' }
+          ],
+          initComplete: function(settings) {
+            $('.dataTables_scrollHead thead').hide();
+          }
+      });
+
+      datatable.on( 'order.dt search.dt', function () {
+        let i = tableData.length;
+
+        datatable.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell) {
+            cell.innerHTML = i;
+            i = i - 1;
+        });
+      }).draw();
+
+      // 회원정보 edit 모드 진입
+      $('.basicInfoEdit').click(function() {
+        $('.editInput').removeAttr('disabled');
+        $('.basicInfoEdit').addClass('d-none');
+        $('.basicInfoSave').removeClass('d-none');
+        $('.basicInfoCancle').removeClass('d-none');
+      });
+
+      // 회원정보 edit 모드 종료
+      $('.basicInfoSave, .basicInfoCancle').on('click', function() {
+        $('.editInput').prop('disabled', 'ture');
+        $('.basicInfoEdit').removeClass('d-none');
+        $('.basicInfoSave').addClass('d-none');
+        $('.basicInfoCancle').addClass('d-none');
+
+        if($(this).hasClass('basicInfoSave') === true){
+          alert('회원정보가 변경되었습니다.');
+          // 유저 정보 수정 ajax 구현
+        } else {
+          orderInfoLoad();
+        }
+      });
+
+      orderInfoLoad();
+
+      $('.page-title').html(`주문내역<span class="font-size-sm text-success ml-2">${orderNumber}</span>`);
+    });
+  </script>
+
+  <!-- ========== SCRIPT ========== -->
+  <script type="text/javascript">
+    // input script
+  </script>
+  <!-- ========== END SCRIPT ========== -->
+
+  <!-- ========== MODAL ========== -->
+  @@include("@@autopath/modal/manager-note.html")
+  <!-- ========== END MODAL ========== -->
+
+@@include("@@autopath/inculde/footer.html")
+</html>

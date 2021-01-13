@@ -23,7 +23,7 @@ module.exports = {
   //
 
   vars: {
-    googleFont: "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap",
+    googleFont: "https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Open+Sans:ital,wght@0,600;1,400&display=swap",
     version: "?v=1.0",
     style: {
       color: '#377dff', // Primary Color
