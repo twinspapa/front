@@ -1,42 +1,13 @@
-// // // // // // // // // // // // // // // // // // // // //
-// class Ajax {
-//   'use strict';
-//
-//   constructor(name){
-//     this.name = name;
-//   }
-//
-//   send(type, url, dataType, sendData, successMsg){
-//     $.ajax({
-//       type: type,
-//       url: url,
-//       dataType: dataType,
-//       async: false,
-//       data: sendData,
-//       success: function(data) {
-//         console.log('success');
-//
-//         return data;
-//       },
-//       error: function(request, status, error) {
-//         alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-//         console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-//       }
-//     });
-//   }
-// }
-
-
 // form 전송
-class SubmitForm{
-  'use strict';
+class SubmitForm {
+  'use strict'
 
   constructor(formId) {
     this.el = $(formId);
   }
 
   validChk(){
-    const chkEl = this.el.valid('success');
+    let chkEl = this.el.valid('success');
 
     if (chkEl === false) {
       this.el.valid();
@@ -45,63 +16,23 @@ class SubmitForm{
     return chkEl;
   }
 
-  signIn(){
-    this.validChk();
-
-    if (validChk() === true) {
+  send(type, url, dataType, async, sendData){
+    return new Promise(function (resolve, reject) {
       $.ajax({
-        type: this.el.attr('method'),
-        url: this.el.attr('action'),
-        dataType: 'json',
-        async: false,
-        data: this.el.serialize(),
-        success: function(data) {
-          if (data['result'] == 'fail') {
-            $('#errMsg').removeClass('hide').text(data['errMsg']);
-          } else if (data['result'] == 'sucess'){
-            location.href = 'index.html';
-          }
-        },
-        error: function(xhr, status, error) {
-          let error_confirm = confirm('데이터 전송 오류 입니다. 확인을 누르시면 페이지가 새로고침 됩니다.');
-          if (error_confirm == true) {
-            location.href = 'index.html';
-          }
-        }
+        type: type,
+        url: url,
+        dataType: dataType,
+        async: async,
+        data: sendData,
+        success: resolve,
+        error: reject
       });
-      return false;
-    }
+    });
   }
 }
 // // // // // // // // // // // // // // // // // // // // //
 
 
-// // // // // // // // // // // // // // // // // // // // //
-// 그래프
-// class Graph {
-//   constructor(element) {
-//     this.el = element;
-//   }
-//
-//   // 그래프 데이터 업데이트
-//   dataUpdate(...args) {
-//     let res = [];
-//
-//     for (let i = 0; i < args.length; i++) {
-//         const obj = {data : args[i]};
-//         res.push(obj);
-//     }
-//
-//     console.log(res);
-//
-//     $.HSCore.components.HSChartJS.init($(this.el), {
-//       data: {
-//         datasets: res
-//       }
-//     });
-//   }
-// }
-// // // // // // // // // // // // // // // // // // // // //
 // 페이지 이동
 class Go {
   constructor(element) {
@@ -129,26 +60,6 @@ class Go {
   }
 }
 
-// // // // // // // // // // // // // // // // // // // // //
-// class Insert {
-//   constructor(name) {
-//     this.name = name;
-//   }
-//
-//   value(el, data){
-//     $(el).val(data);
-//   }
-//
-//   text(el, data){
-//     $(el).text(dataWithComma(data));
-//   }
-//
-//   attr(el, data){
-//     $(el).attr()
-//   }
-// }
-// // // // // // // // // // // // // // // // // // // // //
-
 
 function dataWithComma(data) {
   if(isNaN(data) === false){
@@ -157,7 +68,6 @@ function dataWithComma(data) {
     return data;
   }
 }
-
 
 // list filter : PGID_C1
 function filterList(inputEl,el) {
@@ -207,34 +117,6 @@ function urlCompareAddClass(element, className) {
   }
 }
 
-function commonVendorInit() {
-  $('.js-navbar-vertical-aside-toggle-invoker').click(function () {
-    $('.js-navbar-vertical-aside-toggle-invoker i').tooltip('hide');
-  });
-
-  // initialization of navbar vertical navigation
-  let sidebar = $('.js-navbar-vertical-aside').hsSideNav();
-
-  // initialization of tooltip in navbar vertical menu
-  $('.js-nav-tooltip-link').tooltip({ boundary: 'window' })
-
-  $(".js-nav-tooltip-link").on("show.bs.tooltip", function(e) {
-    if (!$("body").hasClass("navbar-vertical-aside-mini-mode")) {
-      return false;
-    }
-  });
-
-  // initialization of unfold
-  $('.js-hs-unfold-invoker').each(function () {
-    let unfold = new HSUnfold($(this)).init();
-  });
-
-  // initialization of select2
-  $('.js-select2-custom').each(function () {
-    let select2 = $.HSCore.components.HSSelect2.init($(this));
-  });
-}
-
 // 파라미터 값 가져오기
 function getParameterByName(name) {
         name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
@@ -253,33 +135,4 @@ function get_query(){
         result[qs[i][0]] = decodeURIComponent(qs[i][1]);
     }
     return result;
-}
-
-// all page document ready script
-$(document).ready(function() {
-  urlCompareAddClass($('.navbar-vertical-content .nav-item a'), 'active');
-  commonVendorInit();
-});
-
-
-function downloadTable() {
-  $('#export-copy').click(function() {
-    datatable.button('.buttons-copy').trigger()
-  });
-
-  $('#export-excel').click(function() {
-    datatable.button('.buttons-excel').trigger()
-  });
-
-  $('#export-csv').click(function() {
-    datatable.button('.buttons-csv').trigger()
-  });
-
-  $('#export-pdf').click(function() {
-    datatable.button('.buttons-pdf').trigger()
-  });
-
-  $('#export-print').click(function() {
-    datatable.button('.buttons-print').trigger()
-  });
 }

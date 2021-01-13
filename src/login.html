@@ -55,20 +55,16 @@
         <div class="col-lg-6 d-flex justify-content-center align-items-center min-vh-lg-100">
           <div class="w-100 pt-10 pt-lg-7 pb-7" style="max-width: 25rem;">
             <!-- Form -->
-            <form id="signForm" class="js-validate" action="" method="post" onsubmit="return signInSubmit(this);">
+            <form id="signForm" class="js-validate">
               <div class="text-center pb-3 mb-5 border-bottom">
                 <h1 class="display-4">Sign in</h1>
                 <p>Scrich 2.0 : Content Management System</p>
               </div>
-
-              <!-- hidden -->
-              <input type="hidden" name="ACCESS" value="true">
-
               <!-- Form Group -->
               <div class="js-form-message form-group">
                 <label class="input-label" for="inputId" tabindex="-1">ID</label>
 
-                <input type="text" class="form-control form-control-lg" name="inputId" id="inputId" placeholder="아이디를 입력하세요" required data-msg="유효한 아이디를 입력하세요.">
+                <input type="text" class="form-control form-control-lg" name="inputId" id="inputId" placeholder="아이디를 입력하세요" minlength="4" required data-msg="유효한 아이디를 입력하세요.">
               </div>
               <!-- End Form Group -->
 
@@ -81,8 +77,8 @@
                 </label>
 
                 <div class="input-group input-group-merge">
-                  <input type="password" class="js-toggle-password form-control form-control-lg" name="password" id="inputPw" placeholder="비밀번호를 입력하세요" aria-label="8+ characters required" required
-                         data-msg="비밀번호가 일치하지 않습니다. 다시 시도해주세요."
+                  <input type="password" class="js-toggle-password form-control form-control-lg" name="password" id="inputPw" placeholder="비밀번호를 입력하세요" aria-label="8+ characters required" minlength="8" required
+                         data-msg="유효한 비밀번호를 입력하세요"
                          data-hs-toggle-password-options='{
                            "target": "#changePassTarget",
                            "defaultClass": "tio-hidden-outlined",
@@ -98,7 +94,7 @@
               </div>
               <!-- End Form Group -->
 
-              <button type="submit" class="btn btn-lg btn-block btn-primary">Sign in</button>
+              <button id="signInSubmit" type="button" class="btn btn-lg btn-block btn-primary">Sign in</button>
               <div id="errMsg" class="hide text-center my-3">아이디 비밀번호가 일치하지 않습니다.</div>
             </form>
             <!-- End Form -->
@@ -116,33 +112,46 @@
   @@include("@@autopath/inculde/theme.html")
   @@include("@@autopath/inculde/common-plugin-script.html")
 
-  <!-- JS Plugins Init. -->
-  <script type="text/javascript">
-    $(document).on('ready', function() {
-      // initialization of Show Password
-      $('.js-toggle-password').each(function() {
-        new HSTogglePassword(this).init()
-      });
-
-      // initialization of form validation
-      $('.js-validate').each(function() {
-        $.HSCore.components.HSValidation.init($(this));
-      });
-
-      // initialization of select2
-      $('.js-select2-custom').each(function() {
-        var select2 = $.HSCore.components.HSSelect2.init($(this));
-      });
-    });
-  </script>
-
   <!-- ========== SCRIPT ========== -->
-  <script>
-  function signInSubmit() {
-    let signIn = new SubmitForm($('#signForm')).signInChk();
-  }
+  <script type="text/javascript">
+  let signIn = new SubmitForm($('#signForm')),
+      sendData = {};
+
+  $('#signInSubmit').on('click', function() {
+    // input data update
+    sendData.userId = $('#inputId').val();
+    sendData.userPw = $('#inputPw').val();
+
+    // ajax send
+    if (signIn.validChk() === true ) {
+      signIn.send('post', '','json', false, sendData)
+      .then(function(data){
+        if (data['result'] == 'fail') {
+          alert('로그인 실패');
+          $('#errMsg').removeClass('hide').text(data['errMsg']);
+        } else if (data['result'] == 'sucess'){
+          alert('로그인 성공');
+          // location.href = 'index.html';
+        }
+      })
+      .catch(function(error){
+        let error_confirm = confirm('데이터 전송 오류 입니다. 확인을 누르시면 페이지가 새로고침 됩니다.');
+
+        if (error_confirm == true) {
+          alert('통신 에러');
+          // location.href = 'index.html';
+        }
+      });
+    } else {
+      signIn.validChk();
+    }
+  });
   </script>
   <!-- ========== END SCRIPT ========== -->
 
-  @@include("@@autopath/inculde/footer.html")
-  </html>
+  <!-- ========== MODAL ========== -->
+
+  <!-- ========== END MODAL ========== -->
+
+@@include("@@autopath/inculde/footer.html")
+</html>

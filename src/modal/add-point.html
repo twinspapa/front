@@ -1,0 +1,99 @@
+<div class="modal fade" id="addPoint" tabindex="-1" role="dialog" aria-labelledby="addPointTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <form id="FormAddPoint" class="modal-content js-validate">
+      <!-- Header -->
+      <div class="modal-header">
+        <h4 id="addPointTitle" class="modal-title">포인트 지급</h4>
+        <button type="button" class="btn btn-icon btn-sm btn-ghost-secondary" data-dismiss="modal" aria-label="Close">
+          <i class="tio-clear tio-lg"></i>
+        </button>
+      </div>
+      <!-- End Header -->
+
+      <!-- Body -->
+      <div class="modal-body">
+        <input id="addPointInputManagerId" type="hidden" name="managerId" value="">
+        <input id="addPointInputUserId" type="hidden" name="userId" value="">
+        <input id="addPointInputDivision" type="hidden" name="pointDivision" value="관리자">
+        <div class="form-group">
+          <label class="input-label" for="addPointInputPoint">적립/차감 포인트 입력</label>
+          <input type="number" id="addPointInputPoint" class="form-control" placeholder="차감은 '-'부호를 붙혀서 입력하세요" value="" min="-99999" max="99999" required>
+        </div>
+        <div class="form-group m-0">
+          <textarea id="addPointTextarea" class="form-control js-form-message" placeholder="관리자 메모를 입력하세요." rows="4" maxlength="30" required></textarea>
+        </div>
+      </div>
+      <!-- End Body -->
+
+      <!-- Footer -->
+      <div class="modal-footer justify-content-start">
+        <div class="row align-items-center flex-grow-1 mx-n2">
+          <div class="col-sm-12 text-sm-right">
+            <button id="addPointRegister" type="submit" class="btn btn-sm btn-primary text-nowrap mr-2" aria-label="Register">등록</button>
+            <button type="button" class="btn btn-sm btn-secondary text-nowrap mr-2" data-dismiss="modal" aria-label="Close">취소</button>
+          </div>
+        </div>
+      </div>
+      <!-- End Footer -->
+    </form>
+  </div>
+</div>
+
+  <script type="text/javascript">
+  let pointModify = new SubmitForm($('#FormAddPoint')),
+      sendData = {};
+
+  $(document).ready(function() {
+    $('#addPoint').on('show.bs.modal', function (event) {
+      const button = $(event.relatedTarget);
+      const modal = $(this);
+
+      modal.find('#addPointInputManagerId').val(managerId);
+      modal.find('#addPointInputUserId').val(userId);
+      modal.find('#addPointInputDivision').val('관리자');
+
+      modal.find('#addPointRegister').on('click', function() {
+        // input data update
+        sendData.managerId = $('#addPointInputManagerId').val();
+        sendData.userId = $('#addPointInputUserId').val();
+        sendData.division = $('#addPointInputDivision').val();
+        sendData.point = $('#addPointInputPoint').val();
+        sendData.contents = $('#addPointTextarea').val();
+
+        // ajax send
+        if (pointModify.validChk() === true ) {
+          pointModify.send('post', '','json', false, sendData)
+          .then(function(data){
+            if (data['result'] == 'fail') {
+              alert('포인트 수정에 실패하였습니다.');
+
+            } else if (data['result'] == 'sucess'){
+              alert('포인트 수정이 완료 되었습니다.');
+
+            }
+          })
+          .catch(function(error){
+            let error_confirm = confirm('데이터 전송 오류 입니다. 확인을 누르시면 페이지가 새로고침 됩니다.');
+
+            if (error_confirm == true) {
+              console.log('통신 에러');
+            }
+          });
+        } else {
+          pointModify.validChk();
+        }
+      });
+    });
+
+    $('#addPoint').on('hidden.bs.modal', function (event) {
+      $('#FormAddPoint').each(function() {
+          this.reset();
+      });
+    });
+
+    // show.bs.modal 모달이 열릴 때 바로 실행되는 이벤트입니다.
+    // shown.bs.modal 모달의 열림이 끝나고 실행되는 이벤트입니다.
+    // hide.bs.modal 모달이 닫힐 때 바로 실행되는 이벤트입니다.
+    // hidden.bs.modal 모달의 닫힘이 끝나고 실행되는 이벤트입니다.
+  });
+</script>

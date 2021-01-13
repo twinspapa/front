@@ -1,22 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- Title -->
-  <title>Scrich 2.0 | Page Title</title>
-  @@include("@@autopath/inculde/head2.html")
-</head>
-
-<body class="has-navbar-vertical-aside navbar-vertical-aside-show-xl">
-  <!-- ========== HEADER ========== -->
-  @@include("@@autopath/inculde/header.html")
-  <!-- ========== END HEADER ========== -->
-
-  <!-- ========== ASIDE : NAVBAR ========== -->
-  @@include("@@autopath/inculde/navbar.html")
-  <!-- ========== END ASIDE : NAVBAR ========== -->
+<html lang="ko">
+@@include("@@autopath/inculde/header-1.html")
+  <title>Scrich 2.0 | User Product</title>
+@@include("@@autopath/inculde/header-2.html")
 
   <!-- ========== CONTENTS ========== -->
   <main id="content" role="main" class="main">
@@ -27,7 +13,7 @@
       <div class="page-header">
         <div class="row align-items-end">
           <div class="col-sm mb-2 mb-sm-0">
-            <h1 class="page-title">Possession Product</h1>
+            <h1 class="page-title">User Product</h1>
           </div>
         </div>
         <!-- End Row -->
@@ -102,25 +88,10 @@
 
         <!-- Table -->
         <div class="table-responsive datatable-custom">
-          <table id="datatable" class="table table-lg table-borderless table-thead-bordered table-nowrap table-align-middle card-table table-hover"
-                 data-hs-datatables-options='{
-                   "columnDefs": [{
-                      "targets": [0, 5],
-                      "orderable": false
-                    }],
-                   "order": [],
-                   "info": {
-                     "totalQty": "#datatableWithPaginationInfoTotalQty"
-                   },
-                   "search": "#datatableSearch",
-                   "entries": "#datatableEntries",
-                   "pageLength": 15,
-                   "isResponsive": false,
-                   "isShowPaging": false,
-                   "pagination": "datatablePagination"
-                 }'>
+          <table id="datatable" class="table table-lg table-borderless table-thead-bordered table-nowrap table-align-middle card-table table-hover">
             <thead class="thead-light">
               <tr>
+                <th>#</th>
                 <th>Division</th>
                 <th>Content</th>
                 <th>Status</th>
@@ -129,241 +100,6 @@
                 <th>Acquisition Date</th>
               </tr>
             </thead>
-
-            <tbody>
-              <tr>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>상품 타이틀</td>
-                <td>리뷰완료</td>
-                <td>기프티콘</td>
-                <td>2020.12.02</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>상품 타이틀</td>
-                <td>리뷰완료</td>
-                <td>기프티콘</td>
-                <td>2020.12.02</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>상품 타이틀</td>
-                <td>리뷰완료</td>
-                <td>기프티콘</td>
-                <td>2020.12.02</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>상품 타이틀</td>
-                <td>리뷰완료</td>
-                <td>기프티콘</td>
-                <td>2020.12.02</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>상품 타이틀</td>
-                <td>리뷰완료</td>
-                <td>기프티콘</td>
-                <td>2020.12.02</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>상품 타이틀</td>
-                <td>리뷰완료</td>
-                <td>기프티콘</td>
-                <td>2020.12.02</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>상품 타이틀</td>
-                <td>리뷰완료</td>
-                <td>기프티콘</td>
-                <td>2020.12.02</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>상품 타이틀</td>
-                <td>리뷰완료</td>
-                <td>기프티콘</td>
-                <td>2020.12.02</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>상품 타이틀</td>
-                <td>리뷰완료</td>
-                <td>기프티콘</td>
-                <td>2020.12.02</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>상품 타이틀</td>
-                <td>리뷰완료</td>
-                <td>기프티콘</td>
-                <td>2020.12.02</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>상품 타이틀</td>
-                <td>리뷰완료</td>
-                <td>기프티콘</td>
-                <td>2020.12.02</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>상품 타이틀</td>
-                <td>리뷰완료</td>
-                <td>기프티콘</td>
-                <td>2020.12.02</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>상품 타이틀</td>
-                <td>리뷰완료</td>
-                <td>기프티콘</td>
-                <td>2020.12.02</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>상품 타이틀</td>
-                <td>리뷰완료</td>
-                <td>기프티콘</td>
-                <td>2020.12.02</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>상품 타이틀</td>
-                <td>리뷰완료</td>
-                <td>기프티콘</td>
-                <td>2020.12.02</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>상품 타이틀</td>
-                <td>리뷰완료</td>
-                <td>기프티콘</td>
-                <td>2020.12.02</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>상품 타이틀</td>
-                <td>리뷰완료</td>
-                <td>기프티콘</td>
-                <td>2020.12.02</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>상품 타이틀</td>
-                <td>리뷰완료</td>
-                <td>기프티콘</td>
-                <td>2020.12.02</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>상품 타이틀</td>
-                <td>리뷰완료</td>
-                <td>기프티콘</td>
-                <td>2020.12.02</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>상품 타이틀</td>
-                <td>리뷰완료</td>
-                <td>기프티콘</td>
-                <td>2020.12.02</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>상품 타이틀</td>
-                <td>리뷰완료</td>
-                <td>기프티콘</td>
-                <td>2020.12.02</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>상품 타이틀</td>
-                <td>리뷰완료</td>
-                <td>기프티콘</td>
-                <td>2020.12.02</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>상품 타이틀</td>
-                <td>리뷰완료</td>
-                <td>기프티콘</td>
-                <td>2020.12.02</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>상품 타이틀</td>
-                <td>리뷰완료</td>
-                <td>기프티콘</td>
-                <td>2020.12.02</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>상품 타이틀</td>
-                <td>리뷰완료</td>
-                <td>기프티콘</td>
-                <td>2020.12.02</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>상품 타이틀</td>
-                <td>리뷰완료</td>
-                <td>기프티콘</td>
-                <td>2020.12.02</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>상품 타이틀</td>
-                <td>리뷰완료</td>
-                <td>기프티콘</td>
-                <td>2020.12.02</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>상품 타이틀</td>
-                <td>리뷰완료</td>
-                <td>기프티콘</td>
-                <td>2020.12.02</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>상품 타이틀</td>
-                <td>리뷰완료</td>
-                <td>기프티콘</td>
-                <td>2020.12.02</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-            </tbody>
           </table>
         </div>
         <!-- End Table -->
@@ -417,12 +153,68 @@
   @@include("@@autopath/inculde/global.html")
   @@include("@@autopath/inculde/vendor.html")
   @@include("@@autopath/inculde/theme.html")
+  @@include("@@autopath/inculde/common-plugin-script.html")
 
-  <script>
+  <!-- ========== SCRIPT ========== -->
+  <script type="text/javascript">
+    let managerId = '김진혁',
+        userId = 'scrich',
+        tableData = [
+          {
+            "no" : "",
+            "division" : ["닉네임","scrich"],
+            "contents" : "상품 타이틀",
+            "status" : "리뷰완료",
+            "productType" : "기프티콘",
+            "expirationDate" : "2020-12-02",
+            "acquisitionDate" : "2020-12-02 23:59:59"
+          },
+          {
+            "no" : "",
+            "division" : ["리치쇼핑"],
+            "contents" : "상품 타이틀",
+            "status" : "리뷰완료",
+            "productType" : "기프티콘",
+            "expirationDate" : "2020-12-02",
+            "acquisitionDate" : "2020-12-02 23:59:59"
+          }
+        ];
+
     $(document).on('ready', function () {
-      // initialization of datatables
-      var datatable = $.HSCore.components.HSDatatables.init($('#datatable'), {
+      let datatable = $.HSCore.components.HSDatatables.init($('#datatable'), {
+        // ajax: url input,
+        data: tableData,
+        columnDefs: [
+          {orderable: false, "targets": [0]}
+        ],
+        columns: [
+          { data: 'no' },
+          { data: 'division',
+            render: function(data) {
+              if (data.length == 2) {
+                return '<a href="#" class="user_id" user_id='+data[1]+'>'+data[0]+'</a>';
+              } else {
+                return data[0];
+              }
+            }
+          },
+          { data: 'contents' },
+          { data: 'status' },
+          { data: 'productType' },
+          { data: 'expirationDate' },
+          { data: 'acquisitionDate' }
+        ],
         dom: 'Bfrtip',
+        order: [],
+        info: {
+          "totalQty": "#datatableWithPaginationInfoTotalQty"
+        },
+        search: "#datatableSearch",
+        entries: "#datatableEntries",
+        pageLength: 15,
+        isResponsive: false,
+        isShowPaging: false,
+        pagination: "datatablePagination",
         buttons: [
           {
             extend: 'copy',
@@ -448,31 +240,23 @@
       });
 
       $('#export-copy').click(function() {
-        datatable.button('.buttons-copy').trigger()
+        datatable.button('.buttons-copy').trigger();
       });
 
       $('#export-excel').click(function() {
-        datatable.button('.buttons-excel').trigger()
+        datatable.button('.buttons-excel').trigger();
       });
 
       $('#export-csv').click(function() {
-        datatable.button('.buttons-csv').trigger()
+        datatable.button('.buttons-csv').trigger();
       });
 
       $('#export-pdf').click(function() {
-        datatable.button('.buttons-pdf').trigger()
+        datatable.button('.buttons-pdf').trigger();
       });
 
       $('#export-print').click(function() {
-        datatable.button('.buttons-print').trigger()
-      });
-
-      $('.js-datatable-filter').on('change', function() {
-        var $this = $(this),
-          elVal = $this.val(),
-          targetColumnIndex = $this.data('target-column-index');
-
-        datatable.column(targetColumnIndex).search(elVal).draw();
+        datatable.button('.buttons-print').trigger();
       });
 
       $('#datatableSearch').on('mouseup', function (e) {
@@ -491,51 +275,28 @@
         }, 1);
       });
 
-      // initialization of daterangepicker
-      var startDate = null,
-          endDate = null;
+      datatable.on( 'order.dt search.dt', function () {
+        let i = tableData.length;
 
-      $('.js-daterangepicker').each(function () {
-        var d = $.HSCore.components.HSDaterangepicker.init($(this));
-      });
-
-      $('.js-daterangepicker').on('apply.daterangepicker', function(ev, picker) {
-        $(this).val(picker.startDate.format('YYYY/MM/DD') + ' - ' + picker.endDate.format('YYYY/MM/DD'));
-
-        startDate = moment(picker.startDate.format('YYYY/MM/DD'));
-        endDate = moment(picker.endDate.format('YYYY/MM/DD'));
-
-        datatable.draw();
-      });
-
-      $('.js-daterangepicker').on('cancel.daterangepicker', function(ev, picker) {
-        $(this).val('');
-
-        startDate = null;
-        endDate = null;
-
-        datatable.draw();
-      });
-
-      $.fn.dataTable.ext.search.push(
-        function (settings, data, dataIndex) {
-
-          if (!startDate || !endDate) return true;
-
-          let compareDate = moment(moment(data[4]).format('YYYY/MM/DD'));
-
-          return compareDate.isBetween(startDate -1 , endDate + 1 );
-        }
-      );
+        datatable.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell) {
+            cell.innerHTML = i;
+            i = i - 1;
+        });
+      }).draw();
 
       $("#datatable .user_id").on("click", function(){
           let seq = $(this).attr('user_id');
 
           console.log(seq);
-          location.href="PGID_B1.html?user_id="+seq;
+          location.href="PGID_B1.html?user-id="+seq;
       });
     });
   </script>
-</body>
+  <!-- ========== END SCRIPT ========== -->
 
+  <!-- ========== MODAL ========== -->
+  @@include("@@autopath/modal/add-point.html")
+  <!-- ========== END MODAL ========== -->
+
+@@include("@@autopath/inculde/footer.html")
 </html>

@@ -1,0 +1,43 @@
+<script type="text/javascript">
+  $(document).on('ready', function () {
+    let sidebar = $('.js-navbar-vertical-aside').hsSideNav();
+
+    $('.js-navbar-vertical-aside-toggle-invoker').click(function () {
+      $('.js-navbar-vertical-aside-toggle-invoker i').tooltip('hide');
+    });
+
+    // initialization of tooltip in navbar vertical menu
+    $('.js-nav-tooltip-link').tooltip({ boundary: 'window' })
+
+    $(".js-nav-tooltip-link").on("show.bs.tooltip", function(e) {
+      if (!$("body").hasClass("navbar-vertical-aside-mini-mode")) {
+        return false;
+      }
+    });
+
+    // initialization of unfold
+    $('.js-hs-unfold-invoker').each(function () {
+      let unfold = new HSUnfold($(this)).init();
+    });
+
+    $('.js-validate').each(function() {
+      $.HSCore.components.HSValidation.init($(this));
+    });
+
+    $('.js-masked-input').each(function () {
+      $.HSCore.components.HSMask.init($(this));
+    });
+
+    // initialization of Show Password
+    $('.js-toggle-password').each(function() {
+      new HSTogglePassword(this).init();
+    });
+
+    // initialization of select2
+    $('.js-select2-custom').each(function() {
+      var select2 = $.HSCore.components.HSSelect2.init($(this));
+    });
+
+    urlCompareAddClass($('.navbar-vertical-content .nav-item a'), 'active');
+  });
+</script>

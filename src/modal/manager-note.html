@@ -5,7 +5,7 @@
       <div class="modal-header">
         <h4 id="managerNoteTitle" class="modal-title">Manager Note</h4>
 
-        <button type="button" class="btn btn-icon btn-sm btn-ghost-secondary" data-dismiss="modal" aria-label="Close">
+        <button type="button" class="btn btn-icon btn-sm btn-ghost-secondary modalClose" data-dismiss="modal" aria-label="Close">
           <i class="tio-clear tio-lg"></i>
         </button>
       </div>
@@ -16,15 +16,15 @@
         <div class="row">
           <div class="col-sm-6 form-group">
             <label class="input-label" for="adminName">관리자</label>
-            <input type="text" id="adminName" class="form-control" placeholder="John Doe" disabled>
+            <input type="text" id="adminName" class="form-control" placeholder="" value="" disabled>
           </div>
           <div class="col-sm-6 form-group">
             <label class="input-label" for="addDate">작성일</label>
-            <input type="text" id="addDate" class="form-control" placeholder="2021/01/01" disabled>
+            <input type="text" id="addDate" class="form-control" placeholder="" value="" disabled>
           </div>
         </div>
         <div class="form-group">
-          <textarea id="managerNoteTextarea" class="form-control" placeholder="메모를 입력하세." rows="4"></textarea>
+          <textarea id="managerNoteTextarea" class="form-control" placeholder="메모를 입력하세요." rows="4"></textarea>
         </div>
       </div>
       <!-- End Body -->
@@ -50,20 +50,62 @@
 
 <script>
   $(document).ready(function() {
-    $('#managerNoteAdd').on('click', function() {
-      alert('등록이 완료되었습니다.');
+    $('#managerNote').on('show.bs.modal', function (event) {
+      const button = $(event.relatedTarget);
+      const what = button.data('what');
+      const adminname = button.data('adminname');
+      const adddate = button.data('adddate');
+      const modal = $(this);
+
+      console.log(button);
+      console.log(what);
+      console.log(modal);
+
+      if (what == 'newAdd') {
+        modal.find('#adminName').val(managerId);
+        modal.find('#addDate').val(moment().format('YYYY/MM/DD'));
+        modal.find('#addDate').attr('hidden');
+        modal.find('#managerNoteDelete, #managerNoteModify').hide();
+        modal.find('.btn-cancel').on('click', function() {
+          $('#managerNoteTextarea').val('');
+        });
+      } else {
+        modal.find('#managerNoteAdd').hide();
+        modal.find('#adminName').val(adminname);
+        modal.find('#addDate').val(adddate);
+        modal.find('#managerNoteTextarea').val(button.text());
+        modal.find('.btn-cancel, .modalClose').on('click', function() {
+          $('#managerNoteTextarea').val('');
+        });
+      }
+
+      modal.find('#managerNoteAdd').on('click', function() {
+        alert('등록이 완료되었습니다.');
+      });
+
+      modal.find('#managerNoteModify').on('click', function() {
+        alert('수정이 완료되었습니다.');
+      });
+
+      modal.find('#managerNoteDelete').on('click', function() {
+        alert('삭제가 완료되었습니다.');
+      });
     });
 
-    $('#managerNoteModify').on('click', function() {
-      alert('수정이 완료되었습니다.');
+    $('#managerNote').on('hidden.bs.modal', function (event) {
+      const button = $(event.relatedTarget);
+      const what = button.data('what');
+      const adminname = button.data('adminname');
+      const adddate = button.data('adddate');
+      const modal = $(this);
+
+      modal.find('#managerNoteAdd, #managerNoteDelete, #managerNoteModify').show();
     });
 
-    $('#managerNoteDelete').on('click', function() {
-      alert('삭제가 완료되었습니다.');
-    });
+    // show.bs.modal 모달이 열릴 때 바로 실행되는 이벤트입니다.
+    // shown.bs.modal 모달의 열림이 끝나고 실행되는 이벤트입니다.
+    // hide.bs.modal 모달이 닫힐 때 바로 실행되는 이벤트입니다.
+    // hidden.bs.modal 모달의 닫힘이 끝나고 실행되는 이벤트입니다.
 
-    $('.btn-cancel').on('click', function() {
-      $('#managerNoteTextarea').val('');
-    });
   });
 </script>

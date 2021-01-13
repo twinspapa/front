@@ -80,6 +80,14 @@
   }
 }
 
+.avatar-uploader-input[disabled] + span {
+    display: none;
+}
+
+.td-cut-1 {
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
 .hide {
     opacity: 0;
 }

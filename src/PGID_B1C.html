@@ -1,22 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- Title -->
-  <title>Scrich 2.0 | Page Title</title>
-  @@include("@@autopath/inculde/head2.html")
-</head>
-
-<body class="has-navbar-vertical-aside navbar-vertical-aside-show-xl">
-  <!-- ========== HEADER ========== -->
-  @@include("@@autopath/inculde/header.html")
-  <!-- ========== END HEADER ========== -->
-
-  <!-- ========== ASIDE : NAVBAR ========== -->
-  @@include("@@autopath/inculde/navbar.html")
-  <!-- ========== END ASIDE : NAVBAR ========== -->
+<html lang="ko">
+@@include("@@autopath/inculde/header-1.html")
+  <title>Scrich 2.0 | Campaign</title>
+@@include("@@autopath/inculde/header-2.html")
 
   <!-- ========== CONTENTS ========== -->
   <main id="content" role="main" class="main">
@@ -98,23 +84,23 @@
                 <div class="hs-unfold">
                   <a class="js-hs-unfold-invoker btn btn-sm btn-white" href="javascript:;"
                      data-hs-unfold-options='{
-                       "target": "#usersFilterDropdown",
+                       "target": "#filterDropdown",
                        "type": "css-animation",
                        "smartPositionOff": true
                      }'>
                     <i class="tio-filter-list mr-1"></i> Filter <span class="badge badge-soft-dark rounded-circle ml-1">3</span>
                   </a>
 
-                  <div id="usersFilterDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-sm-right dropdown-card card-dropdown-filter-centered" style="min-width: 22rem;">
+                  <div id="filterDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-sm-right dropdown-card card-dropdown-filter-centered" style="min-width: 22rem;">
                     <!-- Card -->
                     <div class="card">
                       <div class="card-header">
-                        <h5 class="card-header-title">Filter users</h5>
+                        <h5 class="card-header-title">Filter</h5>
 
                         <!-- Toggle Button -->
                         <a class="js-hs-unfold-invoker btn btn-icon btn-xs btn-ghost-secondary ml-2" href="javascript:;"
                            data-hs-unfold-options='{
-                            "target": "#usersFilterDropdown",
+                            "target": "#filterDropdown",
                             "type": "css-animation",
                             "smartPositionOff": true
                            }'>
@@ -131,7 +117,7 @@
 
                               <!-- Select -->
                               <select class="js-select2-custom js-datatable-filter"
-                                      data-target-column-index="0"
+                                      data-target-column-index="1"
                                       data-hs-select2-options='{
                                         "minimumResultsForSearch": "Infinity"
                                       }'>
@@ -150,7 +136,7 @@
 
                               <!-- Select -->
                               <select class="js-select2-custom js-datatable-filter"
-                                      data-target-column-index="3"
+                                      data-target-column-index="4"
                                       data-hs-select2-options='{
                                         "minimumResultsForSearch": "Infinity"
                                       }'>
@@ -174,15 +160,7 @@
                                         <i class="tio-date-range"></i>
                                       </span>
                                     </div>
-                                    <input type="text" class="js-daterangepicker js-datatable-filter form-control daterangepicker-custom-input"
-                                        placeholder="Select dates"
-                                       data-hs-daterangepicker-options='{
-                                         "autoUpdateInput": false,
-                                         "locale": {
-                                           "cancelLabel": "Clear"
-                                         }
-                                       }'
-                                     >
+                                    <input type="text" class="js-daterangepicker-predefined js-datatable-filter form-control daterangepicker-custom-input" placeholder="Select dates">
                                   </div>
                                   <!-- End Daterangepicker -->
                               </div>
@@ -190,7 +168,7 @@
 
                           <a class="js-hs-unfold-invoker btn btn-block btn-primary" href="javascript:;"
                              data-hs-unfold-options='{
-                              "target": "#usersFilterDropdown",
+                              "target": "#filterDropdown",
                               "type": "css-animation",
                               "smartPositionOff": true
                              }'>Apply</a>
@@ -210,25 +188,10 @@
 
         <!-- Table -->
         <div class="table-responsive datatable-custom">
-          <table id="datatable" class="table table-lg table-borderless table-thead-bordered table-nowrap table-align-middle card-table table-hover"
-                 data-hs-datatables-options='{
-                   "columnDefs": [{
-                      "targets": [0, 4],
-                      "orderable": false
-                    }],
-                   "order": [],
-                   "info": {
-                     "totalQty": "#datatableWithPaginationInfoTotalQty"
-                   },
-                   "search": "#datatableSearch",
-                   "entries": "#datatableEntries",
-                   "pageLength": 15,
-                   "isResponsive": false,
-                   "isShowPaging": false,
-                   "pagination": "datatablePagination"
-                 }'>
+          <table id="datatable" class="table table-lg table-borderless table-thead-bordered table-nowrap table-align-middle card-table table-hover">
             <thead class="thead-light">
               <tr>
+                <th>#</th>
                 <th>Division</th>
                 <th>Content</th>
                 <th>Product Name</th>
@@ -236,198 +199,6 @@
                 <th>Participation Date</th>
               </tr>
             </thead>
-
-            <tbody>
-              <tr>
-                <td>캠페인</td>
-                <td>캠페인 타이틀</td>
-                <td>상품명 타이틀</td>
-                <td>당첨</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>캠페인</td>
-                <td>캠페인 타이틀</td>
-                <td>상품명 타이틀</td>
-                <td>당첨</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>캠페인</td>
-                <td>캠페인 타이틀</td>
-                <td>상품명 타이틀</td>
-                <td>당첨</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>캠페인</td>
-                <td>캠페인 타이틀</td>
-                <td>상품명 타이틀</td>
-                <td>당첨</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>캠페인</td>
-                <td>캠페인 타이틀</td>
-                <td>상품명 타이틀</td>
-                <td>당첨</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>캠페인</td>
-                <td>캠페인 타이틀</td>
-                <td>상품명 타이틀</td>
-                <td>당첨</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>캠페인</td>
-                <td>캠페인 타이틀</td>
-                <td>상품명 타이틀</td>
-                <td>당첨</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>캠페인</td>
-                <td>캠페인 타이틀</td>
-                <td>상품명 타이틀</td>
-                <td>당첨</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>캠페인</td>
-                <td>캠페인 타이틀</td>
-                <td>상품명 타이틀</td>
-                <td>당첨</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>캠페인</td>
-                <td>캠페인 타이틀</td>
-                <td>상품명 타이틀</td>
-                <td>당첨</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>캠페인</td>
-                <td>캠페인 타이틀</td>
-                <td>상품명 타이틀</td>
-                <td>당첨</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>캠페인</td>
-                <td>캠페인 타이틀</td>
-                <td>상품명 타이틀</td>
-                <td>당첨</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>캠페인</td>
-                <td>캠페인 타이틀</td>
-                <td>상품명 타이틀</td>
-                <td>당첨</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>캠페인</td>
-                <td>캠페인 타이틀</td>
-                <td>상품명 타이틀</td>
-                <td>당첨</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>캠페인</td>
-                <td>캠페인 타이틀</td>
-                <td>상품명 타이틀</td>
-                <td>당첨</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>캠페인</td>
-                <td>캠페인 타이틀</td>
-                <td>상품명 타이틀</td>
-                <td>당첨</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>캠페인</td>
-                <td>캠페인 타이틀</td>
-                <td>상품명 타이틀</td>
-                <td>당첨</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>캠페인</td>
-                <td>캠페인 타이틀</td>
-                <td>상품명 타이틀</td>
-                <td>당첨</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>캠페인</td>
-                <td>캠페인 타이틀</td>
-                <td>상품명 타이틀</td>
-                <td>당첨</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>캠페인</td>
-                <td>캠페인 타이틀</td>
-                <td>상품명 타이틀</td>
-                <td>당첨</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>캠페인</td>
-                <td>캠페인 타이틀</td>
-                <td>상품명 타이틀</td>
-                <td>당첨</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>캠페인</td>
-                <td>캠페인 타이틀</td>
-                <td>상품명 타이틀</td>
-                <td>당첨</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>캠페인</td>
-                <td>캠페인 타이틀</td>
-                <td>상품명 타이틀</td>
-                <td>당첨</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>캠페인</td>
-                <td>캠페인 타이틀</td>
-                <td>상품명 타이틀</td>
-                <td>당첨</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>캠페인</td>
-                <td>캠페인 타이틀</td>
-                <td>상품명 타이틀</td>
-                <td>당첨</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>캠페인</td>
-                <td>캠페인 타이틀</td>
-                <td>상품명 타이틀</td>
-                <td>당첨</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>캠페인</td>
-                <td>캠페인 타이틀</td>
-                <td>상품명 타이틀</td>
-                <td>당첨</td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-            </tbody>
           </table>
         </div>
         <!-- End Table -->
@@ -481,12 +252,66 @@
   @@include("@@autopath/inculde/global.html")
   @@include("@@autopath/inculde/vendor.html")
   @@include("@@autopath/inculde/theme.html")
+  @@include("@@autopath/inculde/common-plugin-script.html")
 
-  <script>
+  <!-- ========== SCRIPT ========== -->
+  <script type="text/javascript">
+    let managerId = '김진혁',
+        userId = 'scrich',
+        tableData = [
+          {
+            "no" : "",
+            "division" : "캠페인",
+            "contents" : "캠페인 타이틀",
+            "productName" : "상품명 타이틀",
+            "winningResult" : "당첨",
+            "dateTime" : "2020-12-02 23:59:59"
+          },
+          {
+            "no" : "",
+            "division" : "캠페인",
+            "contents" : "캠페인 타이틀",
+            "productName" : "상품명 타이틀",
+            "winningResult" : "당첨",
+            "dateTime" : "2020-12-02 23:59:59"
+          }
+        ];
+
     $(document).on('ready', function () {
-      // initialization of datatables
-      var datatable = $.HSCore.components.HSDatatables.init($('#datatable'), {
+      // user list table
+      let datatable = $.HSCore.components.HSDatatables.init($('#datatable'), {
+        // ajax: url input,
+        data: tableData,
+        columnDefs: [
+          {orderable: false, "targets": [0]}
+        ],
+        columns: [
+          { data: 'no' },
+          { data: 'division' },
+          { data: 'contents' },
+          { data: 'productName' },
+          { data: 'winningResult',
+            render: function(data) {
+              if (data == '당첨') {
+                return '<span class="legend-indicator bg-success"></span>' + data;
+              } else if (data == '미당첨') {
+                return '<span class="legend-indicator bg-danger"></span>' + data;
+              }
+            }
+          },
+          { data: 'dateTime' }
+        ],
         dom: 'Bfrtip',
+        order: [],
+        info: {
+          "totalQty": "#datatableWithPaginationInfoTotalQty"
+        },
+        search: "#datatableSearch",
+        entries: "#datatableEntries",
+        pageLength: 15,
+        isResponsive: false,
+        isShowPaging: false,
+        pagination: "datatablePagination",
         buttons: [
           {
             extend: 'copy',
@@ -512,23 +337,23 @@
       });
 
       $('#export-copy').click(function() {
-        datatable.button('.buttons-copy').trigger()
+        datatable.button('.buttons-copy').trigger();
       });
 
       $('#export-excel').click(function() {
-        datatable.button('.buttons-excel').trigger()
+        datatable.button('.buttons-excel').trigger();
       });
 
       $('#export-csv').click(function() {
-        datatable.button('.buttons-csv').trigger()
+        datatable.button('.buttons-csv').trigger();
       });
 
       $('#export-pdf').click(function() {
-        datatable.button('.buttons-pdf').trigger()
+        datatable.button('.buttons-pdf').trigger();
       });
 
       $('#export-print').click(function() {
-        datatable.button('.buttons-print').trigger()
+        datatable.button('.buttons-print').trigger();
       });
 
       $('.js-datatable-filter').on('change', function() {
@@ -556,27 +381,46 @@
       });
 
       // initialization of daterangepicker
-      var startDate = null,
-          endDate = null;
+      let start = moment().subtract(6, 'days');
+      let end = moment();
 
-      $('.js-daterangepicker').each(function () {
-        var d = $.HSCore.components.HSDaterangepicker.init($(this));
-      });
+      function cb(start, end) {
+        $('.js-daterangepicker-predefined').val(start.format('YYYY-MM-DD') + ' / ' + end.format('YYYY-MM-DD'));
+      }
 
-      $('.js-daterangepicker').on('apply.daterangepicker', function(ev, picker) {
-        $(this).val(picker.startDate.format('YYYY/MM/DD') + ' - ' + picker.endDate.format('YYYY/MM/DD'));
+      $.HSCore.components.HSDaterangepicker.init($('.js-daterangepicker-predefined'), {
+        autoUpdateInput: false,
+        locale: {
+          "cancelLabel": "Clear"
+        },
+        startDate: start,
+        endDate: end,
+        ranges: {
+          'Today': [moment(), moment()],
+          'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+          'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+          'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+          'This Month': [moment().startOf('month'), moment().endOf('month')],
+          'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        }
+      }, cb);
 
-        startDate = moment(picker.startDate.format('YYYY/MM/DD'));
-        endDate = moment(picker.endDate.format('YYYY/MM/DD'));
+      cb(start, end);
+
+      $('.js-daterangepicker-predefined').on('apply.daterangepicker', function(ev, picker) {
+        $(this).val(picker.startDate.format('YYYY-MM-DD') + ' / ' + picker.endDate.format('YYYY-MM-DD'));
+
+        start = moment(picker.startDate.format('YYYY-MM-DD'));
+        end = moment(picker.endDate.format('YYYY-MM-DD'));
 
         datatable.draw();
       });
 
-      $('.js-daterangepicker').on('cancel.daterangepicker', function(ev, picker) {
+      $('.js-daterangepicker-predefined').on('cancel.daterangepicker', function(ev, picker) {
         $(this).val('');
 
-        startDate = null;
-        endDate = null;
+        start = null;
+        end = null;
 
         datatable.draw();
       });
@@ -584,15 +428,29 @@
       $.fn.dataTable.ext.search.push(
         function (settings, data, dataIndex) {
 
-          if (!startDate || !endDate) return true;
+          if (!start || !end) return true;
 
-          let compareDate = moment(moment(data[4]).format('YYYY/MM/DD'));
+          let compareDate = moment(moment(data[5]).format('YYYY-MM-DD'));
 
-          return compareDate.isBetween(startDate -1 , endDate + 1 );
+          return compareDate.isBetween(start -1 , end + 1 );
         }
       );
+
+      datatable.on( 'order.dt search.dt', function () {
+        let i = tableData.length;
+
+        datatable.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell) {
+            cell.innerHTML = i;
+            i = i - 1;
+        });
+      }).draw();
     });
   </script>
-</body>
+  <!-- ========== END SCRIPT ========== -->
 
+  <!-- ========== MODAL ========== -->
+  @@include("@@autopath/modal/add-point.html")
+  <!-- ========== END MODAL ========== -->
+
+@@include("@@autopath/inculde/footer.html")
 </html>

@@ -1,22 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- Title -->
-  <title>Scrich 2.0 | Page Title</title>
-  @@include("@@autopath/inculde/head2.html")
-</head>
-
-<body class="has-navbar-vertical-aside navbar-vertical-aside-show-xl">
-  <!-- ========== HEADER ========== -->
-  @@include("@@autopath/inculde/header.html")
-  <!-- ========== END HEADER ========== -->
-
-  <!-- ========== ASIDE : NAVBAR ========== -->
-  @@include("@@autopath/inculde/navbar.html")
-  <!-- ========== END ASIDE : NAVBAR ========== -->
+<html lang="ko">
+@@include("@@autopath/inculde/header-1.html")
+  <title>Scrich 2.0 | 사용자 리포트</title>
+@@include("@@autopath/inculde/header-2.html")
 
   <!-- ========== CONTENTS ========== -->
   <main id="content" role="main" class="main">
@@ -27,12 +13,6 @@
       <div class="page-header">
         <div class="row align-items-end">
           <div class="col-sm mb-2 mb-sm-0">
-            <nav aria-label="breadcrumb">
-              <ol class="breadcrumb breadcrumb-no-gutter">
-                <li class="breadcrumb-item">리포트</li>
-                <li class="breadcrumb-item active" aria-current="page">사용자 리포트</li>
-              </ol>
-            </nav>
             <h1 class="page-title">사용자 리포트</h1>
           </div>
         </div>
@@ -213,9 +193,10 @@
   @@include("@@autopath/inculde/global.html")
   @@include("@@autopath/inculde/vendor.html")
   @@include("@@autopath/inculde/theme.html")
+  @@include("@@autopath/inculde/common-plugin-script.html")
 
-
-  <script>
+  <!-- ========== SCRIPT ========== -->
+  <script type="text/javascript">
   $(document).on('ready', function () {
     // initialization of datatables
     var datatable = $.HSCore.components.HSDatatables.init($('#datatable'), {
@@ -312,7 +293,7 @@
 
         if (!startDate || !endDate) return true;
 
-        let compareDate = moment(moment(data[6]).format('YYYY-MM-DD'));
+        let compareDate = moment(moment(data[0]).format('YYYY-MM-DD'));
 
         return compareDate.isBetween(startDate -1 , endDate + 1 );
       }
@@ -321,6 +302,11 @@
     urlCompareAddClass($('.page-header-tabs .nav-link'), 'active');
   });
   </script>
-</body>
+  <!-- ========== END SCRIPT ========== -->
 
+  <!-- ========== MODAL ========== -->
+
+  <!-- ========== END MODAL ========== -->
+
+@@include("@@autopath/inculde/footer.html")
 </html>

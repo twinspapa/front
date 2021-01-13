@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 @@include("@@autopath/inculde/header-1.html")
-  <title>Scrich 2.0 | Page Title</title>
+  <title>Scrich 2.0 | Overview</title>
 @@include("@@autopath/inculde/header-2.html")
   <!-- ========== CONTENTS ========== -->
   <main id="content" role="main" class="main pointer-event">
@@ -359,7 +359,7 @@
               <!-- 기간설정 -->
               <button id="js-daterangepicker-predefined" class="btn btn-sm btn-ghost-secondary dropdown-toggle">
                 <i class="tio-date-range"></i>
-                <span class="js-daterangepicker-predefined-preview ml-1">Nov 2 - Nov 2, 2020</span>
+                <span class="js-daterangepicker-predefined-preview ml-1"></span>
               </button>
               <!-- End 기간설정 -->
             </div>
@@ -639,11 +639,11 @@
 
     $(document).on('ready', function () {
       // initialization of daterangepicker
-      var start = moment();
+      var start = moment().subtract(6, 'days');
       var end = moment();
 
       function cb(start, end) {
-        $('#js-daterangepicker-predefined .js-daterangepicker-predefined-preview').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+        $('#js-daterangepicker-predefined .js-daterangepicker-predefined-preview').html(start.format('YYYY-MM-DD') + ' / ' + end.format('YYYY-MM-DD'));
       }
 
       $.HSCore.components.HSDaterangepicker.init($('#js-daterangepicker-predefined'), {

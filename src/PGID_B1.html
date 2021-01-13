@@ -12,7 +12,7 @@
       <!-- Page Header -->
       <div class="page-header">
         <div class="row align-items-end">
-          <div class="col-sm mb-2 mb-sm-0" style="position:relative;">
+          <div class="col-sm mb-2 mb-sm-0">
             <h1 class="page-title"></h1>
           </div>
         </div>
@@ -24,7 +24,7 @@
       <div id="cardSection" class="row gx-2 gx-lg-3">
 
         <!-- Card: Burnout Point -->
-        <div class="col-sm-6 col-lg-4 col-xl-20 mb-3 mb-lg-5">
+        <div class="col-sm-6 col-lg-4 mb-3 mb-lg-5">
           <!-- Card -->
           <div class="card card-sm card-hover-shadow h-100">
             <div class="card-body">
@@ -43,7 +43,7 @@
         <!-- End Card: Burnout Point -->
 
         <!-- Card: Burnout Point -->
-        <div class="col-sm-6 col-lg-4 col-xl-20 mb-3 mb-lg-5">
+        <div class="col-sm-6 col-lg-4 mb-3 mb-lg-5">
           <!-- Card -->
           <div class="card card-sm card-hover-shadow h-100">
             <div class="card-body">
@@ -62,7 +62,7 @@
         <!-- End Card: Burnout Point -->
 
         <!-- Card: Burnout Point -->
-        <div class="col-sm-6 col-lg-4 col-xl-20 mb-3 mb-lg-5">
+        <div class="col-sm-6 col-lg-4 mb-3 mb-lg-5">
           <!-- Card -->
           <div class="card card-sm card-hover-shadow h-100">
             <div class="card-body">
@@ -81,7 +81,7 @@
         <!-- End Card: Burnout Point -->
 
         <!-- Card: Burnout Point -->
-        <div class="col-sm-6 col-lg-4 col-xl-20 mb-3 mb-lg-5">
+        <div class="col-sm-6 col-lg-4 mb-3 mb-lg-5">
           <!-- Card -->
           <div class="card card-sm card-hover-shadow h-100">
             <div class="card-body">
@@ -100,7 +100,26 @@
         <!-- End Card: Burnout Point -->
 
         <!-- Card: Burnout Point -->
-        <div class="col-sm-6 col-lg-4 col-xl-20 mb-3 mb-lg-5">
+        <div class="col-sm-6 col-lg-4 mb-3 mb-lg-5">
+          <!-- Card -->
+          <div class="card card-sm card-hover-shadow h-100">
+            <div class="card-body">
+              <div class="d-flex align-items-center">
+                <i class="tio-folder-shared tio-xl text-body mr-2"></i>
+                <div class="">
+                  <h5 class="card-title text-truncate mr-2">선물</h5>
+                  <p class="card-title text-truncate mr-2"><span id="gift1"></span>/<span id="gift2"></span></p>
+                </div>
+              </div>
+            </div>
+            <a class="stretched-link" href="#" href-url="PGID_H8.html"></a>
+          </div>
+          <!-- End Card -->
+        </div>
+        <!-- End Card: Burnout Point -->
+
+        <!-- Card: Burnout Point -->
+        <div class="col-sm-6 col-lg-4 mb-3 mb-lg-5">
           <!-- Card -->
           <div class="card card-sm card-hover-shadow h-100">
             <div class="card-body">
@@ -108,11 +127,11 @@
                 <i class="tio-folder-shared tio-xl text-body mr-2"></i>
                 <div class="">
                   <h5 class="card-title text-truncate mr-2">신고</h5>
-                  <p class="card-title text-truncate mr-2"><span id="report1"></span>/<span id="report2"></span></p>
+                  <p class="card-title text-truncate mr-2"><span id="report1"></span></p>
                 </div>
               </div>
             </div>
-            <a class="stretched-link" href="#" href-url="PGID_B1E.html"></a>
+            <a class="stretched-link" href="#" href-url="PGID_H9.html"></a>
           </div>
           <!-- End Card -->
         </div>
@@ -126,7 +145,7 @@
           <!-- Card -->
           <div class="card mb-3 mb-lg-5">
             <div class="card-header">
-              <h2 class="card-title h4" style="line-height:35px;">Basic information</h2>
+              <h2 class="card-title h4">기본정보</h2>
               <div class="btn-wrap">
                 <button class="basicInfoCancle btn btn-sm btn-secondary d-none">cancle</button>
                 <button class="basicInfoEdit btn btn-sm btn-white">Edit</button>
@@ -140,11 +159,11 @@
               <form id="userInfo" action="" method="post">
 
                 <!-- Form Group -->
-                <div id="userAvatar" class="row form-group">
-                  <span class="col-sm-3 col-form-label input-label">아바타</span>
+                <div id="userAvatar" class="row form-group mb-1">
+                  <span class="col-sm-3 col-form-label input-label" style="line-height:3;">아바타</span>
                   <div class="col-sm-9">
                     <!-- Avatar -->
-                    <label class="avatar avatar-lg avatar-circle avatar-border-lg" for="avatarUploader">
+                    <label class="avatar avatar-lg avatar-circle avatar-border-lg m-0" for="avatarUploader">
                       <img id="avatarImg" class="avatar-img" src="" alt="Image Description">
 
                       <input type="file" class="js-file-attach avatar-uploader-input editInput" disabled id="avatarUploader"
@@ -335,12 +354,12 @@
             <div class="card-header">
               <div class="row justify-content-between align-items-center flex-grow-1">
                 <div class="col-sm-3 mb-3 mb-sm-0">
-                  <h2 class="card-title h4" style="line-height:35px;">Manager note</h2>
+                  <h2 class="card-title h4" style="line-height:35px;">메모</h2>
                 </div>
 
                 <div class="col-sm-9">
                   <div class="d-sm-flex justify-content-sm-end align-items-sm-center">
-                    <div class="mr-2">
+                    <div class="mr-3">
                       <form>
                         <!-- Search -->
                         <div class="input-group input-group-merge input-group-flush">
@@ -356,7 +375,7 @@
                     </div>
 
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#managerNote">
+                    <button type="button" class="btn btn-sm btn-white" data-toggle="modal" data-target="#managerNote" data-what="newAdd">
                       메모작성
                     </button>
                     <!-- End Button trigger modal -->
@@ -369,13 +388,16 @@
 
             <!-- Table -->
             <div class="table-responsive datatable-custom">
-              <table id="datatable" class="table table-lg table-borderless table-thead-bordered table-nowrap table-align-middle card-table table-hover"
+              <table id="datatable" style="table-layout: fixed;" class="table table-lg table-borderless table-thead-bordered table-align-middle card-table table-hover"
                      data-hs-datatables-options='{
-                       "columnDefs": [{
-                          "targets": 0,
-                          "searchable": false,
-                          "orderable": false
-                        }],
+                       "autoWidth": false,
+                       "columnDefs": [
+                         {"targets": 0, "searchable": false, "orderable": false},
+                         {"width": "60px", "targets": 0 },
+                         {"className": "td-cut-1", "targets": 1 },
+                         {"width": "120px", "targets": 2 },
+                         {"width": "120px", "targets": 3 }
+                       ],
                        "order": [1],
                        "info": {
                          "totalQty": "#datatableWithPaginationInfoTotalQty"
@@ -451,10 +473,11 @@
   @@include("@@autopath/inculde/global.html")
   @@include("@@autopath/inculde/vendor.html")
   @@include("@@autopath/inculde/theme.html")
-  @@include("@@autopath/inculde/common-plugin-script.html"
+  @@include("@@autopath/inculde/common-plugin-script.html")
 
   <script>
-    let userId = getParameterByName('user-id'),
+    let managerId = 'scrich',
+        userId = getParameterByName('user-id'),
         userInfo = {
           'id': userId,
           'status': '휴면',
@@ -470,7 +493,8 @@
           'shopping': [50000, 78000],
           'campaign': [50000, 78000],
           'product': [50000, 78000],
-          'report': [50000, 78000],
+          'gift': [50000, 78000],
+          'report': [78000],
           'imgSrc': '@@autopath/assets/img/160x160/img6.jpg'
         },
         link_1 = new Go('.stretched-link');
@@ -494,13 +518,14 @@
       $('#campaign2').text(dataWithComma(userInfo.campaign[1]));
       $('#product1').text(dataWithComma(userInfo.product[0]));
       $('#product2').text(dataWithComma(userInfo.product[1]));
+      $('#gift1').text(dataWithComma(userInfo.gift[0]));
+      $('#gift2').text(dataWithComma(userInfo.gift[1]));
       $('#report1').text(dataWithComma(userInfo.report[0]));
-      $('#report2').text(dataWithComma(userInfo.report[1]));
       $('#avatarImg').attr('src', userInfo.imgSrc);
     }
 
 
-    let managerNoteList = [
+    let tableData = [
       {
         "no" : "",
         "contents" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -537,12 +562,12 @@
       // user list table
       let datatable = $.HSCore.components.HSDatatables.init($('#datatable'), {
           // ajax: url input,
-          data: managerNoteList,
+          data: tableData,
           columns: [
             { data: 'no' },
             { data: 'contents',
-              render: function(data) {
-                return '<a class="text-primary" href="javascript:;" data-toggle="modal" data-target="#managerNote">' + data;
+              render: function(data, type, row) {
+                return '<a class="text-primary" href="javascript:;" data-toggle="modal" data-target="#managerNote" data-adminName="'+row.adminName+'" data-addDate="'+row.addDate+'">' + data;
               }
             },
             { data: 'adminName' },
@@ -550,10 +575,14 @@
           ]
       });
 
-      // initialization of Input Masks
-      $('.js-masked-input').each(function () {
-        $.HSCore.components.HSMask.init($(this));
-      });
+      datatable.on( 'order.dt search.dt', function () {
+        let i = tableData.length;
+
+        datatable.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell) {
+            cell.innerHTML = i;
+            i = i - 1;
+        });
+      }).draw();
 
       // 회원정보 edit 모드 진입
       $('.basicInfoEdit').click(function() {
