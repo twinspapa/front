@@ -26,18 +26,16 @@
         <div class="card-header">
           <div class="row justify-content-between align-items-center flex-grow-1">
             <div class="col-sm-3 mb-3 mb-sm-0">
-              <form>
-                <!-- Search -->
-                <div class="input-group input-group-merge input-group-flush">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">
-                      <i class="tio-search"></i>
-                    </div>
+              <!-- Search -->
+              <div class="input-group input-group-merge input-group-flush">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <i class="tio-search"></i>
                   </div>
-                  <input id="datatableSearch" type="search" class="form-control" placeholder="Search users" aria-label="Search users">
                 </div>
-                <!-- End Search -->
-              </form>
+                <input id="datatableSearch" form="tableFilter" type="search" class="form-control" placeholder="Search text" aria-label="Search text">
+              </div>
+              <!-- End Search -->
             </div>
 
             <div class="col-sm-6">
@@ -46,13 +44,13 @@
                 <div class="hs-unfold mr-2">
                   <a class="js-hs-unfold-invoker btn btn-sm btn-white dropdown-toggle" href="javascript:;"
                      data-hs-unfold-options='{
-                       "target": "#usersExportDropdown",
+                       "target": "#exportDropdown",
                        "type": "css-animation"
                      }'>
                     <i class="tio-download-to mr-1"></i> Export
                   </a>
 
-                  <div id="usersExportDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-sm-right">
+                  <div id="exportDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-sm-right">
                     <span class="dropdown-header">Options</span>
                     <a id="export-copy" class="dropdown-item" href="javascript:;">
                       <img class="avatar avatar-xss avatar-4by3 mr-2" src="@@autopath/assets/svg/illustrations/copy.svg" alt="Image Description">
@@ -110,10 +108,10 @@
                       </div>
 
                       <div class="card-body">
-                        <form>
+                        <form id="tableFilter">
                           <div class="form-row">
                             <div class="col-sm form-group">
-                              <small class="text-cap mb-2">Status</small>
+                              <small class="text-cap mb-2">상태</small>
 
                               <!-- Select -->
                               <select class="js-select2-custom js-datatable-filter"
@@ -121,7 +119,7 @@
                                       data-hs-select2-options='{
                                         "minimumResultsForSearch": "Infinity"
                                       }'>
-                                <option value="">Any status</option>
+                                <option value="">전체</option>
                                 <option value="정상" data-option-template='<span class="legend-indicator bg-success"></span>정상'>정상</option>
                                 <option value="정지" data-option-template='<span class="legend-indicator bg-warning"></span>정지'>정지</option>
                                 <option value="탈퇴" data-option-template='<span class="legend-indicator bg-danger"></span>탈퇴'>탈퇴</option>
@@ -134,7 +132,7 @@
 
                           <div class="form-row">
                               <div class="col-sm form-group">
-                                  <small class="text-cap mb-2">Join Date</small>
+                                  <small class="text-cap mb-2">가입일</small>
 
                                   <!-- Daterangepicker -->
                                   <div class="input-group input-group-merge">
@@ -255,702 +253,86 @@
   @@include("@@autopath/inculde/theme.html")
   @@include("@@autopath/inculde/common-plugin-script.html")
 
-  <script>
-    let link_1 = new Go('.user_id'),
-        tableData = [
-      {
-        "no" : "",
-        "status" : "정상",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "정지",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "휴면",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "정상",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "정지",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "휴면",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "정상",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "정지",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "휴면",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "정상",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "정지",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "휴면",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "정상",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "정지",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "휴면",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "정상",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "정지",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "휴면",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "정상",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "정지",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "휴면",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "정상",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "정지",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "휴면",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "정상",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "정지",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "휴면",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "정상",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "정지",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "휴면",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "정상",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "정지",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "휴면",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "정상",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "정지",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "휴면",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "정상",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "정지",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "휴면",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "정상",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "정지",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "휴면",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "정상",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "정지",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "휴면",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "정상",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "정지",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "휴면",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "정상",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "정지",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "휴면",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      },
-      {
-        "no" : "",
-        "status" : "탈퇴",
-        "id" : "scrich@scrich.com",
-        "nickName" : "Scrich",
-        "gender" : "남",
-        "location" : "서울",
-        "phone" : "01037626202",
-        "joinDate" : "2021-01-09"
-      }
-    ];
-
-    $(document).on('ready', function () {
-      // user list table
-      let datatable = $.HSCore.components.HSDatatables.init($('#datatable'), {
-          // ajax: url input,
-          data: tableData,
-          columns: [
-            { data: 'no' },
-            { data: 'status',
-              render: function(data) {
-                if (data == '정상') {
-                  return '<span class="legend-indicator bg-success"></span>' + data;
-                } else if (data == '정지') {
-                  return '<span class="legend-indicator bg-secondary"></span>' + data;
-                } else if (data == '휴면') {
-                  return '<span class="legend-indicator bg-warning"></span>' + data;
-                } else if (data == '탈퇴') {
-                  return '<span class="legend-indicator bg-danger"></span>' + data;
-                }
-              }
-            },
-            { data: 'id',
-              render: function(data) {
-                return '<a class="user_id text-primary" href="#none" href-url="PGID_B1.html" user-id=' + data + '>' + data;
-              }
-            },
-            { data: 'nickName' },
-            { data: 'gender' },
-            { data: 'location' },
-            { data: 'phone' },
-            { data: 'joinDate' }
-          ],
-          dom: 'Bfrtip',
-          buttons: [
-            {
-              extend: 'copy',
-              className: 'd-none'
-            },
-            {
-              extend: 'excel',
-              className: 'd-none'
-            },
-            {
-              extend: 'csv',
-              className: 'd-none'
-            },
-            {
-              extend: 'pdf',
-              className: 'd-none'
-            },
-            {
-              extend: 'print',
-              className: 'd-none'
-            },
-          ]
-      });
-
-      $('#export-copy').click(function() {
-        datatable.button('.buttons-copy').trigger()
-      });
-
-      $('#export-excel').click(function() {
-        datatable.button('.buttons-excel').trigger()
-      });
-
-      $('#export-csv').click(function() {
-        datatable.button('.buttons-csv').trigger()
-      });
-
-      $('#export-pdf').click(function() {
-        datatable.button('.buttons-pdf').trigger()
-      });
-
-      $('#export-print').click(function() {
-        datatable.button('.buttons-print').trigger()
-      });
-
-      $('.js-datatable-filter').on('change', function() {
-        var $this = $(this),
-          elVal = $this.val(),
-          targetColumnIndex = $this.data('target-column-index');
-
-        datatable.column(targetColumnIndex).search(elVal).draw();
-      });
-
-      $('#datatableSearch').on('mouseup', function (e) {
-        var $input = $(this),
-          oldValue = $input.val();
-
-        if (oldValue == "") return;
-
-        setTimeout(function(){
-          var newValue = $input.val();
-
-          if (newValue == ""){
-            // Gotcha
-            datatable.search('').draw();
-          }
-        }, 1);
-      });
-
-      // initialization of daterangepicker
-      let start = moment().subtract(6, 'days');
-      let end = moment();
-
-      function cb(start, end) {
-        $('.js-daterangepicker-predefined').val(start.format('YYYY-MM-DD') + ' / ' + end.format('YYYY-MM-DD'));
-      }
-
-      $.HSCore.components.HSDaterangepicker.init($('.js-daterangepicker-predefined'), {
-        autoUpdateInput: false,
-        locale: {
-          "cancelLabel": "Clear"
-        },
-        startDate: start,
-        endDate: end,
-        ranges: {
-          'Today': [moment(), moment()],
-          'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-          'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-          'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-          'This Month': [moment().startOf('month'), moment().endOf('month')],
-          'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-        }
-      }, cb);
-
-      cb(start, end);
-
-      $('.js-daterangepicker-predefined').on('apply.daterangepicker', function(ev, picker) {
-        $(this).val(picker.startDate.format('YYYY-MM-DD') + ' / ' + picker.endDate.format('YYYY-MM-DD'));
-
-        start = moment(picker.startDate.format('YYYY-MM-DD'));
-        end = moment(picker.endDate.format('YYYY-MM-DD'));
-
-        datatable.draw();
-      });
-
-      $('.js-daterangepicker-predefined').on('cancel.daterangepicker', function(ev, picker) {
-        $(this).val('');
-
-        start = null;
-        end = null;
-
-        datatable.draw();
-      });
-
-      $.fn.dataTable.ext.search.push(
-        function (settings, data, dataIndex) {
-
-          if (!start || !end) return true;
-
-          let compareDate = moment(moment(data[7]).format('YYYY-MM-DD'));
-
-          return compareDate.isBetween(start -1 , end + 1 );
-        }
-      );
-
-      datatable.on( 'order.dt search.dt', function () {
-        let i = tableData.length;
-
-        datatable.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell) {
-            cell.innerHTML = i;
-            i = i - 1;
-        });
-      }).draw();
-
-      link_1.link('href-url','user-id');
-    });
-  </script>
   <!-- ========== SCRIPT ========== -->
   <script type="text/javascript">
-    // input script
+  let managerId = 'scrich',
+      tableNumbering = true,
+      tableFilter = true,
+      tableDateFilter = true,
+      tableSearch = true,
+      tableExport = true,
+      dateFilterColumnNumber = 7,
+      tableData = [
+        {
+          "no" : "",
+          "status" : "탈퇴",
+          "id" : "scrich@scrich.com",
+          "nickName" : "Scrich",
+          "gender" : "남",
+          "location" : "서울",
+          "phone" : "01037626202",
+          "joinDate" : "2021-01-09"
+        }
+      ];
+
+  $(document).on('ready', function () {
+    // user list table
+    let datatable = $.HSCore.components.HSDatatables.init($('#datatable'), {
+        // ajax: url input,
+        data: tableData,
+        columns: [
+          { data: 'no' },
+          { data: 'status',
+            render: function(data) {
+              if (data == '정상') {
+                return `<span class="legend-indicator bg-success"></span>${data}`;
+              } else if (data == '정지') {
+                return `<span class="legend-indicator bg-secondary"></span>${data}`;
+              } else if (data == '휴면') {
+                return `<span class="legend-indicator bg-warning"></span>${data}`;
+              } else if (data == '탈퇴') {
+                return `<span class="legend-indicator bg-danger"></span>${data}`;
+              }
+            }
+          },
+          { data: 'id',
+            render: function(data) {
+              return `<a class="text-primary" href="PGID_B1.html?user-id=${data}">${data}</a>`
+            }
+          },
+          { data: 'nickName' },
+          { data: 'gender' },
+          { data: 'location' },
+          { data: 'phone' },
+          { data: 'joinDate' }
+        ],
+        dom: 'Bfrtip',
+        buttons: [
+          {
+            extend: 'copy',
+            className: 'd-none'
+          },
+          {
+            extend: 'excel',
+            className: 'd-none'
+          },
+          {
+            extend: 'csv',
+            className: 'd-none'
+          },
+          {
+            extend: 'pdf',
+            className: 'd-none'
+          },
+          {
+            extend: 'print',
+            className: 'd-none'
+          },
+        ]
+    });
+
+  @@include("@@autopath/inculde/commonTable.html")
+  });
   </script>
   <!-- ========== END SCRIPT ========== -->
 

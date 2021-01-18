@@ -190,7 +190,7 @@
                   <label for="userId" class="col-sm-3 col-form-label input-label">아이디</label>
 
                   <div class="col-sm-9">
-                    <input type="text" class="form-control" name="organization" placeholder="Your organization" aria-label="Your organization" value="" disabled>
+                    <input type="text" class="form-control" name="user id" placeholder="user id" aria-label="user id" value="" disabled>
                   </div>
                 </div>
                 <!-- End Form Group -->
@@ -221,7 +221,7 @@
                   <label for="userNickName" class="col-sm-3 col-form-label input-label">닉네임</label>
 
                   <div class="col-sm-9">
-                    <input type="text" class="form-control editInput" name="userNickName" placeholder="Your nickName" aria-label="Your nickName" value="" minlength="2" maxlength="11" disabled>
+                    <input type="text" class="form-control editInput" name="userNickName" placeholder="user nickname" aria-label="user nickname" value="" minlength="2" maxlength="11" disabled>
                   </div>
                 </div>
                 <!-- End Form Group -->
@@ -236,7 +236,7 @@
                             data-hs-select2-options='{
                               "minimumResultsForSearch": "Infinity"
                             }'>
-                      <option value="*">시/도</option>
+                      <option value=""></option>
                       <option value="36">세종특별자치시</option>
                       <option value="50">제주특별자치도</option>
                       <option value="48">경상남도</option>
@@ -353,14 +353,14 @@
             <!-- Header -->
             <div class="card-header">
               <div class="row justify-content-between align-items-center flex-grow-1">
-                <div class="col-sm-3 mb-3 mb-sm-0">
+                <div class="col-sm-2 mb-3 mb-sm-0">
                   <h2 class="card-title h4" style="line-height:35px;">메모</h2>
                 </div>
 
-                <div class="col-sm-9">
+                <div class="col-sm-10">
                   <div class="d-sm-flex justify-content-sm-end align-items-sm-center">
                     <div class="mr-3">
-                      <form>
+                      <form id="tableFilter">
                         <!-- Search -->
                         <div class="input-group input-group-merge input-group-flush">
                           <div class="input-group-prepend">
@@ -388,27 +388,7 @@
 
             <!-- Table -->
             <div class="table-responsive datatable-custom">
-              <table id="datatable" style="table-layout: fixed;" class="table table-lg table-borderless table-thead-bordered table-align-middle card-table table-hover"
-                     data-hs-datatables-options='{
-                       "autoWidth": false,
-                       "columnDefs": [
-                         {"targets": 0, "searchable": false, "orderable": false},
-                         {"width": "60px", "targets": 0 },
-                         {"className": "td-cut-1", "targets": 1 },
-                         {"width": "120px", "targets": 2 },
-                         {"width": "120px", "targets": 3 }
-                       ],
-                       "order": [1],
-                       "info": {
-                         "totalQty": "#datatableWithPaginationInfoTotalQty"
-                       },
-                       "search": "#datatableSearch",
-                       "entries": "#datatableEntries",
-                       "pageLength": 15,
-                       "isResponsive": false,
-                       "isShowPaging": false,
-                       "pagination": "datatablePagination"
-                     }'>
+              <table id="datatable" style="table-layout: fixed;" class="table table-lg table-borderless table-thead-bordered table-align-middle card-table table-hover">
                 <thead class="thead-light">
                   <tr>
                     <th>#</th>
@@ -475,148 +455,139 @@
   @@include("@@autopath/inculde/theme.html")
   @@include("@@autopath/inculde/common-plugin-script.html")
 
-  <script>
-    let managerId = 'scrich',
-        userId = getParameterByName('user-id'),
-        userInfo = {
-          'id': userId,
-          'status': '휴면',
-          'nickName': '스크리치',
-          'location': 11,
-          'phone': '01037626202',
-          'birth': '2020/11/12',
-          'gender': '남성',
-          'signUpDate': '2020/11/12 23:59:59',
-          'signOutDate': '2020/11/12 23:59:59',
-          'os': 'aos 1.10.1',
-          'point': [50000, 78000],
-          'shopping': [50000, 78000],
-          'campaign': [50000, 78000],
-          'product': [50000, 78000],
-          'gift': [50000, 78000],
-          'report': [78000],
-          'imgSrc': '@@autopath/assets/img/160x160/img6.jpg'
-        },
-        link_1 = new Go('.stretched-link');
-
-    function userInfoLoad() {
-      $('#userId input').val(userInfo.id);
-      $('#userStatus select').val(userInfo.status).trigger('change');
-      $('#userNickName input').val(userInfo.nickName);
-      $('#userLocation select').val(userInfo.location).trigger('change');
-      $('#userPhone input').val(userInfo.phone);
-      $('#userBirth input').val(userInfo.birth);
-      $('#userGender select').val(userInfo.gender).trigger('change');
-      $('#userSignUpDate input').val(userInfo.signUpDate);
-      $('#userSignOutDate input').val(userInfo.signOutDate);
-      $('#userOS input').val(userInfo.os);
-      $('#point1').text(dataWithComma(userInfo.point[0]));
-      $('#point2').text(dataWithComma(userInfo.point[1]));
-      $('#shopping1').text(dataWithComma(userInfo.shopping[0]));
-      $('#shopping2').text(dataWithComma(userInfo.shopping[1]));
-      $('#campaign1').text(dataWithComma(userInfo.campaign[0]));
-      $('#campaign2').text(dataWithComma(userInfo.campaign[1]));
-      $('#product1').text(dataWithComma(userInfo.product[0]));
-      $('#product2').text(dataWithComma(userInfo.product[1]));
-      $('#gift1').text(dataWithComma(userInfo.gift[0]));
-      $('#gift2').text(dataWithComma(userInfo.gift[1]));
-      $('#report1').text(dataWithComma(userInfo.report[0]));
-      $('#avatarImg').attr('src', userInfo.imgSrc);
-    }
-
-
-    let tableData = [
-      {
-        "no" : "",
-        "contents" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "adminName" : "김진혁",
-        "addDate" : "2020/11/02"
-      },
-      {
-        "no" : "",
-        "contents" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "adminName" : "김진혁",
-        "addDate" : "2020/11/02"
-      },
-      {
-        "no" : "",
-        "contents" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "adminName" : "김진혁",
-        "addDate" : "2020/11/02"
-      },
-      {
-        "no" : "",
-        "contents" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "adminName" : "김진혁",
-        "addDate" : "2020/11/02"
-      },
-      {
-        "no" : "",
-        "contents" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "adminName" : "김진혁",
-        "addDate" : "2020/11/02"
-      }
-    ];
-
-    $(document).on('ready', function () {
-      // user list table
-      let datatable = $.HSCore.components.HSDatatables.init($('#datatable'), {
-          // ajax: url input,
-          data: tableData,
-          columns: [
-            { data: 'no' },
-            { data: 'contents',
-              render: function(data, type, row) {
-                return '<a class="text-primary" href="javascript:;" data-toggle="modal" data-target="#managerNote" data-adminName="'+row.adminName+'" data-addDate="'+row.addDate+'">' + data;
-              }
-            },
-            { data: 'adminName' },
-            { data: 'addDate' }
-          ]
-      });
-
-      datatable.on( 'order.dt search.dt', function () {
-        let i = tableData.length;
-
-        datatable.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell) {
-            cell.innerHTML = i;
-            i = i - 1;
-        });
-      }).draw();
-
-      // 회원정보 edit 모드 진입
-      $('.basicInfoEdit').click(function() {
-        $('.editInput').removeAttr('disabled');
-        $('.basicInfoEdit').addClass('d-none');
-        $('.basicInfoSave').removeClass('d-none');
-        $('.basicInfoCancle').removeClass('d-none');
-      });
-
-      // 회원정보 edit 모드 종료
-      $('.basicInfoSave, .basicInfoCancle').on('click', function() {
-        $('.editInput').prop('disabled', 'ture');
-        $('.basicInfoEdit').removeClass('d-none');
-        $('.basicInfoSave').addClass('d-none');
-        $('.basicInfoCancle').addClass('d-none');
-
-        if($(this).hasClass('basicInfoSave') === true){
-          alert('회원정보가 변경되었습니다.');
-          // 유저 정보 수정 ajax 구현
-        } else {
-          userInfoLoad();
-        }
-      });
-
-      userInfoLoad();
-      $('.page-title').text(userId  + ' 님의 회원정보');
-      $('.stretched-link').attr('user-id', userId);
-      link_1.link('href-url','user-id');
-    });
-  </script>
-
   <!-- ========== SCRIPT ========== -->
   <script type="text/javascript">
-    // input script
+  let managerId = 'scrich',
+      userId = getParameterByName('userId'),
+      userNickName = '스크리치',
+      tableNumbering = true,
+      tableFilter = false,
+      tableDateFilter = false,
+      tableSearch = true,
+      tableExport = false,
+      userInfo = {
+        'id': userId,
+        'status': '휴면',
+        'nickName': '스크리치',
+        'location': 11,
+        'phone': '01037626202',
+        'birth': '2020/11/12',
+        'gender': '남성',
+        'signUpDate': '2020/11/12 23:59:59',
+        'signOutDate': '2020/11/12 23:59:59',
+        'os': 'aos 1.10.1',
+        'point': [50000, 78000],
+        'shopping': [50000, 78000],
+        'campaign': [50000, 78000],
+        'product': [50000, 78000],
+        'gift': [50000, 78000],
+        'report': [78000],
+        'imgSrc': '@@autopath/assets/img/160x160/img6.jpg'
+      },
+      tableData = [
+        {
+          "no" : "",
+          "contents" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          "adminName" : "김진혁",
+          "addDate" : "2020/11/02"
+        }
+      ];
+
+  function userInfoLoad() {
+    $('#userId input').val(userInfo.id);
+    $('#userStatus select').val(userInfo.status).trigger('change');
+    $('#userNickName input').val(userInfo.nickName);
+    $('#userLocation select').val(userInfo.location).trigger('change');
+    $('#userPhone input').val(userInfo.phone);
+    $('#userBirth input').val(userInfo.birth);
+    $('#userGender select').val(userInfo.gender).trigger('change');
+    $('#userSignUpDate input').val(userInfo.signUpDate);
+    $('#userSignOutDate input').val(userInfo.signOutDate);
+    $('#userOS input').val(userInfo.os);
+    $('#point1').text(dataWithComma(userInfo.point[0]));
+    $('#point2').text(dataWithComma(userInfo.point[1]));
+    $('#shopping1').text(dataWithComma(userInfo.shopping[0]));
+    $('#shopping2').text(dataWithComma(userInfo.shopping[1]));
+    $('#campaign1').text(dataWithComma(userInfo.campaign[0]));
+    $('#campaign2').text(dataWithComma(userInfo.campaign[1]));
+    $('#product1').text(dataWithComma(userInfo.product[0]));
+    $('#product2').text(dataWithComma(userInfo.product[1]));
+    $('#gift1').text(dataWithComma(userInfo.gift[0]));
+    $('#gift2').text(dataWithComma(userInfo.gift[1]));
+    $('#report1').text(dataWithComma(userInfo.report[0]));
+    $('#avatarImg').attr('src', userInfo.imgSrc);
+  }
+
+  $(document).on('ready', function () {
+    $('.page-title').html(`${userId}<span class="font-size-sm font-weight-light"> 님의 회원정보</span>`);
+    userInfoLoad();
+
+    $('.stretched-link:eq(0)').attr('href',`PGID_B1A.html?userId=${userId}`);
+    $('.stretched-link:eq(1)').attr('href',`PGID_B1B.html?userId=${userId}`);
+    $('.stretched-link:eq(2)').attr('href',`PGID_B1C.html?userId=${userId}`);
+    $('.stretched-link:eq(3)').attr('href',`PGID_B1D.html?userId=${userId}`);
+    $('.stretched-link:eq(4)').attr('href',`PGID_H8.html?searchQuery=${userNickName}`);
+    $('.stretched-link:eq(5)').attr('href',`PGID_H9.html?searchQuery=${userNickName}`);
+
+    // 회원정보 edit 모드 진입
+    $('.basicInfoEdit').click(function() {
+      $('.editInput').removeAttr('disabled');
+      $('.basicInfoEdit').addClass('d-none');
+      $('.basicInfoSave').removeClass('d-none');
+      $('.basicInfoCancle').removeClass('d-none');
+    });
+
+    // 회원정보 edit 모드 종료
+    $('.basicInfoSave, .basicInfoCancle').on('click', function() {
+      $('.editInput').prop('disabled', 'ture');
+      $('.basicInfoEdit').removeClass('d-none');
+      $('.basicInfoSave').addClass('d-none');
+      $('.basicInfoCancle').addClass('d-none');
+
+      if($(this).hasClass('basicInfoSave') === true){
+        alert('회원정보가 변경되었습니다.');
+        // 유저 정보 수정 ajax 구현
+      } else {
+        userInfoLoad();
+      }
+    });
+
+    // user list table
+    let datatable = $.HSCore.components.HSDatatables.init($('#datatable'), {
+        // ajax: url input,
+        data: tableData,
+        columns: [
+          { data: 'no' },
+          { data: 'contents',
+            render: function(data, type, row) {
+              return `<a class="text-primary" href="javascript:;" data-toggle="modal" data-target="#managerNote" data-adminName="${row.adminName}" data-addDate="${row.addDate}">${data}`;
+            }
+          },
+          { data: 'adminName' },
+          { data: 'addDate' }
+        ],
+        autoWidth: false,
+        columnDefs: [
+          {"targets": 0, "searchable": false, "orderable": false},
+          {"width": "60px", "targets": 0 },
+          {"className": "td-cut-1", "targets": 1 },
+          {"width": "120px", "targets": 2 },
+          {"width": "120px", "targets": 3 }
+        ],
+        order: [1],
+        info: {
+          totalQty: "#datatableWithPaginationInfoTotalQty"
+        },
+        search: "#datatableSearch",
+        entries: "#datatableEntries",
+        pageLength: 15,
+        isResponsive: false,
+        isShowPaging: false,
+        pagination: "datatablePagination"
+    });
+
+    @@include("@@autopath/inculde/commonTable.html")
+  });
   </script>
   <!-- ========== END SCRIPT ========== -->
 

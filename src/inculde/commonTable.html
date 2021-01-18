@@ -1,0 +1,133 @@
+if (tableExport == true) {
+  console.log('tabel export init');
+
+  $('#export-copy').click(function() {
+    datatable.button('.buttons-copy').trigger();
+  });
+
+  $('#export-excel').click(function() {
+    datatable.button('.buttons-excel').trigger();
+  });
+
+  $('#export-csv').click(function() {
+    datatable.button('.buttons-csv').trigger();
+  });
+
+  $('#export-pdf').click(function() {
+    datatable.button('.buttons-pdf').trigger();
+  });
+
+  $('#export-print').click(function() {
+    datatable.button('.buttons-print').trigger();
+  });
+}
+
+
+
+if (tableFilter == true) {
+  console.log('tabel filter init');
+
+  $('.js-datatable-filter').on('change', function() {
+    var $this = $(this),
+        elVal = $this.val(),
+        targetColumnIndex = $this.data('target-column-index');
+
+    datatable.column(targetColumnIndex).search(elVal).draw();
+  });
+}
+
+
+if (tableSearch == true) {
+  console.log('tabel search init');
+
+  $('#datatableSearch').on('mouseup', function (e) {
+    var $input = $(this),
+    oldValue = $input.val();
+
+    if (oldValue == "") return;
+
+    setTimeout(function(){
+      var newValue = $input.val();
+
+      if (newValue == ""){
+        // Gotcha
+        datatable.search('').draw();
+      }
+    }, 1);
+  });
+}
+
+
+// initialization of daterangepicker
+let start = moment().subtract(6, 'days');
+let end = moment();
+
+function cb(start, end) {
+  $('.js-daterangepicker-predefined').val(start.format('YYYY-MM-DD') + ' / ' + end.format('YYYY-MM-DD'));
+}
+
+$.HSCore.components.HSDaterangepicker.init($('.js-daterangepicker-predefined'), {
+  autoUpdateInput: false,
+  locale: {
+    "cancelLabel": "Clear"
+  },
+  startDate: start,
+  endDate: end,
+  ranges: {
+    'Today': [moment(), moment()],
+    'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+    'This Month': [moment().startOf('month'), moment().endOf('month')],
+    'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+  }
+}, cb);
+
+cb(start, end);
+
+$('.js-daterangepicker-predefined').on('apply.daterangepicker', function(ev, picker) {
+  $(this).val(picker.startDate.format('YYYY-MM-DD') + ' / ' + picker.endDate.format('YYYY-MM-DD'));
+
+  start = moment(picker.startDate.format('YYYY-MM-DD'));
+  end = moment(picker.endDate.format('YYYY-MM-DD'));
+
+  datatable.draw();
+});
+
+$('.js-daterangepicker-predefined').on('cancel.daterangepicker', function(ev, picker) {
+  $(this).val('');
+
+  start = null;
+  end = null;
+
+  datatable.draw();
+});
+
+
+if( typeof(dateFilterColumnNumber) == 'number' ) {
+    console.log('date filter init');
+
+    $.fn.dataTable.ext.search.push(
+      function (settings, data, dataIndex) {
+
+        if (!start || !end) return true;
+
+        let compareDate = moment(moment(data[dateFilterColumnNumber]).format('YYYY-MM-DD'));
+
+        return compareDate.isBetween(start -1 , end + 1 );
+      }
+    );
+}
+
+if (tableNumbering == true) {
+  console.log('table numbering init');
+
+  datatable.on( 'order.dt search.dt', function () {
+    let i = tableData.length;
+
+    datatable.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell) {
+      cell.innerHTML = i;
+      i = i - 1;
+    });
+  }).draw();
+}

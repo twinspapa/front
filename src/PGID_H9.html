@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 @@include("@@autopath/inculde/header-1.html")
-  <title>Scrich 2.0 | 포인트</title>
+  <title>Scrich 2.0 | 신고 리포트</title>
 @@include("@@autopath/inculde/header-2.html")
 
   <!-- ========== CONTENTS ========== -->
@@ -12,16 +12,15 @@
       <!-- Page Header -->
       <div class="page-header">
         <div class="row align-items-end">
-          <div class="col-sm mb-2 mb-sm-0">
-            <h1 class="page-title"></h1>
-          </div>
-
-          <div class="col-sm-auto">
-            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#addPoint">
-              <i class="tio-add mr-1"></i>포인트</a>
+          <div class="col-sm mb-2 mb-sm-0" style="position:relative;">
+            <h1 class="page-title">신고 리포트</h1>
           </div>
         </div>
         <!-- End Row -->
+
+        <!-- Nav -->
+        @@include("@@autopath/inculde/nav-menu-H-report.html")
+        <!-- End Nav -->
       </div>
       <!-- End Page Header -->
 
@@ -114,32 +113,10 @@
 
                       <div class="card-body">
                         <form id="tableFilter">
-                          <div class="form-row">
-                            <div class="col-sm form-group">
-                              <small class="text-cap mb-2">포인트 구분</small>
-
-                              <!-- Select -->
-                              <select class="js-select2-custom js-datatable-filter"
-                                      data-target-column-index="1"
-                                      data-hs-select2-options='{
-                                        "minimumResultsForSearch": "Infinity"
-                                      }'>
-                                <option value="">전체</option>
-                                <option value="캠페인">캠페인</option>
-                                <option value="리치쇼핑">리치쇼핑</option>
-                                <option value="리치박스">리치박스</option>
-                                <option value="충전소">충전소</option>
-                                <option value="관리자">관리자</option>
-                                <option value="리뷰">리뷰</option>
-                              </select>
-                              <!-- End Select -->
-                            </div>
-                          </div>
-                          <!-- End Row -->
 
                           <div class="form-row">
                               <div class="col-sm form-group">
-                                  <small class="text-cap mb-2">날짜</small>
+                                  <small class="text-cap mb-2">신고일</small>
 
                                   <!-- Daterangepicker -->
                                   <div class="input-group input-group-merge">
@@ -180,10 +157,10 @@
             <thead class="thead-light">
               <tr>
                 <th>#</th>
-                <th>포인트구분</th>
-                <th>내용</th>
-                <th>포인트</th>
-                <th>날짜</th>
+                <th>신고내용</th>
+                <th>피신고자</th>
+                <th>신고자</th>
+                <th>신고일</th>
               </tr>
             </thead>
           </table>
@@ -244,32 +221,31 @@
   <!-- ========== SCRIPT ========== -->
   <script type="text/javascript">
     let managerId = 'scrich',
-        userId = 'scrich',
-        userNickName = '스크리치',
+        searchQuery = getParameterByName('searchQuery'),
         tableNumbering = true,
-        tableFilter = true,
+        tableFilter = false,
         tableSearch = true,
         tableExport = true,
         dateFilterColumnNumber = 4,
         tableData = [
           {
             "no" : "",
-            "division" : "캠페인",
-            "contents" : "캠페인 타이틀",
-            "point" : 10000,
+            "contents" : "상품명",
+            "reporter" : ["닉네임", "scrich"],
+            "respondent" : ["닉네임", "scrich"],
             "dateTime" : "2021-01-02 23:59:59"
           },
           {
             "no" : "",
-            "division" : "리치쇼핑",
-            "contents" : "캠페인 타이틀",
-            "point" : -10000,
+            "contents" : "상품명",
+            "reporter" : ["닉네임", "scrich"],
+            "respondent" : ["스크리치", "scrich"],
             "dateTime" : "2021-01-02 23:59:59"
           }
         ];
 
     $(document).on('ready', function () {
-      $('.page-title').html(`포인트<span class="font-size-sm text-success ml-2">${userNickName}</span>`);
+      urlCompareAddClass($('.page-header-tabs .nav-link'), 'active');
 
       // initialization of datatables
       let datatable = $.HSCore.components.HSDatatables.init($('#datatable'), {
@@ -281,15 +257,15 @@
         ],
         columns: [
           { data: 'no' },
-          { data: 'division' },
           { data: 'contents' },
-          { data: 'point',
+          { data: 'reporter',
             render: function(data) {
-              if (data >= 0) {
-                return `<span class="text-primary">${dataWithComma(data)}</span>`;
-              } else {
-                return `<span class="text-danger">${dataWithComma(data)}</span>`;
-              }
+              return `<a class="text-primary" href="PGID_B1.html?user-id=${data[1]}">${data[0]}</a>`
+            }
+          },
+          { data: 'respondent',
+            render: function(data) {
+              return `<a class="text-primary" href="PGID_B1.html?user-id=${data[1]}">${data[0]}</a>`
             }
           },
           { data: 'dateTime' }
@@ -330,6 +306,16 @@
       });
 
       @@include("@@autopath/inculde/commonTable.html")
+
+      if (searchQuery !== '') {
+        $('#giftDaterangepicker').val('').change();
+
+        start = null;
+        end = null;
+
+        $('#datatableSearch').val(searchQuery).change();
+        datatable.search(searchQuery).draw();
+      }
     });
   </script>
   <!-- ========== END SCRIPT ========== -->

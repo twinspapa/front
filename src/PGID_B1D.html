@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 @@include("@@autopath/inculde/header-1.html")
-  <title>Scrich 2.0 | Products in</title>
+  <title>Scrich 2.0 | 보유상품</title>
 @@include("@@autopath/inculde/header-2.html")
 
   <!-- ========== CONTENTS ========== -->
@@ -46,13 +46,13 @@
                 <div class="hs-unfold mr-2">
                   <a class="js-hs-unfold-invoker btn btn-sm btn-white dropdown-toggle" href="javascript:;"
                      data-hs-unfold-options='{
-                       "target": "#usersExportDropdown",
+                       "target": "#exportDropdown",
                        "type": "css-animation"
                      }'>
                     <i class="tio-download-to mr-1"></i> Export
                   </a>
 
-                  <div id="usersExportDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-sm-right">
+                  <div id="exportDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-sm-right">
                     <span class="dropdown-header">Options</span>
                     <a id="export-copy" class="dropdown-item" href="javascript:;">
                       <img class="avatar avatar-xss avatar-4by3 mr-2" src="@@autopath/assets/svg/illustrations/copy.svg" alt="Image Description">
@@ -92,12 +92,12 @@
             <thead class="thead-light">
               <tr>
                 <th>#</th>
-                <th>Division</th>
-                <th>Content</th>
-                <th>Status</th>
-                <th>Product Type</th>
-                <th>Expiration Date</th>
-                <th>Acquisition Date</th>
+                <th>구분</th>
+                <th>내용</th>
+                <th>상태</th>
+                <th>상품타입</th>
+                <th>만료일</th>
+                <th>획득일</th>
               </tr>
             </thead>
           </table>
@@ -157,9 +157,13 @@
 
   <!-- ========== SCRIPT ========== -->
   <script type="text/javascript">
-    let managerId = '김진혁',
-        userNickName = '스크리치'
+    let managerId = 'scrich',
         userId = 'scrich',
+        userNickName = '스크리치',
+        tableNumbering = true,
+        tableFilter = true,
+        tableSearch = true,
+        tableExport = true,
         tableData = [
           {
             "no" : "",
@@ -182,6 +186,9 @@
         ];
 
     $(document).on('ready', function () {
+      $('.page-title').html(`보유상품<span class="font-size-sm text-info ml-2">${userNickName}</span>`);
+
+      // initialization of datatables
       let datatable = $.HSCore.components.HSDatatables.init($('#datatable'), {
         // ajax: url input,
         data: tableData,
@@ -193,7 +200,7 @@
           { data: 'division',
             render: function(data) {
               if (data.length == 2) {
-                return '<a href="#" class="user_id" user_id='+data[1]+'>'+data[0]+'</a>';
+                return `<a href="PGID_B1.html?user-id=${data[1]}">${data[0]}</a>`;
               } else {
                 return data[0];
               }
@@ -240,59 +247,7 @@
         ]
       });
 
-      $('#export-copy').click(function() {
-        datatable.button('.buttons-copy').trigger();
-      });
-
-      $('#export-excel').click(function() {
-        datatable.button('.buttons-excel').trigger();
-      });
-
-      $('#export-csv').click(function() {
-        datatable.button('.buttons-csv').trigger();
-      });
-
-      $('#export-pdf').click(function() {
-        datatable.button('.buttons-pdf').trigger();
-      });
-
-      $('#export-print').click(function() {
-        datatable.button('.buttons-print').trigger();
-      });
-
-      $('#datatableSearch').on('mouseup', function (e) {
-        var $input = $(this),
-          oldValue = $input.val();
-
-        if (oldValue == "") return;
-
-        setTimeout(function(){
-          var newValue = $input.val();
-
-          if (newValue == ""){
-            // Gotcha
-            datatable.search('').draw();
-          }
-        }, 1);
-      });
-
-      datatable.on( 'order.dt search.dt', function () {
-        let i = tableData.length;
-
-        datatable.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell) {
-            cell.innerHTML = i;
-            i = i - 1;
-        });
-      }).draw();
-
-      $("#datatable .user_id").on("click", function(){
-          let seq = $(this).attr('user_id');
-
-          console.log(seq);
-          location.href="PGID_B1.html?user-id="+seq;
-      });
-
-      $('.page-title').html(`Products in<span class="font-size-sm text-info ml-2">${userNickName}</span>`);
+      @@include("@@autopath/inculde/commonTable.html")
     });
   </script>
   <!-- ========== END SCRIPT ========== -->

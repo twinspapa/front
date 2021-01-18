@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 @@include("@@autopath/inculde/header-1.html")
-  <title>Scrich 2.0 | Rich Shopping</title>
+  <title>Scrich 2.0 | 리치쇼핑</title>
 @@include("@@autopath/inculde/header-2.html")
 
   <!-- ========== CONTENTS ========== -->
@@ -13,7 +13,7 @@
       <div class="page-header">
         <div class="row align-items-end">
           <div class="col-sm mb-2 mb-sm-0">
-            <h1 class="page-title">Rich Shopping</h1>
+            <h1 class="page-title"></h1>
           </div>
         </div>
         <!-- End Row -->
@@ -34,7 +34,7 @@
                       <i class="tio-search"></i>
                     </div>
                   </div>
-                  <input id="datatableSearch" type="search" class="form-control" placeholder="Search users" aria-label="Search users">
+                  <input id="datatableSearch" form="tableFilter" type="search" class="form-control" placeholder="Search text" aria-label="Search text">
                 </div>
                 <!-- End Search -->
               </form>
@@ -46,13 +46,13 @@
                 <div class="hs-unfold mr-2">
                   <a class="js-hs-unfold-invoker btn btn-sm btn-white dropdown-toggle" href="javascript:;"
                      data-hs-unfold-options='{
-                       "target": "#usersExportDropdown",
+                       "target": "#exportDropdown",
                        "type": "css-animation"
                      }'>
                     <i class="tio-download-to mr-1"></i> Export
                   </a>
 
-                  <div id="usersExportDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-sm-right">
+                  <div id="exportDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-sm-right">
                     <span class="dropdown-header">Options</span>
                     <a id="export-copy" class="dropdown-item" href="javascript:;">
                       <img class="avatar avatar-xss avatar-4by3 mr-2" src="@@autopath/assets/svg/illustrations/copy.svg" alt="Image Description">
@@ -110,7 +110,7 @@
                       </div>
 
                       <div class="card-body">
-                        <form>
+                        <form id="tableFilter">
                           <div class="form-row">
                             <div class="col-sm form-group">
                               <small class="text-cap mb-2">Delivery Status</small>
@@ -181,12 +181,12 @@
             <thead class="thead-light">
               <tr>
                 <th>#</th>
-                <th>Delivery Status</th>
-                <th>Order Number</th>
-                <th>Product Name</th>
-                <th>Option</th>
-                <th>Payment Amount</th>
-                <th>Order Date</th>
+                <th>배송상태</th>
+                <th>주문번호</th>
+                <th>상품명</th>
+                <th>옵션</th>
+                <th>결제금액</th>
+                <th>주문일</th>
               </tr>
             </thead>
           </table>
@@ -246,8 +246,14 @@
 
   <!-- ========== SCRIPT ========== -->
   <script type="text/javascript">
-    let managerId = '김진혁',
+    let managerId = 'scrich',
         userId = 'scrich',
+        userNickName = '스크리치',
+        tableNumbering = true,
+        tableFilter = true,
+        tableSearch = true,
+        tableExport = true,
+        dateFilterColumnNumber = 6,
         tableData = [
           {
             "no" : "",
@@ -270,6 +276,8 @@
         ];
 
     $(document).on('ready', function () {
+      $('.page-title').html(`리치쇼핑<span class="font-size-sm text-success ml-2">${userNickName}</span>`);
+
       // initialization of datatables
       let datatable = $.HSCore.components.HSDatatables.init($('#datatable'), {
         // ajax: url input,
@@ -283,7 +291,7 @@
           { data: 'deliveryStatus' },
           { data: 'orderNumber',
             render: function(data) {
-              return '<a href="#" class="order_number">'+data+'</a>';
+              return `<a href="PGID_B1B1.html?order_number=${data}">${data}</a>`;
             }
           },
           { data: 'productName' },
@@ -292,7 +300,7 @@
               let coulmnBulider = "<ul class='m-0'>";
 
               for (let i = 0; i < data.length; i++) {
-                coulmnBulider += "<li>"+data[i]+"</li>"
+                coulmnBulider += `<li>${data[i]}</li>`;
               }
 
               return coulmnBulider + "</ul>";
@@ -340,121 +348,7 @@
         ]
       });
 
-      $('#export-copy').click(function() {
-        datatable.button('.buttons-copy').trigger()
-      });
-
-      $('#export-excel').click(function() {
-        datatable.button('.buttons-excel').trigger()
-      });
-
-      $('#export-csv').click(function() {
-        datatable.button('.buttons-csv').trigger()
-      });
-
-      $('#export-pdf').click(function() {
-        datatable.button('.buttons-pdf').trigger()
-      });
-
-      $('#export-print').click(function() {
-        datatable.button('.buttons-print').trigger()
-      });
-
-      $('.js-datatable-filter').on('change', function() {
-        var $this = $(this),
-          elVal = $this.val(),
-          targetColumnIndex = $this.data('target-column-index');
-
-        datatable.column(targetColumnIndex).search(elVal).draw();
-      });
-
-      $('#datatableSearch').on('mouseup', function (e) {
-        var $input = $(this),
-          oldValue = $input.val();
-
-        if (oldValue == "") return;
-
-        setTimeout(function(){
-          var newValue = $input.val();
-
-          if (newValue == ""){
-            // Gotcha
-            datatable.search('').draw();
-          }
-        }, 1);
-      });
-
-      // initialization of daterangepicker
-      let start = moment().subtract(6, 'days');
-      let end = moment();
-
-      function cb(start, end) {
-        $('.js-daterangepicker-predefined').val(start.format('YYYY-MM-DD') + ' / ' + end.format('YYYY-MM-DD'));
-      }
-
-      $.HSCore.components.HSDaterangepicker.init($('.js-daterangepicker-predefined'), {
-        autoUpdateInput: false,
-        locale: {
-          "cancelLabel": "Clear"
-        },
-        startDate: start,
-        endDate: end,
-        ranges: {
-          'Today': [moment(), moment()],
-          'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-          'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-          'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-          'This Month': [moment().startOf('month'), moment().endOf('month')],
-          'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-        }
-      }, cb);
-
-      cb(start, end);
-
-      $('.js-daterangepicker-predefined').on('apply.daterangepicker', function(ev, picker) {
-        $(this).val(picker.startDate.format('YYYY-MM-DD') + ' / ' + picker.endDate.format('YYYY-MM-DD'));
-
-        start = moment(picker.startDate.format('YYYY-MM-DD'));
-        end = moment(picker.endDate.format('YYYY-MM-DD'));
-
-        datatable.draw();
-      });
-
-      $('.js-daterangepicker-predefined').on('cancel.daterangepicker', function(ev, picker) {
-        $(this).val('');
-
-        start = null;
-        end = null;
-
-        datatable.draw();
-      });
-
-      $.fn.dataTable.ext.search.push(
-        function (settings, data, dataIndex) {
-
-          if (!start || !end) return true;
-
-          let compareDate = moment(moment(data[6]).format('YYYY-MM-DD'));
-
-          return compareDate.isBetween(start -1 , end + 1 );
-        }
-      );
-
-      datatable.on( 'order.dt search.dt', function () {
-        let i = tableData.length;
-
-        datatable.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell) {
-            cell.innerHTML = i;
-            i = i - 1;
-        });
-      }).draw();
-
-      $("#datatable .order_number").on("click", function(){
-          let seq = $(this).text();
-
-          console.log(seq);
-          location.href="PGID_B1B1.html?order_number="+seq;
-      });
+      @@include("@@autopath/inculde/commonTable.html")
     });
   </script>
   <!-- ========== END SCRIPT ========== -->

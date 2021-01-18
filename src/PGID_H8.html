@@ -1,22 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- Title -->
-  <title>Scrich 2.0 | Page Title</title>
-  @@include("@@autopath/inculde/head2.html")
-</head>
-
-<body class="has-navbar-vertical-aside navbar-vertical-aside-show-xl">
-  <!-- ========== HEADER ========== -->
-  @@include("@@autopath/inculde/header.html")
-  <!-- ========== END HEADER ========== -->
-
-  <!-- ========== ASIDE : NAVBAR ========== -->
-  @@include("@@autopath/inculde/navbar.html")
-  <!-- ========== END ASIDE : NAVBAR ========== -->
+<html lang="ko">
+@@include("@@autopath/inculde/header-1.html")
+  <title>Scrich 2.0 | 선물 리포트</title>
+@@include("@@autopath/inculde/header-2.html")
 
   <!-- ========== CONTENTS ========== -->
   <main id="content" role="main" class="main">
@@ -26,11 +12,15 @@
       <!-- Page Header -->
       <div class="page-header">
         <div class="row align-items-end">
-          <div class="col-sm mb-2 mb-sm-0">
-            <h1 class="page-title">Report List</h1>
+          <div class="col-sm mb-2 mb-sm-0" style="position:relative;">
+            <h1 class="page-title">선물 리포트</h1>
           </div>
         </div>
         <!-- End Row -->
+
+        <!-- Nav -->
+        @@include("@@autopath/inculde/nav-menu-H-report.html")
+        <!-- End Nav -->
       </div>
       <!-- End Page Header -->
 
@@ -40,18 +30,16 @@
         <div class="card-header">
           <div class="row justify-content-between align-items-center flex-grow-1">
             <div class="col-sm-3 mb-3 mb-sm-0">
-              <form>
-                <!-- Search -->
-                <div class="input-group input-group-merge input-group-flush">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">
-                      <i class="tio-search"></i>
-                    </div>
+              <!-- Search -->
+              <div class="input-group input-group-merge input-group-flush">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <i class="tio-search"></i>
                   </div>
-                  <input id="datatableSearch" type="search" class="form-control" placeholder="Search Table" aria-label="Search Table">
                 </div>
-                <!-- End Search -->
-              </form>
+                <input id="datatableSearch" form="tableFilter" type="search" class="form-control" placeholder="Search Text" aria-label="Search text">
+              </div>
+              <!-- End Search -->
             </div>
 
             <div class="col-sm-6">
@@ -60,13 +48,13 @@
                 <div class="hs-unfold mr-2">
                   <a class="js-hs-unfold-invoker btn btn-sm btn-white dropdown-toggle" href="javascript:;"
                      data-hs-unfold-options='{
-                       "target": "#usersExportDropdown",
+                       "target": "#exportDropdown",
                        "type": "css-animation"
                      }'>
                     <i class="tio-download-to mr-1"></i> Export
                   </a>
 
-                  <div id="usersExportDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-sm-right">
+                  <div id="exportDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-sm-right">
                     <span class="dropdown-header">Options</span>
                     <a id="export-copy" class="dropdown-item" href="javascript:;">
                       <img class="avatar avatar-xss avatar-4by3 mr-2" src="@@autopath/assets/svg/illustrations/copy.svg" alt="Image Description">
@@ -93,6 +81,68 @@
                   </div>
                 </div>
                 <!-- End Unfold -->
+
+                <!-- Unfold -->
+                <div class="hs-unfold">
+                  <a class="js-hs-unfold-invoker btn btn-sm btn-white dropdown-toggle" href="javascript:;"
+                     data-hs-unfold-options='{
+                       "target": "#filterDropdown",
+                       "type": "css-animation",
+                       "smartPositionOff": true
+                     }'>
+                    <i class="tio-filter-list mr-1"></i> Filter
+                  </a>
+
+                  <div id="filterDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-sm-right dropdown-card card-dropdown-filter-centered" style="min-width: 22rem;">
+                    <!-- Card -->
+                    <div class="card">
+                      <div class="card-header">
+                        <h5 class="card-header-title">Filter</h5>
+
+                        <!-- Toggle Button -->
+                        <a class="js-hs-unfold-invoker btn btn-icon btn-xs btn-ghost-secondary ml-2" href="javascript:;"
+                           data-hs-unfold-options='{
+                            "target": "#filterDropdown",
+                            "type": "css-animation",
+                            "smartPositionOff": true
+                           }'>
+                          <i class="tio-clear tio-lg"></i>
+                        </a>
+                        <!-- End Toggle Button -->
+                      </div>
+
+                      <div class="card-body">
+                        <form id="tableFilter">
+                          <div class="form-row">
+                              <div class="col-sm form-group">
+                                  <small class="text-cap mb-2">선물일시</small>
+
+                                  <!-- Daterangepicker -->
+                                  <div class="input-group input-group-merge">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text">
+                                        <i class="tio-date-range"></i>
+                                      </span>
+                                    </div>
+                                    <input type="text" id="giftDaterangepicker" class="js-daterangepicker-predefined js-datatable-filter form-control daterangepicker-custom-input" placeholder="Select dates">
+                                  </div>
+                                  <!-- End Daterangepicker -->
+                              </div>
+                          </div>
+
+                          <a class="js-hs-unfold-invoker btn btn-block btn-primary" href="javascript:;"
+                             data-hs-unfold-options='{
+                              "target": "#filterDropdown",
+                              "type": "css-animation",
+                              "smartPositionOff": true
+                             }'>Apply</a>
+                        </form>
+                      </div>
+                    </div>
+                    <!-- End Card -->
+                  </div>
+                </div>
+                <!-- End Unfold -->
               </div>
             </div>
           </div>
@@ -102,223 +152,16 @@
 
         <!-- Table -->
         <div class="table-responsive datatable-custom">
-          <table id="datatable" class="table table-lg table-borderless table-thead-bordered table-nowrap table-align-middle card-table table-hover"
-                 data-hs-datatables-options='{
-                   "columnDefs": [{
-                      "targets": [0, 2],
-                      "orderable": false
-                    }],
-                   "order": [],
-                   "info": {
-                     "totalQty": "#datatableWithPaginationInfoTotalQty"
-                   },
-                   "search": "#datatableSearch",
-                   "entries": "#datatableEntries",
-                   "pageLength": 15,
-                   "isResponsive": false,
-                   "isShowPaging": false,
-                   "pagination": "datatablePagination"
-                 }'>
+          <table id="datatable" class="table table-lg table-borderless table-thead-bordered table-nowrap table-align-middle card-table table-hover">
             <thead class="thead-light">
               <tr>
-                <th>Content</th>
-                <th>Reporter</th>
-                <th>Report Date</th>
+                <th>#</th>
+                <th>상품명</th>
+                <th>보낸회원</th>
+                <th>받은회원</th>
+                <th>선물일시</th>
               </tr>
             </thead>
-
-            <tbody>
-              <tr>
-                <td>신고내용</td>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>신고내용</td>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>신고내용</td>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>신고내용</td>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>신고내용</td>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>신고내용</td>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>신고내용</td>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>신고내용</td>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>신고내용</td>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>신고내용</td>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>신고내용</td>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>신고내용</td>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>신고내용</td>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>신고내용</td>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>신고내용</td>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>신고내용</td>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>신고내용</td>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>신고내용</td>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>신고내용</td>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>신고내용</td>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>신고내용</td>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>신고내용</td>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>신고내용</td>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>신고내용</td>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>신고내용</td>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>신고내용</td>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>신고내용</td>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>신고내용</td>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>신고내용</td>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>신고내용</td>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>신고내용</td>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>신고내용</td>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>신고내용</td>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>신고내용</td>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>신고내용</td>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>신고내용</td>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>신고내용</td>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-              <tr>
-                <td>신고내용</td>
-                <td class="user_id" user_id="user1"><a href="#">닉네임</a></td>
-                <td>2020.12.02 23:59:59</td>
-              </tr>
-            </tbody>
           </table>
         </div>
         <!-- End Table -->
@@ -372,12 +215,71 @@
   @@include("@@autopath/inculde/global.html")
   @@include("@@autopath/inculde/vendor.html")
   @@include("@@autopath/inculde/theme.html")
+  @@include("@@autopath/inculde/common-plugin-script.html")
 
-  <script>
+  <!-- ========== SCRIPT ========== -->
+  <script type="text/javascript">
+    let managerId = 'scrich',
+        searchQuery = getParameterByName('searchQuery'),
+        tableNumbering = true,
+        tableFilter = false,
+        tableSearch = true,
+        tableExport = true,
+        dateFilterColumnNumber = 4,
+        tableData = [
+          {
+            "no" : "",
+            "productName" : "상품명",
+            "sender" : ["닉네임", "scrich"],
+            "received" : ["닉네임", "scrich"],
+            "dateTime" : "2021-01-02 23:59:59"
+          },
+          {
+            "no" : "",
+            "productName" : "상품명",
+            "sender" : ["닉네임", "scrich"],
+            "received" : ["스크리치", "scrich"],
+            "dateTime" : "2021-01-02 23:59:59"
+          }
+        ];
+
     $(document).on('ready', function () {
+      urlCompareAddClass($('.page-header-tabs .nav-link'), 'active');
+
       // initialization of datatables
-      var datatable = $.HSCore.components.HSDatatables.init($('#datatable'), {
+      let datatable = $.HSCore.components.HSDatatables.init($('#datatable'), {
+        // ajax: url input,
+        data: tableData,
+        columnDefs: [
+          {className: "text-right", "targets": [4]},
+          {orderable: false, "targets": [0]}
+        ],
+        columns: [
+          { data: 'no' },
+          { data: 'productName' },
+          { data: 'sender',
+            render: function(data) {
+              return `<a class="text-primary" href="PGID_B1.html?user-id=${data[1]}">${data[0]}</a>`
+            }
+          },
+          { data: 'received',
+            render: function(data) {
+              return `<a class="text-primary" href="PGID_B1.html?user-id=${data[1]}">${data[0]}</a>`
+            }
+          },
+          { data: 'dateTime' }
+        ],
         dom: 'Bfrtip',
+        order: [],
+        info: {
+          "totalQty": "#datatableWithPaginationInfoTotalQty"
+        },
+        search: "#datatableSearch",
+        entries: "#datatableEntries",
+        pageLength: 15,
+        isResponsive: false,
+        isShowPaging: false,
+        pagination: "datatablePagination",
         buttons: [
           {
             extend: 'copy',
@@ -402,95 +304,24 @@
         ]
       });
 
-      $('#export-copy').click(function() {
-        datatable.button('.buttons-copy').trigger()
-      });
+      @@include("@@autopath/inculde/commonTable.html")
 
-      $('#export-excel').click(function() {
-        datatable.button('.buttons-excel').trigger()
-      });
+      if (searchQuery !== '') {
+        $('#giftDaterangepicker').val('').change();
 
-      $('#export-csv').click(function() {
-        datatable.button('.buttons-csv').trigger()
-      });
+        start = null;
+        end = null;
 
-      $('#export-pdf').click(function() {
-        datatable.button('.buttons-pdf').trigger()
-      });
-
-      $('#export-print').click(function() {
-        datatable.button('.buttons-print').trigger()
-      });
-
-      $('.js-datatable-filter').on('change', function() {
-        var $this = $(this),
-          elVal = $this.val(),
-          targetColumnIndex = $this.data('target-column-index');
-
-        datatable.column(targetColumnIndex).search(elVal).draw();
-      });
-
-      $('#datatableSearch').on('mouseup', function (e) {
-        var $input = $(this),
-          oldValue = $input.val();
-
-        if (oldValue == "") return;
-
-        setTimeout(function(){
-          var newValue = $input.val();
-
-          if (newValue == ""){
-            // Gotcha
-            datatable.search('').draw();
-          }
-        }, 1);
-      });
-
-      // initialization of daterangepicker
-      var startDate = null,
-          endDate = null;
-
-      $('.js-daterangepicker').each(function () {
-        var d = $.HSCore.components.HSDaterangepicker.init($(this));
-      });
-
-      $('.js-daterangepicker').on('apply.daterangepicker', function(ev, picker) {
-        $(this).val(picker.startDate.format('YYYY/MM/DD') + ' - ' + picker.endDate.format('YYYY/MM/DD'));
-
-        startDate = moment(picker.startDate.format('YYYY/MM/DD'));
-        endDate = moment(picker.endDate.format('YYYY/MM/DD'));
-
-        datatable.draw();
-      });
-
-      $('.js-daterangepicker').on('cancel.daterangepicker', function(ev, picker) {
-        $(this).val('');
-
-        startDate = null;
-        endDate = null;
-
-        datatable.draw();
-      });
-
-      $.fn.dataTable.ext.search.push(
-        function (settings, data, dataIndex) {
-
-          if (!startDate || !endDate) return true;
-
-          let compareDate = moment(moment(data[4]).format('YYYY/MM/DD'));
-
-          return compareDate.isBetween(startDate -1 , endDate + 1 );
-        }
-      );
-
-      $("#datatable .user_id").on("click", function(){
-          let seq = $(this).attr('user_id');
-
-          console.log(seq);
-          location.href="PGID_B1.html?user_id="+seq;
-      });
+        $('#datatableSearch').val(searchQuery).change();
+        datatable.search(searchQuery).draw();
+      }
     });
   </script>
-</body>
+  <!-- ========== END SCRIPT ========== -->
 
+  <!-- ========== MODAL ========== -->
+  @@include("@@autopath/modal/add-point.html")
+  <!-- ========== END MODAL ========== -->
+
+@@include("@@autopath/inculde/footer.html")
 </html>
