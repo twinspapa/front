@@ -1,39 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Title -->
-  <title>Scrich 2.0 | 캠페인</title>
-
-
-
-
-  
-
-
-  @@include("@@autopath/inculde/head2.html")
-  
-  
-  
-  
-
-
-
-
-</head>
-
-<body class="has-navbar-vertical-aside navbar-vertical-aside-show-xl">
-  <!-- ========== HEADER ========== -->
-  @@include("@@autopath/inculde/header.html")
-  <!-- ========== END HEADER ========== -->
-
-  <!-- ========== ASIDE : NAVBAR ========== -->
-  @@include("@@autopath/inculde/navbar.html")
-  <!-- ========== END ASIDE : NAVBAR ========== -->
+<html lang="ko">
+@@include("@@autopath/inculde/header-1.html")
+  <title>Scrich 2.0 | Page Title</title>
+@@include("@@autopath/inculde/header-2.html")
 
   <!-- ========== CONTENTS ========== -->
   <main id="content" role="main" class="main">
@@ -125,14 +94,14 @@
                 <div class="hs-unfold">
                   <a class="js-hs-unfold-invoker btn btn-sm btn-white" href="javascript:;"
                      data-hs-unfold-options='{
-                       "target": "#usersFilterDropdown",
+                       "target": "#filterDropdown",
                        "type": "css-animation",
                        "smartPositionOff": true
                      }'>
                     <i class="tio-filter-list mr-1"></i> Filter <span class="badge badge-soft-dark rounded-circle ml-1">2</span>
                   </a>
 
-                  <div id="usersFilterDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-sm-right dropdown-card card-dropdown-filter-centered" style="min-width: 22rem;">
+                  <div id="filterDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-sm-right dropdown-card card-dropdown-filter-centered" style="min-width: 22rem;">
                     <!-- Card -->
                     <div class="card">
                       <div class="card-header">
@@ -141,7 +110,7 @@
                         <!-- Toggle Button -->
                         <a class="js-hs-unfold-invoker btn btn-icon btn-xs btn-ghost-secondary ml-2" href="javascript:;"
                            data-hs-unfold-options='{
-                            "target": "#usersFilterDropdown",
+                            "target": "#filterDropdown",
                             "type": "css-animation",
                             "smartPositionOff": true
                            }'>
@@ -200,7 +169,7 @@
 
                           <a class="js-hs-unfold-invoker btn btn-block btn-primary" href="javascript:;"
                              data-hs-unfold-options='{
-                              "target": "#usersFilterDropdown",
+                              "target": "#filterDropdown",
                               "type": "css-animation",
                               "smartPositionOff": true
                              }'>Apply</a>
@@ -535,7 +504,7 @@
   @@include("@@autopath/inculde/global.html")
 
 
-  
+
 
   <!-- JS Implementing Plugins -->
   <!-- bundlejs:vendor [@@autopath] -->

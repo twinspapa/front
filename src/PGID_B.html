@@ -82,14 +82,14 @@
                 <div class="hs-unfold">
                   <a class="js-hs-unfold-invoker btn btn-sm btn-white dropdown-toggle" href="javascript:;"
                      data-hs-unfold-options='{
-                       "target": "#usersFilterDropdown",
+                       "target": "#filterDropdown",
                        "type": "css-animation",
                        "smartPositionOff": true
                      }'>
                     <i class="tio-filter-list mr-1"></i> Filter
                   </a>
 
-                  <div id="usersFilterDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-sm-right dropdown-card card-dropdown-filter-centered" style="min-width: 22rem;">
+                  <div id="filterDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-sm-right dropdown-card card-dropdown-filter-centered" style="min-width: 22rem;">
                     <!-- Card -->
                     <div class="card">
                       <div class="card-header">
@@ -98,7 +98,7 @@
                         <!-- Toggle Button -->
                         <a class="js-hs-unfold-invoker btn btn-icon btn-xs btn-ghost-secondary ml-2" href="javascript:;"
                            data-hs-unfold-options='{
-                            "target": "#usersFilterDropdown",
+                            "target": "#filterDropdown",
                             "type": "css-animation",
                             "smartPositionOff": true
                            }'>
@@ -149,7 +149,7 @@
 
                           <a class="js-hs-unfold-invoker btn btn-block btn-primary" href="javascript:;"
                              data-hs-unfold-options='{
-                              "target": "#usersFilterDropdown",
+                              "target": "#filterDropdown",
                               "type": "css-animation",
                               "smartPositionOff": true
                              }'>Apply</a>
@@ -297,7 +297,7 @@
           },
           { data: 'id',
             render: function(data) {
-              return `<a class="text-primary" href="PGID_B1.html?user-id=${data}">${data}</a>`
+              return `<a class="text-primary" href="PGID_B1.html?userId=${data}">${data}</a>`
             }
           },
           { data: 'nickName' },

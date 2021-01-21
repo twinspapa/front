@@ -1,3 +1,73 @@
+// 데이터 처리
+class Data {
+  'use strict'
+
+  // data 객체 담기
+  constructor(obj) {
+    this.obj = obj;
+  }
+
+  // data 삽입
+  // data 객체 key값과 data가 삽입될 위치 아이디값 일치 시켜야 한다.
+  insert() {
+    const keyArray = Object.keys(this.obj);
+
+    for (let i = 0; i < keyArray.length; i++) {
+      let el = $('#'+keyArray[i]),
+            value = this.obj[keyArray[i]],
+            dataTag = el.attr('dataTag')
+
+      if (dataTag == 'text') {
+        el.text(value);
+      }
+
+      if (dataTag == 'number') {
+        el.text(dataWithComma(value));
+      }
+
+      if (dataTag == 'select') {
+        el.val(value).trigger('change');
+      }
+
+      if (dataTag == 'input') {
+        el.val(value);
+      }
+
+      if (dataTag == 'img') {
+        el.attr('src', value);
+      }
+    }
+  }
+
+  // 현재 입력된 값으로 data 객체 값 업데이트
+  update(formId) {
+    let queryString = $(formId).serializeArray();
+
+    for (let i = 0; i < queryString.length; i++) {
+      let temporaryObject = {},
+          keyname = queryString[0].name,
+          value = queryString[0].value;
+
+      temporaryObject[keyname+''] = value;
+      this.obj = Object.assign(this.obj, temporaryObject);
+    }
+  }
+
+  send(type, url, dataType, async, sendData){
+    return new Promise(function (resolve, reject) {
+      $.ajax({
+        type: type,
+        url: url,
+        dataType: dataType,
+        async: async,
+        data: sendData,
+        success: resolve,
+        error: reject
+      });
+    });
+  }
+}
+
 // form 전송
 class SubmitForm {
   'use strict'
@@ -136,3 +206,98 @@ function get_query(){
     }
     return result;
 }
+
+// form data object 현재 입력 내용으로 업데이트
+function formDataUpdate(formId, formDataObject) {
+  let formQueryString = $(formId).serializeArray();
+
+  for (let i = 0; i < formQueryString.length; i++) {
+    let temporaryObject = {},
+        keyname = formQueryString[0].name,
+        value = formQueryString[0].value;
+
+    temporaryObject[keyname+''] = value;
+    formDataObject = Object.assign(formDataObject, temporaryObject);
+  }
+}
+
+// form button set
+// edit할 input 객체에 editInput class 추가
+function formBtnClick(formId) {
+  return new Promise(function(resolve) {
+    $(`${formId} .btn-wrap .btn`).on('click', function() {
+      $(`${formId} .btn-wrap .btn, ${formId} .editLabel`).toggleClass('d-none');
+
+      if ($(this).hasClass('btnEdit') == true)
+      {
+        $('#userInfo .editInput').prop('disabled', false);
+        resolve('edit');
+      }
+      else if ($(this).hasClass('btnCancel') == true)
+      {
+        $('#userInfo .editInput').prop('disabled', true);
+        resolve('cancel');
+      }
+      else if ($(this).hasClass('btnSave') == true)
+      {
+        $('#userInfo .editInput').prop('disabled', true);
+        resolve('save');
+      }
+    });
+  });
+}
+
+// formBtnClik 호출
+/*
+(function retry() {
+  formBtnClick('#userInfo')
+  .then(function(result) {
+    if (result == 'edit') {
+      console.log('click edit');
+      // insert code
+    }
+    if (result == 'cancel') {
+      console.log('click cancel');
+      // insert code
+      $('.is-invalid, .is-valid').removeClass('is-invalid is-valid');
+    }
+    if (result == 'save') {
+      console.log('click save');
+      // insert code
+      if (userInfo.validChk() === false ) {
+        console.log('성공');
+
+        userInfo.send('post', '','json', false, orderInfo)
+        .then(function(data){
+          if (data['result'] == 'fail') {
+            alert('수정 실패');
+            userInfo.validChk();
+
+          } else if (data['result'] == 'sucess'){
+            userInfo.update('#userInfo');
+
+            $('.is-invalid, .is-valid').removeClass('is-invalid is-valid');
+            alert('수정 성공.');
+          }
+        })
+        .catch(function(error){
+          let error_confirm = confirm('데이터 전송 오류 입니다. 확인을 누르시면 페이지가 새로고침 됩니다.');
+
+          if (error_confirm == true) {
+            console.log('확인');
+            location.reload();
+          } else {
+            console.log('취소');
+            userInfo.validChk();
+          }
+        });
+      } else {
+        console.log('실패');
+        userInfo.validChk();
+      }
+    }
+
+    return retry();
+  });
+})()
+*/

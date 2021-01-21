@@ -15,6 +15,11 @@
       }
     });
 
+    // INITIALIZATION OF FILE ATTACH
+    $('.js-file-attach').each(function () {
+      var customFile = new HSFileAttach($(this)).init();
+    });
+
     // initialization of unfold
     $('.js-hs-unfold-invoker').each(function () {
       let unfold = new HSUnfold($(this)).init();

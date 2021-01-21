@@ -1,0 +1,111 @@
+<div class="modal fade" id="requestReturn" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <form id="formRequestReturn" class="modal-content">
+      <!-- Header -->
+      <div class="modal-header">
+        <h4 id="managerNoteTitle" class="modal-title"></h4>
+
+        <button type="button" class="btn btn-icon btn-sm btn-ghost-secondary modalClose" data-dismiss="modal" aria-label="Close">
+          <i class="tio-clear tio-lg"></i>
+        </button>
+      </div>
+      <!-- End Header -->
+
+      <!-- Body -->
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-sm-6 form-group">
+            <label class="input-label" for="adminName">관리자</label>
+            <input type="text" id="adminName" class="form-control" placeholder="" value="" disabled>
+          </div>
+          <div class="col-sm-6 form-group">
+            <label class="input-label" for="addDate">작성일</label>
+            <input type="text" id="addDate" class="form-control" placeholder="" value="" disabled>
+          </div>
+        </div>
+        <div class="form-group">
+          <textarea id="managerNoteTextarea" class="form-control" placeholder="메모를 입력하세요." rows="4"></textarea>
+        </div>
+      </div>
+      <!-- End Body -->
+
+      <!-- Footer -->
+      <div class="modal-footer justify-content-start">
+        <div class="row align-items-center flex-grow-1 mx-n2">
+          <div class="col-sm-3 mb-2 mb-sm-0">
+            <a id="managerNoteDelete" class="btn btn-sm btn-danger text-nowrap" href="javascript:;" data-dismiss="modal" aria-label="Close">삭제</a>
+          </div>
+
+          <div class="col-sm-9 text-sm-right">
+            <a id="managerNoteAdd" class="btn btn-sm btn-primary text-nowrap mr-2" href="javascript:;" data-dismiss="modal" aria-label="Close">등록</a>
+            <a id="managerNoteModify" class="btn btn-sm btn-primary text-nowrap mr-2" href="javascript:;" data-dismiss="modal" aria-label="Close">수정</a>
+            <a class="btn btn-sm btn-secondary text-nowrap btn-cancel" href="javascript:;">초기화</a>
+          </div>
+        </div>
+      </div>
+      <!-- End Footer -->
+    </form>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $('#managerNote').on('show.bs.modal', function (event) {
+      const button = $(event.relatedTarget);
+      const what = button.data('what');
+      const adminname = button.data('adminname');
+      const adddate = button.data('adddate');
+      const modal = $(this);
+
+      console.log(button);
+      console.log(what);
+      console.log(modal);
+
+      if (what == 'newAdd') {
+        modal.find('#adminName').val(managerId);
+        modal.find('#addDate').val(moment().format('YYYY/MM/DD'));
+        modal.find('#addDate').attr('hidden');
+        modal.find('#managerNoteDelete, #managerNoteModify').hide();
+        modal.find('.btn-cancel').on('click', function() {
+          $('#managerNoteTextarea').val('');
+        });
+      } else {
+        modal.find('#managerNoteAdd').hide();
+        modal.find('#adminName').val(adminname);
+        modal.find('#addDate').val(adddate);
+        modal.find('#managerNoteTextarea').val(button.text());
+        modal.find('.btn-cancel, .modalClose').on('click', function() {
+          $('#managerNoteTextarea').val('');
+        });
+      }
+
+      modal.find('#managerNoteAdd').on('click', function() {
+        alert('등록이 완료되었습니다.');
+      });
+
+      modal.find('#managerNoteModify').on('click', function() {
+        alert('수정이 완료되었습니다.');
+      });
+
+      modal.find('#managerNoteDelete').on('click', function() {
+        alert('삭제가 완료되었습니다.');
+      });
+    });
+
+    $('#managerNote').on('hidden.bs.modal', function (event) {
+      const button = $(event.relatedTarget);
+      const what = button.data('what');
+      const adminname = button.data('adminname');
+      const adddate = button.data('adddate');
+      const modal = $(this);
+
+      modal.find('#managerNoteAdd, #managerNoteDelete, #managerNoteModify').show();
+    });
+
+    // show.bs.modal 모달이 열릴 때 바로 실행되는 이벤트입니다.
+    // shown.bs.modal 모달의 열림이 끝나고 실행되는 이벤트입니다.
+    // hide.bs.modal 모달이 닫힐 때 바로 실행되는 이벤트입니다.
+    // hidden.bs.modal 모달의 닫힘이 끝나고 실행되는 이벤트입니다.
+
+  });
+</script>
